@@ -12,6 +12,9 @@ public partial class PlayerState : Node
 	/// <summary> Called when this state is entered. </summary>
 	public virtual void EnterState() { }
 
+	/// <summary> Caches last ground/aerial speed to PlayerController. Writes speed used for Bound Jump.</summary>
+	public void CacheMomentumOnExit() => Player.LastActionMoveSpeed = Player.MoveSpeed;
+
 	/// <summary> Called when this state is exited. </summary>
 	public virtual void ExitState() { }
 

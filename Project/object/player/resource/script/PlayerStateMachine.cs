@@ -31,12 +31,15 @@ public partial class PlayerStateMachine : Node
 	/// <summary> Resets the state machine to its initial state. </summary>
 	public void ResetStateMachine() => ChangeState(GetNode<PlayerState>(startingState));
 
-	/// <summary> Exit the current state and switch to a new state. </summary>
+	/// <summary> Exit the current state and switch to a new state. Initates the write done by PlayerState to cache speed of previous state to be used for Bound Jump. </summary>
 	public void ChangeState(PlayerState state)
 	{
 		QueuedState = state;
 		if (CurrentState != state)
-			CurrentState?.ExitState();
+		{
+        	CurrentState?.CacheMomentumOnExit();
+        	CurrentState?.ExitState();
+    	}
 
 		QueuedState = null;
 		CurrentState = state;

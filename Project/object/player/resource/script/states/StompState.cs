@@ -83,6 +83,9 @@ public partial class StompState : PlayerState
 				(Input.IsActionPressed("button_jump") && SaveManager.Config.jumpButtonMode != SaveManager.JumpButtonModeEnum.Attack)))
 			{
 				Player.IsBounceJumping = true;
+
+				// Bound Jump inherits cached speed
+				Player.MoveSpeed = Player.LastActionMoveSpeed;
 			}
 
 			return landState;

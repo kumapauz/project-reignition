@@ -106,6 +106,10 @@ public partial class PlayerController : CharacterBody3D
 	/// <summary> Player's vertical speed -- only effective when not on the ground. </summary>
 	public float VerticalSpeed { get; set; }
 	public bool IsMovingBackward { get; set; }
+
+	/// <summary> Horizontal speed set by the most recent ground or aerial action. Used to determine speed of Bound Jump. </summary>
+	public float LastActionMoveSpeed { get; set; }
+
 	/// <summary> Returns whether the player is moving backwards or not, taking free roam into account (CHECK IsMovingBackward SEPARATELY!). </summary>
 	public bool IsMovingBackwardFreeRoam => SaveManager.ActiveSkillRing.IsFreeRoamActive &&
 		ExtensionMethods.DotAngle(MovementAngle, PathFollower.ForwardAngle) < 0;
