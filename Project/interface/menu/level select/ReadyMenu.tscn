@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://vbh7a47k4llw" path="res://interface/menu/title/texture/transition fade.png" id="3_kki8l"]
 [ext_resource type="Texture2D" uid="uid://k8exixourkta" path="res://interface/menu/main/texture/char.png" id="3_kwgm4"]
 [ext_resource type="Texture2D" uid="uid://cno436k6axxi5" path="res://interface/menu/main/texture/background.png" id="4_x0w6p"]
-[ext_resource type="Shader" uid="uid://dj2vtehay1fej" path="res://effect/shader/interface/InterfaceFlashAdd.gdshader" id="6_03cqa"]
+[ext_resource type="Shader" uid="uid://cywcr73eavwo2" path="res://effect/shader/interface/InterfaceFlashAdd.gdshader" id="6_03cqa"]
 [ext_resource type="SpriteFrames" uid="uid://blsqrm1eukmr2" path="res://effect/particle/sprite frames/Flame Menu Small.tres" id="6_kwgm4"]
 [ext_resource type="AudioStream" uid="uid://huxte6rhwx58" path="res://sound/sfx/system/menu selection.wav" id="7_5a0w1"]
 [ext_resource type="AudioStream" uid="uid://cl54rftw5aiyf" path="res://sound/sfx/system/menu cancel.wav" id="8_2da68"]
@@ -595,6 +595,18 @@ tracks/17/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Flames:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_ow2hg"]
 resource_name = "cancel"
@@ -624,7 +636,7 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.5),
+"times": PackedFloat32Array(0.19999999),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -730,6 +742,18 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Flames:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_xs86i"]
@@ -1281,12 +1305,9 @@ tracks/13/path = NodePath(".")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0, 0.266667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.266667),
+"transitions": PackedFloat32Array(1),
 "values": [{
-"args": [],
-"method": &"HideDescription"
-}, {
 "args": [],
 "method": &"ShowDescription"
 }]
@@ -1340,6 +1361,18 @@ tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Flames:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0.46666667),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -2193,6 +2226,7 @@ autoplay = &"loop"
 libraries/ = SubResource("AnimationLibrary_hh1da")
 
 [node name="Flames" parent="." unique_id=1642780012 instance=ExtResource("31_1njce")]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 

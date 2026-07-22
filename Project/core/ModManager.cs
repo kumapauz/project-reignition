@@ -80,15 +80,19 @@ public partial class ModManager : Node
 		string[] files = levelDir.GetFiles();
 		foreach (string file in files) // Find the level data resource
 		{
-			if (!file.GetFile().GetExtension().Equals(ResourceExtension))
+			string fileName = file;
+			if (fileName.EndsWith(".remap"))
+				fileName = fileName.Replace(".remap", string.Empty);
+
+			if (!fileName.GetFile().GetExtension().Equals(ResourceExtension))
 				continue;
 
-			Resource resource = ResourceLoader.Load(dir + file);
+			Resource resource = ResourceLoader.Load(dir + fileName);
 			if (resource is not LevelDataResource)
 				continue;
 
 			LevelMods.Add(resource as LevelDataResource);
-			GD.Print($"Loaded custom level {file}.");
+			GD.Print($"Loaded custom level {fileName}.");
 		}
 	}
 

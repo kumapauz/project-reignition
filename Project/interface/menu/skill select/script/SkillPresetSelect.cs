@@ -13,7 +13,7 @@ public partial class SkillPresetSelect : Menu
 	[Export] private Node2D cursor;
 	[Export] private Sprite2D scrollbar;
 
-	[Export] private Label saveLabel; // We're changing this to "overwrite" if a save already exists
+	[Export] private Label saveLabel;
 
 	[Export] private LineEdit nameEditor;
 
@@ -146,6 +146,10 @@ public partial class SkillPresetSelect : Menu
 	public override void ShowMenu()
 	{
 		animator.Play("show");
+
+		for (int i = 0; i < SaveManager.PresetCount; i++)
+			if (presetList[i].IsInvalid)
+				SaveEmptyPreset(i);
 		LoadPresets();
 
 		base.ShowMenu();
@@ -157,6 +161,15 @@ public partial class SkillPresetSelect : Menu
 			presetList[i].Initialize();
 
 		presetList[VerticalSelection].SelectRight();
+	}
+
+	private void SaveEmptyPreset(int preset)
+	{
+		presetList[preset].PresetName = "New Preset";
+
+		presetList[preset].Skills.Clear();
+		presetList[preset].Augments.Clear();
+		presetList[preset].Initialize();
 	}
 
 	protected override void UpdateSelection()
@@ -206,15 +219,12 @@ public partial class SkillPresetSelect : Menu
 
 			switch (subIndex)
 			{
-				case 0:
+				case 1:
 					SaveSkills(VerticalSelection, false);
 					submenuAnimator.Play("select-save");
 					break;
-				case 1:
-					if (!IsInvalid(VerticalSelection))
-						LoadSkills(VerticalSelection);
-					else
-						failSFX.Play();
+				case 0:
+					LoadSkills(VerticalSelection);
 					break;
 				case 2:
 					if (!IsInvalid(VerticalSelection))
@@ -287,9 +297,11 @@ public partial class SkillPresetSelect : Menu
 		else
 		{
 			subIndex = 0;
-			submenuAnimator.Play(IsInvalid(VerticalSelection) ? "select-save-invalid" : "select-save");
+			submenuAnimator.Play(IsInvalid(VerticalSelection) ? "select-load-invalid" : "select-load");
+			//submenuAnimator.Play("select-load");
 		}
 		submenuAnimator.Advance(0.0);
+
 
 		submenuAnimator.Play("show");
 		isSubMenuActive = true;
@@ -344,10 +356,10 @@ public partial class SkillPresetSelect : Menu
 				targetAnimation = "select-none";
 				break;
 			case 0:
-				targetAnimation = "select-save";
+				targetAnimation = "select-load";
 				break;
 			case 1:
-				targetAnimation = "select-load";
+				targetAnimation = "select-save";
 				break;
 			case 2:
 				targetAnimation = "select-rename";
@@ -362,6 +374,7 @@ public partial class SkillPresetSelect : Menu
 
 		if (IsInvalid(VerticalSelection))
 			targetAnimation += "-invalid";
+
 
 		submenuAnimator.Play(targetAnimation);
 
@@ -401,7 +414,7 @@ public partial class SkillPresetSelect : Menu
 		presetList[preset].Augments.Remove(SkillKey.Character);
 
 		//  Save our new data to the file and play the animation to initialize the on-screen data
-		if (subIndex == 0) // Only play the save animation if we are selecting save
+		if (subIndex == 1) // Only play the save animation if we are selecting save
 			presetList[preset].SavePreset();
 		else
 			presetList[preset].Initialize();
@@ -472,6 +485,7 @@ public partial class SkillPresetSelect : Menu
 
 		submenuAnimator.CurrentAnimation = "select-delete-invalid";
 		submenuAnimator.Seek(0.0, true, true); // Grays out the options menu
+		SaveEmptyPreset(preset);
 	}
 
 	public void AlertMenuClosed()

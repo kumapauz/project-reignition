@@ -66,6 +66,7 @@
 [ext_resource type="AudioStream" uid="uid://ogybg5ps0hji" path="res://sound/sfx/stage/pirate storm/exterior rain loop.wav" id="63_5ud1a"]
 [ext_resource type="AudioStream" uid="uid://b612qb5uur1vx" path="res://sound/sfx/stage/pirate storm/thunder loop.wav" id="64_mkixc"]
 [ext_resource type="AudioStream" uid="uid://bps2bv273awbs" path="res://sound/sfx/stage/pirate storm/cave ambience.wav" id="65_n37bo"]
+[ext_resource type="Script" uid="uid://bdieqwbvr1c2e" path="res://sound/script/Reverb_Area.gd" id="67_5ud1a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k720b"]
 size = Vector3(25, 20, 5)
@@ -1028,6 +1029,9 @@ _data = {
 &"demo3": SubResource("Animation_qhv7k")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_mkixc"]
+size = Vector3(399.2956, 56.901398, 117.127846)
+
 [node name="Static" type="Node3D" unique_id=1859483676 node_paths=PackedStringArray("pathParent", "completionAnimator", "Environment")]
 script = ExtResource("1_g84th")
 DefaultBgm = ExtResource("62_uv0vh")
@@ -1155,7 +1159,7 @@ shape = SubResource("BoxShape3D_k720b")
 [node name="PSSky" parent="Visuals" unique_id=2133069 instance=ExtResource("13_q3kya")]
 script = ExtResource("41_08hmi")
 
-[node name="FogSkyboxMesh" parent="Visuals/PSSky" index="4" unique_id=171859400]
+[node name="FogSkyboxMesh" parent="Visuals/PSSky" index="4" unique_id=918817092]
 startEnabled = true
 
 [node name="PSSkyLightning" parent="Visuals/PSSky" unique_id=1008241150 instance=ExtResource("17_qhv7k")]
@@ -2611,6 +2615,23 @@ panning_strength = 0.0
 bus = &"GAME SFX"
 area_mask = 1
 attenuation_filter_db = 0.0
+
+[node name="ReverbAreaGAME SFX BUS" type="Area3D" parent="Sound/Interior" unique_id=400718653]
+top_level = true
+collision_layer = 3
+collision_mask = 3
+monitorable = false
+priority = 1
+reverb_bus_amount = 0.5
+script = ExtResource("67_5ud1a")
+wet_target = 0.09
+fade_time = 0.35
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sound/Interior/ReverbAreaGAME SFX BUS" unique_id=797038281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -289.38724, 14.478695, 1571.0532)
+top_level = true
+shape = SubResource("BoxShape3D_mkixc")
+debug_color = Color(1.3743589, 0, 0.30839366, 1)
 
 [connection signal="LevelStarted" from="." to="Rain/Rain" method="set_emitting" binds= [true]]
 [connection signal="Activated" from="Visuals/CullingTriggers/02-L" to="Visuals/02Islands" method="Activate"]

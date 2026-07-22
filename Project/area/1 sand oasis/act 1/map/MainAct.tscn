@@ -13176,7 +13176,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
 shape = SubResource("305")
 
 [node name="HallwayLoad" parent="MainAct/CullingMap" unique_id=1948798666 instance=ExtResource("4_v6hfg")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 96.0798, -47.8, -435.915)
+transform = Transform3D(0.76604444, 0, -0.6427877, 0, 1, 0, 0.6427877, 0, 0.76604444, 90.223076, -49.8, -399.31876)
 "Trigger Mode" = 2
 "Exit Mode" = 2
 

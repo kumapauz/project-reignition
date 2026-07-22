@@ -111,6 +111,12 @@ public partial class TimeAttack : Menu
 		if (!isActive)
 			return;
 
+		if (input.X == 0 && input.Y == 0)
+			return;
+
+		if (input.X != 0 && input.Y == 0)
+			return;
+
 		currentSelection += input.Y;
 		if (currentSelection > maxSelection || currentSelection < 1)
 			currentSelection = WrapSelection(currentSelection, maxSelection, 1);
@@ -131,6 +137,7 @@ public partial class TimeAttack : Menu
 			buttonList[currentSelection - 1].SelectButton();
 			return;
 		}
+
 
 		switch (currentSelection)
 		{

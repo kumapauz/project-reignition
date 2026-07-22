@@ -115,7 +115,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 290),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, -39450.0]
+"values": [0.0, -52800.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -187,7 +187,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 180),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, -23380.0]
+"values": [0.0, -29880.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -327,15 +327,6 @@ PROJECT REIGNITION
 Project Director / Lead Programmer
 [b]KumaPauZ[/b]
 
-3D Art Director
-[b]Merlang7[/b]
-
-2D Art Director
-[b]Matt Kenney[/b]
-
-Sound Director
-[b]Aoi[/b]
-
 
 
 Menu Programmers
@@ -347,7 +338,8 @@ Michael Gallinago[/b]
 
 
 Environment Designers
-[b]Merlang7
+[b]Bluwolfblitz
+Merlang7
 Jackal Phantom[/b]
 
 
@@ -356,8 +348,7 @@ Level Designers
 [b]Freeze
 Jackal Phantom
 KumaPauZ
-TrueVision
-[/b]
+TrueVision[/b]
 
 
 
@@ -373,6 +364,11 @@ Michael4Numbers[/b]
 
 
 
+Audio Director
+[b]Mario Tainaka[/b]
+
+
+
 Musicians
 [b]Aoi
 Stuart
@@ -381,13 +377,16 @@ Zakkujo[/b]
 
 
 Asset Importers
-[b]Jay (DuckGod)
-JHonny
-KumaPauZ[/b]
+[b]KumaPauZ
+Jay (DuckGod)
+JHonny[/b]
 
 
 
 LOCALIZATION
+[i]English Voice Cast[/i]
+Izziibel...Shahra
+
 Spanish (Spain)
 [b]Aoi[/b]
 
@@ -399,15 +398,25 @@ French
 S3nkuuv (Initial Draft)[/b]
 
 Italian
-[b]Luken[/b]
+[b]Luken
+LimeWeb[/b]
 
 German
 [b]A Blob
+Milonoto
+Elements of Justice
 Darkninja5746[/b]
+[i]German Voice Cast[/i]
+Michelle Pinkawa...Sonic
+Yuko...Shahra
+Elements of Justice...Erazor Djinn
+Elements of Justice...Sinbad
+Elements of Justice...King Solomon
+KAIPHER...King Shahryar
 
 Brazilian Portuguese
-[b]Tio Illuminati
-Skyer
+[b]Skyer
+Tio Illuminati
 Alvin Goldhart[/b]
 
 Polish
@@ -424,8 +433,22 @@ Swedish
 [b]Johan23t[/b]
 
 Russian
-[b]Dark Sonic[/b]
-
+[b]Alexey \"Dark Sonic\" Iojik
+Katrin Black
+Anastasia Akhmedzyanova
+Alena \"Dio Green\" Rodionova
+Alexander \"ALEKS KV\" Cross
+Alexander \"Irregular Zero\" Stavcev
+Artem \"TimTH\" Bolonenko
+[/b]
+[i]Russian Voice Cast[/i]
+Alexander \"ALEKS KV\" Cross...Sonic
+Ksenia Pevchenko...Shahra
+Evgeny Gaevsky...Erazor Djinn
+Lucy \"LucyNyuElf\" Kozitsyna...Ali Baba
+Ahill Namazov...Sinbad the Sailor
+Ivan Soldatenkov...King Shahryar
+Konstantin Pogodaev...King Solomon
 
 
 Promotion
@@ -441,35 +464,37 @@ GamerOfDays, Golbats
 Ing, TheDullStar[/b]
 
 [i]Microsoft Windows Playtesters[/i]
+Bloom, Solvalou
+Bun, Alvin Goldhart
+flapplebees, FusionBlueCore
+vio, Sparrowverse
+jakobtehwookiee, biggie
 Amaterasu92, July2612
-flapplebees, Bloom
-SergeantTimbo12, biggie
-rayisepic, jakobtehwookiee
-Sonic 104, Sparrowverse
-Neco Sage, Perfect Cell
-FusionBlueCore, Bun
-LimaVI, Silent
-TwoX, Dark (Gui)
+Dark (GUI), rayisepic
+Ben, MegaTech
+Silent, Star (StarDontMiss)
+SergeantTimbo12, LimaVI
 
 [i]Apple MacOS Playtesters[/i]
-// TODO FILL THIS IN
+Josh The Writer, Sleep
+LeoTheHuman_, folais,
 
 [i]Steam Deck / Linux Playtesters[/i]
-qwerty - iop, Guide Missile
-Caleb Koser, Star
-gang weed studios, HealCaster
-DiJiorno, Mark \"Ace-7\" Yuuki
-malon, Jainx
-Mc, Naar
-AdamAxo, Vitaili
-SoarSpeed
+EVDESTROY, malon
+Kyuna, Mark \"Divine\" Yuuki
+AFA, AbyssWatcher
+ChrisHighwind, Sydney_Angel
+Caleb Koser, HealCaster
+Jainx, VitailiBlaze
+Star (StarDontMiss), McGringus
+darkhunterzz., SoarSpeed
 
 SPECIAL THANKS
 Arg
 DKDave
+Redunka Zver
 Micky
 Wingzzzzy
-
 
 
 
@@ -823,6 +848,8 @@ Masaki Hirooka
 Mayumi Moro
 Yuichi Kikuchi
 
+[i]Game Title[/i]
+Shun Nakamura
 
 [i]Special Thanks[/i]
 Ai Muroi, Shinobu Yokota
@@ -1159,10 +1186,6 @@ Special Thanks To
 
 
 
-
-
-Made in the Godot Game Engine
-
 Original Game Created by
 [b]SONICTEAM[/b]
 
@@ -1171,6 +1194,10 @@ Copyrighted (C) SEGA.
 
 
 
+
+This game uses the Godot Engine,
+available under the following license:
+godotengine.org/license
 
 
 

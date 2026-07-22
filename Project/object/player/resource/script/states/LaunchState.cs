@@ -45,6 +45,7 @@ public partial class LaunchState : PlayerState
 
 		Player.IsOnGround = false;
 		Player.IsLaunching = true;
+		Player.IsBounceJumping = false;
 		Player.IsMovingBackward = false;
 		Player.AllowLandingGrind = true;
 		Player.AllowLandingSkills = false;

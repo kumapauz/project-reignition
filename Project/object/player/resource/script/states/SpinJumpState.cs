@@ -17,6 +17,7 @@ public partial class SpinJumpState : PlayerState
 	public override void EnterState()
 	{
 		Player.IsSpinJump = true;
+		Player.AllowLandingGrind = true;
 		Player.AttackState = PlayerController.AttackStates.Weak;
 		Player.Animator.StartSpin(5f);
 		Player.Effect.StartSpinFX();

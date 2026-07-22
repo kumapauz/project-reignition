@@ -102,10 +102,12 @@ public partial class TimeAttackManager : Node
 	public void SetRunActive(bool isActive) => IsRunActive = isActive;
 	public void LoadLevel(LevelDataResource level)
 	{
+		SoundManager.instance.StageMusicPlayer.Stop();
 		TransitionManager.QueueSceneChange(level.LevelPath);
 		TransitionManager.StartTransition(new()
 		{
-			inSpeed = 0.2f,
+			inSpeed = 1f,
+			outSpeed = 0.5f,
 			color = Colors.Black,
 			loadAsynchronously = true,
 			disableAutoTransition = true,
@@ -153,7 +155,8 @@ public partial class TimeAttackManager : Node
 		ResetLevelCount();
 		ClearCurrentSavedRun();
 		ClearCurrentRun();
-		LoadLevel(GetCurrentLevel());
+		if (Instance.CurrentRunType != RunType.SingleRun)
+			LoadLevel(GetCurrentLevel());
 	}
 
 	public void ClearCurrentSavedRun()

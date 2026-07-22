@@ -33,3 +33,4 @@ bus = &"GAME SFX"
 attenuation_filter_cutoff_hz = 10000.0
 
 [connection signal="area_entered" from="." to="." method="OnEntered"]
+[connection signal="area_exited" from="." to="." method="OnExited"]

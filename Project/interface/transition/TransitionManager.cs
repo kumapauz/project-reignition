@@ -166,6 +166,7 @@ public partial class TransitionManager : Node
 						// Forget async loading
 						GD.Print("Infinite Loading Detected. Force loading.");
 						GetTree().ChangeSceneToFile(QueuedScene);
+						FinishSceneChange();
 						return;
 					}
 				}
@@ -173,12 +174,18 @@ public partial class TransitionManager : Node
 				PackedScene scene = ResourceLoader.LoadThreadedGet(QueuedScene) as PackedScene;
 				GetTree().ChangeSceneToPacked(scene);
 				GD.Print($"Scene loaded in {loadTime} milliseconds.");
+				FinishSceneChange();
 				return;
 			}
 
 			GetTree().ChangeSceneToFile(QueuedScene);
 		}
 
+		FinishSceneChange();
+	}
+
+	private void FinishSceneChange()
+	{
 		// Reset time scale and unpause whenever we change scenes
 		Engine.TimeScale = 1f;
 		GetTree().Paused = false;

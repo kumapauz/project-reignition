@@ -8,7 +8,11 @@ public partial class BGMPlayer : AudioStreamPlayer
 {
 	[Export] private BGMResource bgmResource;
 	public BGMResource GetBgmResource() => bgmResource;
-	public void SetBgmResource(BGMResource resource) => bgmResource = resource;
+	public void SetBgmResource(BGMResource resource)
+	{
+		Stop();
+		bgmResource = resource;
+	}
 
 	[Export] public bool loadAsyncronously;
 

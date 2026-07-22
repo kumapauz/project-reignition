@@ -340,16 +340,13 @@ public partial class PauseMenu : Node
 		{
 			if (TimeAttackManager.Instance.IsRunActive)
 			{
-				GetTree().Paused = false;
-				Engine.TimeScale = 1.0f;
 				TimeAttackManager.Instance.RestartRun();
+				if (TimeAttackManager.Instance.CurrentRunType == TimeAttackManager.RunType.SingleRun)
+					ReloadStage();
 			}
 			else
 			{
-				// Resume
-				TransitionManager.Instance.QueuedScene = string.Empty;
-				SoundManager.instance.StageMusicPlayer.Stop();
-				EmitSignal(SignalName.OnSceneChangeSelected);
+				ReloadStage();
 			}
 		}
 		else if (currentSelection == 3) // Open the Skill Menu
@@ -377,6 +374,13 @@ public partial class PauseMenu : Node
 				EmitSignal(SignalName.OnSceneChangeSelected);
 			}
 		}
+	}
+
+	private void ReloadStage()
+	{
+		TransitionManager.Instance.QueuedScene = string.Empty;
+		SoundManager.instance.StageMusicPlayer.Stop();
+		EmitSignal(SignalName.OnSceneChangeSelected);
 	}
 
 	private void UpdateStatusMenuData()

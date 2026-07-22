@@ -616,7 +616,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -791,10 +791,135 @@ tracks/9/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_efuki"]
+resource_name = "show-invalid"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../NameLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Text:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Elements/Wind:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Elements/Fire:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Elements/Dark:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../NameLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Text:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Elements/Wind:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Elements/Fire:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Elements/Dark:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v3rdt"]
 _data = {
 &"RESET": SubResource("Animation_khxjk"),
-&"show": SubResource("Animation_pefke")
+&"show": SubResource("Animation_pefke"),
+&"show-invalid": SubResource("Animation_efuki")
 }
 
 [node name="SkillPresetOption" type="Control" unique_id=2083659827 node_paths=PackedStringArray("presetLabel", "numLabel", "skillCountLabel", "skillCostLabel", "windAmtLabel", "fireAmtLabel", "darkAmtLabel", "animator", "animatorData")]
@@ -852,7 +977,6 @@ pivot_offset = Vector2(567.5, 130.5)
 mouse_filter = 2
 
 [node name="NameLabel" type="Label" parent="." unique_id=2107272371]
-modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(500, 64)
 layout_mode = 0
 offset_left = 129.0
@@ -866,6 +990,7 @@ clip_text = true
 text_overrun_behavior = 3
 
 [node name="Text" type="HBoxContainer" parent="." unique_id=426745343]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 680.5
@@ -923,6 +1048,7 @@ theme_override_constants/separation = -12
 alignment = 1
 
 [node name="Wind" type="TextureRect" parent="Elements" unique_id=152737947]
+visible = false
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(180, 64)
 layout_mode = 2
@@ -962,6 +1088,7 @@ label_settings = ExtResource("1_rp60a")
 vertical_alignment = 1
 
 [node name="Fire" type="TextureRect" parent="Elements" unique_id=1165089666]
+visible = false
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(180, 64)
 layout_mode = 2
@@ -1001,6 +1128,7 @@ label_settings = ExtResource("1_rp60a")
 vertical_alignment = 1
 
 [node name="Dark" type="TextureRect" parent="Elements" unique_id=1220114581]
+visible = false
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(180, 64)
 layout_mode = 2

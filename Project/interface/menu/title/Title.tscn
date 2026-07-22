@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://chvedyxbnb0fh" path="res://interface/menu/title/texture/logos/logo en.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://vbh7a47k4llw" path="res://interface/menu/title/texture/transition fade.png" id="3_7q5op"]
 [ext_resource type="AudioStream" uid="uid://crnh8q3fup5o7" path="res://video/event/opening.ogg" id="4"]
+[ext_resource type="FontFile" uid="uid://dkrgp70eyje4" path="res://interface/font/otf/Credits - Dark Sonic & Co.otf" id="12_urcaa"]
 [ext_resource type="Texture2D" uid="uid://druwlyf3jy3tt" path="res://interface/menu/title/texture/corner_L.png" id="12_ww6bn"]
 [ext_resource type="Texture2D" uid="uid://bt6qpovcvk3li" path="res://interface/menu/title/texture/corner_R.png" id="13_h62u8"]
 [ext_resource type="Script" uid="uid://df7uyhsm3g1ji" path="res://video/EventResizer.cs" id="14_h62u8"]
@@ -13,7 +14,6 @@
 [ext_resource type="Material" uid="uid://bhbsafmnnhtdb" path="res://effect/material/Canvas Item Add.tres" id="28_yt1t1"]
 [ext_resource type="Texture2D" uid="uid://bfwjdnmqpjcvd" path="res://interface/menu/title/texture/decal.png" id="29_2jf04"]
 [ext_resource type="SpriteFrames" uid="uid://blsqrm1eukmr2" path="res://effect/particle/sprite frames/Flame Menu Small.tres" id="29_8b480"]
-[ext_resource type="Texture2D" uid="uid://ci5hojl3r34do" path="res://interface/menu/title/texture/press any button.png" id="30_cw0ix"]
 [ext_resource type="PackedScene" uid="uid://dad2hh4ttgaox" path="res://interface/menu/flames/Flames.tscn" id="33_hglwt"]
 [ext_resource type="AudioStream" uid="uid://cruu5h1jr78lr" path="res://sound/sfx/system/menu screen change.wav" id="34_nycgp"]
 [ext_resource type="Script" uid="uid://br1sa65q3jlq7" path="res://interface/menu/title/Title.cs" id="35"]
@@ -178,6 +178,40 @@ _data = {
 &"RESET": SubResource("Animation_0gx1k"),
 &"transition": SubResource("Animation_dodqd")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_e2t8q"]
+font = ExtResource("12_urcaa")
+font_size = 40
+font_color = Color(1, 0.87058824, 0.7764706, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+stacked_shadow_count = 3
+stacked_shadow_0/offset = Vector2(0, 0)
+stacked_shadow_0/color = Color(0, 0, 0, 0.5882353)
+stacked_shadow_0/outline_size = 10
+stacked_shadow_1/offset = Vector2(0, 0)
+stacked_shadow_1/color = Color(0, 0, 0, 0.5882353)
+stacked_shadow_1/outline_size = 15
+stacked_shadow_2/offset = Vector2(0, 0)
+stacked_shadow_2/color = Color(0, 0, 0, 0.19607843)
+stacked_shadow_2/outline_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_urcaa"]
+font = ExtResource("12_urcaa")
+font_size = 40
+font_color = Color(1, 0.87058824, 0.7764706, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+stacked_shadow_count = 3
+stacked_shadow_0/offset = Vector2(0, 0)
+stacked_shadow_0/color = Color(1, 1, 1, 0.5882353)
+stacked_shadow_0/outline_size = 10
+stacked_shadow_1/offset = Vector2(0, 0)
+stacked_shadow_1/color = Color(1, 1, 1, 0.5882353)
+stacked_shadow_1/outline_size = 15
+stacked_shadow_2/offset = Vector2(0, 0)
+stacked_shadow_2/color = Color(1, 1, 1, 0.19607843)
+stacked_shadow_2/outline_size = 20
 
 [sub_resource type="Animation" id="9"]
 length = 0.001
@@ -1150,20 +1184,6 @@ offset_bottom = 792.0
 grow_horizontal = 2
 mouse_filter = 2
 
-[node name="Text" type="Sprite2D" parent="Press Start" unique_id=1510139992]
-position = Vector2(16, -16)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("30_cw0ix")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 48)
-
-[node name="Glow" type="Sprite2D" parent="Press Start/Text" unique_id=731944457]
-self_modulate = Color(1, 1, 1, 0)
-material = ExtResource("28_yt1t1")
-texture = ExtResource("30_cw0ix")
-region_enabled = true
-region_rect = Rect2(0, 48, 256, 48)
-
 [node name="DecalL" type="TextureRect" parent="Press Start" unique_id=2078210186]
 layout_mode = 0
 offset_left = -560.0
@@ -1184,6 +1204,46 @@ mouse_filter = 2
 texture = ExtResource("29_2jf04")
 stretch_mode = 4
 flip_h = true
+
+[node name="Text" type="Label" parent="Press Start" unique_id=2064934121]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -37.5
+offset_right = 400.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "any_button"
+label_settings = SubResource("LabelSettings_e2t8q")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Glow" type="Label" parent="Press Start/Text" unique_id=1744618634]
+self_modulate = Color(1, 1, 1, 0)
+material = ExtResource("28_yt1t1")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = -22.75
+offset_right = 384.0
+offset_bottom = 22.75
+grow_horizontal = 2
+grow_vertical = 2
+text = "any_button"
+label_settings = SubResource("LabelSettings_urcaa")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
 [node name="Logo" type="TextureRect" parent="." unique_id=1539652232]
 layout_mode = 1

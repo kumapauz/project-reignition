@@ -15,7 +15,7 @@
 [ext_resource type="LabelSettings" uid="uid://bjc55uea7otvo" path="res://interface/font/MenuButtonFont.tres" id="14_mgygt"]
 [ext_resource type="Texture2D" uid="uid://dnolag8em8r32" path="res://interface/menu/common/button small highlight.png" id="15_7cmb6"]
 [ext_resource type="AudioStream" uid="uid://huxte6rhwx58" path="res://sound/sfx/system/menu selection.wav" id="15_bkyki"]
-[ext_resource type="Shader" uid="uid://dj2vtehay1fej" path="res://effect/shader/interface/InterfaceFlashAdd.gdshader" id="17_ql86b"]
+[ext_resource type="Shader" uid="uid://cywcr73eavwo2" path="res://effect/shader/interface/InterfaceFlashAdd.gdshader" id="17_ql86b"]
 [ext_resource type="FontFile" uid="uid://bsoin3p4iygoo" path="res://interface/font/otf/Chiaro Std B.otf" id="18_po5u0"]
 
 [sub_resource type="Animation" id="Animation_n41l1"]
@@ -312,7 +312,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.294118, 0.294118, 0.294118, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -560,7 +560,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.294118, 0.294118, 0.294118, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -808,7 +808,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.294118, 0.294118, 0.294118, 1)]
+"values": [Color(1, 1, 0, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1056,7 +1056,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.294118, 0.294118, 0.294118, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1304,7 +1304,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.294118, 0.294118, 0.294118, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1552,7 +1552,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.294118, 0.294118, 0.294118, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1723,6 +1723,102 @@ tracks/4/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_7cmb6"]
+resource_name = "show-invalid"
+length = 0.16667
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(1, 1)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"DisableProcessing"
+}, {
+"args": [],
+"method": &"EnableProcessing"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../SFX/Alert")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SubmenuOptions/Rename:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.294118, 0.294118, 0.294118, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SubmenuOptions/Delete:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.294118, 0.294118, 0.294118, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2bfnq"]
 _data = {
 &"RESET": SubResource("Animation_n41l1"),
@@ -1739,7 +1835,8 @@ _data = {
 &"select-rename-invalid": SubResource("Animation_6gv4x"),
 &"select-save": SubResource("Animation_2y4dd"),
 &"select-save-invalid": SubResource("Animation_dckcc"),
-&"show": SubResource("Animation_n0g4h")
+&"show": SubResource("Animation_n0g4h"),
+&"show-invalid": SubResource("Animation_7cmb6")
 }
 
 [sub_resource type="Animation" id="Animation_cduiw"]
@@ -2870,6 +2967,7 @@ _data = {
 }
 
 [node name="SkillPresetSelect" type="Control" unique_id=1187455234 node_paths=PackedStringArray("presetContainer", "cursor", "scrollbar", "saveLabel", "nameEditor", "submenuAnimator", "nameEditorAnimator", "alertAnimator", "confirmSFX", "cancelSFX", "selectSFX", "failSFX", "animator")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -3074,6 +3172,7 @@ offset_right = -8.0
 offset_bottom = 265.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1e-05, 1)
 pivot_offset = Vector2(180, 120)
 mouse_filter = 2
 
@@ -3102,16 +3201,16 @@ grow_vertical = 2
 mouse_filter = 2
 alignment = 1
 
-[node name="Save" type="Label" parent="Submenu/SubmenuOptions" unique_id=340585367]
-modulate = Color(1, 1, 0, 0)
+[node name="Load" type="Label" parent="Submenu/SubmenuOptions" unique_id=803746230]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 mouse_filter = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "sys_save"
+text = "sys_load"
 label_settings = ExtResource("6_esvmo")
 horizontal_alignment = 1
 
-[node name="Arrow" type="TextureRect" parent="Submenu/SubmenuOptions/Save" unique_id=734324025]
+[node name="Arrow" type="TextureRect" parent="Submenu/SubmenuOptions/Load" unique_id=1759285350]
+visible = false
 layout_mode = 0
 offset_left = 300.0
 offset_top = 10.0001
@@ -3125,15 +3224,16 @@ texture = ExtResource("8_ateip")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Load" type="Label" parent="Submenu/SubmenuOptions" unique_id=803746230]
-modulate = Color(1, 1, 1, 0)
+[node name="Save" type="Label" parent="Submenu/SubmenuOptions" unique_id=340585367]
+modulate = Color(1, 1, 0, 0)
 layout_mode = 2
 mouse_filter = 0
-text = "sys_load"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "sys_save"
 label_settings = ExtResource("6_esvmo")
 horizontal_alignment = 1
 
-[node name="Arrow" type="TextureRect" parent="Submenu/SubmenuOptions/Load" unique_id=1759285350]
+[node name="Arrow" type="TextureRect" parent="Submenu/SubmenuOptions/Save" unique_id=734324025]
 visible = false
 layout_mode = 0
 offset_left = 300.0
@@ -3596,10 +3696,10 @@ libraries/ = SubResource("AnimationLibrary_6tdb6")
 libraries/ = SubResource("AnimationLibrary_b2l6e")
 autoplay = &"init"
 
-[connection signal="mouse_entered" from="Submenu/SubmenuOptions/Save" to="." method="ReceiveSubmenuMouseInput" binds= [0]]
-[connection signal="mouse_exited" from="Submenu/SubmenuOptions/Save" to="." method="ReceiveSubmenuMouseInput" binds= [-1]]
-[connection signal="mouse_entered" from="Submenu/SubmenuOptions/Load" to="." method="ReceiveSubmenuMouseInput" binds= [1]]
+[connection signal="mouse_entered" from="Submenu/SubmenuOptions/Load" to="." method="ReceiveSubmenuMouseInput" binds= [0]]
 [connection signal="mouse_exited" from="Submenu/SubmenuOptions/Load" to="." method="ReceiveSubmenuMouseInput" binds= [-1]]
+[connection signal="mouse_entered" from="Submenu/SubmenuOptions/Save" to="." method="ReceiveSubmenuMouseInput" binds= [1]]
+[connection signal="mouse_exited" from="Submenu/SubmenuOptions/Save" to="." method="ReceiveSubmenuMouseInput" binds= [-1]]
 [connection signal="mouse_entered" from="Submenu/SubmenuOptions/Rename" to="." method="ReceiveSubmenuMouseInput" binds= [2]]
 [connection signal="mouse_exited" from="Submenu/SubmenuOptions/Rename" to="." method="ReceiveSubmenuMouseInput" binds= [-1]]
 [connection signal="mouse_entered" from="Submenu/SubmenuOptions/Delete" to="." method="ReceiveSubmenuMouseInput" binds= [3]]

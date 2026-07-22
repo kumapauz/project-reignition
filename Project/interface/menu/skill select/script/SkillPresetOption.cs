@@ -7,7 +7,8 @@ namespace Project.Interface.Menus;
 
 public partial class SkillPresetOption : Control
 {
-	public bool IsInvalid => string.IsNullOrEmpty(PresetName);
+	//public bool IsInvalid => string.IsNullOrEmpty(PresetName);
+	public bool IsInvalid => CheckInvalid();
 
 	/// <summary> The preset option's 0-based index number. </summary>
 	public int Index { get; set; }
@@ -46,17 +47,27 @@ public partial class SkillPresetOption : Control
 		set => SaveManager.ActiveGameData.presetSkillAugments[Index] = value;
 	}
 
+	public bool CheckInvalid()
+	{
+		if (Skills.Count == 0 && Augments.Count == 0)
+			return true;
+		return false;
+	}
+
 	public void Initialize()
 	{
 		numLabel.Text = DisplayNumber.ToString("00");
-		if (IsInvalid)
-		{
-			animator.Play("no-preset");
-			return;
-		}
+		//if (IsInvalid)
+		//{
+		//animator.Play("no-preset");
+		//return;
+		//}
 
 		Redraw();
-		animatorData.Play("show");
+		if (!IsInvalid)
+			animatorData.Play("show");
+		else
+			animatorData.Play("show-invalid");
 	}
 
 	public void Redraw()

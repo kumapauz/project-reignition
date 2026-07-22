@@ -114,15 +114,13 @@ public partial class PteroEgg : Area3D
 		if (IgnoreRespawn) return; // Don't respawn if we're already at the nest. Don't force the player to redo stuff they already did.
 
 		if (IsHeld)
-		{
 			PteroEggManager.heldEggs.Remove(this);
-			HeadsUpDisplay.Instance.PlayObjectiveAnimation("dino-egg", eggIndex);
-		}
 
 		IsReturnedToNest = false;
 		followVelocity = Vector3.Zero;
 		spawnData.Respawn(this);
 		Animator.Play("idle");
+		HeadsUpDisplay.Instance.PlayObjectiveAnimation("dino-egg", eggIndex);
 	}
 
 	public void SetType(int pattern, int index, Node3D model) // Adds the egg model as a child

@@ -9,7 +9,7 @@ namespace Project.Interface.Menus
 	public partial class Title : Menu
 	{
 		[Export] private Label versionLabel;
-		[Export] private Sprite2D startTextSprite;
+		[Export] private Control startTextSprite;
 
 		private bool isCutsceneActive;
 		private float cutsceneTimer;
