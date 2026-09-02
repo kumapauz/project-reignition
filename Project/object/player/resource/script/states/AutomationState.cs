@@ -26,6 +26,7 @@ public partial class AutomationState : PlayerState
 		Player.Animator.ExternalAngle = 0;
 		Player.Animator.SnapRotation(Player.Animator.ExternalAngle); // Rotate to follow pathfollower
 		Player.IsMovingBackward = false; // Prevent getting stuck in backstep animation
+		Player.IsBounceJumping = false;
 
 		if (Player.Animator.IsBrakeAnimationActive)
 			Player.Animator.StopBrake();

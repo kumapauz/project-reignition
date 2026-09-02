@@ -921,7 +921,7 @@ size = Vector3(5, 5, 3)
 Data = ExtResource("2_e7blr")
 InitialCameraSettings = ExtResource("3_0ocbc")
 
-[node name="Skeleton3D" parent="Static/Visuals/LRSky/SkyRoot" parent_id_path=PackedInt32Array(1813644485, 1715637403, 700085858) index="0" unique_id=1812939772]
+[node name="Skeleton3D" parent="Static/Visuals/LRSky/SkyRoot" parent_id_path=PackedInt32Array(1813644485, 1715637403, 1392339559) index="0" unique_id=854044039]
 bones/2/position = Vector3(0, 0.00033497438, 2820.001)
 bones/3/position = Vector3(0, 0.00027457604, 2020.0005)
 bones/4/position = Vector3(0, 9.210742e-05, 1220.0002)
@@ -932,7 +932,7 @@ bones/8/position = Vector3(0, -0.00014948582, -1980.0006)
 bones/9/position = Vector3(0, -8.781382e-05, -2780.001)
 bones/13/rotation = Quaternion(-3.5527137e-14, 0, 0, 1)
 
-[node name="Skeleton3D" parent="Static/Visuals/LRSky/Skybox/SkyRoot" parent_id_path=PackedInt32Array(1813644485, 148671396, 468969659) index="0" unique_id=1072610300]
+[node name="Skeleton3D" parent="Static/Visuals/LRSky/Skybox/SkyRoot" parent_id_path=PackedInt32Array(1813644485, 148671396, 1565113909) index="0" unique_id=902071008]
 bones/1/position = Vector3(0, 0, 950.00024)
 bones/1/rotation = Quaternion(1.1520229e-07, 0.70710695, 0.7071066, 1.1520233e-07)
 
@@ -1091,6 +1091,7 @@ shape = SubResource("BoxShape3D_5yb3a")
 
 [node name="PrisonDoor" parent="CageAct" unique_id=1858283410 instance=ExtResource("13_n6k87")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250, 10, -1397.5)
+skipDisabledAnimationTracks = []
 
 [node name="Knuckles" parent="CageAct/PrisonDoor" unique_id=737048234 instance=ExtResource("14_stncl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 1.5)
@@ -1718,7 +1719,7 @@ Movement/Angle = 180.0
 "Vertical Orientation" = false
 
 [node name="GreenMajin" parent="CageAct/Zipline1/MajinMover2" unique_id=264841273 instance=ExtResource("35_07dos")]
-transform = Transform3D(1.0000215, 0, -2.9057264e-07, 0, 1, 0, 2.9057264e-07, 0, 1.0000215, 0, 0, 9.999878)
+transform = Transform3D(1.0000216, 0, -2.9057264e-07, 0, 1, 0, 2.9057264e-07, 0, 1.0000216, 0, 0, 9.999878)
 "Spawn Settings/Spawn Travel Time" = 0.5
 "Spawn Settings/Spawn Delay" = 0.0
 "Spawn Settings/Spawn Offset" = Vector3(-20, 0, 0)
@@ -1767,6 +1768,7 @@ shape = SubResource("CylinderShape3D_7f5hg")
 
 [node name="Gate1" parent="CageAct/Tower2" unique_id=860195340 instance=ExtResource("36_glppg")]
 transform = Transform3D(1, 0, 0, 0, 1.75, 0, 0, 0, 1, 0, 0, 18)
+skipDisabledAnimationTracks = []
 respawnAnimation = 2
 activationSpeedScale = 10.0
 
@@ -1787,6 +1789,7 @@ shape = SubResource("BoxShape3D_5yb3a")
 
 [node name="Gate2" parent="CageAct/Tower2" unique_id=1552568167 instance=ExtResource("36_glppg")]
 transform = Transform3D(1, 0, 0, 0, 1.75, 0, 0, 0, 1, 0, 0, -9.5)
+skipDisabledAnimationTracks = []
 respawnAnimation = 2
 activationSpeedScale = 10.0
 
@@ -1846,6 +1849,7 @@ randomizedDialogTriggers = []
 
 [node name="StaticGate1" parent="CageAct/Tower2" unique_id=986472953 instance=ExtResource("36_glppg")]
 transform = Transform3D(0.282843, 0, -0.707107, 0, 2.2, 0, 0.282843, 0, 0.707107, 5.15, 8, 5.59998)
+skipDisabledAnimationTracks = []
 
 [node name="DashPanel1" parent="CageAct/Tower2" unique_id=1245869345 instance=ExtResource("39_fh5tf")]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -4.63, 8, 6.22998)
@@ -1973,6 +1977,7 @@ Distance = 2.0
 
 [node name="StaticGate2" parent="CageAct/Tower2" unique_id=221087914 instance=ExtResource("36_glppg")]
 transform = Transform3D(0.4, 0, 0, 0, 2.2, 0, 0, 0, 1, 7.69558, 8, 0.160303)
+skipDisabledAnimationTracks = []
 
 [node name="DashPanel2" parent="CageAct/Tower2" unique_id=2018209121 instance=ExtResource("39_fh5tf")]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 1.37, 16, 7.72998)
@@ -2034,6 +2039,7 @@ Distance = 2.0
 
 [node name="StaticGate3" parent="CageAct/Tower2" unique_id=772531649 instance=ExtResource("36_glppg")]
 transform = Transform3D(0.282843, 0, 0.707107, 0, 2.2, 0, -0.282843, 0, 0.707107, 5.48586, 16, -5.26941)
+skipDisabledAnimationTracks = []
 
 [node name="MissileGenerator1" parent="CageAct/Tower2" unique_id=448858777 instance=ExtResource("43_llcwr")]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -4.97932, 39, 4.87268)
@@ -2079,6 +2085,7 @@ shape = SubResource("BoxShape3D_5yb3a")
 
 [node name="Gate3" parent="CageAct/Tower2" unique_id=2027354706 instance=ExtResource("36_glppg")]
 transform = Transform3D(-0.469846, 0, 0.34202, 0, 1.8, 0, -0.17101, 0, -0.939693, -8.05524, 25.33, -3.01151)
+skipDisabledAnimationTracks = []
 deactivationSpeedScale = 0.1
 
 [node name="FootholdTrigger2" parent="CageAct/Tower2" unique_id=2005377368 instance=ExtResource("44_tsd8s")]
@@ -2638,7 +2645,7 @@ Movement/Angle = 0.0
 "Vertical Orientation" = false
 
 [node name="BlueMajin" parent="CageAct/Tower3/Exterior/MovingMajin1" unique_id=979756358 instance=ExtResource("57_j1b1d")]
-transform = Transform3D(1, 1.5716068e-08, 0, 0, 0.9999723, -9.5181167e-07, 0, 4.954636e-07, 1, 6.1035156e-05, -7.6293945e-06, -20.634888)
+transform = Transform3D(1, 1.5832484e-08, 0, 0, 0.9999722, -9.536743e-07, 0, 4.954636e-07, 1, 6.1035156e-05, -7.6293945e-06, -20.634888)
 "Spawn Settings/Spawn Travel Time" = 0.5
 "Spawn Settings/Spawn Delay" = 0.0
 "Spawn Settings/Spawn Offset" = Vector3(20, 0, 0)
@@ -2662,7 +2669,7 @@ Movement/Angle = 0.0
 "Vertical Orientation" = false
 
 [node name="BlueMajin" parent="CageAct/Tower3/Exterior/MovingMajin2" unique_id=713692565 instance=ExtResource("57_j1b1d")]
-transform = Transform3D(1, -4.5984052e-08, -4.3958426e-07, -4.7613867e-08, 1.00001, -8.251518e-07, 6.854534e-07, 2.3469329e-07, 1.00001, 0, -7.6293945e-06, -17.5)
+transform = Transform3D(1, -4.5984052e-08, -4.3958426e-07, -4.7730282e-08, 1.00001, -8.2701445e-07, 6.854534e-07, 2.3469329e-07, 1.00001, 0, -7.6293945e-06, -17.5)
 "Spawn Settings/Spawn Travel Time" = 0.5
 "Spawn Settings/Spawn Delay" = 0.0
 "Spawn Settings/Spawn Offset" = Vector3(20, 0, 0)
@@ -2706,6 +2713,7 @@ shape = SubResource("CylinderShape3D_gg5un")
 
 [node name="Gate1" parent="CageAct/Tower3" unique_id=1080602872 instance=ExtResource("36_glppg")]
 transform = Transform3D(1, 0, 0, 0, 1.75, 0, 0, 0, 1, 0, 0, 18)
+skipDisabledAnimationTracks = []
 respawnAnimation = 2
 activationSpeedScale = 10.0
 
@@ -2726,6 +2734,7 @@ shape = SubResource("BoxShape3D_5yb3a")
 
 [node name="Gate2" parent="CageAct/Tower3" unique_id=1957840946 instance=ExtResource("36_glppg")]
 transform = Transform3D(1, 0, 0, 0, 1.75, 0, 0, 0, 1, 0, 0, -9.5)
+skipDisabledAnimationTracks = []
 respawnAnimation = 2
 activationSpeedScale = 10.0
 
@@ -2834,9 +2843,11 @@ Length = 6
 
 [node name="StaticGate3" parent="CageAct/Tower3" unique_id=794467878 instance=ExtResource("36_glppg")]
 transform = Transform3D(0.375877, 0, -0.34202, 0, 2.2, 0, 0.136808, 0, 0.939693, 7.6781, 16, 2.82825)
+skipDisabledAnimationTracks = []
 
 [node name="StaticGate4" parent="CageAct/Tower3" unique_id=1976712984 instance=ExtResource("36_glppg")]
 transform = Transform3D(-0.136808, 0, -0.939693, 0, 2.2, 0, 0.375877, 0, -0.34202, -2.82159, 32.3, 7.63513)
+skipDisabledAnimationTracks = []
 
 [node name="Switch" parent="CageAct/Tower3" unique_id=1269663874 instance=ExtResource("42_ccg2v")]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 6.53329, 16.3, 4.26011)
@@ -3274,6 +3285,7 @@ shape = SubResource("BoxShape3D_5yb3a")
 
 [node name="Gate" parent="CageAct/Tower4/Exterior" unique_id=1146353960 instance=ExtResource("36_glppg")]
 transform = Transform3D(1.25, 0, 0, 0, -2.5, -1.88745e-07, 0, 3.77489e-07, -1.25, 0, 6.3942, 9.98071)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 deactivationSpeedScale = 5.0
 "Trigger Settings/Is One Shot" = false
@@ -3374,6 +3386,7 @@ shape = SubResource("CylinderShape3D_7f5hg")
 
 [node name="Gate1" parent="CageAct/Tower4" unique_id=904360113 instance=ExtResource("36_glppg")]
 transform = Transform3D(1, 0, 0, 0, 1.75, 0, 0, 0, 1, 0, 0, 9.5)
+skipDisabledAnimationTracks = []
 respawnAnimation = 2
 activationSpeedScale = 10.0
 
@@ -3394,6 +3407,7 @@ shape = SubResource("BoxShape3D_5yb3a")
 
 [node name="Gate2" parent="CageAct/Tower4" unique_id=1578985985 instance=ExtResource("36_glppg")]
 transform = Transform3D(1, 0, 0, 0, 1.75, 0, 0, 0, 1, 0, 0, -18)
+skipDisabledAnimationTracks = []
 respawnAnimation = 2
 activationSpeedScale = 10.0
 
@@ -4175,6 +4189,7 @@ Movement/Distance = 14.0
 
 [node name="Gate" parent="CageAct/Tower5/Exterior" unique_id=1497072962 instance=ExtResource("36_glppg")]
 transform = Transform3D(1.25, 0, 0, 0, -2.5, -1.88745e-07, 0, 3.77489e-07, -1.25, 0, 6.3942, 31.2307)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
@@ -4280,6 +4295,7 @@ shape = SubResource("CylinderShape3D_kgcgh")
 
 [node name="Gate1" parent="CageAct/Tower5" unique_id=1928907080 instance=ExtResource("36_glppg")]
 transform = Transform3D(1, 0, 0, 0, 1.75, 0, 0, 0, 1, 0, 0, 9.5)
+skipDisabledAnimationTracks = []
 respawnAnimation = 2
 activationSpeedScale = 10.0
 
@@ -4300,6 +4316,7 @@ shape = SubResource("BoxShape3D_5yb3a")
 
 [node name="Gate2" parent="CageAct/Tower5" unique_id=2120861491 instance=ExtResource("36_glppg")]
 transform = Transform3D(1, 0, 0, 0, 1.75, 0, 0, 0, 1, 0, 0, -18)
+skipDisabledAnimationTracks = []
 respawnAnimation = 2
 activationSpeedScale = 10.0
 
@@ -4356,12 +4373,14 @@ transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107
 
 [node name="StaticGate1" parent="CageAct/Tower5/FirstFloor" unique_id=806925811 instance=ExtResource("36_glppg")]
 transform = Transform3D(-1.74846e-08, 0, -1, 0, 2.3, 0, 0.4, 0, -4.37114e-08, 0.150024, 1.00001, 7.59998)
+skipDisabledAnimationTracks = []
 
 [node name="TowerInteriorPlatform2" parent="CageAct/Tower5/FirstFloor" unique_id=1238216064 instance=ExtResource("77_khyi4")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 9, 7.59998)
 
 [node name="StaticGate2" parent="CageAct/Tower5/FirstFloor" unique_id=1401808340 instance=ExtResource("36_glppg")]
 transform = Transform3D(-0.282843, 0, 0.707107, 0, 3.2, 0, -0.282843, 0, -0.707107, 5.21063, 1.00001, 5.40796)
+skipDisabledAnimationTracks = []
 
 [node name="SpikeBallStatic1" parent="CageAct/Tower5/FirstFloor" unique_id=1000491963 instance=ExtResource("67_rtnuq")]
 transform = Transform3D(0.702745, 0.485715, -0.519837, -0.423861, 0.872687, 0.242404, 0.571394, 0.0499905, 0.819152, -7.59998, 1, -3.19995)
@@ -4472,6 +4491,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32, 0)
 
 [node name="StaticGate1" parent="CageAct/Tower5/SecondFloor" unique_id=688296089 instance=ExtResource("36_glppg")]
 transform = Transform3D(0.282843, 0, -0.707107, 0, 2.3, 0, 0.282843, 0, 0.707107, 5.3119, 0.0800079, 5.54937)
+skipDisabledAnimationTracks = []
 
 [node name="SpikeBall1" parent="CageAct/Tower5/SecondFloor" unique_id=1393119490 instance=ExtResource("55_i7fb6")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 1.625, -0.5, 7.4749756)
@@ -4756,6 +4776,7 @@ settings = ExtResource("82_2ih45")
 [node name="MirrorEvent1" type="Node3D" parent="CageAct/Mirrors" unique_id=2075490914 node_paths=PackedStringArray("animator")]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -115.828, 50, -1559.17)
 script = ExtResource("83_tb2m1")
+skipDisabledAnimationTracks = []
 animator = NodePath("AnimationPlayer")
 EventID = "lr_cage_mirror1"
 "Trigger Settings/Automatically Respawn" = false
@@ -4790,6 +4811,7 @@ libraries/ = SubResource("AnimationLibrary_gg5un")
 [node name="MirrorEvent2" type="Node3D" parent="CageAct/Mirrors" unique_id=884740389 node_paths=PackedStringArray("animator")]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 665.808, -30, -1509.25)
 script = ExtResource("83_tb2m1")
+skipDisabledAnimationTracks = []
 animator = NodePath("AnimationPlayer")
 EventID = "lr_cage_mirror2"
 "Trigger Settings/Automatically Respawn" = false
@@ -4818,6 +4840,7 @@ libraries/ = SubResource("AnimationLibrary_nskpe")
 [node name="MirrorEvent3" type="Node3D" parent="CageAct/Mirrors" unique_id=771956839 node_paths=PackedStringArray("animator")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -55.724, -45, -940.736)
 script = ExtResource("83_tb2m1")
+skipDisabledAnimationTracks = []
 animator = NodePath("AnimationPlayer")
 EventID = "lr_cage_mirror3"
 "Trigger Settings/Automatically Respawn" = false
@@ -4846,6 +4869,7 @@ libraries/ = SubResource("AnimationLibrary_4e6mj")
 [node name="MirrorEvent4" type="Node3D" parent="CageAct/Mirrors" unique_id=422751032 node_paths=PackedStringArray("animator")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 566, 70, -1041)
 script = ExtResource("83_tb2m1")
+skipDisabledAnimationTracks = []
 animator = NodePath("AnimationPlayer")
 EventID = "lr_cage_mirror4"
 "Trigger Settings/Automatically Respawn" = false
@@ -4937,20 +4961,20 @@ shape = SubResource("BoxShape3D_y4pk0")
 [connection signal="Deactivated" from="CageAct/Tower2/Spring1" to="CageAct/Tower2/Triggers/Lockout" method="Activate"]
 [connection signal="Deactivated" from="CageAct/Tower2/Spring1" to="CageAct/Tower2/Spring1/TowerDialog" method="Activate"]
 [connection signal="Activated" from="CageAct/Tower2/DashPanel1" to="CageAct/Tower2/DashPanel1/Path" method="Activate"]
-[connection signal="Activated" from="CageAct/Tower2/DashPanel1" to="CageAct/Tower2/DashPanel1/AutomationTrigger" method="AttemptAutomation" flags=3]
+[connection signal="Activated" from="CageAct/Tower2/DashPanel1" to="CageAct/Tower2/DashPanel1/AutomationTrigger" method="AttemptAutomation"]
 [connection signal="Activated" from="CageAct/Tower2/DashPanel1/AutomationTrigger" to="CageAct/Tower2/DashPanel1/Path" method="Activate"]
 [connection signal="Deactivated" from="CageAct/Tower2/DashPanel1/AutomationTrigger" to="CageAct/Tower2/Triggers/LoopPath" method="Activate"]
 [connection signal="Activated" from="CageAct/Tower2/Switch1" to="CageAct/Tower2/Switch1/Spring" method="ShowLauncher"]
 [connection signal="Deactivated" from="CageAct/Tower2/Switch1" to="CageAct/Tower2/Switch1/Spring" method="HideLauncher"]
 [connection signal="Activated" from="CageAct/Tower2/DashPanel2" to="CageAct/Tower2/DashPanel2/Path" method="Activate"]
-[connection signal="Activated" from="CageAct/Tower2/DashPanel2" to="CageAct/Tower2/DashPanel2/AutomationTrigger" method="AttemptAutomation" flags=3]
+[connection signal="Activated" from="CageAct/Tower2/DashPanel2" to="CageAct/Tower2/DashPanel2/AutomationTrigger" method="AttemptAutomation"]
 [connection signal="Deactivated" from="CageAct/Tower2/DashPanel2/AutomationTrigger" to="CageAct/Tower2/Triggers/LoopPath" method="Activate"]
 [connection signal="Activated" from="CageAct/Tower2/Switch2" to="CageAct/Tower2/CullingTrigger" method="Activate"]
 [connection signal="Activated" from="CageAct/Tower2/Switch3" to="CageAct/Tower2/Switch3/Spring" method="ShowLauncher"]
 [connection signal="Deactivated" from="CageAct/Tower2/Switch3" to="CageAct/Tower2/Switch3/Spring" method="HideLauncher"]
 [connection signal="Activated" from="CageAct/Tower2/GateTrigger2" to="CageAct/Tower2/Gate3" method="Activate"]
 [connection signal="Activated" from="CageAct/Tower2/DashPanel3" to="CageAct/Tower2/DashPanel3/Path" method="Activate"]
-[connection signal="Activated" from="CageAct/Tower2/DashPanel3" to="CageAct/Tower2/DashPanel3/AutomationTrigger" method="AttemptAutomation" flags=3]
+[connection signal="Activated" from="CageAct/Tower2/DashPanel3" to="CageAct/Tower2/DashPanel3/AutomationTrigger" method="AttemptAutomation"]
 [connection signal="Deactivated" from="CageAct/Tower2/DashPanel3/AutomationTrigger" to="CageAct/Tower2/Triggers/LoopPath" method="Activate"]
 [connection signal="Activated" from="CageAct/Tower2/Spring2" to="CageAct/Tower2/Spring2/SpringDialog" method="Activate"]
 [connection signal="Activated" from="CageAct/Tower2/Spring2" to="CageAct/Tower2/Spring2/Path" method="Activate"]
