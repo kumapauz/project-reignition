@@ -63,6 +63,7 @@
 [ext_resource type="AudioStream" uid="uid://dqutonnrsm8sn" path="res://sound/sfx/stage/sand oasis/lake end loop.wav" id="61_hlk2v"]
 [ext_resource type="AudioStream" uid="uid://8rocdheu2kcf" path="res://sound/sfx/stage/dinosaur jungle/exterior ambience.wav" id="62_txr7m"]
 [ext_resource type="AudioStream" uid="uid://7kcy1fjoe4sg" path="res://sound/sfx/stage/dinosaur jungle/water fall point.wav" id="63_txr7m"]
+[ext_resource type="Script" uid="uid://bdieqwbvr1c2e" path="res://sound/script/Reverb_Area.gd" id="64_x7700"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_slcyf"]
 blend_mode = 1
@@ -555,6 +556,9 @@ volumetric_fog_temporal_reprojection_enabled = false
 adjustment_enabled = true
 adjustment_saturation = 1.6
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ixwa5"]
+size = Vector3(46.39614, 38.834923, 39.60064)
+
 [node name="Static" type="Node3D" unique_id=837553973 node_paths=PackedStringArray("pathParent", "completionAnimator", "Environment")]
 script = ExtResource("1_tbi4j")
 DefaultBgm = ExtResource("58_2rc53")
@@ -985,25 +989,25 @@ transform = Transform3D(2.25, 0, 0, 0, 1, 0, 0, 0, 2.25, -1.333, -11.114, 25.219
 [node name="CactusPlatform1" parent="Common" unique_id=895869916 instance=ExtResource("2_y75g5")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 19.7497, 4.97457, 113.39)
 
-[node name="CactusPlatformMesh" parent="Common/CactusPlatform1" index="0" unique_id=1661011816]
+[node name="CactusPlatformMesh" parent="Common/CactusPlatform1" index="0" unique_id=535905928]
 layers = 2
 
 [node name="CactusPlatform2" parent="Common" unique_id=368085881 instance=ExtResource("2_y75g5")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 13.166, 12.5, 112.952)
 
-[node name="CactusPlatformMesh" parent="Common/CactusPlatform2" index="0" unique_id=1661011816]
+[node name="CactusPlatformMesh" parent="Common/CactusPlatform2" index="0" unique_id=535905928]
 layers = 2
 
 [node name="CactusPlatform3" parent="Common" unique_id=248000659 instance=ExtResource("2_y75g5")]
 transform = Transform3D(2, 0, -2.23517e-07, 0, 2, 0, 2.23517e-07, 0, 2, -14.224, 23.7, 150.362)
 
-[node name="CactusPlatformMesh" parent="Common/CactusPlatform3" index="0" unique_id=1661011816]
+[node name="CactusPlatformMesh" parent="Common/CactusPlatform3" index="0" unique_id=535905928]
 layers = 2
 
 [node name="GrassPillar1" parent="Common" unique_id=253846207 instance=ExtResource("3_f3x6u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.9927, 16.3, 225.311)
 
-[node name="GrassPillarMesh" parent="Common/GrassPillar1" index="0" unique_id=1743255970]
+[node name="GrassPillarMesh" parent="Common/GrassPillar1" index="0" unique_id=675710008]
 layers = 2
 
 [node name="LotusGroup2" type="Node3D" parent="Common" unique_id=1107710361]
@@ -1467,6 +1471,23 @@ max_distance = 100.0
 bus = &"GAME SFX"
 area_mask = 1
 attenuation_filter_db = 0.0
+
+[node name="ReverbAreaGAME SFX BUS" type="Area3D" parent="Sound" unique_id=1740099683]
+top_level = true
+collision_layer = 3
+collision_mask = 3
+monitorable = false
+priority = 1
+reverb_bus_amount = 0.5
+script = ExtResource("64_x7700")
+wet_target = 0.09
+fade_time = 0.35
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sound/ReverbAreaGAME SFX BUS" unique_id=209945847]
+transform = Transform3D(0.74183005, 0, 0.6705879, 0, 1, 0, -0.6705879, 0, 0.74183005, -110.7367, -5.41148, 133.46266)
+top_level = true
+shape = SubResource("BoxShape3D_ixwa5")
+debug_color = Color(0.9808553, 1, 0, 1)
 
 [connection signal="Activated" from="Common/Object/Spring" to="Collision/IslandOneWay" method="Deactivate"]
 [connection signal="Activated" from="Common/Object/Spring" to="Common/Object/Spring/Camera" method="Activate"]

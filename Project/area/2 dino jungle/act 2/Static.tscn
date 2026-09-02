@@ -76,6 +76,7 @@
 [ext_resource type="Curve3D" uid="uid://uyy1x2hj58jb" path="res://area/2 dino jungle/act 1/environment/path/LogAutomationPath.tres" id="82_ijckf"]
 [ext_resource type="AudioStream" uid="uid://bpnksbwtvxudk" path="res://sound/sfx/stage/dinosaur jungle/jungle interior ambience.wav" id="83_blcup"]
 [ext_resource type="Curve3D" uid="uid://ctd4rn3gyguex" path="res://area/2 dino jungle/act 1/environment/path/DinoRightPath.tres" id="83_pjdfe"]
+[ext_resource type="Script" uid="uid://bdieqwbvr1c2e" path="res://sound/script/Reverb_Area.gd" id="84_5vf8g"]
 [ext_resource type="Curve3D" uid="uid://bjvkgbw6pqfdl" path="res://area/2 dino jungle/act 1/environment/path/BoatPath.tres" id="84_8mjh3"]
 [ext_resource type="Curve3D" uid="uid://yiqn26fm6vq" path="res://area/2 dino jungle/act 1/environment/path/BoatTopPath.tres" id="85_a5jba"]
 [ext_resource type="Curve3D" uid="uid://dwbkww17xa7gl" path="res://area/2 dino jungle/act 1/environment/path/ArenaPath.tres" id="86_ychf6"]
@@ -922,6 +923,9 @@ adjustment_brightness = 1.3
 adjustment_saturation = 0.9
 adjustment_color_correction = SubResource("GradientTexture1D_dce1u")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_amto4"]
+size = Vector3(148.72745, 49.657883, 71.06241)
+
 [node name="Static" type="Node3D" unique_id=1130820062 node_paths=PackedStringArray("pathParent", "completionAnimator", "Environment")]
 script = ExtResource("1_ahfub")
 DefaultBgm = ExtResource("71_sjdj2")
@@ -1657,7 +1661,7 @@ shape = SubResource("BoxShape3D_ibe76")
 [node name="DinoPara1" parent="Trigger/Object/DinoParaGroup" unique_id=659924899 instance=ExtResource("50_f86qt")]
 transform = Transform3D(1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, 1, 2.00012, 0, 1.80005)
 
-[node name="AnimationPlayer" parent="Trigger/Object/DinoParaGroup/DinoPara1" index="1" unique_id=125319052]
+[node name="AnimationPlayer" parent="Trigger/Object/DinoParaGroup/DinoPara1" index="1" unique_id=2514404]
 autoplay = &"para-stand"
 
 [node name="Head" parent="Trigger/Object/DinoParaGroup/DinoPara1" index="3" unique_id=960295935]
@@ -1666,7 +1670,7 @@ transform = Transform3D(0.99999994, 4.4703484e-08, -4.2840838e-07, -4.1608206e-0
 [node name="DinoPara2" parent="Trigger/Object/DinoParaGroup" unique_id=219733896 instance=ExtResource("50_f86qt")]
 transform = Transform3D(0.955961, 0, -1.36525, 0, 1.66667, 0, 1.36525, 0, 0.955961, 11.3036, 0, 11.6873)
 
-[node name="AnimationPlayer" parent="Trigger/Object/DinoParaGroup/DinoPara2" index="1" unique_id=125319052]
+[node name="AnimationPlayer" parent="Trigger/Object/DinoParaGroup/DinoPara2" index="1" unique_id=2514404]
 autoplay = &"event-deactivate"
 
 [node name="Head" parent="Trigger/Object/DinoParaGroup/DinoPara2" index="3" unique_id=960295935]
@@ -1988,51 +1992,51 @@ startEnabled = true
 [node name="03Cave" parent="Visuals" unique_id=1394355348 instance=ExtResource("8_u2eqs")]
 startEnabled = true
 
-[node name="stg020_a03_Mesh_0001" parent="Visuals/03Cave" index="0" unique_id=400855613]
+[node name="stg020_a03_Mesh_0001" parent="Visuals/03Cave" index="0" unique_id=626416786]
 surface_material_override/0 = ExtResource("47_p4him")
 
-[node name="stg020_a03_Mesh_0002" parent="Visuals/03Cave" index="1" unique_id=1734682284]
+[node name="stg020_a03_Mesh_0002" parent="Visuals/03Cave" index="1" unique_id=1320322451]
 surface_material_override/0 = ExtResource("48_p4him")
 
 [node name="03CaveSky" parent="Visuals" unique_id=525119651 instance=ExtResource("9_p15kj")]
 startEnabled = true
 
-[node name="stg020_g08_Mesh_0000" parent="Visuals/03CaveSky" index="0" unique_id=1070293587]
+[node name="stg020_g08_Mesh_0000" parent="Visuals/03CaveSky" index="0" unique_id=1338214883]
 surface_material_override/0 = SubResource("StandardMaterial3D_mgkth")
 
 [node name="03CaveReverse" parent="Visuals" unique_id=717159039 instance=ExtResource("10_q3pap")]
 
 [node name="04Spiral" parent="Visuals" unique_id=1275971145 instance=ExtResource("11_4xcu3")]
 
-[node name="stg020_g16_Mesh_0000" parent="Visuals/04Spiral" index="19" unique_id=2031714851]
+[node name="stg020_g16_Mesh_0000" parent="Visuals/04Spiral" index="19" unique_id=126756198]
 material_override = SubResource("StandardMaterial3D_tp8dn")
 
 [node name="05Crossing" parent="Visuals" unique_id=1597273078 instance=ExtResource("12_m4xj3")]
 
-[node name="stg020_p21_Mesh_52" parent="Visuals/05Crossing" index="10" unique_id=1010412268]
+[node name="stg020_p21_Mesh_52" parent="Visuals/05Crossing" index="10" unique_id=1061277991]
 surface_material_override/0 = ExtResource("55_p4him")
 
-[node name="stg020_falls_w_22_Mesh_0" parent="Visuals/05Crossing" index="28" unique_id=1670423264]
+[node name="stg020_falls_w_22_Mesh_0" parent="Visuals/05Crossing" index="28" unique_id=1627634253]
 surface_material_override/0 = SubResource("ShaderMaterial_0h6wt")
 
 [node name="06CavernEntrance" parent="Visuals" unique_id=165543185 instance=ExtResource("13_vc0wq")]
 
-[node name="stg020_p21_Mesh_52_001" parent="Visuals/06CavernEntrance" index="8" unique_id=1624212348]
+[node name="stg020_p21_Mesh_52_001" parent="Visuals/06CavernEntrance" index="8" unique_id=1307197894]
 surface_material_override/0 = ExtResource("55_p4him")
 
-[node name="stg020_a05_Mesh_0_001" parent="Visuals/06CavernEntrance" index="25" unique_id=1825630113]
+[node name="stg020_a05_Mesh_0_001" parent="Visuals/06CavernEntrance" index="25" unique_id=679273790]
 visible = false
 
 [node name="07Cavern" parent="Visuals" unique_id=1451983186 instance=ExtResource("14_mw2ws")]
 
-[node name="stg020_a05_Mesh_2" parent="Visuals/07Cavern" index="1" unique_id=797645454]
+[node name="stg020_a05_Mesh_2" parent="Visuals/07Cavern" index="1" unique_id=1402990781]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.3779793, 0)
 surface_material_override/0 = SubResource("ShaderMaterial_crqnt")
 
-[node name="stg020_a05_Mesh_0" parent="Visuals/07Cavern" index="3" unique_id=1572934527]
+[node name="stg020_a05_Mesh_0" parent="Visuals/07Cavern" index="3" unique_id=658079793]
 visible = false
 
-[node name="stg020_o05_Mesh_4_001" parent="Visuals/07Cavern" index="5" unique_id=878174307]
+[node name="stg020_o05_Mesh_4_001" parent="Visuals/07Cavern" index="5" unique_id=1873044001]
 transparency = 0.96
 surface_material_override/0 = SubResource("ShaderMaterial_fwu1r")
 
@@ -2114,13 +2118,13 @@ omni_attenuation = 0.5
 [node name="Skybox" parent="Visuals" unique_id=990152727 instance=ExtResource("16_71gb0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -520.204, 0)
 
-[node name="Tint" type="MeshInstance3D" parent="Visuals/Skybox/SkyRoot" parent_id_path=PackedInt32Array(990152727, 669706305) index="1" unique_id=1210296503]
+[node name="Tint" type="MeshInstance3D" parent="Visuals/Skybox/SkyRoot" parent_id_path=PackedInt32Array(990152727, 1361395181) index="1" unique_id=1210296503]
 transform = Transform3D(10, 0, 0, 0, 0, 10, 0, -10, 0, -3644.06, -8893.55, -1940)
 layers = 16
 mesh = SubResource("CylinderMesh_sjdj2")
 skeleton = NodePath("../..")
 
-[node name="Tint2" type="MeshInstance3D" parent="Visuals/Skybox/SkyRoot" parent_id_path=PackedInt32Array(990152727, 669706305) index="2" unique_id=675369125]
+[node name="Tint2" type="MeshInstance3D" parent="Visuals/Skybox/SkyRoot" parent_id_path=PackedInt32Array(990152727, 1361395181) index="2" unique_id=675369125]
 transform = Transform3D(10, 0, 0, 0, 0, 10, 0, -10, 0, -3644.06, -8893.55, -1940)
 layers = 16
 mesh = SubResource("CylinderMesh_tp8dn")
@@ -2375,6 +2379,23 @@ bus = &"GAME SFX"
 area_mask = 1
 playback_type = 1
 attenuation_filter_db = 0.0
+
+[node name="ReverbAreaGAME SFX BUS" type="Area3D" parent="Sound" unique_id=1313713266]
+top_level = true
+collision_layer = 3
+collision_mask = 3
+monitorable = false
+priority = 1
+reverb_bus_amount = 0.5
+script = ExtResource("84_5vf8g")
+wet_target = 0.09
+fade_time = 0.35
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sound/ReverbAreaGAME SFX BUS" unique_id=833687383]
+transform = Transform3D(0.9777376, 0, 0.20983115, 0, 1, 0, -0.20983115, 0, 0.9777376, -567.43933, -266.08243, -1094.5345)
+top_level = true
+shape = SubResource("BoxShape3D_amto4")
+debug_color = Color(0.9808553, 1, 0, 1)
 
 [connection signal="Activated" from="Trigger/Checkpoints/DinoCheckpoint" to="Collision/LSideWall" method="Deactivate"]
 [connection signal="Activated" from="Trigger/Checkpoints/DinoCheckpoint" to="Collision/RSideWall" method="Deactivate"]

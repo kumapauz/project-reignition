@@ -104,6 +104,7 @@
 [ext_resource type="AudioStream" uid="uid://dqutonnrsm8sn" path="res://sound/sfx/stage/sand oasis/lake end loop.wav" id="100_arhuk"]
 [ext_resource type="AudioStream" uid="uid://8rocdheu2kcf" path="res://sound/sfx/stage/dinosaur jungle/exterior ambience.wav" id="100_no7gx"]
 [ext_resource type="AudioStream" uid="uid://bpnksbwtvxudk" path="res://sound/sfx/stage/dinosaur jungle/jungle interior ambience.wav" id="101_no7gx"]
+[ext_resource type="Script" uid="uid://bdieqwbvr1c2e" path="res://sound/script/Reverb_Area.gd" id="105_6qugi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ibe76"]
 size = Vector3(20, 20, 5)
@@ -637,6 +638,9 @@ fog_density = 0.0005
 adjustment_enabled = true
 adjustment_saturation = 1.1
 adjustment_color_correction = SubResource("GradientTexture1D_k3y72")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ved51"]
+size = Vector3(150.85983, 49.657883, 71.06241)
 
 [node name="Static" type="Node3D" unique_id=227702218 node_paths=PackedStringArray("pathParent", "completionAnimator", "Environment")]
 script = ExtResource("1_hpjme")
@@ -1779,7 +1783,7 @@ shape = SubResource("BoxShape3D_ibe76")
 [node name="DinoPara1" parent="Trigger/Object/DinoParaGroup" unique_id=216997819 instance=ExtResource("41_ak0dc")]
 transform = Transform3D(1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, 1, 2.00012, 0, 1.80005)
 
-[node name="Skeleton3D" parent="Trigger/Object/DinoParaGroup/DinoPara1/DinoParaRoot" parent_id_path=PackedInt32Array(216997819, 1012929181) index="0" unique_id=736918577]
+[node name="Skeleton3D" parent="Trigger/Object/DinoParaGroup/DinoPara1/DinoParaRoot" parent_id_path=PackedInt32Array(216997819, 2102479107) index="0" unique_id=275191537]
 bones/6/scale = Vector3(1, 1.0000001, 0.9999999)
 bones/8/scale = Vector3(1, 1.0000002, 1)
 bones/11/scale = Vector3(1, 1, 0.9999998)
@@ -1790,7 +1794,7 @@ bones/16/scale = Vector3(1, 1, 1.0000001)
 bones/17/rotation = Quaternion(0.94178975, -5.6715527e-07, -6.2210677e-07, 0.33620253)
 bones/17/scale = Vector3(1, 0.99999994, 0.99999976)
 
-[node name="AnimationPlayer" parent="Trigger/Object/DinoParaGroup/DinoPara1" index="1" unique_id=125319052]
+[node name="AnimationPlayer" parent="Trigger/Object/DinoParaGroup/DinoPara1" index="1" unique_id=2514404]
 autoplay = &"para-stand"
 
 [node name="Head" parent="Trigger/Object/DinoParaGroup/DinoPara1" index="3" unique_id=960295935]
@@ -1799,7 +1803,7 @@ transform = Transform3D(0.99999994, 4.4703484e-08, -4.2840838e-07, -4.1608206e-0
 [node name="DinoPara2" parent="Trigger/Object/DinoParaGroup" unique_id=1791093711 instance=ExtResource("41_ak0dc")]
 transform = Transform3D(0.955961, 0, -1.36525, 0, 1.66667, 0, 1.36525, 0, 0.955961, 11.3036, 0, 11.6873)
 
-[node name="Skeleton3D" parent="Trigger/Object/DinoParaGroup/DinoPara2/DinoParaRoot" parent_id_path=PackedInt32Array(1791093711, 1012929181) index="0" unique_id=736918577]
+[node name="Skeleton3D" parent="Trigger/Object/DinoParaGroup/DinoPara2/DinoParaRoot" parent_id_path=PackedInt32Array(1791093711, 2102479107) index="0" unique_id=275191537]
 bones/6/scale = Vector3(1, 1.0000001, 0.9999999)
 bones/8/scale = Vector3(1, 1.0000002, 1)
 bones/11/scale = Vector3(1, 1, 0.9999998)
@@ -1810,7 +1814,7 @@ bones/16/scale = Vector3(1, 1, 1.0000001)
 bones/17/rotation = Quaternion(0.94178975, -5.6715527e-07, -6.2210677e-07, 0.33620253)
 bones/17/scale = Vector3(1, 0.99999994, 0.99999976)
 
-[node name="AnimationPlayer" parent="Trigger/Object/DinoParaGroup/DinoPara2" index="1" unique_id=125319052]
+[node name="AnimationPlayer" parent="Trigger/Object/DinoParaGroup/DinoPara2" index="1" unique_id=2514404]
 autoplay = &"event-deactivate"
 
 [node name="Head" parent="Trigger/Object/DinoParaGroup/DinoPara2" index="3" unique_id=960295935]
@@ -2833,7 +2837,7 @@ environment = SubResource("Environment_f4b5x")
 
 [node name="CompletionDemo" parent="." unique_id=1029911597 instance=ExtResource("89_i1ci7")]
 
-[node name="Camera" type="Camera3D" parent="CompletionDemo/CompletionDemo" parent_id_path=PackedInt32Array(1029911597, 779879994) index="0" unique_id=658962860]
+[node name="Camera" type="Camera3D" parent="CompletionDemo/CompletionDemo" parent_id_path=PackedInt32Array(1029911597, 1591689840) index="0" unique_id=658962860]
 cull_mask = 1086
 fov = 70.0
 
@@ -2978,6 +2982,23 @@ bus = &"GAME SFX"
 area_mask = 1
 playback_type = 1
 attenuation_filter_db = 0.0
+
+[node name="ReverbAreaGAME SFX BUS" type="Area3D" parent="Sound" unique_id=1694554731]
+top_level = true
+collision_layer = 3
+collision_mask = 3
+monitorable = false
+priority = 1
+reverb_bus_amount = 0.5
+script = ExtResource("105_6qugi")
+wet_target = 0.09
+fade_time = 0.35
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sound/ReverbAreaGAME SFX BUS" unique_id=36673376]
+transform = Transform3D(0.9777376, 0, 0.20983115, 0, 1, 0, -0.20983115, 0, 0.9777376, -566.25397, -266.08243, -1094.7891)
+top_level = true
+shape = SubResource("BoxShape3D_ved51")
+debug_color = Color(0.9808553, 1, 0, 1)
 
 [connection signal="Activated" from="Visuals/CullingMap/01-U" to="Visuals/01Chase" method="Deactivate"]
 [connection signal="Deactivated" from="Visuals/CullingMap/01-U" to="Visuals/01Chase" method="Activate"]
