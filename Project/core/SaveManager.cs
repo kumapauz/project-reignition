@@ -1115,8 +1115,14 @@ public partial class SaveManager : Node
 		{
 			for (int i = 0; i < (int)SkillKey.Count; i++)
 			{
+				if ((SkillKey)i == SkillKey.Character)
+					continue;
+
 				if (!viewedSkills.Contains((SkillKey)i) && ActiveSkillRing.IsSkillUnlocked((SkillKey)i))
+				{
+					GD.Print($"Has new skill {(SkillKey)i}");
 					return true;
+				}
 			}
 			return false;
 		}
