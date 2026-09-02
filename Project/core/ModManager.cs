@@ -110,6 +110,11 @@ public partial class ModManager : Node
 	{
 		GD.Print($"Loading directory {dir}");
 		DirAccess dirAccess = DirAccess.Open(dir);
+		if (DirAccess.GetOpenError() != Error.Ok)
+		{
+			GD.PrintErr("COULDN'T OPEN MOD FOLDER!");
+			return;
+		}
 
 		foreach (string folder in dirAccess.GetDirectories())
 			LoadZips(dir.PathJoin(folder));
