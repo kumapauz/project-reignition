@@ -7,6 +7,7 @@ namespace Project;
 public partial class BGMPlayer : AudioStreamPlayer
 {
 	[Export] private BGMResource bgmResource;
+	[Export] private float fadeSpeed = 0.5f;
 	public BGMResource GetBgmResource() => bgmResource;
 	public void SetBgmResource(BGMResource resource)
 	{
@@ -35,7 +36,7 @@ public partial class BGMPlayer : AudioStreamPlayer
 			return;
 		}
 
-		if (isFadingBgm && !SoundManager.FadeAudioPlayer(this, 0.5f))
+		if (isFadingBgm && !SoundManager.FadeAudioPlayer(this, fadeSpeed))
 			isFadingBgm = false;
 
 		if (!canLoop) return;

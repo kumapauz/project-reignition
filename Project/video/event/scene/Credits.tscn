@@ -187,7 +187,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 180),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, -29880.0]
+"values": [0.0, -29980.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1259,4 +1259,5 @@ color = Color(0, 0, 0, 1)
 bus = &"BGM"
 script = ExtResource("7_x4lxr")
 bgmResource = ExtResource("8_x4lxr")
+fadeSpeed = 5.0
 loadAsyncronously = true
