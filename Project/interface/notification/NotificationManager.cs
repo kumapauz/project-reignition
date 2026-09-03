@@ -197,6 +197,9 @@ public partial class NotificationManager : Control
 		int count = 0;
 		for (int i = 0; i < (int)SkillKey.Count; i++)
 		{
+			if ((SkillKey)i == SkillKey.Character)
+				continue;
+
 			if (SaveManager.ActiveSkillRing.IsSkillUnlocked((SkillKey)i))
 				count++;
 		}
