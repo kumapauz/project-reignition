@@ -1466,22 +1466,22 @@ hintDialogs = [NodePath("Dialog/Head1"), NodePath("Dialog/Head2"), NodePath("Dia
 gasTankScene = ExtResource("3_7wg3m")
 gasTankSpawnPositions = [NodePath("BoneAttachments/TankSpawn/01L/Tank0"), NodePath("BoneAttachments/TankSpawn/02L/Tank1"), NodePath("BoneAttachments/TankSpawn/03L/Tank2"), NodePath("BoneAttachments/TankSpawn/11L/Tank3"), NodePath("BoneAttachments/TankSpawn/12L/Tank4"), NodePath("BoneAttachments/TankSpawn/13L/Tank5"), NodePath("BoneAttachments/TankSpawn/01R/Tank6"), NodePath("BoneAttachments/TankSpawn/02R/Tank7"), NodePath("BoneAttachments/TankSpawn/03R/Tank8"), NodePath("BoneAttachments/TankSpawn/11R/Tank9"), NodePath("BoneAttachments/TankSpawn/12R/Tank10"), NodePath("BoneAttachments/TankSpawn/13R/Tank11")]
 
-[node name="BaseMesh" parent="IfritRoot/Skeleton3D" parent_id_path=PackedInt32Array(715074003) index="0" unique_id=183278481]
+[node name="BaseMesh" parent="IfritRoot/Skeleton3D" parent_id_path=PackedInt32Array(207917534) index="0" unique_id=1122568137]
 material_overlay = ExtResource("4_1wjmy")
 cast_shadow = 0
 
-[node name="CoreMesh" parent="IfritRoot/Skeleton3D" parent_id_path=PackedInt32Array(715074003) index="1" unique_id=977142915]
+[node name="CoreMesh" parent="IfritRoot/Skeleton3D" parent_id_path=PackedInt32Array(207917534) index="1" unique_id=1287843277]
 cast_shadow = 0
 
-[node name="GearMesh" parent="IfritRoot/Skeleton3D" parent_id_path=PackedInt32Array(715074003) index="2" unique_id=2089123579]
+[node name="GearMesh" parent="IfritRoot/Skeleton3D" parent_id_path=PackedInt32Array(207917534) index="2" unique_id=535021620]
 material_overlay = ExtResource("4_1wjmy")
 cast_shadow = 0
 
-[node name="PlateMesh" parent="IfritRoot/Skeleton3D" parent_id_path=PackedInt32Array(715074003) index="3" unique_id=555287755]
+[node name="PlateMesh" parent="IfritRoot/Skeleton3D" parent_id_path=PackedInt32Array(207917534) index="3" unique_id=791611023]
 material_overlay = ExtResource("4_1wjmy")
 cast_shadow = 0
 
-[node name="AnimationPlayer" parent="." index="1" unique_id=2014554008]
+[node name="AnimationPlayer" parent="." index="1" unique_id=856130835]
 callback_mode_process = 0
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2" unique_id=1504684071]
@@ -1589,7 +1589,7 @@ transform = Transform3D(0.156434, -0.987688, 1.18526e-07, 0.987688, 0.156434, 1.
 isRightHand = true
 
 [node name="LCore1" type="BoneAttachment3D" parent="BoneAttachments/Cores" index="3" unique_id=1760949463]
-transform = Transform3D(-0.9926012, 0.12141833, -3.5089272e-07, -0.12141822, -0.99260116, -3.5567812e-06, -6.9864757e-07, -3.5578803e-06, 0.9999999, 36.000008, 9.100009, -2.2999625)
+transform = Transform3D(-0.1559622, 0.98776275, -3.7015445e-07, -0.98776275, -0.15596227, -3.5674702e-06, -3.6264764e-06, -2.8837383e-07, 0.9999999, 36.000008, 9.100009, -2.2999625)
 bone_name = "l_core1"
 bone_idx = 71
 use_external_skeleton = true
@@ -2329,22 +2329,22 @@ transform = Transform3D(-0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, -0.5, -25.9463
 [node name="Lava" parent="Environment" index="3" unique_id=615356775 instance=ExtResource("2_wope5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, 0)
 
-[node name="LavaRipple1Mesh" parent="Environment/Lava" index="0" unique_id=204327563]
+[node name="LavaRipple1Mesh" parent="Environment/Lava" index="0" unique_id=711954539]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
 visible = false
 layers = 4
 cast_shadow = 0
 
-[node name="LavaMesh" parent="Environment/Lava" index="1" unique_id=1491673078]
+[node name="LavaMesh" parent="Environment/Lava" index="1" unique_id=1877800890]
 layers = 4
 
-[node name="LavaRipple2Mesh" parent="Environment/Lava" index="2" unique_id=437300196]
+[node name="LavaRipple2Mesh" parent="Environment/Lava" index="2" unique_id=1294730362]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
 visible = false
 layers = 4
 cast_shadow = 0
 
-[node name="LavaRipple3Mesh" parent="Environment/Lava" index="3" unique_id=1163509586]
+[node name="LavaRipple3Mesh" parent="Environment/Lava" index="3" unique_id=407018762]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
 visible = false
 layers = 4
