@@ -1115,8 +1115,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.2, 
 "Rotation Settings/Rotation Time" = 2.0
 "Attack Settings/Flame Active Time" = 2.0
 "Attack Settings/Flame Inactive Time" = 5.0
-"Attack Settings/Flame Aggression Radius" = 0
-"Attack Settings/Attack Instantly" = false
 
 [node name="SidleObjects" type="Node3D" parent="TimerAct" unique_id=1211252265]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 160.6, 40, -290)
@@ -1253,8 +1251,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.100
 "Rotation Settings/Rotation Time" = 20.0
 "Attack Settings/Flame Active Time" = 2.0
 "Attack Settings/Flame Inactive Time" = 2.0
-"Attack Settings/Flame Aggression Radius" = 0
-"Attack Settings/Attack Instantly" = false
 
 [node name="FootholdTrigger3" parent="TimerAct/SidleObjects" unique_id=867195864 instance=ExtResource("20_d27qt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -4.044)
@@ -1533,8 +1529,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -82, 0
 "Rotation Settings/Rotation Time" = 8.0
 "Attack Settings/Flame Active Time" = 3.0
 "Attack Settings/Flame Inactive Time" = 1.0
-"Attack Settings/Flame Aggression Radius" = 0
-"Attack Settings/Attack Instantly" = false
 
 [node name="FireSoul2" parent="TimerAct/PlatformHall" unique_id=1931216432 instance=ExtResource("31_mxyuv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -85, 6, -110)
@@ -1563,8 +1557,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 21)
 "Rotation Settings/Rotation Time" = 5.0
 "Attack Settings/Flame Active Time" = 2.0
 "Attack Settings/Flame Inactive Time" = 2.0
-"Attack Settings/Flame Aggression Radius" = 0
-"Attack Settings/Attack Instantly" = false
 "Defeat Settings/Enable Enemy Launching" = true
 "Defeat Settings/Launch Time" = 0.5
 "Defeat Settings/Launch Direction" = Vector3(0, 0, 0)
@@ -1597,19 +1589,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
 [node name="MetalPlatform1" parent="TimerAct/Lava/PlatformGroup1" unique_id=1172225385 instance=ExtResource("27_xdgk4")]
 
 [node name="Stopper" parent="TimerAct/Lava/PlatformGroup1/MetalPlatform1" unique_id=1459681596 instance=ExtResource("28_i0g8o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -4.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -4.743103)
 
 [node name="MetalPlatform2" parent="TimerAct/Lava/PlatformGroup1" unique_id=1267060984 instance=ExtResource("27_xdgk4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 10)
 
 [node name="Stopper" parent="TimerAct/Lava/PlatformGroup1/MetalPlatform2" unique_id=279754431 instance=ExtResource("28_i0g8o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 4.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 4.7418213)
 
 [node name="MetalPlatform3" parent="TimerAct/Lava/PlatformGroup1" unique_id=134614349 instance=ExtResource("27_xdgk4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 29)
 
 [node name="Stopper" parent="TimerAct/Lava/PlatformGroup1/MetalPlatform3" unique_id=510824641 instance=ExtResource("28_i0g8o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -4.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -4.741852)
 
 [node name="MetalPlatform4" parent="TimerAct/Lava/PlatformGroup1" unique_id=470603247 instance=ExtResource("27_xdgk4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 39)
@@ -1697,8 +1689,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33, 0.
 "Rotation Settings/Rotation Time" = 4.0
 "Attack Settings/Flame Active Time" = 2.0
 "Attack Settings/Flame Inactive Time" = 6.0
-"Attack Settings/Flame Aggression Radius" = 0
-"Attack Settings/Attack Instantly" = false
 
 [node name="PlatformGroup3" type="Node3D" parent="TimerAct/Lava" unique_id=1181952025]
 transform = Transform3D(-4.37114e-08, 0, -0.8, 0, 1, 0, 1, 0, -3.49691e-08, 30.96, 0, 250)
@@ -2105,7 +2095,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -6)
 [node name="SpikePanel1" parent="TimerAct/Spiral" unique_id=157526314 instance=ExtResource("34_ssr7c")]
 transform = Transform3D(-0.972581, -0.21644, 0.0850897, -0.215616, 0.976296, 0.018864, -0.0871556, 5.7742e-08, -0.996195, 17.9905, 7.08657, 44.053)
 stateLengths = PackedFloat32Array(0.3, 0.2, 0.5)
-"Start Paused" = false
 "State Lengths/inactive" = 0.3
 "State Lengths/warning" = 0.2
 "State Lengths/active" = 0.5
@@ -2113,7 +2102,6 @@ stateLengths = PackedFloat32Array(0.3, 0.2, 0.5)
 [node name="SpikePanel2" parent="TimerAct/Spiral" unique_id=993653132 instance=ExtResource("34_ssr7c")]
 transform = Transform3D(-0.972581, -0.21644, 0.0850897, -0.215616, 0.976296, 0.018864, -0.0871556, 5.7742e-08, -0.996195, 17.8629, 7.05828, 45.5473)
 stateLengths = PackedFloat32Array(0.3, 0.2, 0.5)
-"Start Paused" = false
 "State Lengths/inactive" = 0.3
 "State Lengths/warning" = 0.2
 "State Lengths/active" = 0.5
@@ -2144,7 +2132,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 0, -12)
 transform = Transform3D(-0.939692, -0.0740267, 0.333913, 0, 0.976296, 0.21644, -0.34202, 0.203387, -0.917418, 38.3276, 13.5984, 30.7516)
 stateLengths = PackedFloat32Array(0.3, 0.2, 0.5)
 "Current State" = 1
-"Start Paused" = false
 "State Lengths/inactive" = 0.3
 "State Lengths/warning" = 0.2
 "State Lengths/active" = 0.5
@@ -2153,7 +2140,6 @@ stateLengths = PackedFloat32Array(0.3, 0.2, 0.5)
 transform = Transform3D(-0.939692, -0.0740267, 0.333913, 0, 0.976296, 0.21644, -0.34202, 0.203387, -0.917418, 39.7371, 13.5984, 31.2648)
 stateLengths = PackedFloat32Array(0.3, 0.2, 0.5)
 "Current State" = 1
-"Start Paused" = false
 "State Lengths/inactive" = 0.3
 "State Lengths/warning" = 0.2
 "State Lengths/active" = 0.5
@@ -2184,7 +2170,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, -15)
 transform = Transform3D(-0.809017, 0.12722, -0.573852, 0, 0.976296, 0.21644, 0.587785, 0.175103, -0.78984, 35.5301, 18.0304, 13.6285)
 stateLengths = PackedFloat32Array(0.3, 0.2, 0.5)
 "Current State" = 2
-"Start Paused" = false
 "State Lengths/inactive" = 0.3
 "State Lengths/warning" = 0.2
 "State Lengths/active" = 0.5
@@ -2193,7 +2178,6 @@ stateLengths = PackedFloat32Array(0.3, 0.2, 0.5)
 transform = Transform3D(-0.809017, 0.12722, -0.573852, 0, 0.976296, 0.21644, 0.587785, 0.175103, -0.78984, 36.7436, 18.0304, 12.7469)
 stateLengths = PackedFloat32Array(0.3, 0.2, 0.5)
 "Current State" = 2
-"Start Paused" = false
 "State Lengths/inactive" = 0.3
 "State Lengths/warning" = 0.2
 "State Lengths/active" = 0.5
@@ -2204,7 +2188,6 @@ transform = Transform3D(0.766044, 0.139125, 0.627551, 0, 0.976296, -0.21644, -0.
 [node name="SpikePanel7" parent="TimerAct/Spiral" unique_id=456041900 instance=ExtResource("34_ssr7c")]
 transform = Transform3D(0.573576, 0.177297, -0.799735, 0, 0.976296, 0.21644, 0.819152, -0.124145, 0.55998, 8.75923, 25.587, 9.28908)
 stateLengths = PackedFloat32Array(0.3, 0.2, 0.5)
-"Start Paused" = false
 "State Lengths/inactive" = 0.3
 "State Lengths/warning" = 0.2
 "State Lengths/active" = 0.5
@@ -2212,7 +2195,6 @@ stateLengths = PackedFloat32Array(0.3, 0.2, 0.5)
 [node name="SpikePanel8" parent="TimerAct/Spiral" unique_id=735928844 instance=ExtResource("34_ssr7c")]
 transform = Transform3D(0.570395, 0.18728, -0.799735, -0.0170387, 0.976147, 0.21644, 0.821194, -0.10983, 0.55998, 7.89886, 25.587, 8.06035)
 stateLengths = PackedFloat32Array(0.3, 0.2, 0.5)
-"Start Paused" = false
 "State Lengths/inactive" = 0.3
 "State Lengths/warning" = 0.2
 "State Lengths/active" = 0.5
@@ -2220,7 +2202,6 @@ stateLengths = PackedFloat32Array(0.3, 0.2, 0.5)
 [node name="SpikePanel9" parent="TimerAct/Spiral" unique_id=731267195 instance=ExtResource("34_ssr7c")]
 transform = Transform3D(-1, -7.6194e-09, -8.70901e-08, 0, 0.996195, -0.0871557, 8.74228e-08, -0.0871557, -0.996195, 0.800003, 29.9004, 29.0087)
 stateLengths = PackedFloat32Array(0.3, 0.2, 0.5)
-"Start Paused" = false
 "State Lengths/inactive" = 0.3
 "State Lengths/warning" = 0.2
 "State Lengths/active" = 0.5
@@ -2228,7 +2209,6 @@ stateLengths = PackedFloat32Array(0.3, 0.2, 0.5)
 [node name="SpikePanel10" parent="TimerAct/Spiral" unique_id=1806751704 instance=ExtResource("34_ssr7c")]
 transform = Transform3D(-1, -7.6194e-09, -8.70901e-08, 0, 0.996195, -0.0871557, 8.74228e-08, -0.0871557, -0.996195, -0.699997, 29.9004, 29.0087)
 stateLengths = PackedFloat32Array(0.3, 0.2, 0.5)
-"Start Paused" = false
 "State Lengths/inactive" = 0.3
 "State Lengths/warning" = 0.2
 "State Lengths/active" = 0.5
@@ -2301,8 +2281,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.5
 "Rotation Settings/Rotation Time" = 6.0
 "Attack Settings/Flame Active Time" = 2.0
 "Attack Settings/Flame Inactive Time" = 1.0
-"Attack Settings/Flame Aggression Radius" = 0
-"Attack Settings/Attack Instantly" = false
 
 [node name="Furnace1" parent="TimerAct/End" unique_id=253420037 instance=ExtResource("35_4ax31")]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 0, -2, 0.799999, 24.7)
