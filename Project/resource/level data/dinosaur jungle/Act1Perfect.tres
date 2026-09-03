@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b8iq60abxjtec" path="res://resource/script/LevelDataResource.cs" id="1_1l0b7"]
 [ext_resource type="Resource" uid="uid://dbuyuheakyob0" path="res://resource/level data/dinosaur jungle/Act2Chain.tres" id="1_wcf1n"]
-[ext_resource type="Resource" uid="uid://bsu0pkrs1lgiq" path="res://resource/level data/evil foundry/Act1Deathless.tres" id="2_wcf1n"]
+[ext_resource type="Resource" uid="uid://d1b7gjmlic4uf" path="res://resource/level data/levitated ruin/Act1Perfect.tres" id="2_wcf1n"]
 
 [resource]
 script = ExtResource("1_1l0b7")
