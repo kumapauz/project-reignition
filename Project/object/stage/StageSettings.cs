@@ -726,7 +726,7 @@ public partial class StageSettings : Node3D
 		{
 			AchievementManager.Instance.UnlockAchievement(HeroAchievementName);
 
-			if (SaveManager.ActiveGameData.level < RebellionAchievementRequirement)
+			if (SaveManager.ActiveGameData.level <= RebellionAchievementRequirement)
 				AchievementManager.Instance.UnlockAchievement(RebellionAchievementName);
 		}
 		else if (Data.LevelID == LastBossLevelId)
