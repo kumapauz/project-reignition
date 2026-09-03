@@ -508,8 +508,7 @@ public partial class SFXLibraryResource : Resource
 		}
 
 		// Get max random index
-		int maxIndex = isLocalizedVoiceLines ? localizedStreamPaths[channel][keyIndex].Count : streams[channel][keyIndex].Count;
-
+		int maxIndex = GetMaxIndex(channel, keyIndex);
 		if (maxIndex == 0) // No sound effect found
 		{
 			if (fallbackResource != null) // Fallback if possible
@@ -540,6 +539,30 @@ public partial class SFXLibraryResource : Resource
 		}
 
 		return streams[channel][keyIndex][sfxIndex];
+	}
+
+	private int GetMaxIndex(int channel, int keyIndex)
+	{
+		if (isLocalizedVoiceLines)
+		{
+			if (localizedStreamPaths.Count <= channel)
+				return 0;
+
+			if (localizedStreamPaths[channel].Count <= keyIndex)
+				return 0;
+
+			return localizedStreamPaths[channel][keyIndex].Count;
+		}
+		else
+		{
+			if (streams.Count <= channel)
+				return 0;
+
+			if (streams[channel].Count <= keyIndex)
+				return 0;
+
+			return streams[channel][keyIndex].Count;
+		}
 	}
 
 	public AudioStream GetStream(int index, int channel = 0, int sfxIndex = -1) => GetStream(GetKeyByIndex(index), channel, sfxIndex);
