@@ -38,9 +38,8 @@ public partial class ModManager : Node
 			LoadCharacterMods();
 		if (SaveManager.Config.areLangModsEnabled)
 			LoadLanguageMods();
-
-		if (!DirAccess.DirExistsAbsolute(SaveManager.ModDirectory + ExtrasPaths))
-			DirAccess.MakeDirRecursiveAbsolute(SaveManager.ModDirectory + ExtrasPaths);
+		if (DirAccess.DirExistsAbsolute(SaveManager.ModDirectory + ExtrasPaths))
+			LoadPcks(SaveManager.ModDirectory + ExtrasPaths);
 	}
 
 	/// <summary> Extracts all zip files, then deletes the original zip file. </summary>

@@ -561,7 +561,6 @@ ssil_radius = 10.0
 glow_enabled = true
 glow_levels/2 = 2.0
 glow_levels/3 = 0.3
-glow_levels/7 = 0.01
 glow_normalized = true
 glow_bloom = 0.15
 glow_hdr_threshold = 1.5
