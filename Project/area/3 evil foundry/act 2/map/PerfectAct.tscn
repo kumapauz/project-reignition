@@ -386,6 +386,12 @@ transform = Transform3D(1, 0, 3.55271e-15, 0, 1, -3.57878e-16, 0, -3.57878e-16, 
 Movement/Distance = 50.0
 Movement/Angle = 180.0
 
+[node name="StaticBody3D" type="StaticBody3D" parent="PerfectAct/ObjectMap" unique_id=1930370437]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -49, 39, -9)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PerfectAct/ObjectMap/StaticBody3D" unique_id=2020442190]
+shape = SubResource("BoxShape3D_jbpsv")
+
 [node name="Goal" parent="PerfectAct/ObjectMap" unique_id=303112343 instance=ExtResource("9_n50kv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -43, 39, -9)
 
@@ -396,7 +402,7 @@ shape = SubResource("BoxShape3D_jbpsv")
 transform = Transform3D(0.57357645, 0, 0.81915206, 0, 1, 0, -0.81915206, 0, 0.57357645, 150, -10.7, -219)
 bigAnimation = &"sit"
 
-[node name="Camera" parent="BigTrigger" index="1"]
+[node name="Camera" parent="BigTrigger" index="1" unique_id=686359960]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 52)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BigTrigger" unique_id=1754609397]
