@@ -71,6 +71,7 @@ public partial class QuickStepState : PlayerState
 		Player.Velocity = Player.PathFollower.Right() * stepDirection * currentSpeed;
 		Player.MoveAndSlide();
 
+		ProcessMoveSpeed();
 		ProcessTurning();
 		Player.AddSlopeSpeed();
 		Player.ApplyMovement();
@@ -137,6 +138,28 @@ public partial class QuickStepState : PlayerState
 			return runState;
 
 		return null;
+	}
+
+	protected override void ProcessMoveSpeed()
+	{
+		GD.Print(isQuickSlideActive);
+		if (!isQuickSlideActive)
+			return;
+
+		ProcessAutorunStrafeSpeed();
+		Player.Stats.UpdateSlideSpeed(Player.SlopeRatio);
+
+		// Influence speed based on input strength
+		float inputAmount = -.5f; // Default to halfway
+		float inputStrength = Player.Controller.GetInputStrength();
+		float inputAngle = Player.Controller.GetTargetMovementAngle();
+		if (Player.Controller.IsHoldingDirection(inputAngle, Player.MovementAngle + Mathf.Pi))
+			inputAmount = -(1 + inputStrength) * .5f; // -0.5 to -1
+		else if (SaveManager.ActiveSkillRing.IsAutorunActive)
+			inputAmount = 0;
+		else if (Player.Controller.IsHoldingDirection(inputAngle, Player.MovementAngle))
+			inputAmount = -(1 - inputStrength) * .5f; // 0 to -0.5
+		Player.MoveSpeed = Player.Stats.SlideSettings.UpdateSlide(Player.MoveSpeed, inputAmount);
 	}
 
 	private float CalculateSpeed()
