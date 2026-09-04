@@ -995,6 +995,8 @@ public partial class PlayerController : CharacterBody3D
 		if (IsInvincible && !settings.ignoreInvincibility) return false;
 		if (ExternalController != null && !settings.ignoreMovementState) return false;
 
+		if (IsStomping && SaveManager.ActiveSkillRing.IsSkillEquipped(SkillKey.StompAttack)) return false; // Prevent bs stomp damage
+
 		UpDirection = Vector3.Up;
 		knockbackState.Settings = settings;
 		StateMachine.ChangeState(knockbackState);
