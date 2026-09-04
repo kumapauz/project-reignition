@@ -804,6 +804,7 @@ public partial class AlfLayla : Node3D
 		stopLockout.Activate();
 		StunPlayback.Start("explosion");
 		animationTree.Set(StunDamageFinalTrigger, (uint)AnimationNodeOneShot.OneShotRequest.Abort);
+		isRingExploding = false; // Reset flag
 		CurrentFightState = FightState.Exploding;
 	}
 
@@ -819,8 +820,16 @@ public partial class AlfLayla : Node3D
 		DefeatBoss();
 	}
 
-	public bool CheckRingExplosion()
+	/// <summary> Tracks whether the rings are exploding or not. </summary>
+	private bool isRingExploding;
+	public void CheckRingExplosion(bool isFirstRing)
 	{
+		if (!isFirstRing && !isRingExploding)
+			return;
+
+		if (isFirstRing)
+			isRingExploding = true;
+
 		if (currentHealth > 0)
 		{
 			int countAmount = Mathf.FloorToInt(MaxHealth / (explosionParticles.Length - 1));
@@ -833,7 +842,7 @@ public partial class AlfLayla : Node3D
 					FinishStun(true);
 				}
 
-				return false;
+				return;
 			}
 
 			lastExplosionHealth -= countAmount;
@@ -843,7 +852,6 @@ public partial class AlfLayla : Node3D
 		if (currentExplosionParticleIndex < explosionCameras.Length)
 			explosionCameras[currentExplosionParticleIndex].Activate();
 		StunPlayback.Start("explosion-damage");
-		return true;
 	}
 
 	// Play a super cool animation

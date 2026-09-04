@@ -2114,7 +2114,7 @@ deterministic = true
 libraries/ = SubResource("AnimationLibrary_s1gny")
 
 [node name="Core" type="Node3D" parent="AlfLaylaWaLayla" unique_id=6447111]
-transform = Transform3D(0.9998265, 6.714113e-06, -1.430293e-06, -6.71315e-06, 0.9998611, 0.0005096314, 1.4336849e-06, -0.00050963846, 0.9998473, 4.1639396e-08, 7.9300003, 0.9212787)
+transform = Transform3D(0.9923691, 0.12090446, -0.015650727, -0.0767592, 0.7194082, 0.6901264, 0.09470947, -0.68378216, 0.7233157, 0.16146341, 5.8480644, -0.27423006)
 script = ExtResource("30_86d2j")
 skeleton = NodePath("../LaylaRoot/Skeleton3D")
 boneName = &"core"
