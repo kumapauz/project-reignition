@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_7xgsx")
 StreamPath = "uid://u5b4t01a7cva"
-LoopEnd = 169.41100000000733
+LoopStart = 1.0
+LoopEnd = 170.411
