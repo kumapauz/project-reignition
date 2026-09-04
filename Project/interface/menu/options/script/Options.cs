@@ -95,6 +95,7 @@ public partial class Options : Menu
 		// Prevent the options menu from jumping displays when moving through the options menu
 		SaveManager.Config.targetDisplay = DisplayServer.WindowGetCurrentScreen();
 		SaveManager.Config.windowSize = GetClosestWindowSize();
+		SoundManager.SetAudioBusVolume(SoundManager.AudioBuses.GameSfx, 100); // Unmute gameplay sound effects
 
 		cursorBasePosition = cursor.Position.Y;
 		SetUpControlOptions();

@@ -1,4 +1,5 @@
 using Godot;
+using Project.Gameplay;
 
 namespace Project.Core;
 
@@ -123,7 +124,9 @@ public partial class TransitionManager : Node
 
 	public static void FinishTransition()
 	{
-		SoundManager.SetAudioBusVolume(SoundManager.AudioBuses.GameSfx, 100); // Unmute gameplay sound effects
+		if (IsInstanceValid(StageSettings.Instance) && (StageSettings.Instance.IsLevelLoading || StageSettings.Instance.IsLevelIngame))
+			SoundManager.SetAudioBusVolume(SoundManager.AudioBuses.GameSfx, 100); // Unmute gameplay sound effects
+
 		Instance.UpdateLoadingText(null);
 		Instance.FinishFade();
 	}
@@ -178,7 +181,6 @@ public partial class TransitionManager : Node
 		Engine.TimeScale = 1f;
 		GetTree().Paused = false;
 
-		SoundManager.SetAudioBusVolume(SoundManager.AudioBuses.GameSfx, 100); // Unmute gameplay sound effects
 		QueuedScene = string.Empty; // Clear queue
 		EmitSignal(SignalName.SceneChanged);
 
