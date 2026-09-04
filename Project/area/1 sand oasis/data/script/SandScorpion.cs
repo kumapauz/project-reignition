@@ -203,6 +203,9 @@ public partial class SandScorpion : Node3D
 
 	private void StartFinalBlow()
 	{
+		if (attackState == AttackState.Recovery)
+			DefeatBoss();
+
 		TransitionManager.StartTransition(new()
 		{
 			inSpeed = 0f,
@@ -967,6 +970,7 @@ public partial class SandScorpion : Node3D
 
 	public void ProcessHitboxCollision()
 	{
+		if (currentHealth <= 0) return;
 		if (Player.IsHomingAttacking || Player.IsBouncing || Player.IsKnockback) return; // Player's homing attack always takes priority
 		if (damageState == DamageState.Knockback) return; // Boss is in knockback and can't damage the player
 
@@ -1110,6 +1114,9 @@ public partial class SandScorpion : Node3D
 	{
 		MoveSpeed = KnockbackStrength; // Start knockback
 		damageState = DamageState.Knockback;
+
+		lTailAnimationTree.Set(LightAttackParameter, (int)AnimationNodeOneShot.OneShotRequest.Abort);
+		rTailAnimationTree.Set(LightAttackParameter, (int)AnimationNodeOneShot.OneShotRequest.Abort);
 	}
 
 	private bool isHittingFarEye;

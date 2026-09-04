@@ -142,7 +142,6 @@ public partial class QuickStepState : PlayerState
 
 	protected override void ProcessMoveSpeed()
 	{
-		GD.Print(isQuickSlideActive);
 		if (!isQuickSlideActive)
 			return;
 
