@@ -677,6 +677,7 @@ public partial class SaveManager : Node
 
 		// Update rendering mode/scale
 		RenderingServer.ViewportSetScaling3DScale(viewportRid, Config.renderScale * .01f);
+		Instance.GetTree().Root.ContentScaleMode = Config.renderScale >= 100 ? Window.ContentScaleModeEnum.CanvasItems : Window.ContentScaleModeEnum.Viewport;
 		RenderingServer.ViewportSetScaling3DMode(viewportRid, Config.resizeMode);
 
 		// Update anti-aliasing
