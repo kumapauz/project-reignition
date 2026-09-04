@@ -147,6 +147,9 @@ public partial class LaunchState : PlayerState
 					return null;
 				}
 
+				if (SaveManager.Config.jumpButtonMode == SaveManager.JumpButtonModeEnum.Disabled)
+					return null;
+
 				if (SaveManager.Config.jumpButtonMode == SaveManager.JumpButtonModeEnum.Stomp)
 					return stompState;
 

@@ -113,6 +113,7 @@ public partial class SaveManager : Node
 		Both,
 		Attack,
 		Stomp,
+		Disabled,
 		Count
 	}
 

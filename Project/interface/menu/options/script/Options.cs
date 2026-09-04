@@ -634,6 +634,7 @@ public partial class Options : Menu
 		{
 			SaveManager.JumpButtonModeEnum.Attack => AttackString,
 			SaveManager.JumpButtonModeEnum.Stomp => StompString,
+			SaveManager.JumpButtonModeEnum.Disabled => DisabledString,
 			_ => BothString,
 		};
 
@@ -1378,7 +1379,7 @@ public partial class Options : Menu
 
 		if (!DirAccess.DirExistsAbsolute(SaveManager.LevelsModDirectory))
 			DirAccess.MakeDirRecursiveAbsolute(SaveManager.LevelsModDirectory);
-		
+
 		if (!DirAccess.DirExistsAbsolute(SaveManager.LangModDirectory))
 			DirAccess.MakeDirRecursiveAbsolute(SaveManager.LangModDirectory);
 
