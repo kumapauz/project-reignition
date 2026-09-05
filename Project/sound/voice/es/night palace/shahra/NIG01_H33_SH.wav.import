@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dqcwac54kxm1u"
+path="res://.godot/imported/NIG01_H33_SH.wav-121b32b7145bcbb768b69ec9a09e8a0c.sample"
+
+[deps]
+
+source_file="res://sound/voice/es/night palace/shahra/NIG01_H33_SH.wav"
+dest_files=["res://.godot/imported/NIG01_H33_SH.wav-121b32b7145bcbb768b69ec9a09e8a0c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

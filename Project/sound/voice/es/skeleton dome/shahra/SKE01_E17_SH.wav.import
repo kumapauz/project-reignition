@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://byaggsv4idqiq"
+path="res://.godot/imported/SKE01_E17_SH.wav-056ac8a6b8d13ab4bf50930ef0667377.sample"
+
+[deps]
+
+source_file="res://sound/voice/es/skeleton dome/shahra/SKE01_E17_SH.wav"
+dest_files=["res://.godot/imported/SKE01_E17_SH.wav-056ac8a6b8d13ab4bf50930ef0667377.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
