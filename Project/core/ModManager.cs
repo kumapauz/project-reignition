@@ -232,6 +232,17 @@ public partial class ModManager : Node
 				if (SaveManager.FindTextLocaleIndex(locale.LocaleId) != -1) // Already exists
 					continue;
 
+				string resourcePath = $"res://locale/Locale.{locale.LocaleId}.translation";
+
+				if (!ResourceLoader.Exists(resourcePath))
+				{
+					GD.PrintErr($"Can't find optimized translation resource {resourcePath}, text localization {locale.LocaleId} won't be loaded");
+					continue;
+				}
+
+				OptimizedTranslation translation = (OptimizedTranslation)ResourceLoader.Load(resourcePath);
+				TranslationServer.AddTranslation(translation);
+
 				SaveManager.Instance.TextLocalizations.Add(locale);
 			}
 			else
