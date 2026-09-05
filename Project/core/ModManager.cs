@@ -22,12 +22,11 @@ public partial class ModManager : Node
 	private readonly string ZipExtension = "zip";
 	private readonly string ResourceExtension = "tres";
 
-	public override void _EnterTree() => Instance = this;
-
-	public override void _Ready()
+	public override void _EnterTree()
 	{
+		Instance = this;
 		ExtractZipFiles();
-		CallDeferred(MethodName.SetUpMods);
+		SetUpMods();
 	}
 
 	public void SetUpMods()
