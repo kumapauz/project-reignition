@@ -36,10 +36,16 @@ public partial class LevelSelect : Menu
 	[Export] bool isModWorld = false;
 	[Export] PackedScene levelOption;
 	[Export] LevelDataResource defaultLevelModOption;
+	[Export] Control nav_delete;
 
 	private readonly int PageSize = 5;
 	private const float ScrollSmoothing = .05f;
 	private readonly List<LevelOption> levelOptions = [];
+
+	[Export] private AnimationPlayer alertAnimator;
+	private bool isAlertMenuActive = false;
+	private bool isYesSelected = false;
+	
 
 	public bool HasNewLevel()
 	{
@@ -123,7 +129,9 @@ public partial class LevelSelect : Menu
 
 	protected override void ProcessMenu()
 	{
-		if (statusMenu != null && statusMenu.IsVisibleInTree())
+		
+
+		if (statusMenu != null && statusMenu.IsVisibleInTree() && isAlertMenuActive)
 			return;
 
 		if (Runtime.Instance.MouseScrollInput != 0)
@@ -159,6 +167,12 @@ public partial class LevelSelect : Menu
 			return;
 		}
 
+		if (Input.IsActionJustPressed("ui_text_delete") && !isAlertMenuActive)
+		{
+			if (TimeAttackManager.Instance.IsRunActive)
+				ShowAlertMenu();
+		}
+
 		if (levelOptions[VerticalSelection].IsUnlocked)
 		{
 			if (Runtime.Instance.IsActionJustPressed("sys_pause", "ui_accept") && menuMemory[MemoryKeys.ActiveMenu] != (int)MemoryKeys.TimeAttack)
@@ -179,6 +193,12 @@ public partial class LevelSelect : Menu
 	{
 		if (menuMemory[MemoryKeys.ActiveMenu] == (int)MemoryKeys.TimeAttack)
 			base.SetUp();
+
+		if (TimeAttackManager.Instance.IsRunActive && TimeAttackManager.Instance.CurrentRunType == TimeAttackManager.RunType.SingleRun)
+			nav_delete.Visible = true;
+		else
+			nav_delete.Visible = false;
+			
 
 		VerticalSelection = menuMemory[MemoryKeys.LevelSelect];
 		RecalculateListPosition();
@@ -281,6 +301,24 @@ public partial class LevelSelect : Menu
 
 	protected override void Confirm()
 	{
+
+		if (isAlertMenuActive)
+		{
+			GD.Print("Selecting option");
+			if (isYesSelected)
+			{
+				isAlertMenuActive = false;
+				alertAnimator.Advance(0.0);
+				alertAnimator.Play("confirm");
+			}
+			else
+			{
+				isAlertMenuActive = false;
+				alertAnimator.Advance(0.0);
+				alertAnimator.Play("hide");
+			}
+			return;
+		}
 		if (ModManager.Instance.LevelMods.Count == 0 && isModWorld)
 			return;
 
@@ -298,6 +336,13 @@ public partial class LevelSelect : Menu
 
 	protected override void Cancel()
 	{
+		if (isAlertMenuActive)
+		{
+			isAlertMenuActive = false;
+			CancelAlertMenu();
+			return;
+		}
+
 		base.Cancel();
 
 		// Revert bgm music
@@ -333,6 +378,18 @@ public partial class LevelSelect : Menu
 
 	protected override void UpdateSelection()
 	{
+
+		if (isAlertMenuActive)
+		{
+			int inputReturn = Mathf.Sign(Input.GetAxis("ui_left", "ui_right"));
+			if ((inputReturn > 0 && isYesSelected) || (inputReturn < 0 && !isYesSelected))
+			{
+				isYesSelected = !isYesSelected;
+				alertAnimator.Play(isYesSelected ? "select-yes" : "select-no");
+			}
+
+			return;
+		}
 		if (menuMemory[MemoryKeys.ActiveMenu] == (int)MemoryKeys.Jukebox)
 			return;
 
@@ -424,6 +481,31 @@ public partial class LevelSelect : Menu
 		ChangeSelection();
 	}
 
+	private void ShowAlertMenu()
+	{
+		isAlertMenuActive = true;
+		isYesSelected = false;
+
+		alertAnimator.Advance(0.0);
+		alertAnimator.Play("show");
+	}
+
+	private void CancelAlertMenu()
+	{
+		if (isYesSelected)
+		{
+			alertAnimator.Play("select-no");
+			alertAnimator.Advance(0.0);
+		}
+
+		alertAnimator.Play("hide");
+	}
+
+	private void AlertMenuClosed()
+	{
+		isAlertMenuActive = false;
+		EnableProcessing();
+	}
 	public List<LevelOption> GetLevelOptions()
 	{
 		return levelOptions;
