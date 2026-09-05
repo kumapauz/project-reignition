@@ -1272,7 +1272,7 @@ windupDelays = PackedFloat32Array(0.3, 0.2, 0.1)
 
 [node name="Erazor" parent="." unique_id=106850060 instance=ExtResource("2")]
 
-[node name="AnimationPlayer" parent="Erazor" index="1" unique_id=788874007]
+[node name="AnimationPlayer" parent="Erazor" index="1" unique_id=410109811]
 callback_mode_process = 0
 
 [node name="DamageAnimator" type="AnimationPlayer" parent="Erazor" unique_id=443059227]
@@ -1324,7 +1324,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.742278e-08, -2)
 layers = 32
 cast_shadow = 0
 emitting = false
-amount = 64
+amount = 32
 lifetime = 0.6
 fixed_fps = 0
 interpolate = false
@@ -1773,7 +1773,6 @@ draw_pass_1 = SubResource("30")
 transform = Transform3D(1, 5.9604645e-08, 4.4703484e-08, 0, 0.9396927, 0.34202006, -1.4901161e-07, -0.34202015, 0.9396928, 0, 0, 0)
 layers = 32
 cast_shadow = 0
-amount = 16
 lifetime = 0.6
 randomness = 0.2
 fixed_fps = 0

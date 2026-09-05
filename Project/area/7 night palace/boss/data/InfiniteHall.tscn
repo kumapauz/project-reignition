@@ -104,34 +104,28 @@ transform = Transform3D(0.999848, 0, 0.0174524, 0, 1, 0, -0.0174524, 0, 0.999848
 [node name="Hall4" parent="HallRoot/Hall2/Hall3" unique_id=348415336 instance=ExtResource("7_xnr41")]
 transform = Transform3D(0.999849, 0, 0.0174512, 0, 1, 0, -0.0174515, 0, 0.999829, 0, 0, -87)
 
-[node name="Hall5" parent="HallRoot/Hall2/Hall3/Hall4" unique_id=478852405 instance=ExtResource("7_xnr41")]
-transform = Transform3D(0.999848, 0, 0.0174524, 0, 1, 0, -0.0174524, 0, 0.999848, -6.67572e-06, 0, -87)
+[node name="LOD1" parent="HallRoot/Hall2/Hall3/Hall4" unique_id=883062820 instance=ExtResource("9_1nc1i")]
+transform = Transform3D(0.99984854, 0, 0.01745241, 0, 1, 0, -0.01745241, 0, 0.99984854, -6.67572e-06, 0, -87)
 
-[node name="Hall6" parent="HallRoot/Hall2/Hall3/Hall4/Hall5" unique_id=45099924 instance=ExtResource("7_xnr41")]
-transform = Transform3D(0.999848, 0, 0.0174524, 0, 1, 0, -0.0174524, 0, 0.999848, 0, 0, -87)
-
-[node name="LOD1" parent="HallRoot/Hall2/Hall3/Hall4/Hall5/Hall6" unique_id=883062820 instance=ExtResource("9_1nc1i")]
-transform = Transform3D(0.999848, 0, 0.0174524, 0, 1, 0, -0.0174524, 0, 0.999848, 9.53674e-06, 0, -87)
-
-[node name="LOD2" parent="HallRoot/Hall2/Hall3/Hall4/Hall5/Hall6/LOD1" unique_id=2021997984 instance=ExtResource("9_1nc1i")]
+[node name="LOD2" parent="HallRoot/Hall2/Hall3/Hall4/LOD1" unique_id=2021997984 instance=ExtResource("9_1nc1i")]
 transform = Transform3D(0.999848, 0, 0.0174524, 0, 1, 0, -0.0174524, 0, 0.999848, -5.72205e-06, 0, -87.0001)
 
-[node name="LOD3" parent="HallRoot/Hall2/Hall3/Hall4/Hall5/Hall6/LOD1/LOD2" unique_id=551295418 instance=ExtResource("9_1nc1i")]
+[node name="LOD3" parent="HallRoot/Hall2/Hall3/Hall4/LOD1/LOD2" unique_id=551295418 instance=ExtResource("9_1nc1i")]
 transform = Transform3D(0.9998477, 0, 0.017452406, 0, 1, 0, -0.017452406, 0, 0.9998477, 0, 0, -87)
 
-[node name="LOD4" parent="HallRoot/Hall2/Hall3/Hall4/Hall5/Hall6/LOD1/LOD2/LOD3" unique_id=329699179 instance=ExtResource("9_1nc1i")]
+[node name="LOD4" parent="HallRoot/Hall2/Hall3/Hall4/LOD1/LOD2/LOD3" unique_id=329699179 instance=ExtResource("9_1nc1i")]
 transform = Transform3D(0.99984825, 0, 0.017452419, 0, 1, 0, -0.017452389, 0, 0.99984825, -1.1444092e-05, 0, -87.00012)
 
-[node name="LOD5" parent="HallRoot/Hall2/Hall3/Hall4/Hall5/Hall6/LOD1/LOD2/LOD3/LOD4" unique_id=2111059084 instance=ExtResource("9_1nc1i")]
+[node name="LOD5" parent="HallRoot/Hall2/Hall3/Hall4/LOD1/LOD2/LOD3/LOD4" unique_id=2111059084 instance=ExtResource("9_1nc1i")]
 transform = Transform3D(0.9998478, 0, 0.017452408, 0, 1, 0, -0.017452408, 0, 0.9998478, 0, 0, -87)
 
-[node name="LOD6" parent="HallRoot/Hall2/Hall3/Hall4/Hall5/Hall6/LOD1/LOD2/LOD3/LOD4/LOD5" unique_id=1500071884 instance=ExtResource("9_1nc1i")]
+[node name="LOD6" parent="HallRoot/Hall2/Hall3/Hall4/LOD1/LOD2/LOD3/LOD4/LOD5" unique_id=1500071884 instance=ExtResource("9_1nc1i")]
 transform = Transform3D(0.9998478, 0, 0.017452408, 0, 1, 0, -0.017452408, 0, 0.9998478, 0, 0, -87)
 
-[node name="LOD7" parent="HallRoot/Hall2/Hall3/Hall4/Hall5/Hall6/LOD1/LOD2/LOD3/LOD4/LOD5/LOD6" unique_id=983353282 instance=ExtResource("9_1nc1i")]
+[node name="LOD7" parent="HallRoot/Hall2/Hall3/Hall4/LOD1/LOD2/LOD3/LOD4/LOD5/LOD6" unique_id=983353282 instance=ExtResource("9_1nc1i")]
 transform = Transform3D(0.9998478, 0, 0.017452408, 0, 1, 0, -0.017452408, 0, 0.9998478, 0, 0, -87)
 
-[node name="LOD8" parent="HallRoot/Hall2/Hall3/Hall4/Hall5/Hall6/LOD1/LOD2/LOD3/LOD4/LOD5/LOD6/LOD7" unique_id=508322872 instance=ExtResource("9_1nc1i")]
+[node name="LOD8" parent="HallRoot/Hall2/Hall3/Hall4/LOD1/LOD2/LOD3/LOD4/LOD5/LOD6/LOD7" unique_id=508322872 instance=ExtResource("9_1nc1i")]
 transform = Transform3D(0.9998478, 0, 0.017452408, 0, 1, 0, -0.017452408, 0, 0.9998478, 0, 0, -87)
 
 [node name="AdvanceTrigger" parent="HallRoot/Hall2" unique_id=2047839580 instance=ExtResource("8_sagd8")]

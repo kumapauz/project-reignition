@@ -4,47 +4,48 @@
 
 [node name="NPBossLOD" unique_id=1320363813 instance=ExtResource("1_k2abg")]
 
-[node name="stg073_w_Mesh_0000" parent="." index="0" unique_id=347413506]
+[node name="stg073_w_Mesh_0000" parent="." index="0" unique_id=976396230]
 layers = 2
 
-[node name="stg073_w_Mesh_0001" parent="." index="1" unique_id=981657084]
+[node name="stg073_w_Mesh_0001" parent="." index="1" unique_id=1736154704]
 layers = 2
 
-[node name="stg073_low_o_Mesh_0010" parent="." index="2" unique_id=2042377519]
+[node name="stg073_low_o_Mesh_0010" parent="." index="2" unique_id=1021138867]
 layers = 2
 
-[node name="stg073_low_o_Mesh_0008" parent="." index="3" unique_id=639901534]
+[node name="stg073_low_o_Mesh_0008" parent="." index="3" unique_id=807480017]
 layers = 2
 
-[node name="stg073_low_o_Mesh_0004" parent="." index="4" unique_id=1900281355]
+[node name="stg073_low_o_Mesh_0004" parent="." index="4" unique_id=193095334]
 layers = 2
 
-[node name="stg073_low_o_Mesh_0009" parent="." index="5" unique_id=188617438]
+[node name="stg073_low_o_Mesh_0009" parent="." index="5" unique_id=1340891072]
 layers = 2
 
-[node name="stg073_low_o_Mesh_0005" parent="." index="6" unique_id=1900529012]
+[node name="stg073_low_o_Mesh_0005" parent="." index="6" unique_id=1917902086]
 layers = 2
 
-[node name="stg073_low_o_Mesh_0002" parent="." index="7" unique_id=1691606127]
+[node name="stg073_low_o_Mesh_0002" parent="." index="7" unique_id=1110000217]
 layers = 2
 
-[node name="stg073_low_o_Mesh_0003" parent="." index="8" unique_id=158161617]
+[node name="stg073_low_o_Mesh_0003" parent="." index="8" unique_id=795917904]
 layers = 2
 
-[node name="stg073_low_o_Mesh_0007" parent="." index="9" unique_id=728472832]
+[node name="stg073_low_o_Mesh_0007" parent="." index="9" unique_id=765354214]
 layers = 2
 
-[node name="stg073_low_p_Mesh_0000" parent="." index="10" unique_id=194686744]
+[node name="stg073_low_p_Mesh_0000" parent="." index="10" unique_id=934706143]
 layers = 2
 
-[node name="stg073_low_o_Mesh_0000" parent="." index="11" unique_id=1640334936]
+[node name="stg073_low_o_Mesh_0000" parent="." index="11" unique_id=1544770650]
 layers = 2
 
-[node name="stg073_low_o_Mesh_0001" parent="." index="12" unique_id=651774932]
+[node name="stg073_low_o_Mesh_0001" parent="." index="12" unique_id=1775741317]
 layers = 2
 
-[node name="stg073_low_o_Mesh_0006" parent="." index="13" unique_id=1472561397]
+[node name="stg073_low_o_Mesh_0006" parent="." index="13" unique_id=1247533103]
 layers = 2
 
-[node name="stg073_k2_Mesh_0000" parent="." index="14" unique_id=1076101475]
+[node name="stg073_k2_Mesh_0000" parent="." index="14" unique_id=1350194467]
+visible = false
 layers = 2
