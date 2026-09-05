@@ -1073,6 +1073,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 
 [node name="SpacePillar1" parent="RampageAct/Opening" unique_id=1048705618 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 1, -47.21176, 0, 0.08807373)
+skipDisabledAnimationTracks = []
 
 [node name="RichRing2" parent="RampageAct/Opening" unique_id=1324237313 instance=ExtResource("28_clvm2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.212135, 1, 2.0148773)
@@ -1103,6 +1104,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 
 [node name="SpacePillar2" parent="RampageAct/Opening" unique_id=641793341 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 1, -32.911762, 0, 0.08807373)
+skipDisabledAnimationTracks = []
 
 [node name="RichRing3" parent="RampageAct/Opening" unique_id=1039877626 instance=ExtResource("28_clvm2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.212135, 1, 0.014877319)
@@ -1588,7 +1590,7 @@ Movement/Angle = 0.0
 "Vertical Orientation" = true
 
 [node name="LaserRoot" type="Node3D" parent="RampageAct/WideStraight/Lap2Only/Laser1/MovingLaser" unique_id=1813155759]
-transform = Transform3D(0.99999756, -5.913391e-17, 2.2737368e-13, 4.6214853e-14, 1, 3.8191672e-14, -2.9842795e-13, 0, 0.99999756, 0, 0, 0)
+transform = Transform3D(0.9999975, -5.913391e-17, 2.2737368e-13, 4.6214853e-14, 1, 3.907985e-14, -3.0553338e-13, 0, 0.9999975, 0, 0, 0)
 
 [node name="LaserL" parent="RampageAct/WideStraight/Lap2Only/Laser1/MovingLaser/LaserRoot" unique_id=2021535159 instance=ExtResource("25_pr3a5")]
 transform = Transform3D(0.9999908, 1.4900887e-08, 4.47032e-07, 1.6967168e-13, 1.0000006, 1.0281799e-06, 5.9603522e-08, -1.3410826e-07, 0.99999106, -4.5, 0, 0)
@@ -1618,7 +1620,7 @@ Movement/Angle = 0.0
 "Vertical Orientation" = true
 
 [node name="LaserRoot" type="Node3D" parent="RampageAct/WideStraight/Lap2Only/Laser2/MovingLaser" unique_id=988584002]
-transform = Transform3D(0.99999756, -5.913391e-17, 2.2737368e-13, 4.6214853e-14, 1, 3.8191672e-14, -2.9842795e-13, 0, 0.99999756, 0, 1.2320004, 0)
+transform = Transform3D(0.9999975, -5.913391e-17, 2.2737368e-13, 4.6214853e-14, 1, 3.907985e-14, -3.0553338e-13, 0, 0.9999975, 0, 1.2320004, 0)
 
 [node name="LaserL" parent="RampageAct/WideStraight/Lap2Only/Laser2/MovingLaser/LaserRoot" unique_id=1756377862 instance=ExtResource("25_pr3a5")]
 transform = Transform3D(0.9999908, 1.4900887e-08, 4.47032e-07, 1.6967168e-13, 1.0000006, 1.0281799e-06, 5.9603522e-08, -1.3410826e-07, 0.99999106, -4.5, 0, 0)
@@ -1670,9 +1672,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
 
 [node name="SpacePillar1" parent="RampageAct/WideStraight/Lap2Only/GrindGroupL" unique_id=187755856 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(0.5, 0, 0, 0, 0.3, 0, 0, 0, 0.5, 0, 0, 0)
+skipDisabledAnimationTracks = []
 
 [node name="SpacePillar2" parent="RampageAct/WideStraight/Lap2Only/GrindGroupL" unique_id=101762382 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(0.5, 0, 0, 0, 0.3, 0, 0, 0, 0.5, 0, 0, -20)
+skipDisabledAnimationTracks = []
 
 [node name="GrindGroupR" type="Node3D" parent="RampageAct/WideStraight/Lap2Only" unique_id=1309072097]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -32)
@@ -1712,9 +1716,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
 
 [node name="SpacePillar1" parent="RampageAct/WideStraight/Lap2Only/GrindGroupR" unique_id=375030977 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(0.5, 0, 0, 0, 0.3, 0, 0, 0, 0.5, 0, 0, 0)
+skipDisabledAnimationTracks = []
 
 [node name="SpacePillar2" parent="RampageAct/WideStraight/Lap2Only/GrindGroupR" unique_id=256881088 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(0.5, 0, 0, 0, 0.3, 0, 0, 0, 0.5, 0, 0, -20)
+skipDisabledAnimationTracks = []
 
 [node name="RingsL" type="Node3D" parent="RampageAct/WideStraight/Lap2Only" unique_id=1332929683]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3.1, -40)
@@ -1792,8 +1798,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -74)
 "Spawn Settings/Spawn Out Offset" = Vector3(0, 0, 0)
 "Attack Settings/Flame Active Time" = 2.0
 "Attack Settings/Flame Inactive Time" = 1.0
-"Attack Settings/Flame Aggression Radius" = 0
-"Attack Settings/Attack Instantly" = false
 rangeOverride = 10
 
 [node name="HourglassGroup1" type="Node3D" parent="RampageAct/WideStraight" unique_id=2137342959]
@@ -1812,7 +1816,7 @@ transform = Transform3D(0.99999994, 0, 6.3573026e-08, 0, 0.5, 0, -6.357302e-08, 
 transform = Transform3D(1.5, 0, 9.5359525e-08, 0, 1.5, 0, -9.5359525e-08, 0, 1.5, 0, 4.3, 0)
 "Falling Platform Settings/Enabled" = false
 
-[node name="CollisionShape3D" parent="RampageAct/WideStraight/HourglassGroup1/SpacePlatform1/Root/ShatterTrigger" index="0"]
+[node name="CollisionShape3D" parent="RampageAct/WideStraight/HourglassGroup1/SpacePlatform1/Root/ShatterTrigger" parent_id_path=PackedInt32Array(647195943, 59850217) index="0" unique_id=1325151927]
 disabled = true
 
 [node name="SpacePlatform2" parent="RampageAct/WideStraight/HourglassGroup1" unique_id=568506445 instance=ExtResource("16_ebngl")]
@@ -1836,41 +1840,49 @@ disableTeleportation = true
 
 [node name="Chandelier1" parent="RampageAct/WideStraight/HourglassGroup1" unique_id=849533493 instance=ExtResource("18_tvwxn")]
 transform = Transform3D(0.99999994, 0, 6.3573026e-08, 0, 1, 0, -6.357302e-08, 0, 1, -8, 33.4, -7.299999)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
 [node name="Chandelier2" parent="RampageAct/WideStraight/HourglassGroup1" unique_id=665899777 instance=ExtResource("18_tvwxn")]
 transform = Transform3D(0.99999994, 0, 6.3573026e-08, 0, 1, 0, -6.357302e-08, 0, 1, 8, 33.4, -7.300003)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
 [node name="Chandelier3" parent="RampageAct/WideStraight/HourglassGroup1" unique_id=1918771424 instance=ExtResource("18_tvwxn")]
 transform = Transform3D(0.99999994, 0, 6.3573026e-08, 0, 1, 0, -6.357302e-08, 0, 1, -8, 33.4, -37.3)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
 [node name="Chandelier4" parent="RampageAct/WideStraight/HourglassGroup1" unique_id=1151986925 instance=ExtResource("18_tvwxn")]
 transform = Transform3D(0.99999994, 0, 6.3573026e-08, 0, 1, 0, -6.357302e-08, 0, 1, 8, 33.4, -37.3)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
 [node name="SpacePillar1" parent="RampageAct/WideStraight/HourglassGroup1" unique_id=1296835424 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(-0.26047242, 0, 1.4772116, 0, 1, 0, -1.4772116, 0, -0.26047242, 10, 0.005, -19.3)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
 [node name="SpacePillar2" parent="RampageAct/WideStraight/HourglassGroup1" unique_id=1855872407 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(0.2604726, 0, -1.4772116, 0, 1, 0, 1.4772116, 0, 0.2604726, -10, 0.005, -19.299997)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
 [node name="SpacePillar3" parent="RampageAct/WideStraight/HourglassGroup1" unique_id=1788688401 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(-0.63392776, 0, 1.3594613, 0, 0.99999994, 0, -1.3594613, 0, -0.63392776, 10, 0.0049991608, -41.3)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
 [node name="SpacePillar4" parent="RampageAct/WideStraight/HourglassGroup1" unique_id=305093409 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(1.0606601, 0, -1.0606601, 0, 1, 0, 1.0606601, 0, 1.0606601, -10, 0.0049991608, -45)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
@@ -2335,7 +2347,6 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -40,
 "Spawn Settings/Spawn Out Offset" = Vector3(0, 0, 0)
 "Attack Settings/Flame Active Time" = 4.0
 "Attack Settings/Flame Inactive Time" = 2.0
-"Attack Settings/Flame Aggression Radius" = 0
 "Attack Settings/Attack Instantly" = true
 
 [node name="DashPanelGroup2" type="Node3D" parent="RampageAct/Hairpins" unique_id=1911637925]
@@ -2422,8 +2433,9 @@ respawnOnActivation = true
 
 [node name="Spear" parent="RampageAct/Hairpins/SpearGroup7/SpearCull1" unique_id=757359221 instance=ExtResource("8_k3vjq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)
-activationDelay = 2.0
-moveSpeed = 50.0
+activationDelay = 0.5
+lifetime = 3.0
+moveSpeed = 70.0
 
 [node name="SpearCull2" type="Node3D" parent="RampageAct/Hairpins/SpearGroup7" unique_id=1286898525]
 transform = Transform3D(0.9396926, 0.34202012, 0, 1.4950174e-08, -4.1075268e-08, -1, -0.34202012, 0.9396926, -4.371139e-08, 47.26969, 5.25, 24.615326)
@@ -2432,8 +2444,9 @@ respawnOnActivation = true
 
 [node name="Spear" parent="RampageAct/Hairpins/SpearGroup7/SpearCull2" unique_id=997766912 instance=ExtResource("8_k3vjq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)
-activationDelay = 2.0
-moveSpeed = 50.0
+activationDelay = 0.8
+lifetime = 3.0
+moveSpeed = 70.0
 
 [node name="SpearCull3" type="Node3D" parent="RampageAct/Hairpins/SpearGroup7" unique_id=762641390]
 transform = Transform3D(0.9396926, 0.34202012, 0, 1.4950174e-08, -4.1075268e-08, -1, -0.34202012, 0.9396926, -4.371139e-08, 42.187683, 5.25, 29.672318)
@@ -2442,8 +2455,9 @@ respawnOnActivation = true
 
 [node name="Spear" parent="RampageAct/Hairpins/SpearGroup7/SpearCull3" unique_id=2027508824 instance=ExtResource("8_k3vjq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40)
-activationDelay = 2.0
-moveSpeed = 50.0
+activationDelay = 1.0
+lifetime = 3.0
+moveSpeed = 70.0
 
 [node name="SpearCull4" type="Node3D" parent="RampageAct/Hairpins/SpearGroup7" unique_id=535978591]
 transform = Transform3D(0.9396926, 0.34202012, 0, 1.4950174e-08, -4.1075268e-08, -1, -0.34202012, 0.9396926, -4.371139e-08, 40.41162, 5.25, 22.77771)
@@ -2452,7 +2466,8 @@ respawnOnActivation = true
 
 [node name="Spear" parent="RampageAct/Hairpins/SpearGroup7/SpearCull4" unique_id=1246005075 instance=ExtResource("8_k3vjq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40)
-activationDelay = 2.0
+activationDelay = 1.2
+lifetime = 3.0
 moveSpeed = 70.0
 
 [node name="SpacePanel1" parent="RampageAct/Hairpins/SpearGroup7" unique_id=1540074328 instance=ExtResource("12")]
@@ -2472,15 +2487,19 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -40,
 
 [node name="SpacePillar1" parent="RampageAct/Hairpins/SpacePillarGroup" unique_id=1644194231 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -20, 0, 4.5)
+skipDisabledAnimationTracks = []
 
 [node name="SpacePillar2" parent="RampageAct/Hairpins/SpacePillarGroup" unique_id=969817797 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -23.500002, 0, -4.5)
+skipDisabledAnimationTracks = []
 
 [node name="SpacePillar3" parent="RampageAct/Hairpins/SpacePillarGroup" unique_id=377872493 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -36, 0, 4.5)
+skipDisabledAnimationTracks = []
 
 [node name="SpacePillar4" parent="RampageAct/Hairpins/SpacePillarGroup" unique_id=586165631 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -39.5, 0, -4.5)
+skipDisabledAnimationTracks = []
 
 [node name="DashPanelGroup3" type="Node3D" parent="RampageAct/Hairpins" unique_id=398025250]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 15, 101)
@@ -2563,7 +2582,7 @@ Movement/Angle = 0.0
 "Vertical Orientation" = true
 
 [node name="Laser" parent="RampageAct/Hairpins/LaserGroup/Laser2/MovingLaser" unique_id=1838415820 instance=ExtResource("25_pr3a5")]
-transform = Transform3D(1, 0, 3.3676624e-06, 0, 1.0000006, 1.3113022e-06, -2.9802322e-08, -1.4901161e-07, 1.0000005, 0, 0, 0)
+transform = Transform3D(1, 0, 3.427267e-06, 0, 1.0000006, 1.3113022e-06, -2.9802322e-08, -1.4901161e-07, 1.0000005, 0, 0, 0)
 
 [node name="LaserPillarL" parent="RampageAct/Hairpins/LaserGroup/Laser2" unique_id=1621471351 instance=ExtResource("25_81smg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0)
@@ -2587,7 +2606,7 @@ Movement/Angle = 0.0
 "Vertical Orientation" = true
 
 [node name="Laser" parent="RampageAct/Hairpins/LaserGroup/Laser3/MovingLaser" unique_id=1992541640 instance=ExtResource("25_pr3a5")]
-transform = Transform3D(0.9999993, -1.7881393e-07, 1.3113022e-06, 1.6391277e-06, 0.99999857, 4.4703484e-07, -8.940697e-08, 1.4901161e-08, 0.9999982, 0, 0, 0)
+transform = Transform3D(0.9999993, -1.7881393e-07, 1.3411045e-06, 1.66893e-06, 0.99999857, 4.3958426e-07, -8.940697e-08, 1.4901161e-08, 0.9999982, 0, 0, 0)
 
 [node name="LaserPillarL" parent="RampageAct/Hairpins/LaserGroup/Laser3" unique_id=821393428 instance=ExtResource("25_81smg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0)
@@ -2611,7 +2630,7 @@ Movement/Angle = 0.0
 "Vertical Orientation" = true
 
 [node name="Laser" parent="RampageAct/Hairpins/LaserGroup/Laser4/MovingLaser" unique_id=1122345781 instance=ExtResource("25_pr3a5")]
-transform = Transform3D(1.0000176, 8.940697e-08, -1.9967556e-06, -2.1606684e-07, 1.0000163, 8.4005296e-07, -2.1457672e-06, -3.9860606e-07, 1.0000015, 0, 3.5000005, 7.6293945e-06)
+transform = Transform3D(1.0000178, 8.195639e-08, -1.9967556e-06, -2.2351742e-07, 1.0000165, 8.4005296e-07, -2.1755695e-06, -4.0233135e-07, 1.0000015, 0, 3.5000005, 7.6293945e-06)
 
 [node name="LaserPillarL" parent="RampageAct/Hairpins/LaserGroup/Laser4" unique_id=90629975 instance=ExtResource("25_81smg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0)
@@ -2738,7 +2757,7 @@ Movement/Angle = 90.0
 "Vertical Orientation" = false
 
 [node name="GreenMajin" parent="RampageAct/NarrowStraight/Lap1Only/MovingMajin1" unique_id=991130893 instance=ExtResource("11_rfsid")]
-transform = Transform3D(1, 0, 9.423573e-13, 0, 1, 0, -9.423573e-13, 0, 1, -3, 0, 0)
+transform = Transform3D(1, 0, 9.432455e-13, 0, 1, 0, -9.432455e-13, 0, 1, -3, 0, 0)
 "Spawn Settings/Spawn Travel Time" = 1.0
 "Spawn Settings/Spawn Delay" = 0.0
 "Spawn Settings/Spawn Offset" = Vector3(20, 0, 0)
@@ -2766,7 +2785,7 @@ Movement/Angle = 90.0
 "Vertical Orientation" = false
 
 [node name="GreenMajin" parent="RampageAct/NarrowStraight/Lap1Only/MovingMajin2" unique_id=210281288 instance=ExtResource("11_rfsid")]
-transform = Transform3D(1, 0, 8.3666407e-13, 0, 1, 0, -8.3666407e-13, 0, 1, -3.1799011, 0, 0)
+transform = Transform3D(1, 0, 8.3755225e-13, 0, 1, 0, -8.3755225e-13, 0, 1, -3.1799011, 0, 0)
 "Spawn Settings/Spawn Travel Time" = 1.0
 "Spawn Settings/Spawn Delay" = 0.0
 "Spawn Settings/Spawn Offset" = Vector3(-20, 0, 0)
@@ -2794,7 +2813,7 @@ Movement/Angle = 90.0
 "Vertical Orientation" = false
 
 [node name="GreenMajin" parent="RampageAct/NarrowStraight/Lap1Only/MovingMajin3" unique_id=1803809931 instance=ExtResource("11_rfsid")]
-transform = Transform3D(1, 0, 1.971756e-12, 0, 1, 0, -1.971756e-12, 0, 1, -3.3592377, 0, 0)
+transform = Transform3D(1, 0, 1.9726443e-12, 0, 1, 0, -1.9726443e-12, 0, 1, -3.3592377, 0, 0)
 "Spawn Settings/Spawn Travel Time" = 1.0
 "Spawn Settings/Spawn Delay" = 0.0
 "Spawn Settings/Spawn Offset" = Vector3(20, 0, 0)
@@ -2842,17 +2861,21 @@ shape = SubResource("BoxShape3D_t4uac")
 
 [node name="SpacePillar1" parent="RampageAct/NarrowStraight/Lap1Only/PillarGroup" unique_id=2103322594 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(0.2303601, -0.2832474, 0.9309701, -0.05429487, 0.95146847, 0.30291876, -0.9715895, -0.1203273, 0.20380151, 3.9364974, 1.4383249, 6.290594)
+skipDisabledAnimationTracks = []
 
 [node name="SpacePillar2" parent="RampageAct/NarrowStraight/Lap1Only/PillarGroup" unique_id=1522309577 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(0.6786344, -0.2969248, 0.6717818, 0.008448258, 0.9177361, 0.39710107, -0.7344275, -0.26381108, 0.6253158, -3.5922182, 1.2897317, 19.220747)
+skipDisabledAnimationTracks = []
 activationSpeedScale = 0.4
 
 [node name="SpacePillar3" parent="RampageAct/NarrowStraight/Lap1Only/PillarGroup" unique_id=743435140 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(0.9350316, -0.25566536, 0.24566485, 0.16317593, 0.9254165, 0.34202015, -0.31478506, -0.279713, 0.9070121, -17.747576, -0.4380238, 28.946196)
+skipDisabledAnimationTracks = []
 activationSpeedScale = 0.3
 
 [node name="SpacePillar4" parent="RampageAct/NarrowStraight/Lap1Only/PillarGroup" unique_id=1270684703 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(0.9750824, -0.1413145, -0.17101003, 0.17101006, 0.96984637, 0.17364818, 0.14131445, -0.19856575, 0.96984625, -34.721207, -3.5860744, 30.090755)
+skipDisabledAnimationTracks = []
 activationSpeedScale = 0.2
 
 [node name="Lap2Only" type="Node3D" parent="RampageAct/NarrowStraight" unique_id=441411101]
@@ -2956,6 +2979,7 @@ shape = SubResource("BoxShape3D_t4uac")
 
 [node name="SpacePillar1" parent="RampageAct/NarrowStraight/Lap2Only/PillarGroup" unique_id=1189912631 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(0.2303601, -0.2832474, 0.9309701, -0.05429487, 0.95146847, 0.30291876, -0.9715895, -0.1203273, 0.20380151, 3.9364974, 1.4383249, 6.290594)
+skipDisabledAnimationTracks = []
 respawnAnimation = 2
 eventAnimation = "event-deactivate"
 deactivateEventAnimation = "event"
@@ -2964,6 +2988,7 @@ deactivationSpeedScale = 1.4
 
 [node name="SpacePillar2" parent="RampageAct/NarrowStraight/Lap2Only/PillarGroup" unique_id=2050591442 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(0.6786344, -0.2969248, 0.6717818, 0.008448258, 0.9177361, 0.39710107, -0.7344275, -0.26381108, 0.6253158, -3.5922182, 1.2897317, 19.220747)
+skipDisabledAnimationTracks = []
 respawnAnimation = 2
 eventAnimation = "event-deactivate"
 deactivateEventAnimation = "event"
@@ -2972,6 +2997,7 @@ deactivationSpeedScale = 1.2
 
 [node name="SpacePillar3" parent="RampageAct/NarrowStraight/Lap2Only/PillarGroup" unique_id=1316769675 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(0.9350316, -0.25566536, 0.24566485, 0.16317593, 0.9254165, 0.34202015, -0.31478506, -0.279713, 0.9070121, -17.747576, -0.4380238, 28.946196)
+skipDisabledAnimationTracks = []
 respawnAnimation = 2
 eventAnimation = "event-deactivate"
 deactivateEventAnimation = "event"
@@ -2980,6 +3006,7 @@ deactivationSpeedScale = 0.8
 
 [node name="SpacePillar4" parent="RampageAct/NarrowStraight/Lap2Only/PillarGroup" unique_id=2105413205 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(0.9750824, -0.1413145, -0.17101003, 0.17101006, 0.96984637, 0.17364818, 0.14131445, -0.19856575, 0.96984625, -34.721207, -3.5860744, 30.090755)
+skipDisabledAnimationTracks = []
 respawnAnimation = 2
 eventAnimation = "event-deactivate"
 deactivateEventAnimation = "event"
@@ -3001,23 +3028,28 @@ transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 28, 19)
 
 [node name="ChandelierL" parent="RampageAct/NarrowStraight/HourglassGroup2" unique_id=353650673 instance=ExtResource("18_tvwxn")]
 transform = Transform3D(1, 0, 1.4210855e-14, 0, 1, 0, -1.4210855e-14, 0, 1, 7, 28, 19)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
 [node name="ChandelierR" parent="RampageAct/NarrowStraight/HourglassGroup2" unique_id=650086936 instance=ExtResource("18_tvwxn")]
 transform = Transform3D(1, 0, 1.4210855e-14, 0, 1, 0, -1.4210855e-14, 0, 1, -7, 28, 19)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
 [node name="Stair" parent="RampageAct/NarrowStraight/HourglassGroup2" unique_id=1706009794 instance=ExtResource("30_g3a6h")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.4861872e-06, 0, 17)
+skipDisabledAnimationTracks = []
 "Trigger Settings/Is One Shot" = false
 
 [node name="SpacePillarL" parent="RampageAct/NarrowStraight/HourglassGroup2" unique_id=1291849641 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(1, 0, 0, 0, 0.9, 0, 0, 0, 1, 2.25, 0, 25)
+skipDisabledAnimationTracks = []
 
 [node name="SpacePillarR" parent="RampageAct/NarrowStraight/HourglassGroup2" unique_id=614820449 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(1, 0, 0, 0, 0.9, 0, 0, 0, 1, -2.25, 0, 25)
+skipDisabledAnimationTracks = []
 
 [node name="PanelGroup" type="Node3D" parent="RampageAct/NarrowStraight" unique_id=879472403]
 transform = Transform3D(7.549789e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, 7.549789e-08, 3.5999908, -0.25, 23.149994)
@@ -3110,7 +3142,7 @@ Movement/Angle = 0.0
 "Vertical Orientation" = true
 
 [node name="SpaceBlock" parent="RampageAct/NarrowStraight/MovingPlatform" unique_id=1857686411 instance=ExtResource("10_ptfc0")]
-transform = Transform3D(4, 0, 1.3358203e-12, 0, 1, 0, -1.3358203e-12, 0, 4, 0, 0, 0)
+transform = Transform3D(4, 0, 1.364242e-12, 0, 1, 0, -1.364242e-12, 0, 4, 0, 0, 0)
 
 [node name="StageTrigger" parent="RampageAct/NarrowStraight/MovingPlatform" unique_id=885454173 instance=ExtResource("5")]
 OneShot = true
@@ -3151,9 +3183,11 @@ transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, -2.6
 
 [node name="SpacePillar1" parent="RampageAct/NarrowStraight/GrindGroup" unique_id=713408674 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(0.8, 0, 0, 0, 0.4, 0, 0, 0, 0.8, 0, 0.001, 0)
+skipDisabledAnimationTracks = []
 
 [node name="SpacePillar2" parent="RampageAct/NarrowStraight/GrindGroup" unique_id=1549785744 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(0.8, 0, 0, 0, 0.4, 0, 0, 0, 0.8, 6.5200005, 0.001, 56.799995)
+skipDisabledAnimationTracks = []
 
 [node name="Grindrail1" parent="RampageAct/NarrowStraight/GrindGroup" unique_id=1803289643 instance=ExtResource("31_ai3wj")]
 transform = Transform3D(-0.9510565, 0, -0.30901703, 0, 1, 0, 0.30901703, 0, -0.9510565, 0, 3, 0)
@@ -3269,11 +3303,13 @@ transform = Transform3D(5, 0, 5.684342e-14, 0, 1, 0, -5.684342e-14, 0, 5, -4.577
 
 [node name="ChandelierL2" parent="RampageAct/NarrowStraight" unique_id=1589818863 instance=ExtResource("18_tvwxn")]
 transform = Transform3D(1, 0, 3.5527137e-14, 0, 1, 0, -3.5527137e-14, 0, 1, 5, 28, 62.5)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
 [node name="ChandelierR2" parent="RampageAct/NarrowStraight" unique_id=236139298 instance=ExtResource("18_tvwxn")]
 transform = Transform3D(1, 0, 3.5527137e-14, 0, 1, 0, -3.5527137e-14, 0, 1, -4, 28, 80)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
@@ -3387,15 +3423,19 @@ transform = Transform3D(0.70710677, 0, 0.70710677, 0, 0.5, 0, -0.70710677, 0, 0.
 
 [node name="SpacePillar1" parent="RampageAct/NarrowStraight/StaticPillarGroup" unique_id=356131713 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.892891, 0, -0.020828247)
+skipDisabledAnimationTracks = []
 
 [node name="SpacePillar2" parent="RampageAct/NarrowStraight/StaticPillarGroup" unique_id=994157835 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.107094, 0, 3.979187)
+skipDisabledAnimationTracks = []
 
 [node name="SpacePillar3" parent="RampageAct/NarrowStraight/StaticPillarGroup" unique_id=532314760 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8929062, 0, 16.979187)
+skipDisabledAnimationTracks = []
 
 [node name="SpacePillar4" parent="RampageAct/NarrowStraight/StaticPillarGroup" unique_id=843030461 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.107109, 0, 20.979187)
+skipDisabledAnimationTracks = []
 
 [node name="DashPanelGroup1" type="Node3D" parent="RampageAct/NarrowStraight" unique_id=60682856]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 40.646805, 0, 171.3137)
@@ -3617,6 +3657,7 @@ isTimeBreakOnly = true
 [node name="EventTrigger" type="Node3D" parent="RampageAct/End/HourglassGroup" unique_id=880881596 node_paths=PackedStringArray("animator")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.5)
 script = ExtResource("33_4wyqf")
+skipDisabledAnimationTracks = []
 animator = NodePath("AnimationPlayer")
 "Trigger Settings/Automatically Respawn" = false
 "Trigger Settings/Is One Shot" = true
@@ -3631,47 +3672,57 @@ transform = Transform3D(2, 0, 0, 0, 0.7, 0, 0, 0, 2.1000001, -9, 0, 26.5)
 
 [node name="StairL" parent="RampageAct/End/HourglassGroup/EventTrigger" unique_id=658485248 instance=ExtResource("30_g3a6h")]
 transform = Transform3D(-1, 0, -1.7881393e-07, 0, 1, 0, 1.7881393e-07, 0, -1, 6, 0.01, 10)
+skipDisabledAnimationTracks = []
 
 [node name="StairR" parent="RampageAct/End/HourglassGroup/EventTrigger" unique_id=317363677 instance=ExtResource("30_g3a6h")]
 transform = Transform3D(-1, 0, -1.7881393e-07, 0, 1, 0, 1.7881393e-07, 0, -1, -6, 0.01, 10)
+skipDisabledAnimationTracks = []
 
 [node name="SpacePillarR1" parent="RampageAct/End/HourglassGroup/EventTrigger" unique_id=37434353 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(-1.4942921, 0, 0.13073373, 0, 2, 0, -0.13073373, 0, -1.4942921, -4, 0, 22)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
 [node name="SpacePillarL1" parent="RampageAct/End/HourglassGroup/EventTrigger" unique_id=489149109 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(-1.494292, 0, 0.13073374, 0, 2, 0, -0.13073374, 0, -1.494292, 4, 0, 22)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
 [node name="SpacePillarR2" parent="RampageAct/End/HourglassGroup/EventTrigger" unique_id=1216880446 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(-1.409539, 0, -0.51303035, 0, 2, 0, 0.51303035, 0, -1.409539, -3.9999924, 0, 30.000008)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
 [node name="SpacePillarL2" parent="RampageAct/End/HourglassGroup/EventTrigger" unique_id=2058699612 instance=ExtResource("19_nhcr1")]
 transform = Transform3D(-1.4095389, 0, 0.5130303, 0, 2, 0, -0.5130303, 0, -1.4095389, 3.9999962, 0, 30)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
 [node name="ChandelierL1" parent="RampageAct/End/HourglassGroup/EventTrigger" unique_id=1909006772 instance=ExtResource("18_tvwxn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.999996, 32, 10)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
 [node name="ChandelierR1" parent="RampageAct/End/HourglassGroup/EventTrigger" unique_id=1507329347 instance=ExtResource("18_tvwxn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 32, 10)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
 [node name="ChandelierL2" parent="RampageAct/End/HourglassGroup/EventTrigger" unique_id=888285724 instance=ExtResource("18_tvwxn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 32, 45)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
 [node name="ChandelierR2" parent="RampageAct/End/HourglassGroup/EventTrigger" unique_id=401519502 instance=ExtResource("18_tvwxn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 32, 45)
+skipDisabledAnimationTracks = []
 respawnAnimation = 1
 "Trigger Settings/Is One Shot" = false
 
@@ -3720,7 +3771,7 @@ Movement/Angle = 0.0
 "Vertical Orientation" = true
 
 [node name="LaserRoot" type="Node3D" parent="RampageAct/End/Laser2/MovingLaser" unique_id=680218839]
-transform = Transform3D(1, 5.9133594e-17, 0, 2.6349666e-15, 1, -3.463896e-14, 1.3500312e-13, 0, 0.99999994, 0, 3.5000005, 0)
+transform = Transform3D(1, 5.9133594e-17, 0, 2.6349666e-15, 1, -3.5527137e-14, 1.3855583e-13, 0, 0.99999994, 0, 3.5000005, 0)
 
 [node name="LaserL" parent="RampageAct/End/Laser2/MovingLaser/LaserRoot" unique_id=967500993 instance=ExtResource("25_pr3a5")]
 transform = Transform3D(0.9999908, 1.4900887e-08, 4.47032e-07, 1.6967168e-13, 1.0000006, 1.0281799e-06, 5.9603522e-08, -1.3410826e-07, 0.99999106, -4.5, 0, 0)
@@ -3770,7 +3821,7 @@ Movement/Angle = 0.0
 "Vertical Orientation" = true
 
 [node name="LaserRoot" type="Node3D" parent="RampageAct/End/Laser3/MovingLaser" unique_id=1620670916]
-transform = Transform3D(1, 8.881743e-16, -3.5527137e-15, 1.3322676e-15, 1, 1.7763568e-15, 0, -7.283063e-14, 0.99999994, 0, 3.5000005, 0)
+transform = Transform3D(1, 8.881742e-16, -3.5527137e-15, 1.3322676e-15, 1, 1.7763568e-15, 0, -7.460699e-14, 0.99999994, 0, 3.5000005, 0)
 
 [node name="LaserL" parent="RampageAct/End/Laser3/MovingLaser/LaserRoot" unique_id=420273684 instance=ExtResource("25_pr3a5")]
 transform = Transform3D(0.9999908, 1.4900887e-08, 4.47032e-07, 1.6967168e-13, 1.0000006, 1.0281799e-06, 5.9603522e-08, -1.3410826e-07, 0.99999106, -4.5, 0, 0)
