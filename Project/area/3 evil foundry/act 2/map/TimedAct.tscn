@@ -1383,7 +1383,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -4.6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -51.5)
 
 [node name="FireSoul1" parent="TimerAct/PlatformHall" unique_id=1052555260 instance=ExtResource("31_mxyuv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.5, -52.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.5, -54.5)
 
 [node name="ScrapFall" parent="TimerAct/PlatformHall" unique_id=840000518 instance=ExtResource("4_6wf7v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, -56)
