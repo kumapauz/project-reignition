@@ -802,6 +802,7 @@ public partial class PlayerController : CharacterBody3D
 	public void StartQuickStep(bool isSteppingRight)
 	{
 		quickStepState.IsSteppingRight = isSteppingRight;
+		quickStepState.EnterState();
 		StateMachine.CallDeferred(PlayerStateMachine.MethodName.ChangeState, quickStepState);
 	}
 

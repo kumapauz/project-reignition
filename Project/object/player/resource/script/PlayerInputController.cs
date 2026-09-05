@@ -388,7 +388,19 @@ public partial class PlayerInputController : Node
 
 	private void UpdateStepBuffer()
 	{
-		StepAxis = Input.GetAxis("button_step_right", "button_step_left");
+		if (StepAxis == 0)
+		{
+			StepAxis = Input.GetAxis("button_step_right", "button_step_left");
+		}
+		else
+		{
+			if (Input.IsActionJustPressed("button_step_right"))
+				StepAxis = 1;
+			else if (Input.IsActionJustPressed("button_step_left"))
+				StepAxis = -1;
+			else if (!Input.IsActionPressed("button_step_right") && !Input.IsActionPressed("button_step_left"))
+				StepAxis = 0;
+		}
 
 		if (Player.IsLockoutDisablingAction(LockoutResource.ActionFlags.Sidestep))
 		{

@@ -29,9 +29,10 @@ public partial class QuickStepState : PlayerState
 	{
 		isQuickSlide = SaveManager.ActiveSkillRing.GetAugmentIndex(SkillKey.QuickStep) == 1;
 		isQuickSlideActive = isQuickSlide && Player.Controller.StepAxis != 0;
-		currentStepLength = 0.0f;
 
+		currentStepLength = 0.0f;
 		stepDirection = 1;
+
 		if (SaveManager.ActiveSkillRing.IsFreeRoamActive &&
 			(!Player.IsLockoutActive || !Player.IsLockoutOverridingMovementAngle))
 		{
@@ -167,8 +168,7 @@ public partial class QuickStepState : PlayerState
 
 		if (isQuickSlideActive)
 		{
-			int axisInput = -Mathf.Sign(Player.Controller.StepAxis) * stepDirection;
-			isQuickSlideActive = (axisInput > 0 && IsSteppingRight) || (axisInput < 0 && !IsSteppingRight);
+			isQuickSlideActive = Player.Controller.StepAxis != 0;
 			currentStepLength = Mathf.Min(currentStepLength, StepLength * MaxQuickSlideSamplePosition);
 		}
 
