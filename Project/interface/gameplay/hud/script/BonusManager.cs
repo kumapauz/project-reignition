@@ -17,7 +17,17 @@ public partial class BonusManager : VBoxContainer
 	public override void _Ready()
 	{
 		instance = this;
+		Stage.LevelStarted += OnLevelStarted;
 		Stage.LevelCompleted += OnLevelCompleted;
+	}
+
+	private void OnLevelStarted()
+	{
+		if (Player.Skills.StartingRingCount == 0)
+			return;
+		Stage.UpdateScore(10 * Player.Skills.StartingRingCount, StageSettings.MathModeEnum.Add);
+		Stage.UpdateRingCount(Player.Skills.StartingRingCount, StageSettings.MathModeEnum.Replace);
+		AddRingChain(Player.Skills.StartingRingCount);
 	}
 
 	public override void _PhysicsProcess(double _)
@@ -89,9 +99,9 @@ public partial class BonusManager : VBoxContainer
 	private int ringChain;
 	private readonly int MaxRingChain = 50;
 	/// <summary> Increases the current ring chain. </summary>
-	public void AddRingChain()
+	public void AddRingChain(int amount = 1)
 	{
-		ringChain++;
+		ringChain += amount;
 
 		if (ringChain >= MaxRingChain)
 			FinishRingChain(true); // Force ring chains to finish when going over the max

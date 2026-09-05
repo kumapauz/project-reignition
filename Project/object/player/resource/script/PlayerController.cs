@@ -31,7 +31,6 @@ public partial class PlayerController : CharacterBody3D
 	public override void _Ready()
 	{
 		StageSettings.RegisterPlayer(this); // Update global reference
-		Stage.UpdateRingCount(Skills.StartingRingCount, StageSettings.MathModeEnum.Replace); // Start with the proper ring count
 		Stage.LevelCompleted += OnLevelCompleted;
 		Stage.LevelDemoStarted += Deactivate;
 
@@ -1242,7 +1241,13 @@ public partial class PlayerController : CharacterBody3D
 		Stage.RevertToCheckpointData();
 		Stage.IncrementRespawnCount();
 		Stage.StartRespawn();
-		Stage.UpdateRingCount(Skills.RespawnRingCount, StageSettings.MathModeEnum.Replace, true); // Reset ring count
+
+		if (Skills.RespawnRingCount != 0)
+		{
+			Stage.UpdateRingCount(Skills.RespawnRingCount, StageSettings.MathModeEnum.Replace, true); // Reset ring count
+			Stage.UpdateScore(10 * Skills.RespawnRingCount, StageSettings.MathModeEnum.Add);
+			BonusManager.instance.AddRingChain(Skills.RespawnRingCount);
+		}
 
 		CheckpointTrigger currentCheckpoint = IsDebugRespawn ? DebugManager.Instance.DebugCheckpoint : Stage.CurrentCheckpoint;
 		Teleport(currentCheckpoint);
