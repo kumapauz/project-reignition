@@ -20,6 +20,7 @@ public partial class LevelOption : Control
 	[Export] private Texture2D fireSoulSprite;
 	[Export] private Texture2D noFireSoulSprite;
 	[Export] private Sprite2D light;
+	[Export] private Control storyMarker;
 	[Export] private Label newLabel;
 	[Export] private TextureRect rank;
 	[Export] private AnimationPlayer animator;
@@ -93,7 +94,13 @@ public partial class LevelOption : Control
 		}
 
 		if (TimeAttackManager.Instance.IsRunActive)
+		{
 			fireSoulParent.Visible = false;
+			light.Visible = false;
+			storyMarker.Visible = false;
+			newLabel.Visible = false;
+			timeLabel.Visible = true;
+		}
 		else if (fireSoulParent != null)
 			fireSoulParent.Visible = data.HasFireSouls && (Engine.IsEditorHint() || IsUnlocked);
 	}
@@ -147,6 +154,8 @@ public partial class LevelOption : Control
 		{
 			if (SaveManager.TimeData.HasRank(data))
 				animator.Play(GoldAnimation);
+			else
+				animator.Play("no-medal");
 		}
 		else
 		{
@@ -181,5 +190,14 @@ public partial class LevelOption : Control
 		timeAttackLevelOption.Visible = true;
 		missionLabelTA.Text = data.MissionTypeKey;
 		areaLabelTA.Text = Tr(data.GetAreaKey());
+	}
+
+	public void DeleteTimesForLevel()
+	{
+		SaveManager.TimeData.DeleteTimesForLevel(data);
+		timeLabel.Text = "00:00.00";
+		UpdateLevelData();
+		ApplySettings();
+		
 	}
 }

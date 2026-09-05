@@ -25,6 +25,7 @@ public partial class TimeAttack : Menu
 		SaveManager.ActiveGameData.level = 99;
 		SaveManager.ActiveGameData.UnlockAllWorlds();
 		SaveManager.ActiveSkillRing.UpdateTotalSkillPoints();
+		SaveManager.ActiveGameData.LevelData.SetClearStatus("np_last", SaveManager.LevelSaveData.LevelStatus.Cleared); //Makes it so no story indicators will show up in time attack single run
 
 		SaveManager.LoadTimeAttackData();//Creates a new timeattack file if there isn't one
 		SaveManager.SaveTimeAttackData();

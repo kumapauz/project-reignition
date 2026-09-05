@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dmdck6tgfytub" path="res://interface/menu/level select/texture/story marker.png" id="9_lgjky"]
 [ext_resource type="Texture2D" uid="uid://djw7xym2gtl60" path="res://interface/menu/level select/texture/story marker glow.png" id="10_jag2e"]
 [ext_resource type="Texture2D" uid="uid://daym7a6tnri40" path="res://interface/menu/level select/texture/bronze.png" id="10_pu4tu"]
-[ext_resource type="FontFile" uid="uid://cislueb5bhi02" path="res://interface/font/bitmap fonts/Experience.fnt" id="11_jag2e"]
+[ext_resource type="FontFile" uid="uid://t6opdwcs42tg" path="res://interface/font/bitmap fonts/Experience.fnt" id="11_jag2e"]
 
 [sub_resource type="Animation" id="Animation_03o5k"]
 resource_name = "RESET"
@@ -1006,7 +1006,7 @@ _data = {
 &"silver": SubResource("Animation_uxs4j")
 }
 
-[node name="LevelOption" type="Control" unique_id=954708137 node_paths=PackedStringArray("missionLabel", "fireSoulParent", "fireSoulRects", "light", "newLabel", "rank", "animator", "timeAttackLevelOption", "missionLabelTA", "areaLabelTA", "timeLabel")]
+[node name="LevelOption" type="Control" unique_id=954708137 node_paths=PackedStringArray("missionLabel", "fireSoulParent", "fireSoulRects", "light", "storyMarker", "newLabel", "rank", "animator", "timeAttackLevelOption", "missionLabelTA", "areaLabelTA", "timeLabel")]
 custom_minimum_size = Vector2(1020, 64)
 layout_mode = 3
 anchor_right = 0.53125
@@ -1019,6 +1019,7 @@ fireSoulRects = [NodePath("FireSouls/FireSoul1"), NodePath("FireSouls/FireSoul2"
 fireSoulSprite = ExtResource("2_a3wse")
 noFireSoulSprite = ExtResource("7_cv7h8")
 light = NodePath("Light")
+storyMarker = NodePath("StoryMarker")
 newLabel = NodePath("New")
 rank = NodePath("Rank")
 animator = NodePath("AnimationPlayer")

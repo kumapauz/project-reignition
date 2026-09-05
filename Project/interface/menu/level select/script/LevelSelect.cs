@@ -310,6 +310,7 @@ public partial class LevelSelect : Menu
 				isAlertMenuActive = false;
 				alertAnimator.Advance(0.0);
 				alertAnimator.Play("confirm");
+				levelOptions[VerticalSelection].DeleteTimesForLevel();
 			}
 			else
 			{

@@ -1703,6 +1703,15 @@ public partial class SaveManager : Node
 				return -1;
 		}
 
+		public void DeleteTimesForLevel(LevelDataResource level)
+		{
+			if (SingleRun.ContainsKey(level.LevelID))
+			{
+				SingleRun.Remove(level.LevelID);
+				SaveTimeAttackData();
+			}
+		}
+
 		public bool HasRank(LevelDataResource level)
 		{
 			float bestTime = GetBestTimeForLevel(level);
