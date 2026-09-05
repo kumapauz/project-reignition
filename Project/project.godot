@@ -22,7 +22,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Sonic and the Secret Rings Remake"
 config/description="A fan-remake of the 2007 Nintendo Wii title \"Sonic and the Secret Rings.\""
-config/version="v1.0.1"
+config/version="v1.0.2"
 config/tags=PackedStringArray("active", "c#")
 run/main_scene="res://interface/boot/Boot.tscn"
 config/features=PackedStringArray("4.7", "C#")
