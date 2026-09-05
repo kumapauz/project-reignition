@@ -5,15 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://d028n5q7f5xqk" path="res://interface/gameplay/countdown/texture/go.png" id="2_rubhb"]
 [ext_resource type="Material" uid="uid://bhbsafmnnhtdb" path="res://effect/material/Canvas Item Add.tres" id="3_hjym8"]
 [ext_resource type="Texture2D" uid="uid://dmc5rbnal0ljt" path="res://interface/gameplay/countdown/texture/Flare.png" id="5"]
-[ext_resource type="AudioStream" uid="uid://4slkrcshm8wp" path="res://sound/sfx/system/countdown 3.wav" id="6_08n3x"]
+[ext_resource type="AudioStream" uid="uid://4slkrcshm8wp" path="res://sound/sfx/system/en/countdown 3.wav" id="6_08n3x"]
 [ext_resource type="AudioStream" uid="uid://b2w1pljl8stmb" path="res://sound/sfx/system/countdown sfx tick.wav" id="7_46y3w"]
 [ext_resource type="Texture2D" uid="uid://joemawgaike5" path="res://interface/gameplay/countdown/texture/1.png" id="7_dtvxt"]
-[ext_resource type="AudioStream" uid="uid://k0junqhnbc4q" path="res://sound/sfx/system/countdown 2.wav" id="7_ipssf"]
+[ext_resource type="AudioStream" uid="uid://k0junqhnbc4q" path="res://sound/sfx/system/en/countdown 2.wav" id="7_ipssf"]
 [ext_resource type="Texture2D" uid="uid://jcyygg5l5cr" path="res://interface/gameplay/countdown/texture/3.png" id="7_w8wkc"]
 [ext_resource type="Texture2D" uid="uid://bq4xcjcryfypm" path="res://interface/gameplay/countdown/texture/2.png" id="8_rubhb"]
-[ext_resource type="AudioStream" uid="uid://cwmd25b1n8fy3" path="res://sound/sfx/system/countdown 1.wav" id="8_tsm2y"]
+[ext_resource type="AudioStream" uid="uid://cwmd25b1n8fy3" path="res://sound/sfx/system/en/countdown 1.wav" id="8_tsm2y"]
 [ext_resource type="Texture2D" uid="uid://0ahpuqj1m4fl" path="res://interface/gameplay/countdown/texture/countdown tick.png" id="9_dtvxt"]
-[ext_resource type="AudioStream" uid="uid://fh5iabi2yg7j" path="res://sound/sfx/system/countdown go.wav" id="9_jq18t"]
+[ext_resource type="AudioStream" uid="uid://fh5iabi2yg7j" path="res://sound/sfx/system/en/countdown go.wav" id="9_jq18t"]
 [ext_resource type="AudioStream" uid="uid://bca1hjlk1wqa4" path="res://sound/sfx/system/countdown sfx final.wav" id="11_vq6q7"]
 
 [sub_resource type="Animation" id="51"]
@@ -213,31 +213,31 @@ tracks/15/keys = {
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("CountdownVoice:stream")
+tracks/16/path = NodePath("CountdownSFX:stream")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("6_08n3x")]
+"values": [ExtResource("7_46y3w")]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("CountdownSFX:stream")
+tracks/17/path = NodePath("Go/Sparkle:rotation")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("7_46y3w")]
+"update": 0,
+"values": [0.0]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Go/Sparkle:rotation")
+tracks/18/path = NodePath("Countdown3:volume_db")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -249,22 +249,10 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("CountdownVoice:volume_db")
+tracks/19/path = NodePath("CountdownSFX:volume_db")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("CountdownSFX:volume_db")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -484,19 +472,19 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("CountdownVoice:stream")
+tracks/17/path = NodePath("CountdownSFX:stream")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0.666667, 1.7, 2.7, 3.66667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 3.66667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("6_08n3x"), ExtResource("7_ipssf"), ExtResource("8_tsm2y"), ExtResource("9_jq18t")]
+"values": [ExtResource("7_46y3w"), ExtResource("11_vq6q7")]
 }
 tracks/18/type = "method"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("CountdownVoice")
+tracks/18/path = NodePath("CountdownSFX")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -528,58 +516,70 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("CountdownSFX:stream")
+tracks/19/path = NodePath("Go/Sparkle:rotation")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
-"times": PackedFloat32Array(0, 3.66667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("7_46y3w"), ExtResource("11_vq6q7")]
-}
-tracks/20/type = "method"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("CountdownSFX")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
-"times": PackedFloat32Array(0.666667, 1.66667, 1.7, 2.66667, 2.7, 3.63333, 3.66667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"values": [{
-"args": [0.0],
-"method": &"play"
-}, {
-"args": [],
-"method": &"stop"
-}, {
-"args": [0.0],
-"method": &"play"
-}, {
-"args": [],
-"method": &"stop"
-}, {
-"args": [0.0],
-"method": &"play"
-}, {
-"args": [],
-"method": &"stop"
-}, {
-"args": [0.0],
-"method": &"play"
-}]
-}
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("Go/Sparkle:rotation")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
 "times": PackedFloat32Array(0, 3.66667, 4.26667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, -0.0872665]
+}
+tracks/20/type = "method"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Countdown3")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0.666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/21/type = "method"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Countdown2")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(1.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/22/type = "method"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Countdown1")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(2.7000003),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/23/type = "method"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("CountdownGo")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(3.6666603),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_exxr4"]
@@ -684,54 +684,39 @@ tracks/7/keys = {
 "update": 0,
 "values": [Vector2(2, 2)]
 }
-tracks/8/type = "value"
+tracks/8/type = "method"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("CountdownVoice:stream")
+tracks/8/path = NodePath("CountdownGo")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("9_jq18t")]
-}
-tracks/9/type = "method"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("CountdownVoice")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0.96666, 1),
-"transitions": PackedFloat32Array(1, 1),
 "values": [{
-"args": [],
-"method": &"stop"
-}, {
 "args": [0.0],
 "method": &"play"
 }]
 }
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("CountdownSFX:stream")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CountdownSFX:stream")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [ExtResource("7_46y3w"), ExtResource("11_vq6q7")]
 }
-tracks/11/type = "method"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("CountdownSFX")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CountdownSFX")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
 "times": PackedFloat32Array(0.96666, 1),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
@@ -742,13 +727,13 @@ tracks/11/keys = {
 "method": &"play"
 }]
 }
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Go/Sparkle:rotation")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Go/Sparkle:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
 "times": PackedFloat32Array(0, 1.0000035, 1.6000036),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
@@ -761,7 +746,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CountdownVoice:volume_db")
+tracks/0/path = NodePath("Countdown3:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1071,8 +1056,20 @@ rotation = -0.418879
 texture = ExtResource("9_dtvxt")
 region_rect = Rect2(448, 256, 48, 96)
 
-[node name="CountdownVoice" type="AudioStreamPlayer" parent="." unique_id=339055795]
+[node name="Countdown3" type="AudioStreamPlayer" parent="." unique_id=339055795]
 stream = ExtResource("6_08n3x")
+bus = &"VOICE"
+
+[node name="Countdown2" type="AudioStreamPlayer" parent="." unique_id=254699226]
+stream = ExtResource("7_ipssf")
+bus = &"VOICE"
+
+[node name="Countdown1" type="AudioStreamPlayer" parent="." unique_id=1502483333]
+stream = ExtResource("8_tsm2y")
+bus = &"VOICE"
+
+[node name="CountdownGo" type="AudioStreamPlayer" parent="." unique_id=117876207]
+stream = ExtResource("9_jq18t")
 bus = &"VOICE"
 
 [node name="CountdownSFX" type="AudioStreamPlayer" parent="." unique_id=1960724049]
