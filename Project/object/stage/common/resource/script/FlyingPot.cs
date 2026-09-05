@@ -100,6 +100,8 @@ public partial class FlyingPot : Node3D
 		if (interactingWithPlayer && !Player.IsOnGround && Player.VerticalSpeed <= 0f)
 			StartJump();
 
+		if (isSleeping) return;
+
 		UpdateAngle(0);
 		ApplyMovement();
 	}
