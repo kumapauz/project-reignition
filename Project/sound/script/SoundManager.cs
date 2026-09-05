@@ -55,7 +55,7 @@ public partial class SoundManager : Control
 
 	private void UpdateAudioDucking()
 	{
-		bool isDuckActive = IsDialogActive || IsRankQuotePlaying;
+		bool isDuckActive = (IsDialogActive || IsRankQuotePlaying) && !SaveManager.Config.isVoiceMuted && SaveManager.Config.voiceVolume != 0;
 		float targetVolumeDb = isDuckActive ? DuckVolumeDB : 0f;
 		float targetSpeed = isDuckActive ? DuckInSpeed : DuckOutSpeed;
 		currentDuckVolume = Mathf.MoveToward(currentDuckVolume, targetVolumeDb, targetSpeed * (float)GetPhysicsProcessDeltaTime());
