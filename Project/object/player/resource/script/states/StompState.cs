@@ -18,7 +18,7 @@ public partial class StompState : PlayerState
 	public override void EnterState()
 	{
 		if (!SaveManager.ActiveSkillRing.IsSkillEquipped(SkillKey.StompBounce) ||
-			Mathf.IsZeroApprox(Player.Controller.GetInputStrength()))
+			Mathf.IsZeroApprox(Player.Controller.GetInputStrength()) || Player.IsGrindstepping)
 		{
 			Player.MoveSpeed = 0; // Go STRAIGHT down
 			Player.StrafeSpeed = 0;
