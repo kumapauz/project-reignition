@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxs1rlwtb024a"
-path="res://.godot/imported/Bloom.png-269be31ae295497342276f2005279bc8.ctex"
+uid="uid://jcyygg5l5cr"
+path="res://.godot/imported/3.png-12ee2983508e03e596fd1a454345d444.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://interface/gameplay/countdown/texture/Bloom.png"
-dest_files=["res://.godot/imported/Bloom.png-269be31ae295497342276f2005279bc8.ctex"]
+source_file="res://interface/gameplay/countdown/texture/3.png"
+dest_files=["res://.godot/imported/3.png-12ee2983508e03e596fd1a454345d444.ctex"]
 
 [params]
 

@@ -13,7 +13,7 @@ public partial class Countdown : Control
 	[Signal] public delegate void CountdownFinishedEventHandler();
 
 	[Export] private Node2D tickParent;
-	[Export] private Node2D[] tickPositions;
+	[Export] private Control[] tickPositions;
 	[Export] private AnimationPlayer animator;
 
 	public float CountdownSkipAmount { get; private set; }

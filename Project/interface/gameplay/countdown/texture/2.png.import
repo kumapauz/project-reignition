@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b115wkhpxydop"
-path="res://.godot/imported/Countdown.png-0cbe126d858a359d110d3c17b3904bc9.ctex"
+uid="uid://bq4xcjcryfypm"
+path="res://.godot/imported/2.png-16de0c3e3e8fceedf651f46293e197c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://interface/gameplay/countdown/texture/Countdown.png"
-dest_files=["res://.godot/imported/Countdown.png-0cbe126d858a359d110d3c17b3904bc9.ctex"]
+source_file="res://interface/gameplay/countdown/texture/2.png"
+dest_files=["res://.godot/imported/2.png-16de0c3e3e8fceedf651f46293e197c3.ctex"]
 
 [params]
 

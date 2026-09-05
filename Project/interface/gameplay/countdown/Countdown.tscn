@@ -2,14 +2,17 @@
 
 [ext_resource type="Script" uid="uid://dxnb5md2nkggf" path="res://interface/gameplay/countdown/Countdown.cs" id="1"]
 [ext_resource type="Texture2D" uid="uid://dgufod6u2u62a" path="res://interface/gameplay/countdown/texture/Sparkle.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://dxs1rlwtb024a" path="res://interface/gameplay/countdown/texture/Bloom.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://d028n5q7f5xqk" path="res://interface/gameplay/countdown/texture/go.png" id="2_rubhb"]
 [ext_resource type="Material" uid="uid://bhbsafmnnhtdb" path="res://effect/material/Canvas Item Add.tres" id="3_hjym8"]
-[ext_resource type="Texture2D" uid="uid://b115wkhpxydop" path="res://interface/gameplay/countdown/texture/Countdown.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://dmc5rbnal0ljt" path="res://interface/gameplay/countdown/texture/Flare.png" id="5"]
 [ext_resource type="AudioStream" uid="uid://4slkrcshm8wp" path="res://sound/sfx/system/countdown 3.wav" id="6_08n3x"]
 [ext_resource type="AudioStream" uid="uid://b2w1pljl8stmb" path="res://sound/sfx/system/countdown sfx tick.wav" id="7_46y3w"]
+[ext_resource type="Texture2D" uid="uid://joemawgaike5" path="res://interface/gameplay/countdown/texture/1.png" id="7_dtvxt"]
 [ext_resource type="AudioStream" uid="uid://k0junqhnbc4q" path="res://sound/sfx/system/countdown 2.wav" id="7_ipssf"]
+[ext_resource type="Texture2D" uid="uid://jcyygg5l5cr" path="res://interface/gameplay/countdown/texture/3.png" id="7_w8wkc"]
+[ext_resource type="Texture2D" uid="uid://bq4xcjcryfypm" path="res://interface/gameplay/countdown/texture/2.png" id="8_rubhb"]
 [ext_resource type="AudioStream" uid="uid://cwmd25b1n8fy3" path="res://sound/sfx/system/countdown 1.wav" id="8_tsm2y"]
+[ext_resource type="Texture2D" uid="uid://0ahpuqj1m4fl" path="res://interface/gameplay/countdown/texture/countdown tick.png" id="9_dtvxt"]
 [ext_resource type="AudioStream" uid="uid://fh5iabi2yg7j" path="res://sound/sfx/system/countdown go.wav" id="9_jq18t"]
 [ext_resource type="AudioStream" uid="uid://bca1hjlk1wqa4" path="res://sound/sfx/system/countdown sfx final.wav" id="11_vq6q7"]
 
@@ -18,7 +21,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/Go/Go:modulate")
+tracks/0/path = NodePath("Go/Go:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -30,7 +33,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Control/Go/Go:scale")
+tracks/1/path = NodePath("Go/Go:offset_transform_scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -42,7 +45,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Control/Go/Go/Bloom:modulate")
+tracks/2/path = NodePath("Go/Go/Bloom:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -54,7 +57,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Control/Go/Sparkle:modulate")
+tracks/3/path = NodePath("Go/Sparkle:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -66,7 +69,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Control/Go/Flare:modulate")
+tracks/4/path = NodePath("Go/Flare:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -102,7 +105,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("3Root/3:scale")
+tracks/7/path = NodePath("3Root/3:offset_transform_scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -126,7 +129,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("2Root/2:scale")
+tracks/9/path = NodePath("2Root/2:offset_transform_scale")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -174,7 +177,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("1Root/1:scale")
+tracks/13/path = NodePath("1Root/1:offset_transform_scale")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -234,7 +237,7 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Control/Go/Sparkle:rotation")
+tracks/18/path = NodePath("Go/Sparkle:rotation")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -275,7 +278,7 @@ step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/Go/Go:modulate")
+tracks/0/path = NodePath("Go/Go:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -287,7 +290,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Control/Go/Go:scale")
+tracks/1/path = NodePath("Go/Go:offset_transform_scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -299,7 +302,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Control/Go/Go/Bloom:modulate")
+tracks/2/path = NodePath("Go/Go/Bloom:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -311,7 +314,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Control/Go/Sparkle:modulate")
+tracks/3/path = NodePath("Go/Sparkle:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -323,7 +326,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Control/Go/Flare:modulate")
+tracks/4/path = NodePath("Go/Flare:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -373,7 +376,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("3Root/3:scale")
+tracks/8/path = NodePath("3Root/3:offset_transform_scale")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -397,7 +400,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("2Root/2:scale")
+tracks/10/path = NodePath("2Root/2:offset_transform_scale")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -445,7 +448,7 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("1Root/1:scale")
+tracks/14/path = NodePath("1Root/1:offset_transform_scale")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -569,7 +572,7 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("Control/Go/Sparkle:rotation")
+tracks/21/path = NodePath("Go/Sparkle:rotation")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
@@ -586,7 +589,7 @@ step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/Go/Go:modulate")
+tracks/0/path = NodePath("Go/Go:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -598,7 +601,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Control/Go/Go:scale")
+tracks/1/path = NodePath("Go/Go:offset_transform_scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -610,7 +613,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Control/Go/Go/Bloom:modulate")
+tracks/2/path = NodePath("Go/Go/Bloom:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -622,7 +625,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Control/Go/Sparkle:modulate")
+tracks/3/path = NodePath("Go/Sparkle:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -634,7 +637,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Control/Go/Flare:modulate")
+tracks/4/path = NodePath("Go/Flare:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -742,7 +745,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Control/Go/Sparkle:rotation")
+tracks/12/path = NodePath("Go/Sparkle:rotation")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -798,10 +801,10 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1")
 tickParent = NodePath("Ticks")
-tickPositions = [NodePath("1Root/1"), NodePath("2Root/2"), NodePath("3Root/3")]
+tickPositions = [NodePath("3Root"), NodePath("2Root"), NodePath("1Root")]
 animator = NodePath("Animator")
 
-[node name="Control" type="Control" parent="." unique_id=205970451]
+[node name="Go" type="Control" parent="." unique_id=205970451]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -812,36 +815,46 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Go" type="Node2D" parent="Control" unique_id=967198174]
-position = Vector2(-960, -540)
-
-[node name="Go" type="Sprite2D" parent="Control/Go" unique_id=271324765]
+[node name="Go" type="TextureRect" parent="Go" unique_id=1982587963]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(960, 540)
-scale = Vector2(1e-05, 1e-05)
-texture = ExtResource("4")
-region_enabled = true
-region_rect = Rect2(0, 256, 440, 224)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -128.0
+offset_right = 256.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("2_rubhb")
 
-[node name="Bloom" type="Sprite2D" parent="Control/Go/Go" unique_id=1920625946]
+[node name="Bloom" type="TextureRect" parent="Go/Go" unique_id=41481071]
 modulate = Color(1, 1, 1, 0)
 material = ExtResource("3_hjym8")
-scale = Vector2(5.5, 5.5)
-texture = ExtResource("3")
-region_enabled = true
-region_rect = Rect2(16, 68, 92, 52)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rubhb")
 
-[node name="Sparkle" type="Sprite2D" parent="Control/Go" unique_id=326444020]
+[node name="Sparkle" type="Sprite2D" parent="Go" unique_id=326444020]
 modulate = Color(1, 1, 1, 0)
 material = ExtResource("3_hjym8")
-position = Vector2(948, 560)
-scale = Vector2(8, 8)
+position = Vector2(-12, 20)
+scale = Vector2(7.9999995, 7.9999995)
 texture = ExtResource("2")
 
-[node name="Flare" type="Sprite2D" parent="Control/Go" unique_id=94907413]
+[node name="Flare" type="Sprite2D" parent="Go" unique_id=94907413]
 modulate = Color(1, 1, 1, 0)
 material = ExtResource("3_hjym8")
-position = Vector2(948, 560)
+position = Vector2(-12, 20)
 scale = Vector2(4, 4)
 texture = ExtResource("5")
 
@@ -857,21 +870,34 @@ offset_bottom = 736.0
 grow_horizontal = 0
 mouse_filter = 2
 
-[node name="1" type="Sprite2D" parent="1Root" unique_id=990677132]
+[node name="1" type="TextureRect" parent="1Root" unique_id=1315131690]
 modulate = Color(1, 1, 1, 0)
-scale = Vector2(1e-05, 1e-05)
-texture = ExtResource("4")
-region_enabled = true
-region_rect = Rect2(368, 0, 144, 216)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -128.0
+offset_right = 98.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("7_dtvxt")
 
-[node name="Bloom" type="Sprite2D" parent="1Root/1" unique_id=1771715748]
+[node name="Bloom" type="TextureRect" parent="1Root/1" unique_id=189353108]
 modulate = Color(1, 1, 1, 0)
 material = ExtResource("3_hjym8")
-position = Vector2(8, 0)
-scale = Vector2(5.5, 5.5)
-texture = ExtResource("3")
-region_enabled = true
-region_rect = Rect2(84, 12, 36, 48)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_dtvxt")
 
 [node name="2Root" type="Control" parent="." unique_id=502554389]
 layout_mode = 1
@@ -882,21 +908,34 @@ offset_right = 440.0
 offset_bottom = 736.0
 mouse_filter = 2
 
-[node name="2" type="Sprite2D" parent="2Root" unique_id=2037429335]
+[node name="2" type="TextureRect" parent="2Root" unique_id=574969868]
 modulate = Color(1, 1, 1, 0)
-scale = Vector2(1e-05, 1e-05)
-texture = ExtResource("4")
-region_enabled = true
-region_rect = Rect2(176, 0, 176, 216)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -128.0
+offset_right = 98.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("8_rubhb")
 
-[node name="Bloom" type="Sprite2D" parent="2Root/2" unique_id=357423782]
+[node name="Bloom" type="TextureRect" parent="2Root/2" unique_id=1912462796]
 modulate = Color(1, 1, 1, 0)
 material = ExtResource("3_hjym8")
-position = Vector2(6.99707, 0)
-scale = Vector2(5.5, 5.5)
-texture = ExtResource("3")
-region_enabled = true
-region_rect = Rect2(44, 12, 40, 48)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_rubhb")
 
 [node name="3Root" type="Control" parent="." unique_id=1212474646]
 layout_mode = 1
@@ -910,19 +949,33 @@ offset_bottom = 736.0
 grow_horizontal = 0
 mouse_filter = 2
 
-[node name="3" type="Sprite2D" parent="3Root" unique_id=67377354]
-scale = Vector2(1e-05, 1e-05)
-texture = ExtResource("4")
-region_enabled = true
-region_rect = Rect2(0, 8, 168, 200)
+[node name="3" type="TextureRect" parent="3Root" unique_id=2033841864]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -128.0
+offset_right = 98.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("7_w8wkc")
 
-[node name="Bloom" type="Sprite2D" parent="3Root/3" unique_id=2002623716]
+[node name="Bloom" type="TextureRect" parent="3Root/3" unique_id=865637460]
 modulate = Color(1, 1, 1, 0)
 material = ExtResource("3_hjym8")
-scale = Vector2(5.5, 5.5)
-texture = ExtResource("3")
-region_enabled = true
-region_rect = Rect2(4, 12, 40, 48)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_w8wkc")
 
 [node name="Ticks" type="Node2D" parent="." unique_id=1359887149]
 modulate = Color(1, 1, 1, 0)
@@ -931,106 +984,91 @@ scale = Vector2(2, 2)
 
 [node name="1" type="Sprite2D" parent="Ticks" unique_id=317057867]
 position = Vector2(0, -200)
-texture = ExtResource("4")
-region_enabled = true
+texture = ExtResource("9_dtvxt")
 region_rect = Rect2(448, 256, 48, 96)
 
 [node name="2" type="Sprite2D" parent="Ticks" unique_id=2068206019]
 position = Vector2(81.3475, -182.709)
 rotation = 0.418879
-texture = ExtResource("4")
-region_enabled = true
+texture = ExtResource("9_dtvxt")
 region_rect = Rect2(448, 256, 48, 96)
 
 [node name="3" type="Sprite2D" parent="Ticks" unique_id=1690871697]
 position = Vector2(148.629, -133.826)
 rotation = 0.837758
-texture = ExtResource("4")
-region_enabled = true
+texture = ExtResource("9_dtvxt")
 region_rect = Rect2(448, 256, 48, 96)
 
 [node name="4" type="Sprite2D" parent="Ticks" unique_id=1393251842]
 position = Vector2(190.211, -61.8035)
 rotation = 1.25664
-texture = ExtResource("4")
-region_enabled = true
+texture = ExtResource("9_dtvxt")
 region_rect = Rect2(448, 256, 48, 96)
 
 [node name="5" type="Sprite2D" parent="Ticks" unique_id=1767790132]
 position = Vector2(198.904, 20.9058)
 rotation = 1.67552
-texture = ExtResource("4")
-region_enabled = true
+texture = ExtResource("9_dtvxt")
 region_rect = Rect2(448, 256, 48, 96)
 
 [node name="6" type="Sprite2D" parent="Ticks" unique_id=903298436]
 position = Vector2(173.205, 100)
 rotation = 2.0944
-texture = ExtResource("4")
-region_enabled = true
+texture = ExtResource("9_dtvxt")
 region_rect = Rect2(448, 256, 48, 96)
 
 [node name="7" type="Sprite2D" parent="Ticks" unique_id=459315085]
 position = Vector2(117.557, 161.803)
 rotation = 2.51327
-texture = ExtResource("4")
-region_enabled = true
+texture = ExtResource("9_dtvxt")
 region_rect = Rect2(448, 256, 48, 96)
 
 [node name="8" type="Sprite2D" parent="Ticks" unique_id=1556840807]
 position = Vector2(41.5822, 195.63)
 rotation = 2.93215
-texture = ExtResource("4")
-region_enabled = true
+texture = ExtResource("9_dtvxt")
 region_rect = Rect2(448, 256, 48, 96)
 
 [node name="9" type="Sprite2D" parent="Ticks" unique_id=1996334305]
 position = Vector2(-41.5823, 195.63)
 rotation = -2.93215
-texture = ExtResource("4")
-region_enabled = true
+texture = ExtResource("9_dtvxt")
 region_rect = Rect2(448, 256, 48, 96)
 
 [node name="10" type="Sprite2D" parent="Ticks" unique_id=123030435]
 position = Vector2(-117.557, 161.803)
 rotation = -2.51327
-texture = ExtResource("4")
-region_enabled = true
+texture = ExtResource("9_dtvxt")
 region_rect = Rect2(448, 256, 48, 96)
 
 [node name="11" type="Sprite2D" parent="Ticks" unique_id=1821772636]
 position = Vector2(-173.205, 99.9999)
 rotation = -2.09439
-texture = ExtResource("4")
-region_enabled = true
+texture = ExtResource("9_dtvxt")
 region_rect = Rect2(448, 256, 48, 96)
 
 [node name="12" type="Sprite2D" parent="Ticks" unique_id=119270870]
 position = Vector2(-198.904, 20.9057)
 rotation = -1.67552
-texture = ExtResource("4")
-region_enabled = true
+texture = ExtResource("9_dtvxt")
 region_rect = Rect2(448, 256, 48, 96)
 
 [node name="13" type="Sprite2D" parent="Ticks" unique_id=678818858]
 position = Vector2(-190.211, -61.8035)
 rotation = -1.25664
-texture = ExtResource("4")
-region_enabled = true
+texture = ExtResource("9_dtvxt")
 region_rect = Rect2(448, 256, 48, 96)
 
 [node name="14" type="Sprite2D" parent="Ticks" unique_id=1724535018]
 position = Vector2(-148.629, -133.826)
 rotation = -0.837758
-texture = ExtResource("4")
-region_enabled = true
+texture = ExtResource("9_dtvxt")
 region_rect = Rect2(448, 256, 48, 96)
 
 [node name="15" type="Sprite2D" parent="Ticks" unique_id=1812040487]
 position = Vector2(-81.3473, -182.709)
 rotation = -0.418879
-texture = ExtResource("4")
-region_enabled = true
+texture = ExtResource("9_dtvxt")
 region_rect = Rect2(448, 256, 48, 96)
 
 [node name="CountdownVoice" type="AudioStreamPlayer" parent="." unique_id=339055795]
