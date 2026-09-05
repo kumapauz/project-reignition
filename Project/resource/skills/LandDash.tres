@@ -6,7 +6,7 @@
 script = ExtResource("1_a8nw4")
 Key = 27
 Cost = 8
-LevelRequirement = 16
+LevelRequirement = 7
 StageRequirement = &""
 SkillConflicts = ["LandSoul"]
 Augments = []

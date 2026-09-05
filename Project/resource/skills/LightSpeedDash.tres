@@ -6,6 +6,7 @@
 script = ExtResource("1_6ca7o")
 Key = 47
 Cost = 20
-StageRequirement = &"np_a2_rampage"
+LevelRequirement = 39
+StageRequirement = &""
 SkillConflicts = []
 Augments = []

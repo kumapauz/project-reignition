@@ -6,7 +6,7 @@
 script = ExtResource("1_6ubtu")
 Key = 12
 Cost = 20
-LevelRequirement = 51
+LevelRequirement = 30
 StageRequirement = &""
 SkillConflicts = []
 AugmentIndex = 2

@@ -6,8 +6,8 @@
 script = ExtResource("1_ogpia")
 Key = 13
 Category = 3
-Cost = 6
-LevelRequirement = 10
+Cost = 3
+LevelRequirement = 4
 StageRequirement = &""
 SkillConflicts = []
 Augments = []

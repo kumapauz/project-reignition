@@ -6,7 +6,7 @@
 script = ExtResource("1_c35k3")
 Key = 10
 Cost = 15
-LevelRequirement = 24
+LevelRequirement = 12
 StageRequirement = &""
 SkillConflicts = []
 AugmentIndex = 1

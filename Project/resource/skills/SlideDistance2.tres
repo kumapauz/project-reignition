@@ -6,7 +6,7 @@
 script = ExtResource("1_m3buo")
 Key = 17
 Cost = 25
-LevelRequirement = 61
+LevelRequirement = 48
 StageRequirement = &""
 SkillConflicts = []
 AugmentIndex = 2

@@ -6,8 +6,8 @@
 script = ExtResource("1_22w83")
 Key = 49
 Element = 1
-Cost = 5
-LevelRequirement = 45
+Cost = 10
+LevelRequirement = 42
 StageRequirement = &""
 SkillConflicts = []
 Augments = []

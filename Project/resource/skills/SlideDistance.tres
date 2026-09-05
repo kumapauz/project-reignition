@@ -7,8 +7,8 @@
 [resource]
 script = ExtResource("1_xnt0a")
 Key = 17
-Cost = 5
-LevelRequirement = 26
+Cost = 8
+LevelRequirement = 10
 StageRequirement = &""
 SkillConflicts = []
 Augments = Array[ExtResource("1_xnt0a")]([ExtResource("1_a5oli"), ExtResource("2_mggxa")])

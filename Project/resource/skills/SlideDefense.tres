@@ -6,7 +6,7 @@
 script = ExtResource("1_qkrua")
 Key = 15
 Cost = 15
-LevelRequirement = 21
+LevelRequirement = 20
 StageRequirement = &""
 SkillConflicts = ["SlideAttack", "SlideExp"]
 Augments = []

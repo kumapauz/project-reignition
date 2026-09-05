@@ -6,7 +6,7 @@
 script = ExtResource("1_nmqdr")
 Key = 10
 Cost = 30
-LevelRequirement = 49
+LevelRequirement = 26
 StageRequirement = &""
 SkillConflicts = []
 AugmentIndex = 2

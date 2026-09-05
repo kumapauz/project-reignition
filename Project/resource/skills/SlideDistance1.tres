@@ -6,7 +6,7 @@
 script = ExtResource("1_ijior")
 Key = 17
 Cost = 15
-LevelRequirement = 41
+LevelRequirement = 26
 StageRequirement = &""
 SkillConflicts = []
 AugmentIndex = 1

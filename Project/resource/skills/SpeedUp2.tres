@@ -6,7 +6,7 @@
 script = ExtResource("1_hcw67")
 Key = 9
 Cost = 40
-LevelRequirement = 63
+LevelRequirement = 45
 StageRequirement = &""
 SkillConflicts = []
 AugmentIndex = 2

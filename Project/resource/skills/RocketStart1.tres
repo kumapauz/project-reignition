@@ -6,7 +6,7 @@
 script = ExtResource("1_lquoq")
 Key = 38
 Cost = 25
-LevelRequirement = 46
+LevelRequirement = 50
 StageRequirement = &""
 SkillConflicts = []
 AugmentIndex = 1

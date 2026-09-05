@@ -6,7 +6,7 @@
 script = ExtResource("1_pgmox")
 Key = 18
 Cost = 6
-LevelRequirement = 16
+LevelRequirement = 18
 StageRequirement = &""
 SkillConflicts = ["StompExp"]
 Augments = []
