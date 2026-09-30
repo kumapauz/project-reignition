@@ -3,6 +3,7 @@ extends PartyGameCharacterSpawner
 
 @export var coin_box: Node3D
 @export var weight_platform2: Node3D
+@export var coinbox_offset: Node3D
 @export var weight_animator: AnimationPlayer
 @export var hand_attachment: BoneAttachment3D
 @export var debug_label: Label3D
@@ -41,8 +42,10 @@ func throw_chest() -> void:
 	character_animator.play_animation("%s/19-return" % MinigameManager.ANIMATION_LIBRARY_PREFIX, true)
 
 func unparent() -> void:
-	set_zero(true)
-	coin_box.reparent(weight_platform2)
+	print("Unparenting")
+	coin_box.reparent(coinbox_offset)
+	#coin_box.position = coinbox_offset.position
+	
 
 func demo_sequence() -> void:
 	if player_index != 0:
