@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cacdy75rk2056" path="res://party/resource/character/scene/Sonic.tscn" id="7_wnuok"]
 [ext_resource type="PackedScene" uid="uid://c6mwbbp0daim1" path="res://party/scene/minigame/19 weight puzzle/model/Coinbox.glb" id="8_dfnbo"]
 [ext_resource type="AnimationLibrary" uid="uid://td28md54xamj" path="res://party/scene/minigame/19 weight puzzle/animation/_Library.glb" id="8_u0ckp"]
+[ext_resource type="AnimationLibrary" uid="uid://dgv1hswanixsl" path="res://party/resource/character/animation/_CommonLibrary.glb" id="10_jdhy2"]
 [ext_resource type="ArrayMesh" uid="uid://dnecmn3hykli0" path="res://party/scene/minigame/19 weight puzzle/model/coin.tres" id="11_veltv"]
 
 [sub_resource type="Environment" id="Environment_skywb"]
@@ -297,6 +298,20 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(0, -0.6981317, 0), Vector3(0, -0.6981317, 0), Vector3(0, 0, 0)]
 }
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../..")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"CanPour"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_ww35w"]
 resource_name = "weight_toss"
@@ -379,15 +394,19 @@ rotation_3d_max = Vector3(0, 360, 0)
 use_rotation_velocity_3d = true
 rotation_velocity_3d_min = Vector3(0, -720, 0)
 rotation_velocity_3d_max = Vector3(0, 720, 0)
+collision_mode = 2
 
-[node name="Environment" type="Node3D" unique_id=1522425192 node_paths=PackedStringArray("coin_box", "weight_platform2", "coinbox_offset", "weight_animator", "hand_attachment", "debug_label", "spawn_position")]
+[node name="Environment" type="Node3D" unique_id=1522425192 node_paths=PackedStringArray("coin_box", "coin_meshes", "coin_particles", "weight_platform2", "coinbox_offset", "weight_animator", "hand_attachment", "debug_label", "debug_target_anim_label", "spawn_position")]
 script = ExtResource("1_skywb")
 coin_box = NodePath("Weight/WeightArm/WeightPlatform2/Coinbox")
+coin_meshes = [NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins1"), NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins2"), NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins3"), NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins4"), NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins5")]
+coin_particles = [NodePath("CoinRain/Coins"), NodePath("CoinRain/Coins2"), NodePath("CoinRain/Coins3")]
 weight_platform2 = NodePath("Weight/WeightArm/WeightPlatform2")
 coinbox_offset = NodePath("Weight/WeightArm/WeightPlatform2/CoinboxOffset")
 weight_animator = NodePath("Weight/WeightAnimator")
 hand_attachment = NodePath("HandAttachment")
 debug_label = NodePath("Debug")
+debug_target_anim_label = NodePath("")
 spawn_position = NodePath("CharacterPosition")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=162862610]
@@ -416,10 +435,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 
 [node name="WeightPlatform2" parent="Weight/WeightArm" unique_id=1349553688 instance=ExtResource("7_rxhfp")]
-transform = Transform3D(0.90228117, 0.4323007, 0, -0.4323007, 0.90228117, 0, 0, 0, 1, 11.011438, 0.0024738312, 0)
+transform = Transform3D(0.9022851, 0.4323026, 0, -0.4323026, 0.9022851, 0, 0, 0, 1, 11.010139, 0.0020771027, 0)
 
 [node name="Coinbox" parent="Weight/WeightArm/WeightPlatform2" unique_id=1117549296 instance=ExtResource("8_dfnbo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67484075, 1.2931433, 0)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Weight/WeightArm/WeightPlatform2/Coinbox" unique_id=1716447568]
+transform = Transform3D(1, 4.8849813e-15, 2.9802322e-08, 1.0835777e-13, 1, -8.881784e-16, 2.9802322e-08, -8.881784e-16, 1, -0.107055664, 1.7115173, -0.09887862)
+size = Vector3(5.196533, 0.76123047, 4.3134766)
 
 [node name="CoinboxOffset" type="Node3D" parent="Weight/WeightArm/WeightPlatform2" unique_id=510407390]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67484075, 1.2931433, 0)
@@ -441,7 +464,7 @@ transform = Transform3D(0.7660444, -1.8473234e-08, -0.6427876, 1.6783801e-08, 1,
 
 [node name="GeneralSkeleton" parent="Sonic/Sonic/CharacterRoot" parent_id_path=PackedInt32Array(731316033, 206978815, 263967807) index="0" unique_id=1169989668]
 bones/66/rotation = Quaternion(-0.67818475, 0.20016392, -0.20016392, 0.6781847)
-bones/67/rotation = Quaternion(0.6344744, -0.6344744, 0.31215757, 0.31215742)
+bones/67/rotation = Quaternion(0.6344744, -0.6344744, 0.31215754, 0.3121575)
 bones/68/rotation = Quaternion(-0.62526655, 0.6252665, 0.33021483, 0.33021483)
 face = 1
 right_hand = 6
@@ -459,6 +482,7 @@ visible = false
 visible = true
 
 [node name="AnimationPlayer" parent="Sonic/Sonic" parent_id_path=PackedInt32Array(731316033, 206978815) index="1" unique_id=446230404]
+libraries/_CommonLibrary = ExtResource("10_jdhy2")
 libraries/_Library = ExtResource("8_u0ckp")
 
 [node name="Debug" type="Label3D" parent="." unique_id=1931390658]
@@ -474,7 +498,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9551544, 20.489803, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3477592, 0)
 emitting = false
 amount = 25
-lifetime = 1.4
+lifetime = 2.0
 speed_scale = 1.2
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_nkfxl")
@@ -484,7 +508,7 @@ draw_pass_1 = ExtResource("11_veltv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.766999, 2.3477592, 0.7023332)
 emitting = false
 amount = 25
-lifetime = 1.4
+lifetime = 2.0
 speed_scale = 1.2
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_nkfxl")
@@ -494,11 +518,12 @@ draw_pass_1 = ExtResource("11_veltv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4785124, 2.3477592, 0)
 emitting = false
 amount = 25
-lifetime = 1.4
+lifetime = 2.0
 speed_scale = 1.2
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_nkfxl")
 draw_pass_1 = ExtResource("11_veltv")
 
+[editable path="Weight/WeightArm/WeightPlatform2/Coinbox"]
 [editable path="Sonic"]
 [editable path="Sonic/Sonic"]
