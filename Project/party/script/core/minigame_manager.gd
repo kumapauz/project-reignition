@@ -50,7 +50,8 @@ enum SCREEN_MODE {
 @export var demo_transition_mode: DEMO_TRANSITION
 enum DEMO_TRANSITION {
 	NONE, # Start with screen already split
-	FULLSCREEN, # Show a fullscreen demo first (normally played by a majin)
+	FULLSCREEN, # Show a fullscreen demo first (global environment, normally played by a majin)
+	FULLSCREEN_PLAYER1 # Show a fullscreen demo first (use player 1's environment)
 }
 
 @export_group("Result Settings")
@@ -133,9 +134,11 @@ func _ready() -> void:
 		animator.play("free-for-all")
 	animator.advance(0.0)
 	
-	if screen_mode == SCREEN_MODE.SHARED || demo_transition_mode == DEMO_TRANSITION.FULLSCREEN:
+	if demo_transition_mode == DEMO_TRANSITION.FULLSCREEN_PLAYER1:
+		animator.play("demo-p1-init")
+	elif screen_mode == SCREEN_MODE.SHARED || demo_transition_mode == DEMO_TRANSITION.FULLSCREEN:
 		animator.play("demo-init") # NOTE: This animation is the same as a split-screen demo.
-		animator.advance(0.0)
+	animator.advance(0.0)
 	
 	if NetworkManager.is_online:
 		NetworkManager.peers_loaded.connect(Callable(self, "start_party_game"), CONNECT_DEFERRED)
@@ -259,7 +262,7 @@ func request_minigame_start() -> void:
 @rpc("any_peer", "call_local", "reliable")
 func start_minigame(tick: float) -> void:
 	var target_animation: String = "minigame-start"
-	if demo_transition_mode == DEMO_TRANSITION.FULLSCREEN:
+	if demo_transition_mode != DEMO_TRANSITION.NONE:
 		target_animation = "demo-fade" # Transition to split-screen
 	
 	var callable: Callable = Callable(self, "play_animation").bind(target_animation)

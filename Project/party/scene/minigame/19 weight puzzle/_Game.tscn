@@ -144,18 +144,36 @@ _data = {
 
 [node name="DemoPlayer" parent="." unique_id=1522425192 instance=ExtResource("4_3m1b2")]
 
+[node name="Environment" parent="DemoPlayer" index="1" unique_id=1161187366]
+visible = false
+
 [node name="WeightPlatform2" parent="DemoPlayer/Weight/WeightArm" parent_id_path=PackedInt32Array(1522425192, 1052711281) index="2" unique_id=1349553688]
 transform = Transform3D(0.90228534, 0.4323027, 0, -0.4323027, 0.90228534, 0, 0, 0, 1, 11.010143, 0.002073288, 0)
+
+[node name="GameCamera" parent="DemoPlayer" index="4" unique_id=2047423510]
+visible = false
+
+[node name="HandAttachment" parent="DemoPlayer" index="5" unique_id=880504346]
+visible = false
+
+[node name="Debug" parent="DemoPlayer" index="7" unique_id=1931390658]
+visible = false
+
+[node name="CoinRain" parent="DemoPlayer" index="8" unique_id=1870482314]
+visible = false
 
 [node name="Minigame" parent="." unique_id=600998337 node_paths=PackedStringArray("results_camera", "intro_animator") instance=ExtResource("1_hrrkc")]
 minigame_resource = ExtResource("2_4jp1s")
 anim_library = ExtResource("3_tq27j")
 screen_mode = 1
-demo_transition_mode = 1
+demo_transition_mode = 2
 results_camera = NodePath("../ResultsCamera")
 intro_animator = NodePath("../AnimationPlayer")
 
-[node name="Environment" parent="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport" parent_id_path=PackedInt32Array(600998337, 578977454) index="0" unique_id=1529352227 instance=ExtResource("4_3m1b2")]
+[node name="SubViewport" parent="Minigame/SplitscreenLayout/GridContainer/Player1" parent_id_path=PackedInt32Array(600998337, 1250316439) index="0" unique_id=578977454]
+size = Vector2i(960, 540)
+
+[node name="Environment" parent="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport" index="0" unique_id=1529352227 instance=ExtResource("4_3m1b2")]
 
 [node name="Environment" parent="Minigame/SplitscreenLayout/GridContainer/Player2/SubViewport" parent_id_path=PackedInt32Array(600998337, 1764725787) index="0" unique_id=1247750040 instance=ExtResource("4_3m1b2")]
 player_index = 1
