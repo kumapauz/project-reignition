@@ -9,7 +9,6 @@ extends PartyGameCharacterSpawner
 @export var weight_animator: AnimationPlayer
 @export var hand_attachment: BoneAttachment3D
 @export var debug_label: Label3D
-@export var debug_target_anim_label: Label3D
 
 var zeroout_hands: bool = false
 
@@ -39,6 +38,9 @@ func _physics_process(delta: float) -> void:
 	if is_demo_complete && can_pour:
 		current_input = get_vertical_input()
 		process_animation()
+
+		#if player_index == 0 :
+			#print("Current Animation: " +  character_animator.get_current_animation())
 
 func _process(delta: float) -> void:
 	debug_label.text = str(num_coins)
@@ -106,24 +108,6 @@ func zero_hands() -> void:
 func set_zero(zero: bool) -> void:
 	zeroout_hands = zero
 
-func process_animation() -> void:
-	var target_animation : String
-
-	#if player_index == 0:
-		#print(current_input)	
-
-	if current_input <= 0 : #If we're not tilting the stick
-		target_animation = "%s/19-lift-wait" % MinigameManager.ANIMATION_LIBRARY_PREFIX
-	if current_input > 0 && current_input <= 0.8 : #If we're only tilting the stick part-way
-		target_animation = "%s/19-slant1" % MinigameManager.ANIMATION_LIBRARY_PREFIX
-	if current_input > 0.8: #If we're fully tilting the stick 
-		target_animation = "%s/19-slant2" % MinigameManager.ANIMATION_LIBRARY_PREFIX
-
-	if !target_animation.is_empty() && character_animator.get_current_animation() != target_animation:
-		print("Changing character anim to: " + target_animation)
-		character_animator.play_minigame_animation(target_animation, 0.1)
-	
-
 func tilt_box(type: int):
 	match type:
 		0:
@@ -136,3 +120,40 @@ func tilt_box(type: int):
 func CanPour(pour: bool):
 	print("setting pour")
 	can_pour = pour
+
+#####################
+### ROLLBACK CODE ###
+#####################
+@export var rollback_timer : RollbackTimer
+const RB_INPUT : int = 0
+func on_rollback_applied(rb_params : Array) -> void:
+	current_input = rb_params[RB_INPUT]
+
+func process_rollback() -> void:
+	rollback_timer.set_param(RB_INPUT, current_input)
+	rollback_timer.process_rollback()
+
+func process_animation() -> void:
+	var target_animation : String
+
+		
+
+	if current_input <= 0 : #If we're not tilting the stick
+		target_animation = "%s/19-lift-wait" % MinigameManager.ANIMATION_LIBRARY_PREFIX
+		#target_animation = "_Library/19-lift-wait"
+	elif current_input > 0 && current_input <= 0.8 : #If we're only tilting the stick part-way
+		target_animation = "%s/19-slant1" % MinigameManager.ANIMATION_LIBRARY_PREFIX
+		#target_animation = "_Library/19-slant1"
+	elif current_input > 0.8: #If we're fully tilting the stick
+		#target_animation = "_Library/19-slant2"
+		target_animation = "%s/19-slant2" % MinigameManager.ANIMATION_LIBRARY_PREFIX
+	
+	if player_index == 0:
+		print("Target Animation: " + target_animation)
+
+	if !target_animation.is_empty() && character_animator.get_current_animation() != target_animation:
+		print("Changing character anim to: " + target_animation)
+		character_animator.play_minigame_animation(target_animation, 0.1)
+	
+
+

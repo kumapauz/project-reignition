@@ -12,6 +12,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://td28md54xamj" path="res://party/scene/minigame/19 weight puzzle/animation/_Library.glb" id="8_u0ckp"]
 [ext_resource type="AnimationLibrary" uid="uid://dgv1hswanixsl" path="res://party/resource/character/animation/_CommonLibrary.glb" id="10_jdhy2"]
 [ext_resource type="ArrayMesh" uid="uid://dnecmn3hykli0" path="res://party/scene/minigame/19 weight puzzle/model/coin.tres" id="11_veltv"]
+[ext_resource type="Script" uid="uid://ds056nimfywwr" path="res://party/script/core/rollback_timer.gd" id="13_y508n"]
 
 [sub_resource type="Environment" id="Environment_skywb"]
 background_mode = 1
@@ -396,7 +397,7 @@ rotation_velocity_3d_min = Vector3(0, -720, 0)
 rotation_velocity_3d_max = Vector3(0, 720, 0)
 collision_mode = 2
 
-[node name="Environment" type="Node3D" unique_id=1522425192 node_paths=PackedStringArray("coin_box", "coin_meshes", "coin_particles", "weight_platform2", "coinbox_offset", "weight_animator", "hand_attachment", "debug_label", "debug_target_anim_label", "spawn_position")]
+[node name="Environment" type="Node3D" unique_id=1522425192 node_paths=PackedStringArray("coin_box", "coin_meshes", "coin_particles", "weight_platform2", "coinbox_offset", "weight_animator", "hand_attachment", "debug_label", "rollback_timer", "spawn_position")]
 script = ExtResource("1_skywb")
 coin_box = NodePath("Weight/WeightArm/WeightPlatform2/Coinbox")
 coin_meshes = [NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins1"), NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins2"), NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins3"), NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins4"), NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins5")]
@@ -406,7 +407,7 @@ coinbox_offset = NodePath("Weight/WeightArm/WeightPlatform2/CoinboxOffset")
 weight_animator = NodePath("Weight/WeightAnimator")
 hand_attachment = NodePath("HandAttachment")
 debug_label = NodePath("Debug")
-debug_target_anim_label = NodePath("")
+rollback_timer = NodePath("Rollback")
 spawn_position = NodePath("CharacterPosition")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=162862610]
@@ -523,6 +524,11 @@ speed_scale = 1.2
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_nkfxl")
 draw_pass_1 = ExtResource("11_veltv")
+
+[node name="Rollback" type="Node" parent="." unique_id=1963454035]
+script = ExtResource("13_y508n")
+param_count = 1
+rollback_interval = 0.10000000000582077
 
 [editable path="Weight/WeightArm/WeightPlatform2/Coinbox"]
 [editable path="Sonic"]
