@@ -12,7 +12,6 @@ extends PartyGameCharacterSpawner
 
 var zeroout_hands: bool = false
 
-
 var is_demo_complete: bool
 ##Can the player tilt the bucket
 var can_pour : bool
@@ -35,12 +34,11 @@ func on_spawn_finished() -> void:
 	character_animator.play_animation("%s/wait" % MinigameManager.COMMON_ANIMATION_LIBRARY_PREFIX, true, 0.1)
 
 func _physics_process(delta: float) -> void:
-	if is_demo_complete && can_pour:
+	if player_index == 0:
+		print("Processing Player!%s" % is_demo_complete)
+	if can_pour:
 		current_input = get_vertical_input()
 		process_animation()
-
-		#if player_index == 0 :
-			#print("Current Animation: " +  character_animator.get_current_animation())
 
 func _process(delta: float) -> void:
 	debug_label.text = str(num_coins)
@@ -62,7 +60,7 @@ func catch_chest() -> void:
 	coin_box.reparent(hand_attachment)
 	character_animator.play_animation("%s/19-catch" % MinigameManager.ANIMATION_LIBRARY_PREFIX, true)
 	await get_tree().create_timer(1.2).timeout
-	CanPour(true)
+	set_can_pour(true)
 
 #Have the player return the chest to the weight
 func throw_chest() -> void:
@@ -117,7 +115,7 @@ func tilt_box(type: int):
 		2:
 			character_animator.queue_minigame_animation("%s/19-slant2" % MinigameManager.ANIMATION_LIBRARY_PREFIX, 0.0)
 
-func CanPour(pour: bool):
+func set_can_pour(pour: bool):
 	print("setting pour")
 	can_pour = pour
 
@@ -135,25 +133,15 @@ func process_rollback() -> void:
 
 func process_animation() -> void:
 	var target_animation : String
-
-		
-
-	if current_input <= 0 : #If we're not tilting the stick
+	if current_input <= 0 : # If we're not tilting the stick
 		target_animation = "%s/19-lift-wait" % MinigameManager.ANIMATION_LIBRARY_PREFIX
-		#target_animation = "_Library/19-lift-wait"
 	elif current_input > 0 && current_input <= 0.8 : #If we're only tilting the stick part-way
 		target_animation = "%s/19-slant1" % MinigameManager.ANIMATION_LIBRARY_PREFIX
-		#target_animation = "_Library/19-slant1"
 	elif current_input > 0.8: #If we're fully tilting the stick
-		#target_animation = "_Library/19-slant2"
 		target_animation = "%s/19-slant2" % MinigameManager.ANIMATION_LIBRARY_PREFIX
 	
 	if player_index == 0:
-		print("Target Animation: " + target_animation)
-
-	if !target_animation.is_empty() && character_animator.get_current_animation() != target_animation:
-		print("Changing character anim to: " + target_animation)
-		character_animator.play_minigame_animation(target_animation, 0.1)
+		print("Current Animation%s Target Animation:%s" % [character_animator.get_current_animation(), target_animation])
 	
-
-
+	if target_animation != null && character_animator.get_current_animation() != target_animation:
+		character_animator.play_minigame_animation(target_animation)

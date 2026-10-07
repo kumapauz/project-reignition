@@ -310,7 +310,7 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [false],
-"method": &"CanPour"
+"method": &"set_can_pour"
 }]
 }
 
@@ -463,26 +463,26 @@ bone_idx = 89
 [node name="Sonic" parent="." unique_id=731316033 instance=ExtResource("7_wnuok")]
 transform = Transform3D(0.7660444, -1.8473234e-08, -0.6427876, 1.6783801e-08, 1, -8.737093e-09, 0.6427876, -4.0954187e-09, 0.7660444, -41.399227, -2.92591, 8.541508)
 
-[node name="GeneralSkeleton" parent="Sonic/Sonic/CharacterRoot" parent_id_path=PackedInt32Array(731316033, 206978815, 263967807) index="0" unique_id=1169989668]
+[node name="GeneralSkeleton" parent="Sonic/Sonic/CharacterRoot" parent_id_path=PackedInt32Array(731316033, 206978815, 1166605822) index="0" unique_id=1797820697]
 bones/66/rotation = Quaternion(-0.67818475, 0.20016392, -0.20016392, 0.6781847)
 bones/67/rotation = Quaternion(0.6344744, -0.6344744, 0.31215754, 0.3121575)
 bones/68/rotation = Quaternion(-0.62526655, 0.6252665, 0.33021483, 0.33021483)
 face = 1
 right_hand = 6
 
-[node name="face_default" parent="Sonic/Sonic/CharacterRoot/GeneralSkeleton" index="2" unique_id=647289430]
+[node name="face_default" parent="Sonic/Sonic/CharacterRoot/GeneralSkeleton" index="2" unique_id=830439389]
 visible = false
 
-[node name="face_happy" parent="Sonic/Sonic/CharacterRoot/GeneralSkeleton" index="3" unique_id=826375726]
+[node name="face_happy" parent="Sonic/Sonic/CharacterRoot/GeneralSkeleton" index="3" unique_id=1744314972]
 visible = true
 
-[node name="hand_fist_r" parent="Sonic/Sonic/CharacterRoot/GeneralSkeleton" index="9" unique_id=528756251]
+[node name="hand_fist_r" parent="Sonic/Sonic/CharacterRoot/GeneralSkeleton" index="9" unique_id=1022890478]
 visible = false
 
-[node name="hand_thumb_r" parent="Sonic/Sonic/CharacterRoot/GeneralSkeleton" index="21" unique_id=1446015515]
+[node name="hand_thumb_r" parent="Sonic/Sonic/CharacterRoot/GeneralSkeleton" index="21" unique_id=1580105244]
 visible = true
 
-[node name="AnimationPlayer" parent="Sonic/Sonic" parent_id_path=PackedInt32Array(731316033, 206978815) index="1" unique_id=446230404]
+[node name="AnimationPlayer" parent="Sonic/Sonic" parent_id_path=PackedInt32Array(731316033, 206978815) index="1" unique_id=1760950327]
 libraries/_CommonLibrary = ExtResource("10_jdhy2")
 libraries/_Library = ExtResource("8_u0ckp")
 

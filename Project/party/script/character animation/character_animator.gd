@@ -63,12 +63,15 @@ func has_animation(anim : StringName) -> bool:
 ## Plays an animation locally.
 func play_animation(anim : StringName, reset : bool = false, blend : float = 0.0) -> void:
 	if animator == null || !has_animation(anim):
+		print("Anim %s not found!" % anim)
 		return
 	
 	if !reset && animator.assigned_animation == anim:
+		print("Already playing %s!" % anim)
 		return
 	
 	animator.play(anim, blend)
+	print("Playing %s!" % anim)
 	
 	if reset:
 		animator.seek(0.0, true)
@@ -99,6 +102,7 @@ func play_minigame_animation(anim : StringName, blend : float = 0.0, speed : flo
 		return
 	
 	animator.play("%s" % anim, blend, speed)
+	print("Playing%s" % anim)
 	if !is_zero_approx(tick):
 		seek += NetworkTimeSynchronizer.get_time() - tick
 	seek = fmod(seek, get_animation_length())
