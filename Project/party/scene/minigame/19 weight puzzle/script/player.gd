@@ -20,22 +20,41 @@ var num_coins: int
 ##A visual representation of how many coins are in the bucket
 var num_coins_visual: int
 var current_input: float
+var tween : Tween
+
+const ANIM_LIST : PackedStringArray = [
+	"19-catch",
+	"19-lift-wait",
+	"19-miss",
+	"19-return",
+	"19-slant2-wait",
+	"wait"
+]
 
 ##The amount of coins needed to win the minigame
 const COINS_TO_REACH: int = 50
 
+const SLANT_BLEND : StringName = "parameters/slant-blend/blend_amount"
+const TRANSITION : StringName = "parameters/Transition/transition_request"
+const RETURN : StringName = "return"
+const MISS : StringName = "miss"
+const CATCH : StringName = "catch"
+const WAIT: StringName = "wait"
+
 func on_spawn_finished() -> void:
 	super()
+	rollback_timer.register_target(self)
+	initialize_animation_tree(get_anim_prefix(), ANIM_LIST)
 	
+
 	num_coins = 0
 	num_coins_visual = 0
 	hand_attachment.reparent(character_animator.skeleton)
 	MinigameManager.instance.gameplay_started.connect(Callable(self, "send_chest"))
-	character_animator.play_animation("%s/wait" % MinigameManager.COMMON_ANIMATION_LIBRARY_PREFIX, true, 0.1)
+	call_oneshot(3)
+	#character_animator.play_minigame_animation("%s/wait" % MinigameManager.COMMON_ANIMATION_LIBRARY_PREFIX, true, 0.1)
 
 func _physics_process(delta: float) -> void:
-	if player_index == 0:
-		print("Processing Player!%s" % is_demo_complete)
 	if can_pour:
 		current_input = get_vertical_input()
 		process_animation()
@@ -58,7 +77,7 @@ func complete_demo() -> void:
 func catch_chest() -> void:
 	set_zero(true)
 	coin_box.reparent(hand_attachment)
-	character_animator.play_animation("%s/19-catch" % MinigameManager.ANIMATION_LIBRARY_PREFIX, true)
+	call_oneshot(2)
 	await get_tree().create_timer(1.2).timeout
 	set_can_pour(true)
 
@@ -107,13 +126,29 @@ func set_zero(zero: bool) -> void:
 	zeroout_hands = zero
 
 func tilt_box(type: int):
+	tween = get_tree().create_tween()
 	match type:
 		0:
-			character_animator.queue_minigame_animation("%s/19-lift-wait" % MinigameManager.ANIMATION_LIBRARY_PREFIX, 0.0)
+			tween.tween_property(animation_tree,"parameters/slant-blend/blend_amount", 0.20, 0.5)
 		1:
-			character_animator.queue_minigame_animation("%s/19-slant1" % MinigameManager.ANIMATION_LIBRARY_PREFIX, 0.0)
+			tween.tween_property(animation_tree,"parameters/slant-blend/blend_amount", 0.50, 0.5)
 		2:
-			character_animator.queue_minigame_animation("%s/19-slant2" % MinigameManager.ANIMATION_LIBRARY_PREFIX, 0.0)
+			tween.tween_property(animation_tree,"parameters/slant-blend/blend_amount", 0.85, 0.5)
+
+func call_oneshot(type: int):
+	match type:
+		0:
+			print("Calling Return Transition")
+			animation_tree.set(TRANSITION,RETURN)
+		1:
+			print("Calling Miss Transition")
+			animation_tree.set(TRANSITION,MISS)
+		2:
+			print("Calling Catch Transition")
+			animation_tree.set(TRANSITION,CATCH)
+		3:
+			print("Calling Wait Transition")
+			animation_tree.set(TRANSITION,WAIT)
 
 func set_can_pour(pour: bool):
 	print("setting pour")
@@ -132,16 +167,4 @@ func process_rollback() -> void:
 	rollback_timer.process_rollback()
 
 func process_animation() -> void:
-	var target_animation : String
-	if current_input <= 0 : # If we're not tilting the stick
-		target_animation = "%s/19-lift-wait" % MinigameManager.ANIMATION_LIBRARY_PREFIX
-	elif current_input > 0 && current_input <= 0.8 : #If we're only tilting the stick part-way
-		target_animation = "%s/19-slant1" % MinigameManager.ANIMATION_LIBRARY_PREFIX
-	elif current_input > 0.8: #If we're fully tilting the stick
-		target_animation = "%s/19-slant2" % MinigameManager.ANIMATION_LIBRARY_PREFIX
-	
-	if player_index == 0:
-		print("Current Animation%s Target Animation:%s" % [character_animator.get_current_animation(), target_animation])
-	
-	if target_animation != null && character_animator.get_current_animation() != target_animation:
-		character_animator.play_minigame_animation(target_animation)
+	animation_tree.set(SLANT_BLEND, current_input)

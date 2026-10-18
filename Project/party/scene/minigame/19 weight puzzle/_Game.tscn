@@ -8,42 +8,6 @@
 
 [sub_resource type="Animation" id="Animation_57gj3"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DemoPlayer/Weight/WeightArm/WeightPlatform2/Coinbox/Coins1:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DemoPlayer/Weight/WeightArm/WeightPlatform2/Coinbox/Coins2:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("DemoPlayer/Weight/WeightArm/WeightPlatform2/Coinbox/Coins3:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_3m1b2"]
 resource_name = "intro"
@@ -52,10 +16,21 @@ step = 0.1
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("DemoPlayer/Weight/WeightAnimator")
+tracks/0/path = NodePath("Minigame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightAnimator")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 7, 8.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
@@ -69,66 +44,30 @@ tracks/0/keys = {
 "method": &"play"
 }]
 }
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DemoPlayer")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(3.5, 11),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
-"args": [1],
+"args": [2],
 "method": &"tilt_box"
 }, {
 "args": [],
 "method": &"complete_demo"
 }]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("DemoPlayer/Weight/WeightArm/WeightPlatform2/Coinbox/Coins1:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.100000024, 4.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
+tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("DemoPlayer/Weight/WeightArm/WeightPlatform2/Coinbox/Coins2:visible")
+tracks/3/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/AnimationTree")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.1, 5.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("DemoPlayer/Weight/WeightArm/WeightPlatform2/Coinbox/Coins3:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.1, 6.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Minigame")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(),
 "transitions": PackedFloat32Array(),
 "values": []
@@ -141,26 +80,6 @@ _data = {
 }
 
 [node name="Game" type="Node3D" unique_id=1617478877]
-
-[node name="DemoPlayer" parent="." unique_id=1522425192 instance=ExtResource("4_3m1b2")]
-
-[node name="Environment" parent="DemoPlayer" index="1" unique_id=1161187366]
-visible = false
-
-[node name="WeightPlatform2" parent="DemoPlayer/Weight/WeightArm" parent_id_path=PackedInt32Array(1522425192, 1052711281) index="2" unique_id=1349553688]
-transform = Transform3D(0.90228534, 0.4323027, 0, -0.4323027, 0.90228534, 0, 0, 0, 1, 11.010143, 0.002073288, 0)
-
-[node name="GameCamera" parent="DemoPlayer" index="4" unique_id=2047423510]
-visible = false
-
-[node name="HandAttachment" parent="DemoPlayer" index="5" unique_id=880504346]
-visible = false
-
-[node name="Debug" parent="DemoPlayer" index="7" unique_id=1931390658]
-visible = false
-
-[node name="CoinRain" parent="DemoPlayer" index="8" unique_id=1870482314]
-visible = false
 
 [node name="Minigame" parent="." unique_id=600998337 node_paths=PackedStringArray("results_camera", "intro_animator") instance=ExtResource("1_hrrkc")]
 minigame_resource = ExtResource("2_4jp1s")
@@ -201,8 +120,8 @@ far = 8000.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=200020328]
 libraries/ = SubResource("AnimationLibrary_57gj3")
 
-[editable path="DemoPlayer"]
-[editable path="DemoPlayer/Weight/WeightArm/WeightPlatform2/Coinbox"]
-[editable path="DemoPlayer/Sonic"]
-[editable path="DemoPlayer/Sonic/Sonic"]
 [editable path="Minigame"]
+[editable path="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment"]
+[editable path="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm/WeightPlatform2/Coinbox"]
+[editable path="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Sonic"]
+[editable path="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Sonic/Sonic"]
