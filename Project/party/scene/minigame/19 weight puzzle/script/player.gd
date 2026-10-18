@@ -31,41 +31,51 @@ const ANIM_LIST : PackedStringArray = [
 	"wait"
 ]
 
-##The amount of coins needed to win the minigame
+## The amount of coins needed to win the minigame
 const COINS_TO_REACH: int = 50
 
-const SLANT_BLEND : StringName = "parameters/slant-blend/blend_amount"
-const TRANSITION : StringName = "parameters/Transition/transition_request"
-const RETURN : StringName = "return"
-const MISS : StringName = "miss"
-const CATCH : StringName = "catch"
-const WAIT: StringName = "wait"
+const TILT_BLEND : StringName = "parameters/tilt-blend/blend_amount"
+const HOLD_TRANSITION : StringName = "parameters/hold-transition/transition_request"
+const ONESHOT_TRIGGER : StringName = "parameters/oneshot-trigger/request"
+const ONESHOT_TRANSITION : StringName = "parameters/oneshot-transition/transition_request"
+const HOLD_ANIM : StringName = "hold"
+const WAIT_ANIM : StringName = "wait"
+const RETURN_ANIM : StringName = "return"
+const MISS_ANIM : StringName = "miss"
+const CATCH_ANIM : StringName = "catch"
 
 func on_spawn_finished() -> void:
 	super()
 	rollback_timer.register_target(self)
 	initialize_animation_tree(get_anim_prefix(), ANIM_LIST)
 	
-
 	num_coins = 0
 	num_coins_visual = 0
 	hand_attachment.reparent(character_animator.skeleton)
 	MinigameManager.instance.gameplay_started.connect(Callable(self, "send_chest"))
-	call_oneshot(3)
-	#character_animator.play_minigame_animation("%s/wait" % MinigameManager.COMMON_ANIMATION_LIBRARY_PREFIX, true, 0.1)
+	print("WAITING!")
+	animation_tree.set(HOLD_TRANSITION, WAIT_ANIM)
 
-func _physics_process(delta: float) -> void:
-	if can_pour:
-		current_input = get_vertical_input()
-		process_animation()
+func _physics_process(_delta: float) -> void:
+	if is_demo_complete:
+		if can_pour:
+			process_inputs()
+		else:
+			current_input = 0.0
 
-func _process(delta: float) -> void:
+func process_inputs() -> void:
+	current_input = max(get_vertical_input(), 0)
+	if !is_cpu() && Input.is_action_just_pressed("button_primary%s" % get_input_suffix()):
+		throw_chest() # TODO Make this work with netplay
+
+func _process(_delta: float) -> void:
 	debug_label.text = str(num_coins)
-
 	if zeroout_hands:
 		zero_hands()
+	process_animation()
 	
 func complete_demo() -> void:
+	current_input = 0
 	is_demo_complete = true
 	set_physics_process(true)
 
@@ -77,14 +87,19 @@ func complete_demo() -> void:
 func catch_chest() -> void:
 	set_zero(true)
 	coin_box.reparent(hand_attachment)
-	call_oneshot(2)
+	play_oneshot_animation(CATCH_ANIM)
+	print("HOLDING!")
+	animation_tree.set(HOLD_TRANSITION, HOLD_ANIM)
 	await get_tree().create_timer(1.2).timeout
 	set_can_pour(true)
 
 #Have the player return the chest to the weight
 func throw_chest() -> void:
-	character_animator.play_animation("%s/19-return" % MinigameManager.ANIMATION_LIBRARY_PREFIX, true)
-	character_animator.queue_minigame_animation("%s/wait" % MinigameManager.COMMON_ANIMATION_LIBRARY_PREFIX, 0.0)
+	weight_animator.play("weight_return")
+	set_can_pour(false)
+	play_oneshot_animation(RETURN_ANIM)
+	print("WAITING!")
+	animation_tree.set(HOLD_TRANSITION, WAIT_ANIM)
 
 #Send the chest from the weight to the player
 func send_chest() -> void:
@@ -109,10 +124,7 @@ func send_chest() -> void:
 		coin_particles[1].emitting = false
 		coin_particles[2].emitting = false
 		num_coins = 100
-
 	weight_animator.play("weight_toss")
-	
-	
 
 func unparent() -> void:
 	print("Unparenting")
@@ -125,30 +137,13 @@ func zero_hands() -> void:
 func set_zero(zero: bool) -> void:
 	zeroout_hands = zero
 
-func tilt_box(type: int):
-	tween = get_tree().create_tween()
-	match type:
-		0:
-			tween.tween_property(animation_tree,"parameters/slant-blend/blend_amount", 0.20, 0.5)
-		1:
-			tween.tween_property(animation_tree,"parameters/slant-blend/blend_amount", 0.50, 0.5)
-		2:
-			tween.tween_property(animation_tree,"parameters/slant-blend/blend_amount", 0.85, 0.5)
+# Tilts the player in the introduction
+func intro_tilt() -> void:
+	current_input = 0.85
 
-func call_oneshot(type: int):
-	match type:
-		0:
-			print("Calling Return Transition")
-			animation_tree.set(TRANSITION,RETURN)
-		1:
-			print("Calling Miss Transition")
-			animation_tree.set(TRANSITION,MISS)
-		2:
-			print("Calling Catch Transition")
-			animation_tree.set(TRANSITION,CATCH)
-		3:
-			print("Calling Wait Transition")
-			animation_tree.set(TRANSITION,WAIT)
+func play_oneshot_animation(anim: StringName):
+	animation_tree.set(ONESHOT_TRANSITION, anim)
+	animation_tree.set(ONESHOT_TRIGGER, AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 
 func set_can_pour(pour: bool):
 	print("setting pour")
@@ -167,4 +162,4 @@ func process_rollback() -> void:
 	rollback_timer.process_rollback()
 
 func process_animation() -> void:
-	animation_tree.set(SLANT_BLEND, current_input)
+	animation_tree.set(TILT_BLEND, current_input)

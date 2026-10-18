@@ -31,13 +31,10 @@ tracks/1/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubVi
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 7, 8.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 8.2),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [&"weight_toss", -1, 1.0, false],
-"method": &"play"
-}, {
-"args": [&"weight_return", -1, 1.0, false],
 "method": &"play"
 }, {
 "args": [&"check_pos_4", -1, 1.0, false],
@@ -51,11 +48,14 @@ tracks/2/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubVi
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(3.5, 11),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(3.5, 7, 11),
+"transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
-"args": [2],
-"method": &"tilt_box"
+"args": [],
+"method": &"intro_tilt"
+}, {
+"args": [],
+"method": &"throw_chest"
 }, {
 "args": [],
 "method": &"complete_demo"
@@ -93,6 +93,9 @@ intro_animator = NodePath("../AnimationPlayer")
 size = Vector2i(960, 540)
 
 [node name="Environment" parent="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport" index="0" unique_id=1529352227 instance=ExtResource("4_3m1b2")]
+
+[node name="AnimationTree" parent="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment" index="10" unique_id=581187547]
+parameters/hold-transition/current_state = "return"
 
 [node name="Environment" parent="Minigame/SplitscreenLayout/GridContainer/Player2/SubViewport" parent_id_path=PackedInt32Array(600998337, 1764725787) index="0" unique_id=1247750040 instance=ExtResource("4_3m1b2")]
 player_index = 1

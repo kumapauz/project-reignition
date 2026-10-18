@@ -54,7 +54,11 @@ func initialize_animation_tree(anim_prefix : String, anim_list : PackedStringArr
 	for anim in anim_list:
 		if !root.has_node(anim):
 			continue
-		(root.get_node(anim) as AnimationNodeAnimation).animation = anim_prefix + anim
+		var target_anim: StringName = anim_prefix + anim
+		if !character_animator.animator.has_animation(target_anim):
+			print("Couldn't find animation %s in %s. Using the default party animation library instead." % [anim, anim_prefix])
+			target_anim = "%s/%s" % [MinigameManager.instance.COMMON_ANIMATION_LIBRARY_PREFIX, anim]
+		(root.get_node(anim) as AnimationNodeAnimation).animation = target_anim
 	animation_tree.active = true
 	MinigameManager.instance.minigame_finished.connect(Callable(self, "deactivate_animation_tree"))
 

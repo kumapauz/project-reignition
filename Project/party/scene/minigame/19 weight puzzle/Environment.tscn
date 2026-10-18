@@ -270,47 +270,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0.44680429)]
 }
-tracks/2/type = "method"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../..")
+tracks/2/path = NodePath("WeightPlatform2/Coinbox:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.05),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [0],
-"method": &"call_oneshot"
-}, {
-"args": [],
-"method": &"unparent"
-}]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("WeightPlatform2/Coinbox:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0, 1, 1.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, -0.6981317, 0), Vector3(0, -0.6981317, 0), Vector3(0, 0, 0)]
 }
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../..")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.05),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": [false],
-"method": &"set_can_pour"
+"args": [],
+"method": &"unparent"
 }]
 }
 
@@ -412,10 +395,17 @@ animation = &"_Library/19-return"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2aidk"]
 animation = &"_Library/19-slant2-wait"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_y508n"]
-
 [sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_2aidk"]
-allow_transition_to_self = true
+input_0/name = "hold"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "wait"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_y508n"]
 input_0/name = "return"
 input_0/auto_advance = false
 input_0/break_loop_at_end = false
@@ -428,38 +418,39 @@ input_2/name = "catch"
 input_2/auto_advance = false
 input_2/break_loop_at_end = false
 input_2/reset = true
-input_3/name = "wait"
-input_3/auto_advance = false
-input_3/break_loop_at_end = false
-input_3/reset = true
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_2aidk"]
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_37cca"]
+sync = true
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m41ng"]
 animation = &"_CommonLibrary/wait"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_it1wb"]
-graph_offset = Vector2(-661.76843, 41.984802)
-nodes/output/position = Vector2(600, 180)
+graph_offset = Vector2(-686.688, 79.13733)
+nodes/output/position = Vector2(660, 180)
 nodes/19-lift-wait/node = SubResource("AnimationNodeAnimation_y508n")
 nodes/19-lift-wait/position = Vector2(-600, 100)
 nodes/19-slant2-wait/node = SubResource("AnimationNodeAnimation_2aidk")
 nodes/19-slant2-wait/position = Vector2(-600, 320)
-nodes/slant-blend/node = SubResource("AnimationNodeBlend2_37cca")
-nodes/slant-blend/position = Vector2(-20, 140)
+nodes/tilt-blend/node = SubResource("AnimationNodeBlend2_37cca")
+nodes/tilt-blend/position = Vector2(-200, 120)
 nodes/19-return/node = SubResource("AnimationNodeAnimation_7uwec")
-nodes/19-return/position = Vector2(-260, 440)
+nodes/19-return/position = Vector2(-100, 700)
 nodes/wait/node = SubResource("AnimationNodeAnimation_m41ng")
-nodes/wait/position = Vector2(-260, 1040)
+nodes/wait/position = Vector2(-280, 400)
 nodes/19-miss/node = SubResource("AnimationNodeAnimation_37cca")
-nodes/19-miss/position = Vector2(-260, 640)
-nodes/Transition/node = SubResource("AnimationNodeTransition_2aidk")
-nodes/Transition/position = Vector2(80, 460)
+nodes/19-miss/position = Vector2(-100, 900)
+nodes/hold-transition/node = SubResource("AnimationNodeTransition_2aidk")
+nodes/hold-transition/position = Vector2(160, 160)
 nodes/19-catch/node = SubResource("AnimationNodeAnimation_d6nuu")
-nodes/19-catch/position = Vector2(-260, 840)
-nodes/Blend2/node = SubResource("AnimationNodeBlend2_y508n")
-nodes/Blend2/position = Vector2(340, 240)
-node_connections = [&"output", 0, &"Blend2", &"slant-blend", 0, &"19-lift-wait", &"slant-blend", 1, &"19-slant2-wait", &"Transition", 0, &"19-return", &"Transition", 1, &"19-miss", &"Transition", 2, &"19-catch", &"Transition", 3, &"wait", &"Blend2", 0, &"slant-blend", &"Blend2", 1, &"Transition"]
+nodes/19-catch/position = Vector2(-100, 1100)
+nodes/oneshot-trigger/node = SubResource("AnimationNodeOneShot_2aidk")
+nodes/oneshot-trigger/position = Vector2(460, 160)
+nodes/oneshot-transition/node = SubResource("AnimationNodeTransition_y508n")
+nodes/oneshot-transition/position = Vector2(240, 520)
+node_connections = [&"output", 0, &"oneshot-trigger", &"tilt-blend", 0, &"19-lift-wait", &"tilt-blend", 1, &"19-slant2-wait", &"hold-transition", 0, &"tilt-blend", &"hold-transition", 1, &"wait", &"oneshot-trigger", 0, &"hold-transition", &"oneshot-trigger", 1, &"oneshot-transition", &"oneshot-transition", 0, &"19-return", &"oneshot-transition", 1, &"19-miss", &"oneshot-transition", 2, &"19-catch"]
 
 [node name="Environment" type="Node3D" unique_id=1522425192 node_paths=PackedStringArray("coin_box", "coin_meshes", "coin_particles", "weight_platform2", "coinbox_offset", "weight_animator", "hand_attachment", "debug_label", "rollback_timer", "spawn_position", "animation_tree")]
 script = ExtResource("1_skywb")
@@ -528,15 +519,14 @@ bone_idx = 89
 [node name="Sonic" parent="." unique_id=731316033 instance=ExtResource("7_wnuok")]
 transform = Transform3D(0.7660444, -1.8473234e-08, -0.6427876, 1.6783801e-08, 1, -8.737093e-09, 0.6427876, -4.0954187e-09, 0.7660444, -41.399227, -2.92591, 8.541508)
 
-[node name="GeneralSkeleton" parent="Sonic/Sonic/CharacterRoot" parent_id_path=PackedInt32Array(731316033, 206978815, 263967807) index="0" unique_id=1169989668]
+[node name="GeneralSkeleton" parent="Sonic/Sonic/CharacterRoot" parent_id_path=PackedInt32Array(731316033, 206978815, 1166605822) index="0" unique_id=1797820697]
 bones/66/rotation = Quaternion(-0.67818475, 0.20016392, -0.20016392, 0.6781847)
 bones/67/rotation = Quaternion(0.6344744, -0.6344744, 0.31215754, 0.3121575)
 bones/68/rotation = Quaternion(-0.62526655, 0.6252665, 0.33021483, 0.33021483)
 
-[node name="AnimationPlayer" parent="Sonic/Sonic" parent_id_path=PackedInt32Array(731316033, 206978815) index="1" unique_id=446230404]
+[node name="AnimationPlayer" parent="Sonic/Sonic" parent_id_path=PackedInt32Array(731316033, 206978815) index="1" unique_id=1760950327]
 libraries/_CommonLibrary = ExtResource("10_jdhy2")
 libraries/_Library = ExtResource("8_u0ckp")
-next/_Library/19-catch = &""
 blend_times = [&"_Library/19-catch", &"_Library/19-lift-wait", 0.1, &"_Library/19-return", &"_CommonLibrary/wait", 0.1]
 
 [node name="Debug" type="Label3D" parent="." unique_id=1931390658]
@@ -587,11 +577,16 @@ rollback_interval = 0.10000000000582077
 root_node = NodePath("../Sonic/Sonic")
 tree_root = SubResource("AnimationNodeBlendTree_it1wb")
 anim_player = NodePath("../Sonic/Sonic/AnimationPlayer")
-parameters/slant-blend/blend_amount = 0.0
-parameters/Transition/current_state = "return"
-parameters/Transition/transition_request = ""
-parameters/Transition/current_index = 0
-parameters/Blend2/blend_amount = 0.0
+parameters/tilt-blend/blend_amount = 0.0
+parameters/hold-transition/current_state = "hold"
+parameters/hold-transition/transition_request = ""
+parameters/hold-transition/current_index = 0
+parameters/oneshot-trigger/active = false
+parameters/oneshot-trigger/internal_active = false
+parameters/oneshot-trigger/request = 0
+parameters/oneshot-transition/current_state = ""
+parameters/oneshot-transition/transition_request = ""
+parameters/oneshot-transition/current_index = -1
 
 [editable path="Weight/WeightArm/WeightPlatform2/Coinbox"]
 [editable path="Sonic"]
