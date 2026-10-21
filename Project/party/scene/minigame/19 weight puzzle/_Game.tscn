@@ -127,7 +127,7 @@ tracks/5/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubVi
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(4.2),
+"times": PackedFloat32Array(4.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -139,7 +139,7 @@ tracks/6/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubVi
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(5.3),
+"times": PackedFloat32Array(5.5),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -166,8 +166,11 @@ size = Vector2i(960, 540)
 
 [node name="Environment" parent="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport" index="0" unique_id=1529352227 instance=ExtResource("4_3m1b2")]
 
-[node name="AnimationTree" parent="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment" index="11" unique_id=581187547]
-parameters/hold-transition/current_state = "return"
+[node name="Coins1" parent="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm/WeightPlatform2/Coinbox" parent_id_path=PackedInt32Array(1529352227, 1117549296) index="1" unique_id=536119459]
+visible = true
+
+[node name="Coins2" parent="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm/WeightPlatform2/Coinbox" parent_id_path=PackedInt32Array(1529352227, 1117549296) index="2" unique_id=328089971]
+visible = true
 
 [node name="Environment" parent="Minigame/SplitscreenLayout/GridContainer/Player2/SubViewport" parent_id_path=PackedInt32Array(600998337, 1764725787) index="0" unique_id=1247750040 instance=ExtResource("4_3m1b2")]
 player_index = 1

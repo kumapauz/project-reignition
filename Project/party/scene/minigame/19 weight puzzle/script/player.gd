@@ -19,8 +19,6 @@ var is_demo_complete: bool
 var can_pour : bool
 ##The current number of coins in the bucket
 var num_coins: int
-##A visual representation of how many coins are in the bucket
-var num_coins_visual: int
 var current_input: float
 var tween : Tween
 
@@ -58,11 +56,15 @@ func on_spawn_finished() -> void:
 	initialize_animation_tree(get_anim_prefix(), ANIM_LIST)
 	
 	num_coins = 0
-	num_coins_visual = 0
 	hand_attachment.reparent(character_animator.skeleton)
 	MinigameManager.instance.gameplay_started.connect(Callable(self, "send_chest"))
 	print("WAITING!")
 	animation_tree.set(HOLD_TRANSITION, WAIT_ANIM)
+
+	if player_index == 0:
+		set_coins_stage(5)
+	else:
+		set_coins_stage(0)
 
 func _physics_process(_delta: float) -> void:
 	if is_demo_complete:
@@ -145,6 +147,8 @@ func send_chest() -> void:
 			await get_tree().create_timer(1).timeout
 		elif num_coins > 40 && num_coins <= 50:
 			await get_tree().create_timer(0.5).timeout
+		
+		set_coins_stage(5)
 	
 		coin_particles.emitting = false
 		num_coins = COINS_TO_START
@@ -173,16 +177,45 @@ func set_can_pour(pour: bool):
 	print("setting pour")
 	can_pour = pour
 
-func pour_coins_visual(pour: bool):
+func pour_coins_visual(pour: bool) -> void:
 	if pour:
 		coin_particles_player.emitting = true
 	else:
 		coin_particles_player.emitting = false
 
+func set_coins_stage(stage: int) -> void:
+	for i in 5:
+		coin_meshes[i].visible = false
+
+	if stage != 0:
+		for i in stage:
+			coin_meshes[i].visible = true
+
+##Returns the proper coin stage for the number of coins the player has
+func check_coins_stage() -> int:
+	
+	if num_coins == 0:
+		return 0
+	elif num_coins > 0 && num_coins < 20:
+		return 1
+	elif num_coins >= 20 && num_coins < 40:
+		return 2
+	elif num_coins >= 40 && num_coins < 60:
+		return 3
+	elif num_coins >= 60 && num_coins < 80:
+		return 4
+	
+	return 5
+
+
 func _on_coin_reduction_timer_timeout() -> void:
 	print("Timer Triggered!")
 	num_coins -= 1
+	num_coins = clampi(num_coins, 0, 100)
+	set_coins_stage(check_coins_stage())
 	coin_reduction_timer.start()
+
+	
 
 #####################
 ### ROLLBACK CODE ###

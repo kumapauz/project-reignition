@@ -449,7 +449,6 @@ sync = true
 animation = &"_CommonLibrary/wait"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_it1wb"]
-graph_offset = Vector2(-552.7495, 37.46051)
 nodes/output/position = Vector2(660, 180)
 nodes/19-lift-wait/node = SubResource("AnimationNodeAnimation_y508n")
 nodes/19-lift-wait/position = Vector2(-600, 100)
@@ -476,7 +475,7 @@ node_connections = [&"output", 0, &"oneshot-trigger", &"tilt-blend", 0, &"19-lif
 [node name="Environment" type="Node3D" unique_id=1522425192 node_paths=PackedStringArray("coin_box", "coin_meshes", "coin_particles", "coin_particles_player", "weight_platform2", "coinbox_offset", "weight_animator", "hand_attachment", "debug_label", "coin_reduction_timer", "rollback_timer", "spawn_position", "animation_tree")]
 script = ExtResource("1_skywb")
 coin_box = NodePath("Weight/WeightArm/WeightPlatform2/Coinbox")
-coin_meshes = [NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins1"), NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins2"), NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins3"), NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins4"), NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins5")]
+coin_meshes = [NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins5"), NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins4"), NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins3"), NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins2"), NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins1")]
 coin_particles = NodePath("Coins")
 coin_particles_player = NodePath("CoinsPlayer")
 weight_platform2 = NodePath("Weight/WeightArm/WeightPlatform2")
@@ -493,14 +492,6 @@ animation_tree = NodePath("AnimationTree")
 environment = SubResource("Environment_skywb")
 
 [node name="Environment" parent="." unique_id=1161187366 instance=ExtResource("1_1d8vo")]
-
-[node name="ParticleWall1" type="GPUParticlesCollisionBox3D" parent="Environment" unique_id=809626852]
-transform = Transform3D(0.675415, 2.6445751e-15, 0.7374378, 1.0835777e-13, 1, -8.8817757e-16, -0.7374378, -4.202436e-15, 0.675415, 8.141802, 4.6406193, 4.24576)
-size = Vector3(1.8198085, 0.29841614, 11.186502)
-
-[node name="ParticleWall2" type="GPUParticlesCollisionBox3D" parent="Environment" unique_id=173175609]
-transform = Transform3D(0.675415, 2.6445751e-15, 0.7374378, 1.0835777e-13, 1, -8.8817757e-16, -0.7374378, -4.202436e-15, 0.675415, 7.07656, 2.0751586, 5.301077)
-size = Vector3(1.8198085, 0.29841614, 11.186502)
 
 [node name="Weight" type="Node3D" parent="." unique_id=1236954025]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
@@ -523,10 +514,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 
 [node name="WeightPlatform2" parent="Weight/WeightArm" unique_id=1349553688 instance=ExtResource("7_rxhfp")]
-transform = Transform3D(0.9022851, 0.4323026, 0, -0.4323026, 0.9022851, 0, 0, 0, 1, 11.010139, 0.0020771027, 0)
+transform = Transform3D(0.90231824, 0.43231848, 0, -0.43231848, 0.90231824, 0, 0, 0, 1, 11.011632, 0.0022878647, 0)
 
 [node name="Coinbox" parent="Weight/WeightArm/WeightPlatform2" unique_id=1117549296 instance=ExtResource("8_dfnbo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67484075, 1.2931433, 0)
+
+[node name="Coins1" parent="Weight/WeightArm/WeightPlatform2/Coinbox" index="1" unique_id=536119459]
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Coins2" parent="Weight/WeightArm/WeightPlatform2/Coinbox" index="2" unique_id=328089971]
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Coins3" parent="Weight/WeightArm/WeightPlatform2/Coinbox" index="3" unique_id=35805179]
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Coins4" parent="Weight/WeightArm/WeightPlatform2/Coinbox" index="4" unique_id=277116245]
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Coins5" parent="Weight/WeightArm/WeightPlatform2/Coinbox" index="5" unique_id=1653406175]
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="ParticleWall1" type="GPUParticlesCollisionBox3D" parent="Weight/WeightArm/WeightPlatform2/Coinbox" unique_id=1716447568]
 transform = Transform3D(1, 4.8852214e-15, 2.9802322e-08, 1.0835777e-13, 1, -8.881784e-16, 2.9802322e-08, -8.881784e-16, 1, -0.04762405, 0.2722931, 0.095455885)
