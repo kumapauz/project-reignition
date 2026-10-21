@@ -13,6 +13,9 @@
 [ext_resource type="AnimationLibrary" uid="uid://dgv1hswanixsl" path="res://party/resource/character/animation/_CommonLibrary.glb" id="10_jdhy2"]
 [ext_resource type="ArrayMesh" uid="uid://dnecmn3hykli0" path="res://party/scene/minigame/19 weight puzzle/model/coin.tres" id="11_veltv"]
 [ext_resource type="Script" uid="uid://ds056nimfywwr" path="res://party/script/core/rollback_timer.gd" id="13_y508n"]
+[ext_resource type="Texture2D" uid="uid://ccidyn8ex5ilp" path="res://party/scene/minigame/17 pitch black/texture/correct.png" id="14_7uwec"]
+[ext_resource type="Texture2D" uid="uid://ryqut2of0q0p" path="res://party/scene/minigame/17 pitch black/texture/correct_shine.png" id="15_m41ng"]
+[ext_resource type="Texture2D" uid="uid://bl2ndecj6hqtk" path="res://party/scene/minigame/17 pitch black/texture/incorrect.png" id="16_d6nuu"]
 
 [sub_resource type="Environment" id="Environment_skywb"]
 background_mode = 1
@@ -75,6 +78,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_rxhfp"]
 resource_name = "check_pos_0"
+length = 3.0000000000000004
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -88,10 +92,38 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0.44680429)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"incorrect", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"send_chest"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_dfnbo"]
 resource_name = "check_pos_1"
-length = 3.0000000000000004
+length = 5.0
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -105,10 +137,38 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, 0.21991149), Vector3(0, 0, 0.32463124)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"send_chest"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Cursor/AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"incorrect", -1, 1.0, false],
+"method": &"play"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_veltv"]
 resource_name = "check_pos_2"
-length = 3.0000000000000004
+length = 5.0
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -122,10 +182,38 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, 0.10646509), Vector3(0, 0, 0.34208453), Vector3(0, 0, 0.10646509), Vector3(0, 0, 0.20245819)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"incorrect", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"send_chest"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_jdhy2"]
 resource_name = "check_pos_3"
-length = 3.0000000000000004
+length = 4.0
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -138,6 +226,34 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, 0.10646509), Vector3(0, 0, 0.1605703), Vector3(0, 0, 0.1064651)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"incorrect", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"send_chest"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_y508n"]
@@ -156,10 +272,38 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.286234), Vector3(0, 0, 0.21118484), Vector3(0, 0, -0.20769419), Vector3(0, 0, 0.15009831), Vector3(0, 0, -0.0418879), Vector3(0, 0, 0.019198623)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"correct", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"finish_minigame"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_2aidk"]
 resource_name = "check_pos_5"
-length = 3.0000000000000004
+length = 4.0
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -173,10 +317,38 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.21642083), Vector3(0, 0, 0.06283186), Vector3(0, 0, -0.09424778)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"incorrect", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"send_chest"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_37cca"]
 resource_name = "check_pos_6"
-length = 3.0000000000000004
+length = 4.0
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -190,10 +362,38 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.4171337), Vector3(0, 0, -0.19024089), Vector3(0, 0, -0.2687807), Vector3(0, 0, -0.21118484)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"send_chest"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_7uwec"]
 resource_name = "check_pos_7"
-length = 3.0000000000000004
+length = 4.0
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -207,10 +407,38 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.40840703), Vector3(0, 0, -0.26005405), Vector3(0, 0, -0.39095375), Vector3(0, 0, -0.3211406)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"incorrect", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"send_chest"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_m41ng"]
 resource_name = "check_pos_8"
-length = 3.0000000000000004
+length = 5.0
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -223,6 +451,34 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.4712389), Vector3(0, 0, -0.31415927), Vector3(0, 0, -0.43633232), Vector3(0, 0, -0.34906584), Vector3(0, 0, -0.43633232), Vector3(0, 0, -0.40142572)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"0", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"send_chest"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_d6nuu"]
@@ -240,6 +496,34 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.61784655)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"incorrect", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"send_chest"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_reudr"]
@@ -289,11 +573,14 @@ tracks/3/path = NodePath("../..")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1.05),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(1.05, 1.1),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"unparent"
+}, {
+"args": [],
+"method": &"check_win_condition"
 }]
 }
 
@@ -370,7 +657,7 @@ _data = {
 }
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nkfxl"]
-emission_shape_scale = Vector3(1.445, 0.705, 1.895)
+emission_shape_scale = Vector3(0.855, 0.585, 1.155)
 emission_shape = 3
 emission_box_extents = Vector3(1, 1, 1)
 angle_min = -390.0
@@ -472,8 +759,282 @@ nodes/oneshot-transition/node = SubResource("AnimationNodeTransition_y508n")
 nodes/oneshot-transition/position = Vector2(240, 520)
 node_connections = [&"output", 0, &"oneshot-trigger", &"tilt-blend", 0, &"19-lift-wait", &"tilt-blend", 1, &"19-slant2-wait", &"hold-transition", 0, &"tilt-blend", &"hold-transition", 1, &"wait", &"oneshot-trigger", 0, &"hold-transition", &"oneshot-trigger", 1, &"oneshot-transition", &"oneshot-transition", 0, &"19-return", &"oneshot-transition", 1, &"19-miss", &"oneshot-transition", 2, &"19-catch"]
 
-[node name="Environment" type="Node3D" unique_id=1522425192 node_paths=PackedStringArray("coin_box", "coin_meshes", "coin_particles", "coin_particles_player", "weight_platform2", "coinbox_offset", "weight_animator", "hand_attachment", "debug_label", "coin_reduction_timer", "rollback_timer", "spawn_position", "animation_tree")]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ww35w"]
+blend_mode = 1
+
+[sub_resource type="Animation" id="Animation_5qh3a"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Correct:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Correct/CorrectShine:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Incorrect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Correct:offset_transform_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Correct/CorrectShine:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Correct/CorrectShine:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Correct:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Incorrect:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Incorrect:offset_transform_scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ocuvf"]
+resource_name = "correct"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Correct:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Correct/CorrectShine:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Correct:offset_transform_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666668, 0.13333334, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.7, 1.7), Vector2(2.2, 2.2), Vector2(2, 2), Vector2(2, 2), Vector2(2.3, 2.3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Correct/CorrectShine:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(22.7, -15.635), Vector2(32.705, -4.255), Vector2(37.445, 1.825)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Correct/CorrectShine:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.23333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Correct:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Incorrect:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_c6dsc"]
+resource_name = "miss"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Correct:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Correct/CorrectShine:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Incorrect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Incorrect:offset_transform_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.7, 1.7), Vector2(2.2, 2.2), Vector2(2, 2), Vector2(2, 2), Vector2(2.3, 2.3)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Incorrect:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_reudr"]
+_data = {
+&"RESET": SubResource("Animation_5qh3a"),
+&"correct": SubResource("Animation_ocuvf"),
+&"miss": SubResource("Animation_c6dsc")
+}
+
+[node name="Environment" type="Node3D" unique_id=1522425192 node_paths=PackedStringArray("camera", "cursor", "coin_box", "coin_meshes", "coin_particles", "coin_particles_player", "weight_platform2", "coinbox_offset", "weight_animator", "hand_attachment", "debug_label", "coin_reduction_timer", "rollback_timer", "spawn_position", "animation_tree")]
 script = ExtResource("1_skywb")
+camera = NodePath("GameCamera")
+cursor = NodePath("Cursor")
 coin_box = NodePath("Weight/WeightArm/WeightPlatform2/Coinbox")
 coin_meshes = [NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins5"), NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins4"), NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins3"), NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins2"), NodePath("Weight/WeightArm/WeightPlatform2/Coinbox/Coins1")]
 coin_particles = NodePath("Coins")
@@ -514,7 +1075,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 
 [node name="WeightPlatform2" parent="Weight/WeightArm" unique_id=1349553688 instance=ExtResource("7_rxhfp")]
-transform = Transform3D(0.90231824, 0.43231848, 0, -0.43231848, 0.90231824, 0, 0, 0, 1, 11.011632, 0.0022878647, 0)
+transform = Transform3D(0.9023705, 0.4323435, 0, -0.4323435, 0.9023705, 0, 0, 0, 1, 11.012753, 0.0023326874, 0)
 
 [node name="Coinbox" parent="Weight/WeightArm/WeightPlatform2" unique_id=1117549296 instance=ExtResource("8_dfnbo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67484075, 1.2931433, 0)
@@ -534,25 +1095,9 @@ transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 
 [node name="Coins5" parent="Weight/WeightArm/WeightPlatform2/Coinbox" index="5" unique_id=1653406175]
 transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="ParticleWall1" type="GPUParticlesCollisionBox3D" parent="Weight/WeightArm/WeightPlatform2/Coinbox" unique_id=1716447568]
-transform = Transform3D(1, 4.8852214e-15, 2.9802322e-08, 1.0835777e-13, 1, -8.881784e-16, 2.9802322e-08, -8.881784e-16, 1, -0.04762405, 0.2722931, 0.095455885)
-size = Vector3(4.887908, 0.29841614, 3.8219357)
-
-[node name="ParticleWall2" type="GPUParticlesCollisionBox3D" parent="Weight/WeightArm/WeightPlatform2/Coinbox/ParticleWall1" unique_id=734189514]
-transform = Transform3D(-0.14611997, 0.9892672, 3.4157047e-08, -0.9892672, -0.14611997, 2.948246e-08, 3.4157036e-08, -2.9482457e-08, 1, 2.215344, 1.1950607, -8.940697e-08)
-size = Vector3(2.497787, 0.29841614, 3.8219357)
-
-[node name="ParticleWall3" type="GPUParticlesCollisionBox3D" parent="Weight/WeightArm/WeightPlatform2/Coinbox/ParticleWall1" unique_id=678015793]
-transform = Transform3D(0.12688653, 0.99191767, 2.6020821e-08, -0.99191767, 0.12688653, 2.956145e-08, 2.6020809e-08, -2.9561448e-08, 1, -2.2945867, 1.1950607, 5.2154064e-08)
-size = Vector3(2.497787, 0.29841614, 3.8219357)
-
-[node name="ParticleWall4" type="GPUParticlesCollisionBox3D" parent="Weight/WeightArm/WeightPlatform2/Coinbox/ParticleWall1" unique_id=1350920295]
-transform = Transform3D(2.0474424e-08, -7.2919555e-08, 1, -0.99192697, 0.12688887, 2.9561615e-08, -0.12688655, -0.99191767, -6.973221e-08, -0.045900375, 1.1950607, 1.6847346)
-size = Vector3(2.497787, 0.29841614, 4.5878496)
-
-[node name="ParticleWall5" type="GPUParticlesCollisionBox3D" parent="Weight/WeightArm/WeightPlatform2/Coinbox/ParticleWall1" unique_id=1901757603]
-transform = Transform3D(1.26944375e-08, -7.294808e-08, 1, -0.99096864, -0.134162, 2.7928986e-09, 0.1341666, -0.99096006, -7.399177e-08, -0.045900255, 1.1950607, -1.773974)
-size = Vector3(2.497787, 0.29841614, 4.5878496)
+[node name="ParticleFloor" type="GPUParticlesCollisionBox3D" parent="Weight/WeightArm/WeightPlatform2/Coinbox" unique_id=1716447568]
+transform = Transform3D(0.9999742, 4.8851295e-15, 2.9801553e-08, 1.083563e-13, 0.9999742, -8.881555e-16, 2.9802322e-08, -8.881784e-16, 1, -0.05412793, 0.08861828, -0.058433533)
+size = Vector3(6.0905075, 1.1394424, 5.5431304)
 
 [node name="CoinboxOffset" type="Node3D" parent="Weight/WeightArm/WeightPlatform2" unique_id=510407390]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67484075, 1.2931433, 0)
@@ -589,9 +1134,9 @@ text = "00"
 font_size = 773
 
 [node name="Coins" type="GPUParticles3D" parent="." unique_id=1009120334]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4498502, 22.871134, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2262714, 22.871134, 0)
 emitting = false
-amount = 60
+amount = 100
 lifetime = 2.3
 speed_scale = 1.2
 randomness = 1.0
@@ -632,6 +1177,50 @@ parameters/oneshot-transition/current_index = 0
 
 [node name="CoinReductionTimer" type="Timer" parent="." unique_id=1946827144]
 wait_time = 0.5
+
+[node name="Cursor" type="Control" parent="." unique_id=2104201004]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-32, -32)
+
+[node name="Correct" type="TextureRect" parent="Cursor" unique_id=1752335409]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2, 2)
+texture = ExtResource("14_7uwec")
+
+[node name="CorrectShine" type="TextureRect" parent="Cursor/Correct" unique_id=1922661514]
+visible = false
+material = SubResource("CanvasItemMaterial_ww35w")
+layout_mode = 0
+offset_right = 50.000088
+offset_bottom = 50.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("15_m41ng")
+
+[node name="Incorrect" type="TextureRect" parent="Cursor" unique_id=1395828586]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+texture = ExtResource("16_d6nuu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cursor" unique_id=617463219]
+deterministic = true
+libraries/ = SubResource("AnimationLibrary_reudr")
 
 [connection signal="timeout" from="CoinReductionTimer" to="." method="_on_coin_reduction_timer_timeout"]
 

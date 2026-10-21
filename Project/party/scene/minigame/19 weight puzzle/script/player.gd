@@ -1,6 +1,8 @@
 ### Represents a player in the Weight Puzzle minigame.
 extends PartyGameCharacterSpawner
 
+@export var camera: Camera3D
+@export var cursor: Control
 @export var coin_box: Node3D
 @export var coin_meshes: Array[Node3D]
 @export var coin_particles: GPUParticles3D
@@ -61,10 +63,15 @@ func on_spawn_finished() -> void:
 	print("WAITING!")
 	animation_tree.set(HOLD_TRANSITION, WAIT_ANIM)
 
+	cursor.position = camera.get_viewport().get_visible_rect().size / 2
+
 	if player_index == 0:
 		set_coins_stage(5)
 	else:
 		set_coins_stage(0)
+
+#func on_minigame_finished() -> void:
+
 
 func _physics_process(_delta: float) -> void:
 	if is_demo_complete:
@@ -154,6 +161,10 @@ func send_chest() -> void:
 		num_coins = COINS_TO_START
 	weight_animator.play("weight_toss")
 
+func check_win_condition() -> void:
+	if is_demo_complete:
+		weight_animator.play(get_bucket_weight_anim())
+
 func unparent() -> void:
 	print("Unparenting")
 	coin_box.reparent(coinbox_offset)
@@ -207,14 +218,48 @@ func check_coins_stage() -> int:
 	
 	return 5
 
+##Determines which weight animation should play
+func get_bucket_weight_anim() -> String:
+
+	if num_coins <= 10:
+		return "check_pos_0"
+	elif num_coins > 10 && num_coins <= 20:
+		return "check_pos_1"
+	elif num_coins > 20 && num_coins <= 30:
+		return "check_pos_2"
+	elif num_coins > 30 && num_coins <= 40:
+		return "check_pos_3"
+	elif num_coins > 40 && num_coins <= 50:
+		return "check_pos_4"
+	elif num_coins > 50 && num_coins <= 60:
+		return "check_pos_5"
+	elif num_coins > 60 && num_coins <= 70:
+		return "check_pos_6"
+	elif num_coins > 70 && num_coins <= 80:
+		return "check_pos_7"
+	elif num_coins > 80 && num_coins <= 90:
+		return "check_pos_8"
+	
+	
+	return "check_pos_9"
+
 
 func _on_coin_reduction_timer_timeout() -> void:
 	print("Timer Triggered!")
+
 	num_coins -= 1
 	num_coins = clampi(num_coins, 0, 100)
 	set_coins_stage(check_coins_stage())
+
+	if num_coins == 0:
+		coin_particles_player.emitting = false
+
 	coin_reduction_timer.start()
 
+func finish_minigame() -> void:
+	if is_demo_complete:
+		MinigameManager.instance.request_score_change(player_index, 1)
+		MinigameManager.instance.request_minigame_finish()
 	
 
 #####################
