@@ -8,6 +8,42 @@
 
 [sub_resource type="Animation" id="Animation_57gj3"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/CoinsPlayer:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm/WeightPlatform2/Coinbox/Coins1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm/WeightPlatform2/Coinbox/Coins2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_3m1b2"]
 resource_name = "intro"
@@ -72,6 +108,42 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(),
 "values": []
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/CoinsPlayer:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3.5, 7.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm/WeightPlatform2/Coinbox/Coins1:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm/WeightPlatform2/Coinbox/Coins2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(5.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_57gj3"]
 _data = {
@@ -87,14 +159,14 @@ anim_library = ExtResource("3_tq27j")
 screen_mode = 1
 demo_transition_mode = 2
 results_camera = NodePath("../ResultsCamera")
-intro_animator = NodePath("../AnimationPlayer")
+intro_animator = NodePath("../IntroAnimator")
 
 [node name="SubViewport" parent="Minigame/SplitscreenLayout/GridContainer/Player1" parent_id_path=PackedInt32Array(600998337, 1250316439) index="0" unique_id=578977454]
 size = Vector2i(960, 540)
 
 [node name="Environment" parent="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport" index="0" unique_id=1529352227 instance=ExtResource("4_3m1b2")]
 
-[node name="AnimationTree" parent="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment" index="10" unique_id=581187547]
+[node name="AnimationTree" parent="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment" index="11" unique_id=581187547]
 parameters/hold-transition/current_state = "return"
 
 [node name="Environment" parent="Minigame/SplitscreenLayout/GridContainer/Player2/SubViewport" parent_id_path=PackedInt32Array(600998337, 1764725787) index="0" unique_id=1247750040 instance=ExtResource("4_3m1b2")]
@@ -120,7 +192,7 @@ transform = Transform3D(0.9848078, -0.015134436, 0.17298739, 2.2265005e-09, 0.99
 fov = 50.0
 far = 8000.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=200020328]
+[node name="IntroAnimator" type="AnimationPlayer" parent="." unique_id=200020328]
 libraries/ = SubResource("AnimationLibrary_57gj3")
 
 [editable path="Minigame"]

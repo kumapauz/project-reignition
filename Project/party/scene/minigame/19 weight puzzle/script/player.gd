@@ -3,12 +3,14 @@ extends PartyGameCharacterSpawner
 
 @export var coin_box: Node3D
 @export var coin_meshes: Array[Node3D]
-@export var coin_particles: Array[GPUParticles3D]
+@export var coin_particles: GPUParticles3D
+@export var coin_particles_player : GPUParticles3D
 @export var weight_platform2: Node3D
 @export var coinbox_offset: Node3D
 @export var weight_animator: AnimationPlayer
 @export var hand_attachment: BoneAttachment3D
 @export var debug_label: Label3D
+@export var coin_reduction_timer: Timer
 
 var zeroout_hands: bool = false
 
@@ -31,8 +33,14 @@ const ANIM_LIST : PackedStringArray = [
 	"wait"
 ]
 
+const COINS_TO_START: int = 100
 ## The amount of coins needed to win the minigame
 const COINS_TO_REACH: int = 50
+const COINS_TIMER_SPEED_SOFT : float = 0.3
+const COINS_TIMER_SPEED_HARD : float = 0.1
+## The amount of coin particles to pour out
+const PARTICLE_SOFT: int = 12
+const PARTICLE_HARD: int = 20
 
 const TILT_BLEND : StringName = "parameters/tilt-blend/blend_amount"
 const HOLD_TRANSITION : StringName = "parameters/hold-transition/transition_request"
@@ -60,6 +68,25 @@ func _physics_process(_delta: float) -> void:
 	if is_demo_complete:
 		if can_pour:
 			process_inputs()
+			if current_input > 0:
+			
+				if current_input > 0.5 && coin_particles_player.amount != PARTICLE_HARD:
+					coin_particles_player.amount = PARTICLE_HARD
+					coin_reduction_timer.wait_time = COINS_TIMER_SPEED_HARD
+				elif current_input <= 0.5 && coin_particles_player.amount != PARTICLE_SOFT:
+					coin_particles_player.amount = PARTICLE_SOFT
+					coin_reduction_timer.wait_time = COINS_TIMER_SPEED_SOFT
+
+				if coin_particles_player.emitting != true && num_coins != 0:
+					pour_coins_visual(true)
+
+				if coin_reduction_timer.is_stopped():
+					coin_reduction_timer.start()
+
+			else:
+				coin_reduction_timer.stop()
+				if coin_particles_player.emitting != false:
+					pour_coins_visual(false)
 		else:
 			current_input = 0.0
 
@@ -95,6 +122,7 @@ func catch_chest() -> void:
 
 #Have the player return the chest to the weight
 func throw_chest() -> void:
+	coin_particles_player.emitting = false
 	weight_animator.play("weight_return")
 	set_can_pour(false)
 	play_oneshot_animation(RETURN_ANIM)
@@ -105,9 +133,7 @@ func throw_chest() -> void:
 func send_chest() -> void:
 	
 	if num_coins < COINS_TO_REACH:
-		coin_particles[0].emitting = true
-		coin_particles[1].emitting = true
-		coin_particles[2].emitting = true
+		coin_particles.emitting = true
 
 		await get_tree().create_timer(0.5).timeout
 
@@ -120,10 +146,8 @@ func send_chest() -> void:
 		elif num_coins > 40 && num_coins <= 50:
 			await get_tree().create_timer(0.5).timeout
 	
-		coin_particles[0].emitting = false
-		coin_particles[1].emitting = false
-		coin_particles[2].emitting = false
-		num_coins = 100
+		coin_particles.emitting = false
+		num_coins = COINS_TO_START
 	weight_animator.play("weight_toss")
 
 func unparent() -> void:
@@ -148,6 +172,17 @@ func play_oneshot_animation(anim: StringName):
 func set_can_pour(pour: bool):
 	print("setting pour")
 	can_pour = pour
+
+func pour_coins_visual(pour: bool):
+	if pour:
+		coin_particles_player.emitting = true
+	else:
+		coin_particles_player.emitting = false
+
+func _on_coin_reduction_timer_timeout() -> void:
+	print("Timer Triggered!")
+	num_coins -= 1
+	coin_reduction_timer.start()
 
 #####################
 ### ROLLBACK CODE ###
