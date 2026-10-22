@@ -5,6 +5,13 @@
 [ext_resource type="AnimationLibrary" uid="uid://td28md54xamj" path="res://party/scene/minigame/19 weight puzzle/animation/_Library.glb" id="3_tq27j"]
 [ext_resource type="PackedScene" uid="uid://h3ew6m00yy8g" path="res://party/scene/minigame/19 weight puzzle/Environment.tscn" id="4_3m1b2"]
 [ext_resource type="PackedScene" uid="uid://f5w7fq20xmd1" path="res://party/scene/minigame/00 base/Time.tscn" id="4_tq27j"]
+[ext_resource type="PackedScene" uid="uid://cdu102pifnrkr" path="res://party/scene/minigame/19 weight puzzle/model/Environment.glb" id="6_57gj3"]
+[ext_resource type="PackedScene" uid="uid://dikhuu5f4533i" path="res://party/scene/minigame/19 weight puzzle/model/WeightBase.glb" id="7_lyv4e"]
+[ext_resource type="PackedScene" uid="uid://bth1sjag5olu7" path="res://party/scene/minigame/19 weight puzzle/model/WeightArm.glb" id="8_bka54"]
+[ext_resource type="PackedScene" uid="uid://w346b02lgpng" path="res://party/scene/minigame/19 weight puzzle/model/WeightPlatform.glb" id="9_w447x"]
+[ext_resource type="PackedScene" uid="uid://cxcxjufumk3h5" path="res://party/scene/minigame/19 weight puzzle/model/Lamp.glb" id="10_hx7b7"]
+[ext_resource type="PackedScene" uid="uid://dwknauxes8he1" path="res://party/scene/minigame/19 weight puzzle/weight_platform.tscn" id="11_b43ym"]
+[ext_resource type="PackedScene" uid="uid://c6mwbbp0daim1" path="res://party/scene/minigame/19 weight puzzle/model/Coinbox.glb" id="12_nd1v0"]
 
 [sub_resource type="Animation" id="Animation_57gj3"]
 length = 0.001
@@ -43,6 +50,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/GameCamera:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(5.53526, 11.948437, 29.323446)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/GameCamera:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_3m1b2"]
@@ -158,11 +189,701 @@ tracks/7/keys = {
 "method": &"play"
 }]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/GameCamera:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(5.535, 11.948, 78.303), Vector3(5.535, 11.948, 78.303), Vector3(5.53526, 11.948437, 29.323446)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/GameCamera:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.18325958, 0), Vector3(0, 0.18325958, 0), Vector3(0, 0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_57gj3"]
 _data = {
 &"RESET": SubResource("Animation_57gj3"),
 &"intro": SubResource("Animation_3m1b2")
+}
+
+[sub_resource type="Environment" id="Environment_57gj3"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.69135684, 0.6913568, 0.6913567, 1)
+tonemap_mode = 2
+tonemap_white = 1.2
+glow_enabled = true
+
+[sub_resource type="Animation" id="Animation_u0ckp"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WeightPlatform2/Coinbox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.67484075, 1.2931433, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WeightPlatform2/Coinbox:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WeightPlatform2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.44680429)]
+}
+
+[sub_resource type="Animation" id="Animation_rxhfp"]
+resource_name = "check_pos_0"
+length = 3.0000000000000004
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.44680429)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"miss", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"miss"],
+"method": &"play_oneshot_animation"
+}, {
+"args": [],
+"method": &"send_chest"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_dfnbo"]
+resource_name = "check_pos_1"
+length = 5.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, 0.21991149), Vector3(0, 0, 0.32463124)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"MISS"],
+"method": &"play_oneshot_animation"
+}, {
+"args": [],
+"method": &"send_chest"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Cursor/AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"miss", -1, 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_veltv"]
+resource_name = "check_pos_2"
+length = 5.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, 0.10646509), Vector3(0, 0, 0.34208453), Vector3(0, 0, 0.10646509), Vector3(0, 0, 0.20245819)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"miss", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"miss"],
+"method": &"play_oneshot_animation"
+}, {
+"args": [],
+"method": &"send_chest"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_jdhy2"]
+resource_name = "check_pos_3"
+length = 4.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.1, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, 0.10646509), Vector3(0, 0, 0.1605703), Vector3(0, 0, 0.1064651)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"miss", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"miss"],
+"method": &"play_oneshot_animation"
+}, {
+"args": [],
+"method": &"send_chest"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_y508n"]
+resource_name = "check_pos_4"
+length = 4.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.286234), Vector3(0, 0, 0.21118484), Vector3(0, 0, -0.20769419), Vector3(0, 0, 0.15009831), Vector3(0, 0, -0.0418879), Vector3(0, 0, 0.019198623)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"correct", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"finish_minigame"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_2aidk"]
+resource_name = "check_pos_5"
+length = 4.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.21642083), Vector3(0, 0, 0.06283186), Vector3(0, 0, -0.09424778)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"miss", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"miss"],
+"method": &"play_oneshot_animation"
+}, {
+"args": [],
+"method": &"send_chest"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_37cca"]
+resource_name = "check_pos_6"
+length = 4.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.4171337), Vector3(0, 0, -0.19024089), Vector3(0, 0, -0.2687807), Vector3(0, 0, -0.21118484)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"miss", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"miss"],
+"method": &"play_oneshot_animation"
+}, {
+"args": [],
+"method": &"send_chest"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_7uwec"]
+resource_name = "check_pos_7"
+length = 4.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.6, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.40840703), Vector3(0, 0, -0.26005405), Vector3(0, 0, -0.39095375), Vector3(0, 0, -0.3211406)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"miss", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"miss"],
+"method": &"play_oneshot_animation"
+}, {
+"args": [],
+"method": &"send_chest"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_m41ng"]
+resource_name = "check_pos_8"
+length = 5.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.6, 2.1, 2.6, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.4712389), Vector3(0, 0, -0.31415927), Vector3(0, 0, -0.43633232), Vector3(0, 0, -0.34906584), Vector3(0, 0, -0.43633232), Vector3(0, 0, -0.40142572)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"miss", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"miss"],
+"method": &"play_oneshot_animation"
+}, {
+"args": [],
+"method": &"send_chest"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_d6nuu"]
+resource_name = "check_pos_9"
+length = 3.0000000000000004
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.61784655)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"miss", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.6, 2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"miss"],
+"method": &"play_oneshot_animation"
+}, {
+"args": [],
+"method": &"send_chest"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_reudr"]
+resource_name = "weight_return"
+length = 1.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WeightPlatform2/Coinbox:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(10.69, -2.252, 3.69), Vector3(7.38, 5.563, 1.22), Vector3(0.675, 5.563, 0.07)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WeightPlatform2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.44680429)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WeightPlatform2/Coinbox:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.6981317, 0), Vector3(0, -0.6981317, 0), Vector3(0, 0, 0)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.05, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"unparent"
+}, {
+"args": [],
+"method": &"check_win_condition"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ww35w"]
+resource_name = "weight_toss"
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.6335545), Vector3(0, 0, -0.65449846), Vector3(0, 0, 0.44680429)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WeightPlatform2/Coinbox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.3, 1.5, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.67484075, 1.2931433, 0), Vector3(0.67484075, 1.2931433, 0), Vector3(0.675, 14.168, 0), Vector3(0.675, 14.168, 0), Vector3(10.69, 14.168, 3.69)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WeightPlatform2/Coinbox:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.3, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(8.737094e-09, -0.69813174, 1.6783803e-08)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"catch_chest"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ux06r"]
+_data = {
+&"RESET": SubResource("Animation_u0ckp"),
+&"check_pos_0": SubResource("Animation_rxhfp"),
+&"check_pos_1": SubResource("Animation_dfnbo"),
+&"check_pos_2": SubResource("Animation_veltv"),
+&"check_pos_3": SubResource("Animation_jdhy2"),
+&"check_pos_4": SubResource("Animation_y508n"),
+&"check_pos_5": SubResource("Animation_2aidk"),
+&"check_pos_6": SubResource("Animation_37cca"),
+&"check_pos_7": SubResource("Animation_7uwec"),
+&"check_pos_8": SubResource("Animation_m41ng"),
+&"check_pos_9": SubResource("Animation_d6nuu"),
+&"weight_return": SubResource("Animation_reudr"),
+&"weight_toss": SubResource("Animation_ww35w")
 }
 
 [node name="Game" type="Node3D" unique_id=1617478877]
@@ -192,6 +913,9 @@ player_index = 2
 [node name="Environment" parent="Minigame/SplitscreenLayout/GridContainer/Player4/SubViewport" parent_id_path=PackedInt32Array(600998337, 331751543) index="0" unique_id=767816148 instance=ExtResource("4_3m1b2")]
 player_index = 3
 
+[node name="ResultsLocation" parent="Minigame" index="4" unique_id=1428872605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.380047)
+
 [node name="Time" parent="." unique_id=2069576343 instance=ExtResource("4_tq27j")]
 anchors_preset = 5
 anchor_left = 0.5
@@ -202,15 +926,69 @@ grow_horizontal = 2
 max_game_time = 0
 
 [node name="ResultsCamera" type="Camera3D" parent="." unique_id=1979176524]
-transform = Transform3D(0.9848078, -0.015134436, 0.17298739, 2.2265005e-09, 0.9961947, 0.08715574, -0.17364818, -0.08583164, 0.98106027, 10, 14, 50)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1531372, 8.381367, 47.296143)
 fov = 50.0
 far = 8000.0
 
 [node name="IntroAnimator" type="AnimationPlayer" parent="." unique_id=200020328]
 libraries/ = SubResource("AnimationLibrary_57gj3")
 
+[node name="Environment" parent="." unique_id=1874643034 instance=ExtResource("6_57gj3")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=1677628122]
+environment = SubResource("Environment_57gj3")
+
+[node name="Weight" type="Node3D" parent="Environment" unique_id=2145442614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
+
+[node name="WeightAnimator" type="AnimationPlayer" parent="Environment/Weight" unique_id=459515874]
+root_node = NodePath("../WeightArm")
+libraries/ = SubResource("AnimationLibrary_ux06r")
+next/check_pos_0 = &"weight_toss"
+next/check_pos_1 = &"weight_toss"
+
+[node name="WeightBase" parent="Environment/Weight" unique_id=1775767881 instance=ExtResource("7_lyv4e")]
+
+[node name="WeightArm" parent="Environment/Weight" unique_id=819639739 instance=ExtResource("8_bka54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
+
+[node name="WeightPlatform1" parent="Environment/Weight/WeightArm" unique_id=1597287532 instance=ExtResource("9_w447x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
+
+[node name="Lamp" parent="Environment/Weight/WeightArm/WeightPlatform1" unique_id=261073164 instance=ExtResource("10_hx7b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+
+[node name="WeightPlatform2" parent="Environment/Weight/WeightArm" unique_id=664049201 instance=ExtResource("11_b43ym")]
+transform = Transform3D(0.9023711, 0.4323438, 0, -0.4323438, 0.9023711, 0, 0, 0, 1, 11.012687, 0.0023555756, 0)
+
+[node name="Coinbox" parent="Environment/Weight/WeightArm/WeightPlatform2" unique_id=914463371 instance=ExtResource("12_nd1v0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67484075, 1.2931433, 0)
+
+[node name="Coins1" parent="Environment/Weight/WeightArm/WeightPlatform2/Coinbox" index="1" unique_id=536119459]
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Coins2" parent="Environment/Weight/WeightArm/WeightPlatform2/Coinbox" index="2" unique_id=328089971]
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Coins3" parent="Environment/Weight/WeightArm/WeightPlatform2/Coinbox" index="3" unique_id=35805179]
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Coins4" parent="Environment/Weight/WeightArm/WeightPlatform2/Coinbox" index="4" unique_id=277116245]
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Coins5" parent="Environment/Weight/WeightArm/WeightPlatform2/Coinbox" index="5" unique_id=1653406175]
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="ParticleFloor" type="GPUParticlesCollisionBox3D" parent="Environment/Weight/WeightArm/WeightPlatform2/Coinbox" unique_id=522246271]
+transform = Transform3D(0.9999742, 4.8851295e-15, 2.9801553e-08, 1.083563e-13, 0.9999742, -8.881555e-16, 2.9802322e-08, -8.881784e-16, 1, -0.05412793, 0.08861828, -0.058433533)
+size = Vector3(6.0905075, 1.1394424, 5.5431304)
+
+[node name="CoinboxOffset" type="Node3D" parent="Environment/Weight/WeightArm/WeightPlatform2" unique_id=598613848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67484075, 1.2931433, 0)
+
 [editable path="Minigame"]
 [editable path="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment"]
 [editable path="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm/WeightPlatform2/Coinbox"]
 [editable path="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Sonic"]
 [editable path="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Sonic/Sonic"]
+[editable path="Environment/Weight/WeightArm/WeightPlatform2/Coinbox"]

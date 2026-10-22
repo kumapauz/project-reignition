@@ -12,6 +12,7 @@ extends PartyGameCharacterSpawner
 @export var weight_animator: AnimationPlayer
 @export var hand_attachment: BoneAttachment3D
 @export var debug_label: Label3D
+@export var weight_label: Label
 @export var coin_reduction_timer: Timer
 
 var zeroout_hands: bool = false
@@ -22,7 +23,6 @@ var can_pour : bool
 ##The current number of coins in the bucket
 var num_coins: int
 var current_input: float
-var tween : Tween
 
 const ANIM_LIST : PackedStringArray = [
 	"19-catch",
@@ -60,7 +60,6 @@ func on_spawn_finished() -> void:
 	num_coins = 0
 	hand_attachment.reparent(character_animator.skeleton)
 	MinigameManager.instance.gameplay_started.connect(Callable(self, "send_chest"))
-	print("WAITING!")
 	animation_tree.set(HOLD_TRANSITION, WAIT_ANIM)
 
 	cursor.position = camera.get_viewport().get_visible_rect().size / 2
@@ -70,13 +69,14 @@ func on_spawn_finished() -> void:
 	else:
 		set_coins_stage(0)
 
-#func on_minigame_finished() -> void:
-
+func on_minigame_finished() -> void:
+	coin_box.visible = false
 
 func _physics_process(_delta: float) -> void:
 	if is_demo_complete:
 		if can_pour:
 			process_inputs()
+			
 			if current_input > 0:
 			
 				if current_input > 0.5 && coin_particles_player.amount != PARTICLE_HARD:
@@ -92,6 +92,8 @@ func _physics_process(_delta: float) -> void:
 				if coin_reduction_timer.is_stopped():
 					coin_reduction_timer.start()
 
+				cpu_check_coins()
+
 			else:
 				coin_reduction_timer.stop()
 				if coin_particles_player.emitting != false:
@@ -101,6 +103,10 @@ func _physics_process(_delta: float) -> void:
 
 func process_inputs() -> void:
 	current_input = max(get_vertical_input(), 0)
+
+	if is_cpu():
+		current_input = 0.85
+		print("Current Input: " + str(current_input))
 	if !is_cpu() && Input.is_action_just_pressed("button_primary%s" % get_input_suffix()):
 		throw_chest() # TODO Make this work with netplay
 
@@ -119,26 +125,39 @@ func complete_demo() -> void:
 		var start_callable : Callable = Callable.create(MinigameManager.instance, "request_minigame_start")
 		get_tree().create_timer(1).timeout.connect(start_callable)
 
-#Have the player catch the chest
+##Have the player catch the chest
 func catch_chest() -> void:
 	set_zero(true)
 	coin_box.reparent(hand_attachment)
 	play_oneshot_animation(CATCH_ANIM)
-	print("HOLDING!")
 	animation_tree.set(HOLD_TRANSITION, HOLD_ANIM)
 	await get_tree().create_timer(1.2).timeout
 	set_can_pour(true)
 
-#Have the player return the chest to the weight
+##Have the player return the chest to the weight
 func throw_chest() -> void:
+	var weight_num : int
+
+	weight_num = num_coins - 50
+
+	if weight_num > 0:
+		weight_label.text = "+" + str(weight_num) + "minigame_19_weight"
+	else:
+		weight_label.text = str(weight_num) + "minigame_19_weight"
+
+
+
+	cpu_num_mistakes -= 1
+	cpu_num_mistakes = clampi(cpu_num_mistakes, 0, 5)
+	cpu_choose_coins()
+
 	coin_particles_player.emitting = false
 	weight_animator.play("weight_return")
 	set_can_pour(false)
 	play_oneshot_animation(RETURN_ANIM)
-	print("WAITING!")
 	animation_tree.set(HOLD_TRANSITION, WAIT_ANIM)
 
-#Send the chest from the weight to the player
+##Send the chest from the weight to the player
 func send_chest() -> void:
 	
 	if num_coins < COINS_TO_REACH:
@@ -161,13 +180,16 @@ func send_chest() -> void:
 		num_coins = COINS_TO_START
 	weight_animator.play("weight_toss")
 
+##Checks if the player has the right amount of weight
 func check_win_condition() -> void:
 	if is_demo_complete:
 		weight_animator.play(get_bucket_weight_anim())
 
+##Unparents from the player and re-parents to the weight
 func unparent() -> void:
 	print("Unparenting")
 	coin_box.reparent(coinbox_offset)
+
 	
 func zero_hands() -> void:
 	coin_box.position = Vector3.ZERO
@@ -221,23 +243,23 @@ func check_coins_stage() -> int:
 ##Determines which weight animation should play
 func get_bucket_weight_anim() -> String:
 
-	if num_coins <= 10:
+	if num_coins <= 15:
 		return "check_pos_0"
-	elif num_coins > 10 && num_coins <= 20:
+	elif num_coins > 15 && num_coins <= 25:
 		return "check_pos_1"
-	elif num_coins > 20 && num_coins <= 30:
+	elif num_coins > 25 && num_coins <= 35:
 		return "check_pos_2"
-	elif num_coins > 30 && num_coins <= 40:
+	elif num_coins > 35 && num_coins <= 45:
 		return "check_pos_3"
-	elif num_coins > 40 && num_coins <= 50:
+	elif num_coins > 45 && num_coins <= 55:
 		return "check_pos_4"
-	elif num_coins > 50 && num_coins <= 60:
+	elif num_coins > 55 && num_coins <= 65:
 		return "check_pos_5"
-	elif num_coins > 60 && num_coins <= 70:
+	elif num_coins > 65 && num_coins <= 75:
 		return "check_pos_6"
-	elif num_coins > 70 && num_coins <= 80:
+	elif num_coins > 75 && num_coins <= 85:
 		return "check_pos_7"
-	elif num_coins > 80 && num_coins <= 90:
+	elif num_coins > 85 && num_coins <= 95:
 		return "check_pos_8"
 	
 	
@@ -245,8 +267,6 @@ func get_bucket_weight_anim() -> String:
 
 
 func _on_coin_reduction_timer_timeout() -> void:
-	print("Timer Triggered!")
-
 	num_coins -= 1
 	num_coins = clampi(num_coins, 0, 100)
 	set_coins_stage(check_coins_stage())
@@ -261,6 +281,8 @@ func finish_minigame() -> void:
 		MinigameManager.instance.request_score_change(player_index, 1)
 		MinigameManager.instance.request_minigame_finish()
 	
+func process_animation() -> void:
+	animation_tree.set(TILT_BLEND, current_input)
 
 #####################
 ### ROLLBACK CODE ###
@@ -274,5 +296,43 @@ func process_rollback() -> void:
 	rollback_timer.set_param(RB_INPUT, current_input)
 	rollback_timer.process_rollback()
 
-func process_animation() -> void:
-	animation_tree.set(TILT_BLEND, current_input)
+################
+### CPU CODE ###
+################
+
+var cpu_num_mistakes : int
+var cpu_num_coins : int
+
+##How many mistakes can a CPU make before getting the right answer?
+func cpu_decide_mistakes() -> int:
+	match get_cpu_difficulty():
+		PlayerData.CPU_DIFFICULTY_ENUM.EASY:
+			return 4
+		PlayerData.CPU_DIFFICULTY_ENUM.NORMAL:
+			return 3
+		PlayerData.CPU_DIFFICULTY_ENUM.HARD:
+			return 2
+		PlayerData.CPU_DIFFICULTY_ENUM.EXTREME:
+			return 1
+	return 0
+
+
+func cpu_check_coins() -> void:
+	if is_cpu:
+		if num_coins == cpu_num_coins:
+			throw_chest()
+
+
+func cpu_choose_coins() -> int:
+	if cpu_num_mistakes == 0:
+		return 45
+	
+	return randi_range(0,100)
+
+func cpu_tilt() -> void:
+	print("CPU POURING")
+	current_input = 0.85
+
+
+
+
