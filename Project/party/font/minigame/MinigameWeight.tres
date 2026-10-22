@@ -1,0 +1,15 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://bjxiy4o5vnnv3"]
+
+[ext_resource type="FontFile" uid="uid://ojverkh50iud" path="res://interface/font/otf/AureZerithaCJ-Bold.otf" id="1_v73md"]
+
+[resource]
+font = ExtResource("1_v73md")
+font_size = 79
+font_color = Color(0.6783516, 0.00034663768, 0.678347, 1)
+outline_size = 8
+outline_color = Color(0.9254902, 0.9137255, 0.47058824, 1)
+shadow_size = 14
+shadow_color = Color(0, 0, 0, 1)
+stacked_outline_count = 1
+stacked_outline_0/size = 3
+stacked_outline_0/color = Color(1, 1, 1, 1)

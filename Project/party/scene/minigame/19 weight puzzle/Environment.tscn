@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://ccidyn8ex5ilp" path="res://party/scene/minigame/17 pitch black/texture/correct.png" id="14_7uwec"]
 [ext_resource type="Texture2D" uid="uid://ryqut2of0q0p" path="res://party/scene/minigame/17 pitch black/texture/correct_shine.png" id="15_m41ng"]
 [ext_resource type="Texture2D" uid="uid://bl2ndecj6hqtk" path="res://party/scene/minigame/17 pitch black/texture/incorrect.png" id="16_d6nuu"]
-[ext_resource type="LabelSettings" uid="uid://bky8u6vd6t367" path="res://party/font/minigame/MinigameWeightScore.tres" id="17_m41ng"]
+[ext_resource type="LabelSettings" uid="uid://bjxiy4o5vnnv3" path="res://party/font/minigame/MinigameWeight.tres" id="17_m41ng"]
 
 [sub_resource type="Environment" id="Environment_skywb"]
 background_mode = 1
