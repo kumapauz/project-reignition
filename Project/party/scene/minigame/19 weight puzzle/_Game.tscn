@@ -904,6 +904,9 @@ size = Vector2i(960, 540)
 [node name="WeightPlatform2" parent="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm" parent_id_path=PackedInt32Array(1529352227, 1052711281) index="2" unique_id=1349553688]
 transform = Transform3D(0.90231824, 0.43231848, 0, -0.43231848, 0.90231824, 0, 0, 0, 1, 11.011632, 0.0022878647, 0)
 
+[node name="AnimationPlayer" parent="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Sonic/Sonic" parent_id_path=PackedInt32Array(1529352227, 731316033, 206978815) index="1" unique_id=446230404]
+blend_times = [&"_Library/19-catch", &"_Library/19-lift-wait", 0.1, &"_Library/19-return", &"_CommonLibrary/wait", 0.1]
+
 [node name="Environment" parent="Minigame/SplitscreenLayout/GridContainer/Player2/SubViewport" parent_id_path=PackedInt32Array(600998337, 1764725787) index="0" unique_id=1247750040 instance=ExtResource("4_3m1b2")]
 player_index = 1
 
@@ -988,7 +991,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67484075, 1.2931433, 0)
 
 [editable path="Minigame"]
 [editable path="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment"]
-[editable path="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm/WeightPlatform2/Coinbox"]
+[editable path="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm/WeightPlatform2/CoinboxOffset/Coinbox"]
 [editable path="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Sonic"]
 [editable path="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Sonic/Sonic"]
 [editable path="Environment/Weight/WeightArm/WeightPlatform2/Coinbox"]

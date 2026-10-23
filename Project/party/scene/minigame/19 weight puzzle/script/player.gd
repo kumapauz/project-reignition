@@ -102,11 +102,12 @@ func _physics_process(_delta: float) -> void:
 			current_input = 0.0
 
 func process_inputs() -> void:
+	if is_cpu():
+		process_cpu_input()
+		return
+
 	current_input = max(get_vertical_input(), 0)
 
-	if is_cpu():
-		current_input = 0.85
-		print("Current Input: " + str(current_input))
 	if !is_cpu() && Input.is_action_just_pressed("button_primary%s" % get_input_suffix()):
 		throw_chest() # TODO Make this work with netplay
 
@@ -303,6 +304,9 @@ func process_rollback() -> void:
 var cpu_num_mistakes : int
 var cpu_num_coins : int
 
+func process_cpu_input() -> void:
+	current_input = 0.85
+
 ##How many mistakes can a CPU make before getting the right answer?
 func cpu_decide_mistakes() -> int:
 	match get_cpu_difficulty():
@@ -329,9 +333,7 @@ func cpu_choose_coins() -> int:
 	
 	return randi_range(0,100)
 
-func cpu_tilt() -> void:
-	print("CPU POURING")
-	current_input = 0.85
+	
 
 
 
