@@ -50,7 +50,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.67484075, 1.2931433, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -764,7 +764,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1.2, 1.3, 1.5, 1.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.67484075, 1.2931433, 0), Vector3(0.67484075, 1.2931433, 0), Vector3(0.675, 14.168, 0), Vector3(0.675, 14.168, 0), Vector3(10.69, 14.168, 3.69)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.675, 14.168, 0), Vector3(0.675, 14.168, 0), Vector3(10.69, 14.168, 3.69)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1248,7 +1248,7 @@ _data = {
 &"show": SubResource("Animation_27r3w")
 }
 
-[node name="Environment" type="Node3D" unique_id=1522425192 node_paths=PackedStringArray("camera", "cursor", "coin_box", "coin_meshes", "coin_particles", "coin_particles_player", "weight_platform2", "coinbox_offset", "weight_animator", "hand_attachment", "debug_label", "weight_label", "coin_reduction_timer", "rollback_timer", "spawn_position", "animation_tree")]
+[node name="Environment" type="Node3D" unique_id=1522425192 node_paths=PackedStringArray("camera", "cursor", "coin_box", "coin_meshes", "coin_particles", "coin_particles_player", "weight_platform2", "coinbox_offset", "weight_animator", "hand_attachment", "debug_label", "weight_label", "coin_reduction_timer", "rollback_timer", "cpu_pause_timer", "spawn_position", "animation_tree")]
 script = ExtResource("1_skywb")
 camera = NodePath("GameCamera")
 cursor = NodePath("Cursor")
@@ -1264,8 +1264,11 @@ debug_label = NodePath("Debug")
 weight_label = NodePath("WeightLabel")
 coin_reduction_timer = NodePath("CoinReductionTimer")
 rollback_timer = NodePath("Rollback")
+cpu_pause_timer = NodePath("")
+player_index = null
 spawn_position = NodePath("CharacterPosition")
 animation_tree = NodePath("AnimationTree")
+deactivate_on_gameplay_finished = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=162862610]
 environment = SubResource("Environment_skywb")
@@ -1293,13 +1296,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 
 [node name="WeightPlatform2" parent="Weight/WeightArm" unique_id=1349553688 instance=ExtResource("7_rxhfp")]
-transform = Transform3D(0.9023667, 0.4323417, 0, -0.4323417, 0.9023667, 0, 0, 0, 1, 11.01291, 0.002448082, 0)
+transform = Transform3D(0.902372, 0.43234423, 0, -0.43234423, 0.902372, 0, 0, 0, 1, 11.012856, 0.0024986267, 0)
 
 [node name="CoinboxOffset" type="Node3D" parent="Weight/WeightArm/WeightPlatform2" unique_id=510407390]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67484075, 1.2931433, 0)
 
 [node name="Coinbox" parent="Weight/WeightArm/WeightPlatform2/CoinboxOffset" unique_id=1117549296 instance=ExtResource("8_dfnbo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67484075, 1.2931433, 0)
 
 [node name="Coins1" parent="Weight/WeightArm/WeightPlatform2/CoinboxOffset/Coinbox" index="1" unique_id=536119459]
 transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
@@ -1352,7 +1354,7 @@ text = "00"
 font_size = 773
 
 [node name="Coins" type="GPUParticles3D" parent="." unique_id=1009120334]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2262714, 22.871134, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24450481, 22.871134, 0)
 emitting = false
 amount = 100
 lifetime = 2.3

@@ -36,7 +36,7 @@ const ANIM_LIST : PackedStringArray = [
 const COINS_TO_START: int = 100
 ## The amount of coins needed to win the minigame
 const COINS_TO_REACH: int = 50
-const COINS_TIMER_SPEED_SOFT : float = 0.3
+const COINS_TIMER_SPEED_SOFT : float = 0.2
 const COINS_TIMER_SPEED_HARD : float = 0.1
 ## The amount of coin particles to pour out
 const PARTICLE_SOFT: int = 12
@@ -57,12 +57,18 @@ func on_spawn_finished() -> void:
 	rollback_timer.register_target(self)
 	initialize_animation_tree(get_anim_prefix(), ANIM_LIST)
 	
-	num_coins = 0
+	
 	hand_attachment.reparent(character_animator.skeleton)
 	MinigameManager.instance.gameplay_started.connect(Callable(self, "send_chest"))
 	animation_tree.set(HOLD_TRANSITION, WAIT_ANIM)
 
 	cursor.position = camera.get_viewport().get_visible_rect().size / 2
+
+	cpu_num_mistakes = cpu_decide_mistakes()
+	num_coins = 100
+	cpu_choose_coins()
+	
+	print("Num coins to reach: " + str(cpu_num_coins))
 
 	if player_index == 0:
 		set_coins_stage(5)
@@ -92,7 +98,8 @@ func _physics_process(_delta: float) -> void:
 				if coin_reduction_timer.is_stopped():
 					coin_reduction_timer.start()
 
-				cpu_check_coins()
+				if is_cpu():
+					cpu_check_coins()
 
 			else:
 				coin_reduction_timer.stop()
@@ -119,12 +126,16 @@ func _process(_delta: float) -> void:
 	
 func complete_demo() -> void:
 	current_input = 0
-	is_demo_complete = true
+	set_demo_complete()
 	set_physics_process(true)
 
 	if is_minigame_host():
 		var start_callable : Callable = Callable.create(MinigameManager.instance, "request_minigame_start")
 		get_tree().create_timer(1).timeout.connect(start_callable)
+
+func set_demo_complete() -> void:
+	is_demo_complete = true
+	num_coins = 0
 
 ##Have the player catch the chest
 func catch_chest() -> void:
@@ -137,6 +148,7 @@ func catch_chest() -> void:
 
 ##Have the player return the chest to the weight
 func throw_chest() -> void:
+	
 	var weight_num : int
 
 	weight_num = num_coins - 50
@@ -146,15 +158,17 @@ func throw_chest() -> void:
 	else:
 		weight_label.text = str(weight_num) + "minigame_19_weight"
 
+	set_can_pour(false)
+	current_input = 0
+	coin_reduction_timer.stop()
 
-
+	cpu_current_mistakes += 1
 	cpu_num_mistakes -= 1
 	cpu_num_mistakes = clampi(cpu_num_mistakes, 0, 5)
-	cpu_choose_coins()
 
 	coin_particles_player.emitting = false
 	weight_animator.play("weight_return")
-	set_can_pour(false)
+	
 	play_oneshot_animation(RETURN_ANIM)
 	animation_tree.set(HOLD_TRANSITION, WAIT_ANIM)
 
@@ -179,6 +193,8 @@ func send_chest() -> void:
 	
 		coin_particles.emitting = false
 		num_coins = COINS_TO_START
+		
+	cpu_choose_coins()
 	weight_animator.play("weight_toss")
 
 ##Checks if the player has the right amount of weight
@@ -301,40 +317,57 @@ func process_rollback() -> void:
 ### CPU CODE ###
 ################
 
+var cpu_choose_min : int = 20
+##How many mistakes can the CPU make before getting the right answer
 var cpu_num_mistakes : int
+var cpu_current_mistakes : int = 0
+##The number of coins the CPU should reach before tossing the weight
 var cpu_num_coins : int
+##The amount of coins the CPU should pause at
+var cpu_coins_pause_amount : int
 
 func process_cpu_input() -> void:
-	current_input = 0.85
+	if num_coins > cpu_num_coins + 15:
+		current_input = 0.85
+	else:
+		current_input = 0.35
+
 
 ##How many mistakes can a CPU make before getting the right answer?
 func cpu_decide_mistakes() -> int:
 	match get_cpu_difficulty():
 		PlayerData.CPU_DIFFICULTY_ENUM.EASY:
-			return 4
+			return 5
 		PlayerData.CPU_DIFFICULTY_ENUM.NORMAL:
-			return 3
+			return 4
 		PlayerData.CPU_DIFFICULTY_ENUM.HARD:
-			return 2
+			return 3
 		PlayerData.CPU_DIFFICULTY_ENUM.EXTREME:
-			return 1
+			return 2
 	return 0
 
 
 func cpu_check_coins() -> void:
 	if is_cpu:
 		if num_coins == cpu_num_coins:
+			current_input = 0
+			can_pour = false
+			await get_tree().create_timer(0.5).timeout
 			throw_chest()
 
 
-func cpu_choose_coins() -> int:
+func cpu_choose_coins() -> void:
 	if cpu_num_mistakes == 0:
-		return 45
+		cpu_num_coins = COINS_TO_REACH
 	
-	return randi_range(0,100)
+	cpu_num_coins = randi_range(cpu_choose_min, num_coins)
+
+	#If the CPU is not in extreme difficulty and has no mistakes, make sure the coins they choose aren't in the correct threshold 
+	if get_cpu_difficulty() != PlayerData.CPU_DIFFICULTY_ENUM.EXTREME && cpu_current_mistakes == 0:
+		while cpu_num_coins > 45 && cpu_num_coins <= 55:
+			cpu_num_coins = randi_range(cpu_choose_min,num_coins)
+
+
+
 
 	
-
-
-
-

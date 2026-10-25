@@ -30,50 +30,50 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm/WeightPlatform2/Coinbox/Coins1:visible")
+tracks/1/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/GameCamera:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector3(5.53526, 11.948437, 29.323446)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm/WeightPlatform2/Coinbox/Coins2:visible")
+tracks/2/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/GameCamera:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector3(0, 0, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/GameCamera:position")
+tracks/3/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm/WeightPlatform2/CoinboxOffset/Coinbox/Coins1:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(5.53526, 11.948437, 29.323446)]
+"update": 1,
+"values": [true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/GameCamera:rotation")
+tracks/4/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm/WeightPlatform2/CoinboxOffset/Coinbox/Coins2:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_3m1b2"]
@@ -151,37 +151,13 @@ tracks/4/keys = {
 "update": 1,
 "values": [true, false]
 }
-tracks/5/type = "value"
+tracks/5/type = "method"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm/WeightPlatform2/Coinbox/Coins1:visible")
+tracks/5/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Cursor/AnimationPlayer")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(4.5),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm/WeightPlatform2/Coinbox/Coins2:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(5.5),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/7/type = "method"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Cursor/AnimationPlayer")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
 "times": PackedFloat32Array(12.25),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -189,29 +165,95 @@ tracks/7/keys = {
 "method": &"play"
 }]
 }
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/GameCamera:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/GameCamera:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.6, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(5.535, 11.948, 78.303), Vector3(5.535, 11.948, 78.303), Vector3(5.53526, 11.948437, 29.323446)]
 }
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/GameCamera:rotation")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/GameCamera:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.6, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0.18325958, 0), Vector3(0, 0.18325958, 0), Vector3(0, 0, 0)]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player2/SubViewport/Environment")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(13),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"set_demo_complete"
+}]
+}
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player3/SubViewport/Environment")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(13),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"set_demo_complete"
+}]
+}
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player4/SubViewport/Environment")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(13),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"set_demo_complete"
+}]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm/WeightPlatform2/CoinboxOffset/Coinbox/Coins1:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(4.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm/WeightPlatform2/CoinboxOffset/Coinbox/Coins2:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(5.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_57gj3"]
@@ -900,6 +942,8 @@ intro_animator = NodePath("../IntroAnimator")
 size = Vector2i(960, 540)
 
 [node name="Environment" parent="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport" index="0" unique_id=1529352227 instance=ExtResource("4_3m1b2")]
+player_index = 0
+deactivate_on_gameplay_finished = true
 
 [node name="WeightPlatform2" parent="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm" parent_id_path=PackedInt32Array(1529352227, 1052711281) index="2" unique_id=1349553688]
 transform = Transform3D(0.90231824, 0.43231848, 0, -0.43231848, 0.90231824, 0, 0, 0, 1, 11.011632, 0.0022878647, 0)
@@ -909,12 +953,15 @@ blend_times = [&"_Library/19-catch", &"_Library/19-lift-wait", 0.1, &"_Library/1
 
 [node name="Environment" parent="Minigame/SplitscreenLayout/GridContainer/Player2/SubViewport" parent_id_path=PackedInt32Array(600998337, 1764725787) index="0" unique_id=1247750040 instance=ExtResource("4_3m1b2")]
 player_index = 1
+deactivate_on_gameplay_finished = true
 
 [node name="Environment" parent="Minigame/SplitscreenLayout/GridContainer/Player3/SubViewport" parent_id_path=PackedInt32Array(600998337, 274842913) index="0" unique_id=288766998 instance=ExtResource("4_3m1b2")]
 player_index = 2
+deactivate_on_gameplay_finished = true
 
 [node name="Environment" parent="Minigame/SplitscreenLayout/GridContainer/Player4/SubViewport" parent_id_path=PackedInt32Array(600998337, 331751543) index="0" unique_id=767816148 instance=ExtResource("4_3m1b2")]
 player_index = 3
+deactivate_on_gameplay_finished = true
 
 [node name="ResultsLocation" parent="Minigame" index="4" unique_id=1428872605]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.380047)
