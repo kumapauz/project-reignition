@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cxcxjufumk3h5" path="res://party/scene/minigame/19 weight puzzle/model/Lamp.glb" id="10_hx7b7"]
 [ext_resource type="PackedScene" uid="uid://dwknauxes8he1" path="res://party/scene/minigame/19 weight puzzle/weight_platform.tscn" id="11_b43ym"]
 [ext_resource type="PackedScene" uid="uid://c6mwbbp0daim1" path="res://party/scene/minigame/19 weight puzzle/model/Coinbox.glb" id="12_nd1v0"]
+[ext_resource type="Resource" uid="uid://b51ccttsaeaas" path="res://party/resource/bgm/Minigame2.tres" id="14_hx7b7"]
 
 [sub_resource type="Animation" id="Animation_57gj3"]
 length = 0.001
@@ -74,6 +75,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm/WeightPlatform2/CoinboxOffset/Coinbox/Sparkles:emitting")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_3m1b2"]
@@ -254,6 +267,35 @@ tracks/12/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm/WeightPlatform2/CoinboxOffset/Coinbox/Sparkles:emitting")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(3.5, 7.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/14/type = "method"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/SFX/CoinSpill")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(3.5, 7),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_in_group"
+}, {
+"args": [],
+"method": &"stop_in_group"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_57gj3"]
@@ -942,29 +984,27 @@ intro_animator = NodePath("../IntroAnimator")
 size = Vector2i(960, 540)
 
 [node name="Environment" parent="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport" index="0" unique_id=1529352227 instance=ExtResource("4_3m1b2")]
-player_index = 0
-deactivate_on_gameplay_finished = true
 
 [node name="WeightPlatform2" parent="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Weight/WeightArm" parent_id_path=PackedInt32Array(1529352227, 1052711281) index="2" unique_id=1349553688]
 transform = Transform3D(0.90231824, 0.43231848, 0, -0.43231848, 0.90231824, 0, 0, 0, 1, 11.011632, 0.0022878647, 0)
 
-[node name="AnimationPlayer" parent="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Sonic/Sonic" parent_id_path=PackedInt32Array(1529352227, 731316033, 206978815) index="1" unique_id=446230404]
-blend_times = [&"_Library/19-catch", &"_Library/19-lift-wait", 0.1, &"_Library/19-return", &"_CommonLibrary/wait", 0.1]
+[node name="GeneralSkeleton" parent="Minigame/SplitscreenLayout/GridContainer/Player1/SubViewport/Environment/Sonic/Sonic/CharacterRoot" parent_id_path=PackedInt32Array(1529352227, 731316033, 206978815, 263967807) index="0" unique_id=1169989668]
+bones/67/rotation = Quaternion(0.6344744, -0.6344744, 0.31215754, 0.3121575)
 
 [node name="Environment" parent="Minigame/SplitscreenLayout/GridContainer/Player2/SubViewport" parent_id_path=PackedInt32Array(600998337, 1764725787) index="0" unique_id=1247750040 instance=ExtResource("4_3m1b2")]
 player_index = 1
-deactivate_on_gameplay_finished = true
 
 [node name="Environment" parent="Minigame/SplitscreenLayout/GridContainer/Player3/SubViewport" parent_id_path=PackedInt32Array(600998337, 274842913) index="0" unique_id=288766998 instance=ExtResource("4_3m1b2")]
 player_index = 2
-deactivate_on_gameplay_finished = true
 
 [node name="Environment" parent="Minigame/SplitscreenLayout/GridContainer/Player4/SubViewport" parent_id_path=PackedInt32Array(600998337, 331751543) index="0" unique_id=767816148 instance=ExtResource("4_3m1b2")]
 player_index = 3
-deactivate_on_gameplay_finished = true
 
 [node name="ResultsLocation" parent="Minigame" index="4" unique_id=1428872605]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.380047)
+
+[node name="BGM" parent="Minigame" index="6" unique_id=1105249761]
+bgmResource = ExtResource("14_hx7b7")
 
 [node name="Time" parent="." unique_id=2069576343 instance=ExtResource("4_tq27j")]
 anchors_preset = 5

@@ -7,6 +7,7 @@ extends PartyGameCharacterSpawner
 @export var coin_meshes: Array[Node3D]
 @export var coin_particles: GPUParticles3D
 @export var coin_particles_player : GPUParticles3D
+@export var coin_sparkles : GPUParticles3D
 @export var weight_platform2: Node3D
 @export var coinbox_offset: Node3D
 @export var weight_animator: AnimationPlayer
@@ -14,6 +15,9 @@ extends PartyGameCharacterSpawner
 @export var debug_label: Label3D
 @export var weight_label: Label
 @export var coin_reduction_timer: Timer
+
+@export var sfx_weight_catch : GroupSfxPlayer
+@export var sfx_coins_pour : GroupSfxPlayer 
 
 var zeroout_hands: bool = false
 
@@ -60,6 +64,7 @@ func on_spawn_finished() -> void:
 	
 	hand_attachment.reparent(character_animator.skeleton)
 	MinigameManager.instance.gameplay_started.connect(Callable(self, "send_chest"))
+	MinigameManager.instance.minigame_finished.connect(Callable(self, "deactivate"))
 	animation_tree.set(HOLD_TRANSITION, WAIT_ANIM)
 
 	cursor.position = camera.get_viewport().get_visible_rect().size / 2
@@ -78,6 +83,14 @@ func on_spawn_finished() -> void:
 func on_minigame_finished() -> void:
 	coin_box.visible = false
 
+func deactivate() -> void:
+	print("DEACTIVATING PLAYER " + str(player_index))
+	weight_animator.stop()
+	sfx_coins_pour.stop_in_group()
+	sfx_weight_catch.stop_in_group()
+	current_input = 0
+	can_pour = false
+
 func _physics_process(_delta: float) -> void:
 	if is_demo_complete:
 		if can_pour:
@@ -85,12 +98,17 @@ func _physics_process(_delta: float) -> void:
 			
 			if current_input > 0:
 			
+				#Sets the particle and coin speed based on current stick tilt
 				if current_input > 0.5 && coin_particles_player.amount != PARTICLE_HARD:
 					coin_particles_player.amount = PARTICLE_HARD
 					coin_reduction_timer.wait_time = COINS_TIMER_SPEED_HARD
+					sfx_coins_pour.max_volume = 1
+					sfx_coins_pour.play_in_group()
 				elif current_input <= 0.5 && coin_particles_player.amount != PARTICLE_SOFT:
 					coin_particles_player.amount = PARTICLE_SOFT
 					coin_reduction_timer.wait_time = COINS_TIMER_SPEED_SOFT
+					sfx_coins_pour.max_volume = 0.5
+					sfx_coins_pour.play_in_group()
 
 				if coin_particles_player.emitting != true && num_coins != 0:
 					pour_coins_visual(true)
@@ -139,12 +157,17 @@ func set_demo_complete() -> void:
 
 ##Have the player catch the chest
 func catch_chest() -> void:
+	
 	set_zero(true)
 	coin_box.reparent(hand_attachment)
 	play_oneshot_animation(CATCH_ANIM)
+	await get_tree().create_timer(0.3).timeout
+	sfx_weight_catch.play_in_group()
 	animation_tree.set(HOLD_TRANSITION, HOLD_ANIM)
 	await get_tree().create_timer(1.2).timeout
 	set_can_pour(true)
+
+	
 
 ##Have the player return the chest to the weight
 func throw_chest() -> void:
@@ -161,12 +184,14 @@ func throw_chest() -> void:
 	set_can_pour(false)
 	current_input = 0
 	coin_reduction_timer.stop()
+	sfx_coins_pour.stop_in_group()
 
 	cpu_current_mistakes += 1
 	cpu_num_mistakes -= 1
 	cpu_num_mistakes = clampi(cpu_num_mistakes, 0, 5)
 
 	coin_particles_player.emitting = false
+	coin_sparkles.emitting = false
 	weight_animator.play("weight_return")
 	
 	play_oneshot_animation(RETURN_ANIM)
@@ -177,9 +202,10 @@ func send_chest() -> void:
 	
 	if num_coins < COINS_TO_REACH:
 		coin_particles.emitting = true
+		
 
 		await get_tree().create_timer(0.5).timeout
-
+		sfx_coins_pour.play_in_group()
 		if num_coins == 0:
 			await get_tree().create_timer(3).timeout
 		elif num_coins > 0 && num_coins <= 25:
@@ -192,6 +218,7 @@ func send_chest() -> void:
 		set_coins_stage(5)
 	
 		coin_particles.emitting = false
+		sfx_coins_pour.stop_in_group()
 		num_coins = COINS_TO_START
 		
 	cpu_choose_coins()
@@ -230,8 +257,10 @@ func set_can_pour(pour: bool):
 func pour_coins_visual(pour: bool) -> void:
 	if pour:
 		coin_particles_player.emitting = true
+		coin_sparkles.emitting = true
 	else:
 		coin_particles_player.emitting = false
+		coin_sparkles.emitting = false
 
 func set_coins_stage(stage: int) -> void:
 	for i in 5:
@@ -283,6 +312,7 @@ func get_bucket_weight_anim() -> String:
 	return "check_pos_9"
 
 
+##Reduces the player's coin amount when the timer goes off
 func _on_coin_reduction_timer_timeout() -> void:
 	num_coins -= 1
 	num_coins = clampi(num_coins, 0, 100)
@@ -294,9 +324,14 @@ func _on_coin_reduction_timer_timeout() -> void:
 	coin_reduction_timer.start()
 
 func finish_minigame() -> void:
+	if !is_multiplayer_authority():
+		return
+
 	if is_demo_complete:
+		sfx_coins_pour.stop_in_group()
 		MinigameManager.instance.request_score_change(player_index, 1)
 		MinigameManager.instance.request_minigame_finish()
+		push_warning()
 	
 func process_animation() -> void:
 	animation_tree.set(TILT_BLEND, current_input)
@@ -346,7 +381,7 @@ func cpu_decide_mistakes() -> int:
 			return 2
 	return 0
 
-
+##Checks if the CPUs coin amount is equal to their chosen coin amount, then throws the chest
 func cpu_check_coins() -> void:
 	if is_cpu:
 		if num_coins == cpu_num_coins:
@@ -355,7 +390,7 @@ func cpu_check_coins() -> void:
 			await get_tree().create_timer(0.5).timeout
 			throw_chest()
 
-
+##Randomly chooses a coin amount for the CPU to work towards
 func cpu_choose_coins() -> void:
 	if cpu_num_mistakes == 0:
 		cpu_num_coins = COINS_TO_REACH
