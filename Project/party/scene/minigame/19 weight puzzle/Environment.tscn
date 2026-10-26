@@ -7,10 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bth1sjag5olu7" path="res://party/scene/minigame/19 weight puzzle/model/WeightArm.glb" id="4_u0ckp"]
 [ext_resource type="PackedScene" uid="uid://w346b02lgpng" path="res://party/scene/minigame/19 weight puzzle/model/WeightPlatform.glb" id="5_rxhfp"]
 [ext_resource type="PackedScene" uid="uid://dwknauxes8he1" path="res://party/scene/minigame/19 weight puzzle/weight_platform.tscn" id="7_rxhfp"]
-[ext_resource type="PackedScene" uid="uid://cacdy75rk2056" path="res://party/resource/character/scene/Sonic.tscn" id="7_wnuok"]
 [ext_resource type="PackedScene" uid="uid://c6mwbbp0daim1" path="res://party/scene/minigame/19 weight puzzle/model/Coinbox.glb" id="8_dfnbo"]
-[ext_resource type="AnimationLibrary" uid="uid://td28md54xamj" path="res://party/scene/minigame/19 weight puzzle/animation/_Library.glb" id="8_u0ckp"]
-[ext_resource type="AnimationLibrary" uid="uid://dgv1hswanixsl" path="res://party/resource/character/animation/_CommonLibrary.glb" id="10_jdhy2"]
 [ext_resource type="ArrayMesh" uid="uid://dnecmn3hykli0" path="res://party/scene/minigame/19 weight puzzle/model/coin.tres" id="11_veltv"]
 [ext_resource type="Material" uid="uid://ju4tirv28jd7" path="res://party/scene/minigame/16 treasure box/material/Sparkle Particle.tres" id="13_d6nuu"]
 [ext_resource type="Script" uid="uid://ds056nimfywwr" path="res://party/script/core/rollback_timer.gd" id="13_y508n"]
@@ -1315,23 +1312,10 @@ tracks/7/keys = {
 "method": &"play_in_group"
 }]
 }
-tracks/8/type = "method"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../SFX/Wrong")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"play_in_group"
-}]
-}
 
 [sub_resource type="Animation" id="Animation_c6dsc"]
 resource_name = "miss"
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1391,6 +1375,20 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../SFX/Wrong")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_in_group"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_reudr"]
@@ -1510,7 +1508,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 
 [node name="WeightPlatform2" parent="Weight/WeightArm" unique_id=1349553688 instance=ExtResource("7_rxhfp")]
-transform = Transform3D(0.9027403, 0.4325207, 0, -0.4325207, 0.9027403, 0, 0, 0, 1, 11.012812, -0.0011196136, 0)
+transform = Transform3D(0.9027534, 0.43252698, 0, -0.43252698, 0.9027534, 0, 0, 0, 1, 11.012463, -0.0031328201, 0)
 
 [node name="CoinboxOffset" type="Node3D" parent="Weight/WeightArm/WeightPlatform2" unique_id=510407390]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67484075, 1.2931433, 0)
@@ -1559,19 +1557,6 @@ fov = 25.2
 bone_name = "hand_attachment"
 bone_idx = 89
 
-[node name="Sonic" parent="." unique_id=731316033 instance=ExtResource("7_wnuok")]
-transform = Transform3D(0.7660444, -1.8473234e-08, -0.6427876, 1.6783801e-08, 1, -8.737093e-09, 0.6427876, -4.0954187e-09, 0.7660444, -41.399227, -16.370056, 8.541508)
-
-[node name="GeneralSkeleton" parent="Sonic/Sonic/CharacterRoot" parent_id_path=PackedInt32Array(731316033, 206978815, 263967807) index="0" unique_id=1169989668]
-bones/66/rotation = Quaternion(-0.67818475, 0.20016392, -0.20016392, 0.6781847)
-bones/67/rotation = Quaternion(0.6344744, -0.6344744, 0.31215757, 0.31215742)
-bones/68/rotation = Quaternion(-0.62526655, 0.6252665, 0.33021483, 0.33021483)
-
-[node name="AnimationPlayer" parent="Sonic/Sonic" parent_id_path=PackedInt32Array(731316033, 206978815) index="1" unique_id=446230404]
-libraries/_CommonLibrary = ExtResource("10_jdhy2")
-libraries/_Library = ExtResource("8_u0ckp")
-blend_times = [&"_Library/19-catch", &"_Library/19-lift-wait", 0.1, &"_Library/19-return", &"_CommonLibrary/wait", 0.1]
-
 [node name="Debug" type="Label3D" parent="." unique_id=1931390658]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.492245, -5.9932804)
 modulate = Color(1, 1, 0, 1)
@@ -1606,9 +1591,7 @@ param_count = 1
 rollback_interval = 0.10000000000582077
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=581187547]
-root_node = NodePath("../Sonic/Sonic")
 tree_root = SubResource("AnimationNodeBlendTree_it1wb")
-anim_player = NodePath("../Sonic/Sonic/AnimationPlayer")
 parameters/tilt-blend/blend_amount = 0.0
 parameters/hold-transition/current_state = "hold"
 parameters/hold-transition/transition_request = ""
@@ -1727,5 +1710,3 @@ metadata/_custom_type_script = "uid://bkwc2atbp4cjd"
 [connection signal="timeout" from="CoinReductionTimer" to="." method="_on_coin_reduction_timer_timeout"]
 
 [editable path="Weight/WeightArm/WeightPlatform2/CoinboxOffset/Coinbox"]
-[editable path="Sonic"]
-[editable path="Sonic/Sonic"]

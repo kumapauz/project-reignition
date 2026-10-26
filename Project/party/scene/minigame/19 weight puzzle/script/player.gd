@@ -289,6 +289,7 @@ func check_coins_stage() -> int:
 ##Determines which weight animation should play
 func get_bucket_weight_anim() -> String:
 
+	print("PLAYING WIN ANIMATION FOR PLAYER: " + str(player_index))
 	if num_coins <= 15:
 		return "check_pos_0"
 	elif num_coins > 15 && num_coins <= 25:
@@ -328,10 +329,9 @@ func finish_minigame() -> void:
 		return
 
 	if is_demo_complete:
-		sfx_coins_pour.stop_in_group()
 		MinigameManager.instance.request_score_change(player_index, 1)
 		MinigameManager.instance.request_minigame_finish()
-		push_warning()
+		push_warning("Warning")
 	
 func process_animation() -> void:
 	animation_tree.set(TILT_BLEND, current_input)
