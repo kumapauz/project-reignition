@@ -13,6 +13,7 @@ extends PartyGameCharacterSpawner
 @export var weight_animator: AnimationPlayer
 @export var hand_attachment: BoneAttachment3D
 @export var debug_label: Label3D
+@export var debug_label_input: Label3D
 @export var weight_label: Label
 @export var coin_reduction_timer: Timer
 
@@ -94,7 +95,9 @@ func deactivate() -> void:
 func _physics_process(_delta: float) -> void:
 	if is_demo_complete:
 		if can_pour:
-			process_inputs()
+
+			if is_multiplayer_authority():
+				process_inputs()
 			
 			if current_input > 0:
 			
@@ -125,6 +128,11 @@ func _physics_process(_delta: float) -> void:
 					pour_coins_visual(false)
 		else:
 			current_input = 0.0
+			
+		if is_multiplayer_authority():
+			process_rollback()
+	
+	
 
 func process_inputs() -> void:
 	if is_cpu():
@@ -132,6 +140,7 @@ func process_inputs() -> void:
 		return
 
 	current_input = max(get_vertical_input(), 0)
+	debug_label_input.text = str(current_input)
 
 	if !is_cpu() && Input.is_action_just_pressed("button_primary%s" % get_input_suffix()):
 		throw_chest() # TODO Make this work with netplay
@@ -170,6 +179,7 @@ func catch_chest() -> void:
 	
 
 ##Have the player return the chest to the weight
+@rpc("any_peer", "call_local", "reliable")
 func throw_chest() -> void:
 	
 	var weight_num : int
@@ -331,7 +341,6 @@ func finish_minigame() -> void:
 	if is_demo_complete:
 		MinigameManager.instance.request_score_change(player_index, 1)
 		MinigameManager.instance.request_minigame_finish()
-		push_warning("Warning")
 	
 func process_animation() -> void:
 	animation_tree.set(TILT_BLEND, current_input)
@@ -340,12 +349,15 @@ func process_animation() -> void:
 ### ROLLBACK CODE ###
 #####################
 @export var rollback_timer : RollbackTimer
-const RB_INPUT : int = 0
+const RB_INPUT : int = 3
+const RB_CPU_NUM_COINS : int = 4
 func on_rollback_applied(rb_params : Array) -> void:
 	current_input = rb_params[RB_INPUT]
+	cpu_num_coins = rb_params[RB_CPU_NUM_COINS]
 
 func process_rollback() -> void:
 	rollback_timer.set_param(RB_INPUT, current_input)
+	rollback_timer.set_param(RB_CPU_NUM_COINS, cpu_num_coins)
 	rollback_timer.process_rollback()
 
 ################

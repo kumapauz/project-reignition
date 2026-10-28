@@ -1544,7 +1544,7 @@ _data = {
 &"show": SubResource("Animation_27r3w")
 }
 
-[node name="Environment" type="Node3D" unique_id=1522425192 node_paths=PackedStringArray("camera", "cursor", "coin_box", "coin_meshes", "coin_particles", "coin_particles_player", "coin_sparkles", "weight_platform2", "coinbox_offset", "weight_animator", "hand_attachment", "debug_label", "weight_label", "coin_reduction_timer", "sfx_weight_catch", "sfx_coins_pour", "rollback_timer", "spawn_position", "animation_tree")]
+[node name="Environment" type="Node3D" unique_id=1522425192 node_paths=PackedStringArray("camera", "cursor", "coin_box", "coin_meshes", "coin_particles", "coin_particles_player", "coin_sparkles", "weight_platform2", "coinbox_offset", "weight_animator", "hand_attachment", "debug_label", "debug_label_input", "weight_label", "coin_reduction_timer", "sfx_weight_catch", "sfx_coins_pour", "rollback_timer", "spawn_position", "animation_tree")]
 script = ExtResource("1_skywb")
 camera = NodePath("GameCamera")
 cursor = NodePath("Cursor")
@@ -1558,6 +1558,7 @@ coinbox_offset = NodePath("Weight/WeightArm/WeightPlatform2/CoinboxOffset")
 weight_animator = NodePath("Weight/WeightAnimator")
 hand_attachment = NodePath("HandAttachment")
 debug_label = NodePath("Debug")
+debug_label_input = NodePath("Debug2")
 weight_label = NodePath("WeightLabel")
 coin_reduction_timer = NodePath("CoinReductionTimer")
 sfx_weight_catch = NodePath("SFX/WeightCatch")
@@ -1647,6 +1648,12 @@ modulate = Color(1, 1, 0, 1)
 text = "00"
 font_size = 773
 
+[node name="Debug2" type="Label3D" parent="." unique_id=229325875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.659856, 18.492245, -5.9932804)
+modulate = Color(1, 1, 0, 1)
+text = "00"
+font_size = 773
+
 [node name="Coins" type="GPUParticles3D" parent="." unique_id=1009120334]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24450481, 22.871134, 0)
 emitting = false
@@ -1671,7 +1678,7 @@ draw_pass_1 = ExtResource("11_veltv")
 
 [node name="Rollback" type="Node" parent="." unique_id=1963454035]
 script = ExtResource("13_y508n")
-param_count = 1
+param_count = 10
 rollback_interval = 0.10000000000582077
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=581187547]
