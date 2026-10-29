@@ -13,7 +13,6 @@ extends PartyGameCharacterSpawner
 @export var weight_animator: AnimationPlayer
 @export var hand_attachment: BoneAttachment3D
 @export var debug_label: Label3D
-@export var debug_label_input: Label3D
 @export var weight_label: Label
 @export var coin_reduction_timer: Timer
 
@@ -52,7 +51,7 @@ const HOLD_TRANSITION : StringName = "parameters/hold-transition/transition_requ
 const ONESHOT_TRIGGER : StringName = "parameters/oneshot-trigger/request"
 const ONESHOT_TRANSITION : StringName = "parameters/oneshot-transition/transition_request"
 const HOLD_ANIM : StringName = "hold"
-const WAIT_ANIM : StringName = "wait"
+const WAIT_ANIM : StringName = "wait"	
 const RETURN_ANIM : StringName = "return"
 const MISS_ANIM : StringName = "miss"
 const CATCH_ANIM : StringName = "catch"
@@ -94,45 +93,13 @@ func deactivate() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if is_demo_complete:
-		if can_pour:
+		if is_multiplayer_authority():
+			process_inputs()
 
-			if is_multiplayer_authority():
-				process_inputs()
-			
-			if current_input > 0:
-			
-				#Sets the particle and coin speed based on current stick tilt
-				if current_input > 0.5 && coin_particles_player.amount != PARTICLE_HARD:
-					coin_particles_player.amount = PARTICLE_HARD
-					coin_reduction_timer.wait_time = COINS_TIMER_SPEED_HARD
-					sfx_coins_pour.max_volume = 1
-					sfx_coins_pour.play_in_group()
-				elif current_input <= 0.5 && coin_particles_player.amount != PARTICLE_SOFT:
-					coin_particles_player.amount = PARTICLE_SOFT
-					coin_reduction_timer.wait_time = COINS_TIMER_SPEED_SOFT
-					sfx_coins_pour.max_volume = 0.5
-					sfx_coins_pour.play_in_group()
+		process_movement_tick()
 
-				if coin_particles_player.emitting != true && num_coins != 0:
-					pour_coins_visual(true)
-
-				if coin_reduction_timer.is_stopped():
-					coin_reduction_timer.start()
-
-				if is_cpu():
-					cpu_check_coins()
-
-			else:
-				coin_reduction_timer.stop()
-				if coin_particles_player.emitting != false:
-					pour_coins_visual(false)
-		else:
-			current_input = 0.0
-			
 		if is_multiplayer_authority():
 			process_rollback()
-	
-	
 
 func process_inputs() -> void:
 	if is_cpu():
@@ -140,16 +107,48 @@ func process_inputs() -> void:
 		return
 
 	current_input = max(get_vertical_input(), 0)
-	debug_label_input.text = str(current_input)
 
 	if !is_cpu() && Input.is_action_just_pressed("button_primary%s" % get_input_suffix()):
-		throw_chest() # TODO Make this work with netplay
+		rpc("throw_chest") # TODO Make this work with netplay
 
 func _process(_delta: float) -> void:
 	debug_label.text = str(num_coins)
 	if zeroout_hands:
 		zero_hands()
 	process_animation()
+
+func process_movement_tick() -> void:
+	if can_pour:
+			
+		if current_input > 0:
+			
+			#Sets the particle and coin speed based on current stick tilt
+			if current_input > 0.5 && coin_particles_player.amount != PARTICLE_HARD:
+				coin_particles_player.amount = PARTICLE_HARD
+				coin_reduction_timer.wait_time = COINS_TIMER_SPEED_HARD
+				sfx_coins_pour.max_volume = 1
+				sfx_coins_pour.play_in_group()
+			elif current_input <= 0.5 && coin_particles_player.amount != PARTICLE_SOFT:
+				coin_particles_player.amount = PARTICLE_SOFT
+				coin_reduction_timer.wait_time = COINS_TIMER_SPEED_SOFT
+				sfx_coins_pour.max_volume = 0.5
+				sfx_coins_pour.play_in_group()
+
+			if coin_particles_player.emitting != true && num_coins != 0:
+				pour_coins_visual(true)
+
+			if coin_reduction_timer.is_stopped():
+				coin_reduction_timer.start()
+
+			if is_cpu():
+				cpu_check_coins()
+
+		else:
+			coin_reduction_timer.stop()
+			if coin_particles_player.emitting != false:
+				pour_coins_visual(false)
+	else:
+		current_input = 0.0
 	
 func complete_demo() -> void:
 	current_input = 0
@@ -349,15 +348,21 @@ func process_animation() -> void:
 ### ROLLBACK CODE ###
 #####################
 @export var rollback_timer : RollbackTimer
-const RB_INPUT : int = 3
-const RB_CPU_NUM_COINS : int = 4
+const RB_INPUT : int = 1
+const RB_NUM_COINS : = 2
+const RB_CPU_NUM_COINS : int = 3
+const RB_CPU_COINS_PAUSE_AMOUNT : int = 4
 func on_rollback_applied(rb_params : Array) -> void:
 	current_input = rb_params[RB_INPUT]
+	num_coins = rb_params[RB_NUM_COINS]
 	cpu_num_coins = rb_params[RB_CPU_NUM_COINS]
+	cpu_coins_pause_amount = rb_params[RB_CPU_COINS_PAUSE_AMOUNT]
 
 func process_rollback() -> void:
 	rollback_timer.set_param(RB_INPUT, current_input)
+	rollback_timer.set_param(RB_NUM_COINS, num_coins)
 	rollback_timer.set_param(RB_CPU_NUM_COINS, cpu_num_coins)
+	rollback_timer.set_param(RB_CPU_COINS_PAUSE_AMOUNT, cpu_coins_pause_amount)
 	rollback_timer.process_rollback()
 
 ################

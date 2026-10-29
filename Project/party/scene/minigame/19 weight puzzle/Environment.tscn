@@ -1558,14 +1558,16 @@ coinbox_offset = NodePath("Weight/WeightArm/WeightPlatform2/CoinboxOffset")
 weight_animator = NodePath("Weight/WeightAnimator")
 hand_attachment = NodePath("HandAttachment")
 debug_label = NodePath("Debug")
-debug_label_input = NodePath("Debug2")
+debug_label_input = NodePath("")
 weight_label = NodePath("WeightLabel")
 coin_reduction_timer = NodePath("CoinReductionTimer")
 sfx_weight_catch = NodePath("SFX/WeightCatch")
 sfx_coins_pour = NodePath("SFX/CoinSpill")
 rollback_timer = NodePath("Rollback")
+player_index = null
 spawn_position = NodePath("CharacterPosition")
 animation_tree = NodePath("AnimationTree")
+deactivate_on_gameplay_finished = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=162862610]
 environment = SubResource("Environment_skywb")
@@ -1644,12 +1646,6 @@ bone_idx = 89
 
 [node name="Debug" type="Label3D" parent="." unique_id=1931390658]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.492245, -5.9932804)
-modulate = Color(1, 1, 0, 1)
-text = "00"
-font_size = 773
-
-[node name="Debug2" type="Label3D" parent="." unique_id=229325875]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.659856, 18.492245, -5.9932804)
 modulate = Color(1, 1, 0, 1)
 text = "00"
 font_size = 773
