@@ -46,6 +46,7 @@ const COINS_TIMER_SPEED_HARD : float = 0.1
 const PARTICLE_SOFT: int = 12
 const PARTICLE_HARD: int = 20
 
+#Character anim blends
 const TILT_BLEND : StringName = "parameters/tilt-blend/blend_amount"
 const HOLD_TRANSITION : StringName = "parameters/hold-transition/transition_request"
 const ONESHOT_TRIGGER : StringName = "parameters/oneshot-trigger/request"
@@ -67,13 +68,11 @@ func on_spawn_finished() -> void:
 	MinigameManager.instance.minigame_finished.connect(Callable(self, "deactivate"))
 	animation_tree.set(HOLD_TRANSITION, WAIT_ANIM)
 
-	cursor.position = camera.get_viewport().get_visible_rect().size / 2
+	cursor.position = camera.get_viewport().get_visible_rect().size / 1
 
 	cpu_num_mistakes = cpu_decide_mistakes()
 	num_coins = 100
 	cpu_choose_coins()
-	
-	print("Num coins to reach: " + str(cpu_num_coins))
 
 	if player_index == 0:
 		set_coins_stage(5)
@@ -84,8 +83,11 @@ func on_minigame_finished() -> void:
 	coin_box.visible = false
 
 func deactivate() -> void:
-	print("DEACTIVATING PLAYER " + str(player_index))
+	weight_animator.seek(0)
 	weight_animator.stop()
+	
+	coin_particles_player.emitting = false
+	coin_particles.emitting = false
 	sfx_coins_pour.stop_in_group()
 	sfx_weight_catch.stop_in_group()
 	current_input = 0
@@ -127,12 +129,10 @@ func process_movement_tick() -> void:
 				coin_particles_player.amount = PARTICLE_HARD
 				coin_reduction_timer.wait_time = COINS_TIMER_SPEED_HARD
 				sfx_coins_pour.max_volume = 1
-				sfx_coins_pour.play_in_group()
 			elif current_input <= 0.5 && coin_particles_player.amount != PARTICLE_SOFT:
 				coin_particles_player.amount = PARTICLE_SOFT
 				coin_reduction_timer.wait_time = COINS_TIMER_SPEED_SOFT
 				sfx_coins_pour.max_volume = 0.5
-				sfx_coins_pour.play_in_group()
 
 			if coin_particles_player.emitting != true && num_coins != 0:
 				pour_coins_visual(true)
@@ -154,12 +154,14 @@ func complete_demo() -> void:
 	current_input = 0
 	set_demo_complete()
 	set_physics_process(true)
+	
 
 	if is_minigame_host():
 		var start_callable : Callable = Callable.create(MinigameManager.instance, "request_minigame_start")
 		get_tree().create_timer(1).timeout.connect(start_callable)
 
 func set_demo_complete() -> void:
+	cursor.position = camera.get_viewport().get_visible_rect().size / 4
 	is_demo_complete = true
 	num_coins = 0
 
@@ -267,9 +269,11 @@ func pour_coins_visual(pour: bool) -> void:
 	if pour:
 		coin_particles_player.emitting = true
 		coin_sparkles.emitting = true
+		sfx_coins_pour.play_in_group()
 	else:
 		coin_particles_player.emitting = false
 		coin_sparkles.emitting = false
+		sfx_coins_pour.stop_in_group()
 
 func set_coins_stage(stage: int) -> void:
 	for i in 5:
@@ -334,9 +338,6 @@ func _on_coin_reduction_timer_timeout() -> void:
 	coin_reduction_timer.start()
 
 func finish_minigame() -> void:
-	if !is_multiplayer_authority():
-		return
-
 	if is_demo_complete:
 		MinigameManager.instance.request_score_change(player_index, 1)
 		MinigameManager.instance.request_minigame_finish()

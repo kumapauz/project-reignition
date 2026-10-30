@@ -170,10 +170,10 @@ tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1, 2, 2.5, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, 0.21991149), Vector3(0, 0, 0.32463124)]
+"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, 0.21991149), Vector3(0, 0, 0.32463124), Vector3(0, 0, 0.32463124), Vector3(0, 0, 0)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -182,7 +182,7 @@ tracks/1/path = NodePath("../..")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(2, 2.5),
+"times": PackedFloat32Array(2.5, 3),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [&"miss"],
@@ -199,7 +199,7 @@ tracks/2/path = NodePath("../../Cursor/AnimationPlayer")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(2),
+"times": PackedFloat32Array(2.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"miss", -1, 1.0, false],
@@ -213,7 +213,7 @@ tracks/3/path = NodePath("../../WeightLabel/WeightLabelAnim")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(2),
+"times": PackedFloat32Array(2.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"show", -1, 1.0, false],
@@ -246,10 +246,10 @@ tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, 0.10646509), Vector3(0, 0, 0.34208453), Vector3(0, 0, 0.10646509), Vector3(0, 0, 0.20245819)]
+"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, 0.10646509), Vector3(0, 0, 0.34208453), Vector3(0, 0, 0.10646509), Vector3(0, 0, 0.20245819), Vector3(0, 0, 0.20245819), Vector3(0, 0, 0)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -258,7 +258,7 @@ tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(3),
+"times": PackedFloat32Array(2.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"miss", -1, 1.0, false],
@@ -272,7 +272,7 @@ tracks/2/path = NodePath("../..")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(3, 3.5),
+"times": PackedFloat32Array(2.5, 3),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [&"miss"],
@@ -289,7 +289,7 @@ tracks/3/path = NodePath("../../WeightLabel/WeightLabelAnim")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(3),
+"times": PackedFloat32Array(2.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"show", -1, 1.0, false],
@@ -336,10 +336,10 @@ tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6, 1.1, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.6, 1.3, 2, 2.5, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, 0.10646509), Vector3(0, 0, 0.1605703), Vector3(0, 0, 0.1064651)]
+"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, 0.10646509), Vector3(0, 0, 0.1605703), Vector3(0, 0, 0.1064651), Vector3(0, 0, 0.1064651), Vector3(0, 0, 0)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -499,10 +499,10 @@ tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.4, 2.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.7, 1.4, 2, 2.5, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.21642083), Vector3(0, 0, 0.06283186), Vector3(0, 0, -0.09424778)]
+"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.21642083), Vector3(0, 0, 0.06283186), Vector3(0, 0, -0.09424778), Vector3(0, 0, -0.09424778), Vector3(0, 0, 0)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -511,7 +511,7 @@ tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(3),
+"times": PackedFloat32Array(2.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"miss", -1, 1.0, false],
@@ -525,7 +525,7 @@ tracks/2/path = NodePath("../..")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(3, 3.5),
+"times": PackedFloat32Array(2.5, 3),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [&"miss"],
@@ -542,7 +542,7 @@ tracks/3/path = NodePath("../../WeightLabel/WeightLabelAnim")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(3),
+"times": PackedFloat32Array(2.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"show", -1, 1.0, false],
@@ -589,10 +589,10 @@ tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.4171337), Vector3(0, 0, -0.19024089), Vector3(0, 0, -0.2687807), Vector3(0, 0, -0.21118484)]
+"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.4171337), Vector3(0, 0, -0.19024089), Vector3(0, 0, -0.2687807), Vector3(0, 0, -0.21118484), Vector3(0, 0, -0.21118484), Vector3(0, 0, 0)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -601,7 +601,7 @@ tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(3),
+"times": PackedFloat32Array(2.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"miss", -1, 1.0, false],
@@ -615,7 +615,7 @@ tracks/2/path = NodePath("../..")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(3, 3.5),
+"times": PackedFloat32Array(2.5, 3),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [&"miss"],
@@ -632,7 +632,7 @@ tracks/3/path = NodePath("../../WeightLabel/WeightLabelAnim")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(3),
+"times": PackedFloat32Array(2.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"show", -1, 1.0, false],
@@ -679,10 +679,10 @@ tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.6, 2.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 1, 1.6, 2, 2.5, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.40840703), Vector3(0, 0, -0.26005405), Vector3(0, 0, -0.39095375), Vector3(0, 0, -0.3211406)]
+"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.40840703), Vector3(0, 0, -0.26005405), Vector3(0, 0, -0.39095375), Vector3(0, 0, -0.3211406), Vector3(0, 0, -0.3211406), Vector3(0, 0, 0)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -691,7 +691,7 @@ tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(3),
+"times": PackedFloat32Array(2.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"miss", -1, 1.0, false],
@@ -705,7 +705,7 @@ tracks/2/path = NodePath("../..")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(3, 3.5),
+"times": PackedFloat32Array(2.5, 3),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [&"miss"],
@@ -722,7 +722,7 @@ tracks/3/path = NodePath("../../WeightLabel/WeightLabelAnim")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(3),
+"times": PackedFloat32Array(2.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"show", -1, 1.0, false],
@@ -769,10 +769,10 @@ tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.6, 2.1, 2.6, 3),
+"times": PackedFloat32Array(0, 0.5, 1, 1.6, 2, 2.5, 2.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.4712389), Vector3(0, 0, -0.31415927), Vector3(0, 0, -0.43633232), Vector3(0, 0, -0.34906584), Vector3(0, 0, -0.43633232), Vector3(0, 0, -0.40142572)]
+"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.4712389), Vector3(0, 0, -0.31415927), Vector3(0, 0, -0.43633232), Vector3(0, 0, -0.40142572), Vector3(0, 0, -0.40142572), Vector3(0, 0, 0)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -781,7 +781,7 @@ tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(4),
+"times": PackedFloat32Array(2.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"miss", -1, 1.0, false],
@@ -795,7 +795,7 @@ tracks/2/path = NodePath("../..")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(4, 4.5),
+"times": PackedFloat32Array(2.5, 3),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [&"miss"],
@@ -812,7 +812,7 @@ tracks/3/path = NodePath("../../WeightLabel/WeightLabelAnim")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(4),
+"times": PackedFloat32Array(2.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"show", -1, 1.0, false],
@@ -859,10 +859,10 @@ tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.6, 1, 1.5, 2, 2.3, 2.5, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.61784655)]
+"values": [Vector3(0, 0, 0.44680429), Vector3(0, 0, -0.61784655), Vector3(0, 0, -0.61784655), Vector3(0, 0, -0.61784655), Vector3(0, 0, -0.61784655), Vector3(0, 0, -0.61784655), Vector3(0, 0, -0.61784655), Vector3(0, 0, 0)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -871,7 +871,7 @@ tracks/1/path = NodePath("../../Cursor/AnimationPlayer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1.6),
+"times": PackedFloat32Array(2.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"miss", -1, 1.0, false],
@@ -885,7 +885,7 @@ tracks/2/path = NodePath("../..")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.6, 2),
+"times": PackedFloat32Array(2.5, 2.9),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [&"miss"],
@@ -902,7 +902,7 @@ tracks/3/path = NodePath("../../WeightLabel/WeightLabelAnim")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1.6),
+"times": PackedFloat32Array(2.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"show", -1, 1.0, false],
@@ -1156,7 +1156,7 @@ sync = true
 animation = &"_CommonLibrary/wait"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_it1wb"]
-graph_offset = Vector2(-509.66663, 45.338104)
+graph_offset = Vector2(-618.7807, 120.56421)
 nodes/output/position = Vector2(660, 180)
 nodes/19-lift-wait/node = SubResource("AnimationNodeAnimation_y508n")
 nodes/19-lift-wait/position = Vector2(-600, 100)
@@ -1544,7 +1544,7 @@ _data = {
 &"show": SubResource("Animation_27r3w")
 }
 
-[node name="Environment" type="Node3D" unique_id=1522425192 node_paths=PackedStringArray("camera", "cursor", "coin_box", "coin_meshes", "coin_particles", "coin_particles_player", "coin_sparkles", "weight_platform2", "coinbox_offset", "weight_animator", "hand_attachment", "debug_label", "debug_label_input", "weight_label", "coin_reduction_timer", "sfx_weight_catch", "sfx_coins_pour", "rollback_timer", "spawn_position", "animation_tree")]
+[node name="Environment" type="Node3D" unique_id=1522425192 node_paths=PackedStringArray("camera", "cursor", "coin_box", "coin_meshes", "coin_particles", "coin_particles_player", "coin_sparkles", "weight_platform2", "coinbox_offset", "weight_animator", "hand_attachment", "debug_label", "weight_label", "coin_reduction_timer", "sfx_weight_catch", "sfx_coins_pour", "rollback_timer", "spawn_position", "animation_tree")]
 script = ExtResource("1_skywb")
 camera = NodePath("GameCamera")
 cursor = NodePath("Cursor")
@@ -1558,16 +1558,13 @@ coinbox_offset = NodePath("Weight/WeightArm/WeightPlatform2/CoinboxOffset")
 weight_animator = NodePath("Weight/WeightAnimator")
 hand_attachment = NodePath("HandAttachment")
 debug_label = NodePath("Debug")
-debug_label_input = NodePath("")
 weight_label = NodePath("WeightLabel")
 coin_reduction_timer = NodePath("CoinReductionTimer")
 sfx_weight_catch = NodePath("SFX/WeightCatch")
 sfx_coins_pour = NodePath("SFX/CoinSpill")
 rollback_timer = NodePath("Rollback")
-player_index = null
 spawn_position = NodePath("CharacterPosition")
 animation_tree = NodePath("AnimationTree")
-deactivate_on_gameplay_finished = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=162862610]
 environment = SubResource("Environment_skywb")
@@ -1595,7 +1592,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 
 [node name="WeightPlatform2" parent="Weight/WeightArm" unique_id=1349553688 instance=ExtResource("7_rxhfp")]
-transform = Transform3D(0.9027689, 0.4325344, 0, -0.4325344, 0.9027689, 0, 0, 0, 1, 11.013404, -0.0029678345, 0)
+transform = Transform3D(0.90286976, 0.4325827, 0, -0.4325827, 0.90286976, 0, 0, 0, 1.0000055, 11.026485, -0.0020713806, 7.748604e-07)
 
 [node name="CoinboxOffset" type="Node3D" parent="Weight/WeightArm/WeightPlatform2" unique_id=510407390]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67484075, 1.2931433, 0)
@@ -1646,6 +1643,7 @@ bone_idx = 89
 
 [node name="Debug" type="Label3D" parent="." unique_id=1931390658]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.492245, -5.9932804)
+visible = false
 modulate = Color(1, 1, 0, 1)
 text = "00"
 font_size = 773
