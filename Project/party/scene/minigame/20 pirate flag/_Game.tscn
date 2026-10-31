@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dxqaox8qm3e8k"]
+
+[ext_resource type="PackedScene" uid="uid://dsbufs8tjchk7" path="res://party/scene/minigame/00 base/MinigameBase.tscn" id="1_epesd"]
+[ext_resource type="Resource" uid="uid://imhndxog3t8f" path="res://party/resource/minigame/20PirateFlag.tres" id="2_epesd"]
+[ext_resource type="AnimationLibrary" uid="uid://b7nv23a63t0ui" path="res://party/scene/minigame/17 pitch black/animation/_Library.glb" id="3_tox3a"]
+[ext_resource type="Resource" uid="uid://cnritclslppve" path="res://party/resource/bgm/Minigame4.tres" id="4_7ve6u"]
+[ext_resource type="PackedScene" uid="uid://30sgb1pjxad8" path="res://party/scene/minigame/00 base/ScoreBottom.tscn" id="5_ksp3b"]
+[ext_resource type="PackedScene" uid="uid://f5w7fq20xmd1" path="res://party/scene/minigame/00 base/Time.tscn" id="6_amek8"]
+[ext_resource type="PackedScene" uid="uid://ni4d7eo73h1v" path="res://party/scene/minigame/20 pirate flag/model/Map.glb" id="7_mfheb"]
+
+[node name="Game" type="Node3D" unique_id=465307590]
+
+[node name="Minigame" parent="." unique_id=600998337 instance=ExtResource("1_epesd")]
+minigame_resource = ExtResource("2_epesd")
+anim_library = ExtResource("3_tox3a")
+
+[node name="ResultsLocation" parent="Minigame" index="4" unique_id=1428872605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -26.322514)
+
+[node name="BGM" parent="Minigame" index="6" unique_id=1105249761]
+bgmResource = ExtResource("4_7ve6u")
+
+[node name="Scores" parent="Minigame" unique_id=1484096685 instance=ExtResource("5_ksp3b")]
+visible = false
+layout_mode = 1
+
+[node name="Time" parent="Minigame" unique_id=2069576343 instance=ExtResource("6_amek8")]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_right = 128.0
+grow_horizontal = 2
+
+[node name="Environment" type="Node3D" parent="." unique_id=121302545]
+
+[node name="Map" parent="Environment" unique_id=1127688023 instance=ExtResource("7_mfheb")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+
+[node name="st_301_flag_gno" parent="Environment/Map" index="3" unique_id=12095223]
+visible = false
+
+[editable path="Minigame"]
+[editable path="Minigame/Scores"]
+[editable path="Environment/Map"]

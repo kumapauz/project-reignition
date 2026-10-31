@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://blea52vs1jo3h"]
+
+[ext_resource type="Texture2D" uid="uid://bcqn55tqg6obw" path="res://party/scene/minigame/20 pirate flag/texture/stg_o0101_COCONUT.png" id="1_veirq"]
+
+[resource]
+resource_name = "st_301_map_Material_0019"
+albedo_texture = ExtResource("1_veirq")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0

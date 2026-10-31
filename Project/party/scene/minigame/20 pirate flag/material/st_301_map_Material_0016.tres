@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://xcdlcxb4wcbp"]
+
+[ext_resource type="Texture2D" uid="uid://dc044rd8v5e03" path="res://party/scene/minigame/20 pirate flag/texture/c010_o003.png" id="1_i3xaj"]
+
+[resource]
+resource_name = "st_301_map_Material_0016"
+albedo_texture = ExtResource("1_i3xaj")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0

@@ -1,0 +1,318 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://ni4d7eo73h1v"
+path="res://.godot/imported/Map.glb-d04ad03f49b171fdad68912ca9e657af.scn"
+
+[deps]
+
+source_file="res://party/scene/minigame/20 pirate flag/model/Map.glb"
+dest_files=["res://.godot/imported/Map.glb-d04ad03f49b171fdad68912ca9e657af.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=0
+meshes/lightmap_texel_size=0.1
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=15
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"st_301_flag_Material_0000": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_flag_Material_0000.tres",
+"use_external/path": "uid://bijjvjrvvlq6i"
+},
+"st_301_map_Material_0000": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0000.tres",
+"use_external/path": "uid://rsnh68i4g4xt"
+},
+"st_301_map_Material_0001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0001.tres",
+"use_external/path": "uid://ykh1xulk4wsw"
+},
+"st_301_map_Material_0002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0002.tres",
+"use_external/path": "uid://bdytachc8pqvq"
+},
+"st_301_map_Material_0003": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0003.tres",
+"use_external/path": "uid://bmodwv1lygg6h"
+},
+"st_301_map_Material_0004": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0004.tres",
+"use_external/path": "uid://drqltiw6frt57"
+},
+"st_301_map_Material_0005": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0005.tres",
+"use_external/path": "uid://yjwv44ubyujb"
+},
+"st_301_map_Material_0006": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0006.tres",
+"use_external/path": "uid://dqhxgu6ptwnta"
+},
+"st_301_map_Material_0007": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0007.tres",
+"use_external/path": "uid://d150jqab0a3mq"
+},
+"st_301_map_Material_0008": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0008.tres",
+"use_external/path": "uid://ccm0glglh5h6x"
+},
+"st_301_map_Material_0009": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0009.tres",
+"use_external/path": "uid://cgobjleaxayfc"
+},
+"st_301_map_Material_0010": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0010.tres",
+"use_external/path": "uid://c2y020emk4bt3"
+},
+"st_301_map_Material_0011": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0011.tres",
+"use_external/path": "uid://crtsidehj16me"
+},
+"st_301_map_Material_0012": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0012.tres",
+"use_external/path": "uid://buen35btykotf"
+},
+"st_301_map_Material_0013": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0013.tres",
+"use_external/path": "uid://dx862b0sk8txc"
+},
+"st_301_map_Material_0014": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0014.tres",
+"use_external/path": "uid://ba8185t6tavum"
+},
+"st_301_map_Material_0015": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0015.tres",
+"use_external/path": "uid://buxltff6hyg2m"
+},
+"st_301_map_Material_0016": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0016.tres",
+"use_external/path": "uid://xcdlcxb4wcbp"
+},
+"st_301_map_Material_0017": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0017.tres",
+"use_external/path": "uid://14nvmmdmfu46"
+},
+"st_301_map_Material_0018": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0018.tres",
+"use_external/path": "uid://cm2ieoogtixkb"
+},
+"st_301_map_Material_0019": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0019.tres",
+"use_external/path": "uid://blea52vs1jo3h"
+},
+"st_301_map_Material_0020": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0020.tres",
+"use_external/path": "uid://n5bkjn28j88f"
+},
+"st_301_map_Material_0021": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0021.tres",
+"use_external/path": "uid://bx035boq6e6s0"
+},
+"st_301_map_Material_0022": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0022.tres",
+"use_external/path": "uid://k0iynomf134u"
+},
+"st_301_map_Material_0023": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0023.tres",
+"use_external/path": "uid://2a6jd03072c7"
+},
+"st_301_map_Material_0024": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0024.tres",
+"use_external/path": "uid://dkrga2ul004qt"
+},
+"st_301_map_Material_0025": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0025.tres",
+"use_external/path": "uid://c5ak6u8xptx4e"
+},
+"st_301_map_Material_0026": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0026.tres",
+"use_external/path": "uid://bhdn3tkx7t0mi"
+},
+"st_301_map_Material_0027": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0027.tres",
+"use_external/path": "uid://fm105irypbt7"
+},
+"st_301_map_Material_0028": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0028.tres",
+"use_external/path": "uid://6uwv4022eark"
+},
+"st_301_map_Material_0029": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0029.tres",
+"use_external/path": "uid://4p0r3yayh5ne"
+},
+"st_301_map_Material_0030": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0030.tres",
+"use_external/path": "uid://brg3kbcr8idn2"
+},
+"st_301_map_Material_0031": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0031.tres",
+"use_external/path": "uid://cmfvdclcyyiks"
+},
+"st_301_map_Material_0032": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0032.tres",
+"use_external/path": "uid://dnoorpslfp7tu"
+},
+"st_301_map_Material_0033": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0033.tres",
+"use_external/path": "uid://1pxl8o3ixupl"
+},
+"st_301_map_Material_0034": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0034.tres",
+"use_external/path": "uid://o48lpsofruuo"
+},
+"st_301_map_Material_0035": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_map_Material_0035.tres",
+"use_external/path": "uid://fr14d7o2js2l"
+},
+"st_301_sea_Material_0000": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_sea_Material_0000.tres",
+"use_external/path": "uid://dxqhblkfnnvti"
+},
+"st_301_sea_Material_0001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_sea_Material_0001.tres",
+"use_external/path": "uid://mfaksmvb85yj"
+},
+"st_301_sea_Material_0002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_sea_Material_0002.tres",
+"use_external/path": "uid://b6mc62hsd7c6c"
+},
+"st_301_ship_Material_0000": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_ship_Material_0000.tres",
+"use_external/path": "uid://bbfivhee5pjtd"
+},
+"st_301_ship_Material_0001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_ship_Material_0001.tres",
+"use_external/path": "uid://h44h8yju2bf1"
+},
+"st_301_ship_Material_0002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_ship_Material_0002.tres",
+"use_external/path": "uid://bw5h7a7kn14hf"
+},
+"st_301_ship_Material_0003": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_ship_Material_0003.tres",
+"use_external/path": "uid://b7alkiatrudov"
+},
+"st_301_ship_Material_0004": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_ship_Material_0004.tres",
+"use_external/path": "uid://ci2htn2ap0p6w"
+},
+"st_301_ship_Material_0005": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_ship_Material_0005.tres",
+"use_external/path": "uid://bm3yxuyqruss4"
+},
+"st_301_ship_Material_0006": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_ship_Material_0006.tres",
+"use_external/path": "uid://db1og0uughuce"
+},
+"st_301_ship_Material_0007": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_ship_Material_0007.tres",
+"use_external/path": "uid://bq3mt7xuljxw"
+},
+"st_301_ship_Material_0008": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_ship_Material_0008.tres",
+"use_external/path": "uid://w1i44q6vwqtr"
+},
+"st_301_ship_Material_0009": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_ship_Material_0009.tres",
+"use_external/path": "uid://chojpny712so6"
+},
+"st_301_ship_Material_0010": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_ship_Material_0010.tres",
+"use_external/path": "uid://xdbv2mtis3yk"
+},
+"st_301_ship_Material_0011": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_ship_Material_0011.tres",
+"use_external/path": "uid://dx2wws4ce3og0"
+},
+"st_301_ship_Material_0012": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_ship_Material_0012.tres",
+"use_external/path": "uid://727prl8euhqx"
+},
+"st_301_ship_Material_0013": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://party/scene/minigame/20 pirate flag/material/st_301_ship_Material_0013.tres",
+"use_external/path": "uid://dk74riuvo3usw"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=0
+gltf/texture_map_mode=1

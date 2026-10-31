@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MinigameResource" format=3 uid="uid://imhndxog3t8f"]
+
+[ext_resource type="Script" uid="uid://dvhyppjt4xp5k" path="res://party/script/resource/minigame_resource.gd" id="1_b6v1g"]
+
+[resource]
+script = ExtResource("1_b6v1g")
+localization_key = "pg_pirate_flag"
+scene_path = "uid://ds5hnjq82a67j"
+minigame_index = 17
+metadata/_custom_type_script = "uid://dvhyppjt4xp5k"

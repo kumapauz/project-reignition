@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://n5bkjn28j88f"]
+
+[ext_resource type="Texture2D" uid="uid://cwy4lm517ckgm" path="res://party/scene/minigame/20 pirate flag/texture/com_o001B_FRUIT.png" id="1_cm7l0"]
+
+[resource]
+resource_name = "st_301_map_Material_0020"
+albedo_texture = ExtResource("1_cm7l0")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0

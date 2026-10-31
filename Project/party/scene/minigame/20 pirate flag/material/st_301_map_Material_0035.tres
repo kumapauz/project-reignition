@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://fr14d7o2js2l"]
+
+[ext_resource type="Texture2D" uid="uid://dlnlkv2vsvlpd" path="res://party/scene/minigame/20 pirate flag/texture/kuro16.png" id="1_iu3m6"]
+
+[resource]
+resource_name = "st_301_map_Material_0035"
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+albedo_texture = ExtResource("1_iu3m6")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ci2htn2ap0p6w"]
+
+[ext_resource type="Texture2D" uid="uid://cblltbj0an7ml" path="res://party/scene/minigame/20 pirate flag/texture/ship_02.png" id="1_gbpq7"]
+
+[resource]
+resource_name = "st_301_ship_Material_0004"
+albedo_texture = ExtResource("1_gbpq7")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
