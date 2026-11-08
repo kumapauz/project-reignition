@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cui404o3s85nu"]
+
+[ext_resource type="Shader" uid="uid://bykl2wdjjbfvf" path="res://party/scene/minigame/20 pirate flag/material/shaders/TreeSway.gdshader" id="1_2g48p"]
+[ext_resource type="Texture2D" uid="uid://tvocvxlwhrnb" path="res://party/scene/minigame/20 pirate flag/texture/Plant000.png" id="2_eq3nx"]
+
+[resource]
+render_priority = 2
+shader = ExtResource("1_2g48p")
+shader_parameter/texture_albedo = ExtResource("2_eq3nx")
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/sway_speed = 9.675
+shader_parameter/sway_strength = 0.035
+shader_parameter/sway_phase_len = 8.0

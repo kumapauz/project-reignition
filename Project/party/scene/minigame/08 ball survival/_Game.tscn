@@ -115,26 +115,26 @@ _data = {
 
 [node name="Game" type="Node3D" unique_id=1966757023]
 
-[node name="Minigame" parent="." unique_id=1535406181 node_paths=PackedStringArray("intro_animator", "results_camera") instance=ExtResource("1_2wqpo")]
+[node name="Minigame" parent="." unique_id=1535406181 node_paths=PackedStringArray("results_camera", "intro_animator") instance=ExtResource("1_2wqpo")]
 minigame_resource = ExtResource("3_v27jp")
 anim_library = ExtResource("3_e0i4m")
 autocomplete_survivor_count = 1
-intro_animator = NodePath("../AnimationPlayer")
 results_camera = NodePath("../ResultsCamera")
+intro_animator = NodePath("../AnimationPlayer")
 
 [node name="ResultsLocation" parent="Minigame" index="4" unique_id=1428872605]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 21)
 
-[node name="P1" parent="Minigame/ResultsLocation" index="0" unique_id=2089623113]
+[node name="P1" parent="Minigame/ResultsLocation" index="0" unique_id=2111766016]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 0)
 
-[node name="P2" parent="Minigame/ResultsLocation" index="1" unique_id=965728698]
+[node name="P2" parent="Minigame/ResultsLocation" index="1" unique_id=2069217776]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
 
-[node name="P3" parent="Minigame/ResultsLocation" index="2" unique_id=63479845]
+[node name="P3" parent="Minigame/ResultsLocation" index="2" unique_id=479822834]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
 
-[node name="P4" parent="Minigame/ResultsLocation" index="3" unique_id=123413261]
+[node name="P4" parent="Minigame/ResultsLocation" index="3" unique_id=13369216]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 0)
 
 [node name="BGM" parent="Minigame" index="6" unique_id=1105249761]
@@ -172,26 +172,26 @@ light_cull_mask = 8
 
 [node name="Map" parent="." unique_id=520846040 instance=ExtResource("1_grd5u")]
 
-[node name="Skeleton3D" parent="Map/MapRoot" parent_id_path=PackedInt32Array(520846040, 169292034) index="0" unique_id=1197215280]
+[node name="Skeleton3D" parent="Map/MapRoot" parent_id_path=PackedInt32Array(520846040, 190988296) index="0" unique_id=1589292398]
 bones/20/rotation = Quaternion(0, 0.20837742, 0, 0.9780485)
 bones/36/position = Vector3(154.23885, -68.90502, -292.6669)
 
-[node name="st_115_map_Mesh_0016_001" parent="Map/MapRoot/Skeleton3D" index="2" unique_id=1911561959]
+[node name="st_115_map_Mesh_0016_001" parent="Map/MapRoot/Skeleton3D" index="2" unique_id=231654447]
 layers = 16
 
-[node name="st_115_water_Mesh_0015_001" parent="Map/WaterRoot/Skeleton3D" parent_id_path=PackedInt32Array(520846040, 1526433513) index="0" unique_id=194868344]
+[node name="st_115_water_Mesh_0015_001" parent="Map/WaterRoot/Skeleton3D" parent_id_path=PackedInt32Array(520846040, 780495177) index="0" unique_id=1381421606]
 layers = 8
 
-[node name="st_115_water_Mesh_0016_001" parent="Map/WaterRoot/Skeleton3D" parent_id_path=PackedInt32Array(520846040, 1526433513) index="1" unique_id=133474118]
+[node name="st_115_water_Mesh_0016_001" parent="Map/WaterRoot/Skeleton3D" parent_id_path=PackedInt32Array(520846040, 780495177) index="1" unique_id=1168308831]
 layers = 8
 
-[node name="water01" parent="Map/WaterRoot/Skeleton3D" parent_id_path=PackedInt32Array(520846040, 1526433513) index="2" unique_id=1485255163]
+[node name="water01" parent="Map/WaterRoot/Skeleton3D" parent_id_path=PackedInt32Array(520846040, 780495177) index="2" unique_id=38235448]
 layers = 8
 
-[node name="water02" parent="Map/WaterRoot/Skeleton3D" parent_id_path=PackedInt32Array(520846040, 1526433513) index="3" unique_id=170542593]
+[node name="water02" parent="Map/WaterRoot/Skeleton3D" parent_id_path=PackedInt32Array(520846040, 780495177) index="3" unique_id=1335316549]
 layers = 8
 
-[node name="AnimationPlayer" parent="Map" index="2" unique_id=477483589]
+[node name="AnimationPlayer" parent="Map" index="2" unique_id=140311574]
 autoplay = &"map"
 
 [node name="Platform" parent="." unique_id=18799423 instance=ExtResource("6_v27jp")]

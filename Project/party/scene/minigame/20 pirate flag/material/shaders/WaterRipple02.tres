@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dqjeqk5w36tiy"]
+
+[ext_resource type="Shader" uid="uid://cp4775j3o61q3" path="res://effect/shader/environment/WaterRipple.gdshader" id="1_paig3"]
+[ext_resource type="Texture2D" uid="uid://74vsbjdlwh35" path="res://party/scene/minigame/08 ball survival/texture/water edge 02.png" id="2_bvk5k"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_paig3")
+shader_parameter/albedo = ExtResource("2_bvk5k")
+shader_parameter/main_speed = 0.28
+shader_parameter/secondary_speed = 4.0
+shader_parameter/sway_amount = 0.4
+shader_parameter/brightness = 0.8

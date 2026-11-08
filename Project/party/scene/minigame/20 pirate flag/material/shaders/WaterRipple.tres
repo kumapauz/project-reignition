@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://7ojkrwx46rn0"]
+
+[ext_resource type="Shader" uid="uid://cp4775j3o61q3" path="res://effect/shader/environment/WaterRipple.gdshader" id="1_8ubbr"]
+[ext_resource type="Texture2D" uid="uid://bqr303ej323vb" path="res://party/scene/minigame/20 pirate flag/texture/water003.png" id="2_1i2uu"]
+
+[resource]
+render_priority = 1
+shader = ExtResource("1_8ubbr")
+shader_parameter/albedo = ExtResource("2_1i2uu")
+shader_parameter/main_speed = 0.28
+shader_parameter/secondary_speed = 2.0
+shader_parameter/sway_amount = 0.4
+shader_parameter/brightness = 1.0

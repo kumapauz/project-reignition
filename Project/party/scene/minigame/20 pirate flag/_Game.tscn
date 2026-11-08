@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dxqaox8qm3e8k"]
+[gd_scene format=4 uid="uid://dxqaox8qm3e8k"]
 
 [ext_resource type="PackedScene" uid="uid://dsbufs8tjchk7" path="res://party/scene/minigame/00 base/MinigameBase.tscn" id="1_epesd"]
 [ext_resource type="Resource" uid="uid://imhndxog3t8f" path="res://party/resource/minigame/20PirateFlag.tres" id="2_epesd"]
@@ -7,6 +7,49 @@
 [ext_resource type="PackedScene" uid="uid://30sgb1pjxad8" path="res://party/scene/minigame/00 base/ScoreBottom.tscn" id="5_ksp3b"]
 [ext_resource type="PackedScene" uid="uid://f5w7fq20xmd1" path="res://party/scene/minigame/00 base/Time.tscn" id="6_amek8"]
 [ext_resource type="PackedScene" uid="uid://ni4d7eo73h1v" path="res://party/scene/minigame/20 pirate flag/model/Map.glb" id="7_mfheb"]
+[ext_resource type="Material" uid="uid://cui404o3s85nu" path="res://party/scene/minigame/20 pirate flag/material/shaders/Tree.tres" id="8_a4fif"]
+[ext_resource type="Material" uid="uid://cm8jqol11icbh" path="res://party/scene/minigame/20 pirate flag/material/shaders/Water.tres" id="8_ksp3b"]
+[ext_resource type="Material" uid="uid://dxqhblkfnnvti" path="res://party/scene/minigame/20 pirate flag/material/st_301_sea_Material_0000.tres" id="9_uob2b"]
+[ext_resource type="Material" uid="uid://7ojkrwx46rn0" path="res://party/scene/minigame/20 pirate flag/material/shaders/WaterRipple.tres" id="10_ksp3b"]
+[ext_resource type="Material" uid="uid://dqjeqk5w36tiy" path="res://party/scene/minigame/20 pirate flag/material/shaders/WaterRipple02.tres" id="10_uob2b"]
+[ext_resource type="Material" uid="uid://538xtpqbdlha" path="res://party/scene/minigame/20 pirate flag/material/shaders/Sail.tres" id="11_amek8"]
+[ext_resource type="Material" uid="uid://bqvahibbecovc" path="res://party/scene/minigame/20 pirate flag/material/shaders/Rope.tres" id="13_ufum1"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_krtm7"]
+resource_name = "Map_st_301_sea_Mesh_0000"
+_surfaces = [{
+"aabb": AABB(-364.14496, -394.1487, 0.30943492, 470.69296, 363.11383, 1e-05),
+"attribute_data": PackedByteArray("AEB5QADAf8AAgJBAAIDEvwDAaUAAABs/AMCWQAAANcAA4JVAAMBxwADgn0AAgGzAAIAVQACAZcAAII1AAACYvQCAg0AAAOI+AICBPwDAGsAAQFJAAAB6PwBAMEAAAGk/AIDQPwAABD8AwAFAAAA5PwAAQz8AAMI+AICJPwAA3D4AAAA+AAAqvwAAxD4AAIS+AADkPgAAID4AQHlAAIA8wACASUAAAB6/AMAoQACAJ8AAAMk/AADWvwCAiEAAAM+/AKCOQABAOcAAQIVAAAA0vgCAekAAAEA+AMBiQAAAjD4AgFBAAAATPwDANkAAAAI/AADrPwAA1L4AAAdAAACyPgCA2j8AABg+AABdPwAAlL4AAJM/AACgPQAAUD8AADA9"),
+"bone_aabbs": [AABB(0, 0, 0, -1, -1, -1), AABB(-364.14496, -394.1487, 0.30943492, 470.69296, 363.11383, 1.001358e-05)],
+"format": 34359745559,
+"index_count": 153,
+"index_data": PackedByteArray("EwAXABQAEwAYABcAGAATAAAAGAADABcAGAAAAAQAAwAYAAQAAwAEAAUAAQAXAAMAEwAVAAAAEwAUABUABgAAABUACQAGABUAAQAZABcAGQAUABcAGQABAAcAGQAHAAgACQAVABYAFAAWABUAEAAJABYAGgAZAAgAGQAaABQAGgAIAAIAGgACABsAGgAbABQAAgAcABsAFAAbABwAAgAKABwACgAdABwAFAAcAB0ACgALAB0AHgAUAB0AFAAeABYACwAfAB0AHgAdAB8ACwANAB8AIAAfAA0AIAAeAB8ADAAgAA0AHgAhABYAEAAWACEADAAiACAAIgAeACAAIgAMAA8AHgAjACEAIgAjAB4AIwAQACEAIwAiAA8AIwARABAAIwAPAA4AEQAjABIAIwAOABIA"),
+"lods": [21.344128, PackedByteArray("EwABABQAEwADAAEABwAUAAEABwAIABQACAACABQAFAACAAoAFAAKAAsAAwATAAAAAwAAAAQAAwAEAAUAEwAVAAAAEwAUABUABgAAABUACQAGABUACQAVABYAFAAWABUAEAAJABYADAAUAAsAFAAMABYADAALAA0AEAAWAA4ADAAOABYADwAOAAwADgARABAAEQAOABIA"), 32.016193, PackedByteArray("AAABAAIAAAADAAEAAwAAAAQAAwAEAAUAAAACAAYABwACAAEABwAIAAIAAgAJAAYAAgAKAAsADAACAAsAAgAMAAkADAALAA0ADAAOAAkADwAOAAwAEAAJAA4ADgARABAAEQAOABIA")],
+"material": ExtResource("9_uob2b"),
+"name": "st_301_sea_Material_0000",
+"primitive": 3,
+"skin_data": PackedByteArray("AQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAAAQAAAAAAAAD//wAAAAAAAAEAAAAAAAAA//8AAAAAAAABAAAAAAAAAP//AAAAAAAA"),
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("L7F1OgkTxcNBbp4+YYdvQvRgVsPJbp4+rMG7wYIKaMJTb54+2ledQnpimsODbp4+LMOYQhEXvcNIbp4+lRjVQv4WusNLbp4+UtUWw64StsNSbp4+SsdGQhBD18IPb54+kgGnQdA0jMIxb54+I1qLw0Rai8OVbp4+JNRrwnZH+MFTb54+30zcwkBREMJTb54+Gadbw8jPgcI+b54+1Ns0w5XTRcJFb54+NWyXwyTDlcIob54+uJGIw7j/jcI2b54+jhK2w4vVFsPybp4+rzOqwzkv8MIIb54+3Kunw7iftsIeb54+Lw14Ote3nsNzbp4+rQyQwut4E8Mfb54+CfTywu2iksONbp4+2nVgwxl2YMO/bp4+cNcPQnmBXMPIbp4+G4FZQhDNnMN+bp4+BSzRQcsa5sITb54+yBbzP0QfscIsb54+y0UIwqjnpMJGb54+bKp1whEecsJGb54+uVPJwsslg8JGb54+3hVHw4qkBMMNb54+ZOwsw6tvmsI2b54+O35UwwSat8Iub54+C5eSw7/x9sIDb54+kmCFw1AOwsImb54+oAGVw3JaxsIWb54+//////n//L//////Xf9PwP////9y/0XA//////z//r//////9v/6v//////8/wDA//////3//7//////7/8HwP/////K/+W//////97/77//////YP9OwP/////8/wDA/////5n/McD/////kv/Jv//////8/oDA/////1n/rL//////qv5Uv/////9S+ai8/////53/L8D/////9/8DwP/////m/wvA//////H/+L//////8f/4v/////+p/yrA/////+3/CMD/////4v8NwP/////s/wjA/////37/P8D/////af9JwP/////E/xzA//////r/AcD/////uP/cv/////+2/yPA/////+7/9r//////8P54v/////+x/9i/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="Skin" id="Skin_i18c6"]
+resource_name = "Skin2"
+bind_count = 4
+bind/0/name = &"st_301_sea_Bone_0000"
+bind/0/bone = -1
+bind/0/pose = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+bind/1/name = &"st_301_sea_Bone_0001"
+bind/1/bone = -1
+bind/1/pose = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.0009765625, 0.30944347, 1.484943e-08)
+bind/2/name = &"st_301_sea_Bone_0002"
+bind/2/bone = -1
+bind/2/pose = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 3.0517578e-05)
+bind/3/name = &"st_301_sea_Bone_0003"
+bind/3/bone = -1
+bind/3/pose = Transform3D(0.22854854, -0.97353256, 0, 0, 0, -1, 0.97353256, 0.22854854, 0, -167.41081, 0, 92.760185)
 
 [node name="Game" type="Node3D" unique_id=465307590]
 
@@ -39,8 +82,114 @@ grow_horizontal = 2
 [node name="Map" parent="Environment" unique_id=1127688023 instance=ExtResource("7_mfheb")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 
+[node name="st_301_map_Mesh_0005" parent="Environment/Map/st_301_map_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 220632559) index="5" unique_id=1190967140]
+process_priority = 1
+
+[node name="st_301_map_Mesh_0039" parent="Environment/Map/st_301_map_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 220632559) index="39" unique_id=982864687]
+material_override = ExtResource("8_a4fif")
+
+[node name="st_301_map_Mesh_0040" parent="Environment/Map/st_301_map_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 220632559) index="40" unique_id=1176234415]
+material_override = ExtResource("8_a4fif")
+
+[node name="st_301_map_Mesh_0041" parent="Environment/Map/st_301_map_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 220632559) index="41" unique_id=176312722]
+material_override = ExtResource("8_a4fif")
+
+[node name="st_301_map_Mesh_0043" parent="Environment/Map/st_301_map_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 220632559) index="43" unique_id=457459063]
+material_override = ExtResource("8_a4fif")
+
+[node name="st_301_map_Mesh_0044" parent="Environment/Map/st_301_map_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 220632559) index="44" unique_id=234755675]
+material_override = ExtResource("8_a4fif")
+
+[node name="st_301_map_Mesh_0051" parent="Environment/Map/st_301_map_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 220632559) index="51" unique_id=552435202]
+material_override = ExtResource("8_a4fif")
+
+[node name="st_301_map_Mesh_0052" parent="Environment/Map/st_301_map_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 220632559) index="52" unique_id=993470025]
+material_override = ExtResource("8_a4fif")
+
+[node name="st_301_map_Mesh_0053" parent="Environment/Map/st_301_map_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 220632559) index="53" unique_id=77710851]
+material_override = ExtResource("8_a4fif")
+
+[node name="st_301_map_Mesh_0055" parent="Environment/Map/st_301_map_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 220632559) index="55" unique_id=866201520]
+material_override = ExtResource("8_a4fif")
+
+[node name="st_301_map_Mesh_0056" parent="Environment/Map/st_301_map_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 220632559) index="56" unique_id=1056757614]
+material_override = ExtResource("8_a4fif")
+
+[node name="st_301_map_Mesh_0057" parent="Environment/Map/st_301_map_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 220632559) index="57" unique_id=1330136266]
+material_override = ExtResource("8_a4fif")
+
+[node name="st_301_map_Mesh_0059" parent="Environment/Map/st_301_map_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 220632559) index="59" unique_id=1380814574]
+material_override = ExtResource("8_a4fif")
+
+[node name="st_301_map_Mesh_0060" parent="Environment/Map/st_301_map_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 220632559) index="60" unique_id=776006701]
+material_override = ExtResource("8_a4fif")
+
+[node name="st_301_map_Mesh_0061" parent="Environment/Map/st_301_map_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 220632559) index="61" unique_id=244408216]
+material_override = ExtResource("8_a4fif")
+
+[node name="st_301_sea_Mesh_0000" parent="Environment/Map/st_301_sea_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 161784692) index="0" unique_id=79349424]
+material_override = ExtResource("8_ksp3b")
+cast_shadow = 0
+lod_bias = 0.001
+
+[node name="st_301_sea_Mesh_0003" type="MeshInstance3D" parent="Environment/Map/st_301_sea_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 161784692) index="1" unique_id=971193975]
+process_priority = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.622197e-09, 0.17437553)
+material_override = ExtResource("9_uob2b")
+cast_shadow = 0
+lod_bias = 0.001
+gi_mode = 0
+mesh = SubResource("ArrayMesh_krtm7")
+skin = SubResource("Skin_i18c6")
+
+[node name="st_301_sea_Mesh_0001" parent="Environment/Map/st_301_sea_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 161784692) index="2" unique_id=1661848267]
+material_override = ExtResource("10_uob2b")
+
+[node name="st_301_sea_Mesh_0002" parent="Environment/Map/st_301_sea_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 161784692) index="3" unique_id=2089134782]
+material_override = ExtResource("10_ksp3b")
+
+[node name="st_301_ship_Mesh_0017" parent="Environment/Map/st_301_ship_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 1268894875) index="17" unique_id=1187708567]
+material_override = ExtResource("11_amek8")
+surface_material_override/0 = ExtResource("11_amek8")
+
+[node name="st_301_ship_Mesh_0020" parent="Environment/Map/st_301_ship_gno/Skeleton3D" parent_id_path=PackedInt32Array(1127688023, 1268894875) index="20" unique_id=9800718]
+material_override = ExtResource("13_ufum1")
+
 [node name="st_301_flag_gno" parent="Environment/Map" index="3" unique_id=12095223]
 visible = false
+
+[node name="Light" type="DirectionalLight3D" parent="Environment" unique_id=91411125]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+layers = 1024
+light_color = Color(0.99999946, 0.9636089, 0.92020273, 1)
+light_cull_mask = 1
+shadow_enabled = true
+shadow_caster_mask = 1
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 200.0
+
+[node name="Bounce" type="DirectionalLight3D" parent="Environment" unique_id=443513546]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0)
+layers = 1024
+light_energy = 0.3
+light_cull_mask = 1
+shadow_caster_mask = 1
+
+[node name="Water" type="DirectionalLight3D" parent="Environment" unique_id=687780112]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+layers = 1024
+light_color = Color(1.6845763e-06, 0.4195085, 0.62817466, 1)
+light_specular = 0.0
+light_cull_mask = 8
+
+[node name="CameraRoot" type="Node3D" parent="." unique_id=733074154]
+transform = Transform3D(1, 0, 0, 0, 0.9961947, 0.08715574, 0, -0.08715574, 0.9961947, 0, 0, 0)
+
+[node name="Camera" type="Camera3D" parent="CameraRoot" unique_id=2046085882]
+transform = Transform3D(0.99904823, 0.0049378416, -0.043339036, -0.003801683, 0.999648, 0.026258975, 0.04345344, -0.026069216, 0.9987154, -5.651146, 15.769117, 110.09052)
+cull_mask = 1151
+current = true
+fov = 25.3
 
 [editable path="Minigame"]
 [editable path="Minigame/Scores"]

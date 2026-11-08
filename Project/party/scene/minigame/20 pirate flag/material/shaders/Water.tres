@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cm8jqol11icbh"]
+
+[ext_resource type="Shader" uid="uid://dmmpj5yuc2ypg" path="res://effect/shader/object/TextureScrollAlpha.gdshader" id="1_1w1mr"]
+[ext_resource type="Texture2D" uid="uid://ca4d06usr3ilm" path="res://party/scene/minigame/20 pirate flag/texture/water005.png" id="2_b8r3x"]
+
+[resource]
+render_priority = 1
+shader = ExtResource("1_1w1mr")
+shader_parameter/scroll_direction = Vector2(1, -0.5)
+shader_parameter/opacity = 0.30000000447036
+shader_parameter/scroll_speed = 0.05
+shader_parameter/albedo = ExtResource("2_b8r3x")

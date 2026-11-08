@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bqvahibbecovc"]
+
+[ext_resource type="Shader" uid="uid://8vko605rpg6p" path="res://party/scene/minigame/20 pirate flag/material/shaders/FlagShader.gdshader" id="1_b2dd3"]
+[ext_resource type="Texture2D" uid="uid://cl7gccyxlfwr6" path="res://party/scene/minigame/20 pirate flag/texture/ship_12.png" id="2_0wswg"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_uob2b"]
+frequency = 0.0051
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rjovx"]
+noise = SubResource("FastNoiseLite_uob2b")
+seamless = true
+in_3d_space = true
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_b2dd3")
+shader_parameter/uv_offset_texture = SubResource("NoiseTexture2D_rjovx")
+shader_parameter/albedo = ExtResource("2_0wswg")
+shader_parameter/uv_offset_scale = Vector2(-0.1, -2)
+shader_parameter/time_scale = Vector2(0, 0.07)
+shader_parameter/face_distortion = 0.5
+shader_parameter/opacity = 1.0
