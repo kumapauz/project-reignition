@@ -90,19 +90,59 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[node name="Commander" type="Node3D" unique_id=1813252519 node_paths=PackedStringArray("majin", "hand_attachment")]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5weod"]
+animation = &"MINIGAME/wait"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dmnni"]
+animation = &"MINIGAME/up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h0vi5"]
+animation = &"MINIGAME/right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v6r3w"]
+animation = &"MINIGAME/down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j6hfn"]
+animation = &"MINIGAME/left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_f7vh1"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_5weod")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_0/name = &"MINIGAME_wait"
+blend_point_1/node = SubResource("AnimationNodeAnimation_dmnni")
+blend_point_1/pos = Vector2(0, 1)
+blend_point_1/name = &"MINIGAME_up"
+blend_point_2/node = SubResource("AnimationNodeAnimation_h0vi5")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_2/name = &"MINIGAME_right"
+blend_point_3/node = SubResource("AnimationNodeAnimation_v6r3w")
+blend_point_3/pos = Vector2(0, -1)
+blend_point_3/name = &"MINIGAME_down"
+blend_point_4/node = SubResource("AnimationNodeAnimation_j6hfn")
+blend_point_4/pos = Vector2(1, 0)
+blend_point_4/name = &"MINIGAME_left"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ybtal"]
+graph_offset = Vector2(-1022.512, 22.101135)
+nodes/output/position = Vector2(-120, 380)
+nodes/FlagWave/node = SubResource("AnimationNodeBlendSpace2D_f7vh1")
+nodes/FlagWave/position = Vector2(-400, 360)
+node_connections = [&"output", 0, &"FlagWave"]
+
+[node name="Commander" type="Node3D" unique_id=1813252519 node_paths=PackedStringArray("majin", "hand_attachment", "anim_tree")]
 script = ExtResource("1_7khd5")
 majin = NodePath("MajinBlue")
 hand_attachment = NodePath("HandAttachment")
+anim_tree = NodePath("AnimationTree")
 
 [node name="SpawnPos" type="Node3D" parent="." unique_id=1605559745]
 
 [node name="MajinBlue" parent="." unique_id=170776021 instance=ExtResource("1_cdtu6")]
 
 [node name="GeneralSkeleton" parent="MajinBlue/Majin/CharacterRoot" parent_id_path=PackedInt32Array(170776021, 734494228, 1127854383) index="0" unique_id=37541739 node_paths=PackedStringArray("face_meshes", "left_hand_meshes", "right_hand_meshes")]
-bones/22/rotation = Quaternion(-0.19045587, 0.6809747, -0.6809748, 0.19045578)
-bones/24/rotation = Quaternion(-0.66174173, 0.6617416, 0.2491947, 0.24919455)
-bones/68/rotation = Quaternion(-0.6252666, 0.6252666, 0.3302147, 0.33021456)
+bones/22/rotation = Quaternion(-0.19045587, 0.68097484, -0.68097466, 0.19045587)
+bones/24/rotation = Quaternion(-0.6617416, 0.6617416, 0.24919476, 0.24919476)
+bones/68/rotation = Quaternion(-0.6252665, 0.6252665, 0.33021483, 0.3302148)
 face_meshes = [NodePath("face_default"), null, null, NodePath("face_shock")]
 left_hand_meshes = [NodePath("hand_curl_l"), NodePath("hand_fist_l"), NodePath("hand_flat_l"), NodePath("hand_open_l"), NodePath("hand_point_l"), NodePath("hand_relax_l"), NodePath("hand_thumb_l"), null]
 right_hand_meshes = [NodePath("hand_curl_r"), NodePath("hand_fist_r"), NodePath("hand_flat_r"), NodePath("hand_open_r"), NodePath("hand_point_r"), NodePath("hand_relax_r"), NodePath("hand_thumb_r"), null]
@@ -118,7 +158,7 @@ use_external_skeleton = true
 external_skeleton = NodePath("../MajinBlue/Majin/CharacterRoot/GeneralSkeleton")
 
 [node name="Flag" type="Node3D" parent="HandAttachment" unique_id=702059006]
-transform = Transform3D(0.8746574, 0.47993737, 0.06808892, 0.07116087, 0.011814505, -0.9973959, -0.47949108, 0.8772236, -0.023819238, -1.1238573, -0.5389557, -0.75424814)
+transform = Transform3D(0.9950848, -0.06181146, -0.07736982, -0.076098815, 0.022662207, -0.9968436, 0.0633703, 0.9978307, 0.01784694, -0.82852554, -0.15117216, -0.29649195)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="HandAttachment/Flag" unique_id=1580168928]
 bones/0/name = "st_301_flag_Bone_0000"
@@ -185,6 +225,12 @@ skin = SubResource("Skin_5weod")
 gi_mode = 0
 mesh = SubResource("ArrayMesh_h0vi5")
 skin = SubResource("Skin_5weod")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1704567370]
+root_node = NodePath("../MajinBlue/Majin")
+tree_root = SubResource("AnimationNodeBlendTree_ybtal")
+anim_player = NodePath("../MajinBlue/Majin/AnimationPlayer")
+parameters/FlagWave/blend_position = Vector2(-0.0014204383, 0.0037174225)
 
 [editable path="MajinBlue"]
 [editable path="MajinBlue/Majin"]

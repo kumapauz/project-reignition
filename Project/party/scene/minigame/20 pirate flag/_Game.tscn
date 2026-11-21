@@ -16,6 +16,7 @@
 [ext_resource type="Material" uid="uid://bqvahibbecovc" path="res://party/scene/minigame/20 pirate flag/material/shaders/Rope.tres" id="13_ufum1"]
 [ext_resource type="PackedScene" uid="uid://buwjmjnoavv7b" path="res://party/scene/minigame/20 pirate flag/Player.tscn" id="15_s05wk"]
 [ext_resource type="PackedScene" uid="uid://bt240jwynbsuu" path="res://party/scene/minigame/20 pirate flag/Commander.tscn" id="16_730s0"]
+[ext_resource type="Script" uid="uid://3kcqhil62g7c" path="res://party/scene/minigame/20 pirate flag/script/flag_controller.gd" id="17_s8b7s"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_krtm7"]
 resource_name = "Map_st_301_sea_Mesh_0000"
@@ -60,12 +61,173 @@ tonemap_mode = 2
 glow_enabled = true
 adjustment_enabled = true
 
+[sub_resource type="Animation" id="Animation_s8b7s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-5.651146, 19.087742, 145.94624)]
+}
+
+[sub_resource type="Animation" id="Animation_w8522"]
+resource_name = "ZoomIn"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-5.651146, 19.087742, 145.94624), Vector3(-3.15, 20.994, 40.528)]
+}
+
+[sub_resource type="Animation" id="Animation_5ftdw"]
+resource_name = "ZoomOut"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-3.15, 20.994, 40.528), Vector3(-5.651146, 19.087742, 145.94624)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1jtdb"]
+_data = {
+&"RESET": SubResource("Animation_s8b7s"),
+&"ZoomIn": SubResource("Animation_w8522"),
+&"ZoomOut": SubResource("Animation_5ftdw")
+}
+
+[sub_resource type="Animation" id="Animation_1jtdb"]
+resource_name = "intro"
+length = 5.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Commander")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.43333334),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"flag_left"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Minigame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"request_minigame_start"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"flag_left"
+}, {
+"args": [],
+"method": &"flag_return"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"flag_left"
+}, {
+"args": [],
+"method": &"flag_return"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player3")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"flag_left"
+}, {
+"args": [],
+"method": &"flag_return"
+}]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player4")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"flag_left"
+}, {
+"args": [],
+"method": &"flag_return"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_470x4"]
+_data = {
+&"intro": SubResource("Animation_1jtdb")
+}
+
 [node name="Game" type="Node3D" unique_id=465307590]
 
-[node name="Minigame" parent="." unique_id=600998337 instance=ExtResource("1_epesd")]
+[node name="Minigame" parent="." unique_id=600998337 node_paths=PackedStringArray("intro_animator") instance=ExtResource("1_epesd")]
 minigame_resource = ExtResource("2_epesd")
 anim_library = ExtResource("3_a4fif")
 autocomplete_survivor_count = 1
+intro_animator = NodePath("../IntroAnimator")
 
 [node name="ResultsLocation" parent="Minigame" index="4" unique_id=1428872605]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -26.322514)
@@ -74,7 +236,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -26.322514)
 bgmResource = ExtResource("4_7ve6u")
 
 [node name="Scores" parent="Minigame" unique_id=1484096685 instance=ExtResource("5_ksp3b")]
-visible = false
 layout_mode = 1
 
 [node name="Time" parent="Minigame" unique_id=2069576343 instance=ExtResource("6_amek8")]
@@ -86,6 +247,7 @@ anchor_right = 0.5
 offset_left = -128.0
 offset_right = 128.0
 grow_horizontal = 2
+max_game_time = 0
 
 [node name="Environment" type="Node3D" parent="." unique_id=121302545]
 
@@ -207,10 +369,13 @@ environment = SubResource("Environment_a4fif")
 transform = Transform3D(1, 0, 0, 0, 0.9961947, 0.08715574, 0, -0.08715574, 0.9961947, 0, 0, 0)
 
 [node name="Camera" type="Camera3D" parent="CameraRoot" unique_id=2046085882]
-transform = Transform3D(0.9990483, 0.0049378513, -0.043339122, -0.004612353, 0.99996054, 0.0076072738, 0.04337497, -0.0074001476, 0.9990316, -5.651146, 15.95981, 145.67256)
+transform = Transform3D(0.99904823, 0.004937853, -0.043339137, -0.0028843158, 0.99887586, 0.04731822, 0.04352406, -0.04714819, 0.9979393, -5.651146, 19.087742, 145.94624)
 cull_mask = 1151
 current = true
 fov = 23.8
+
+[node name="CameraAnimator" type="AnimationPlayer" parent="CameraRoot" unique_id=1658341415]
+libraries/ = SubResource("AnimationLibrary_1jtdb")
 
 [node name="Player1" parent="." unique_id=873559703 instance=ExtResource("15_s05wk")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -22, 0, 6.0551205)
@@ -229,6 +394,18 @@ player_index = 3
 
 [node name="Commander" parent="." unique_id=1813252519 instance=ExtResource("16_730s0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045841217, 10.005241, -22.156778)
+
+[node name="FlagController" type="Node" parent="." unique_id=727253279 node_paths=PackedStringArray("commander", "player1", "player2", "player3", "player4", "camera_anim")]
+script = ExtResource("17_s8b7s")
+commander = NodePath("../Commander")
+player1 = NodePath("../Player1")
+player2 = NodePath("../Player2")
+player3 = NodePath("../Player3")
+player4 = NodePath("../Player4")
+camera_anim = NodePath("../CameraRoot/CameraAnimator")
+
+[node name="IntroAnimator" type="AnimationPlayer" parent="." unique_id=2122579724]
+libraries/ = SubResource("AnimationLibrary_470x4")
 
 [editable path="Minigame"]
 [editable path="Minigame/Scores"]

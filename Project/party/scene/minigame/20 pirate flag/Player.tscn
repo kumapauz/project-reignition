@@ -88,10 +88,44 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[node name="Player" type="Node3D" unique_id=873559703 node_paths=PackedStringArray("hand_attachment", "spawn_position")]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mt3f3"]
+animation = &"MINIGAME/wait"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ylk7q"]
+animation = &"MINIGAME/up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1cgn2"]
+animation = &"MINIGAME/left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_154io"]
+animation = &"MINIGAME/right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kw4nu"]
+animation = &"MINIGAME/down"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_ybtal"]
+sync_mode = 1
+blend_point_0/node = SubResource("AnimationNodeAnimation_mt3f3")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_0/name = &"MINIGAME_wait"
+blend_point_1/node = SubResource("AnimationNodeAnimation_ylk7q")
+blend_point_1/pos = Vector2(0, 1)
+blend_point_1/name = &"MINIGAME_up"
+blend_point_2/node = SubResource("AnimationNodeAnimation_1cgn2")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_2/name = &"MINIGAME_left"
+blend_point_3/node = SubResource("AnimationNodeAnimation_154io")
+blend_point_3/pos = Vector2(1, 0)
+blend_point_3/name = &"MINIGAME_right"
+blend_point_4/node = SubResource("AnimationNodeAnimation_kw4nu")
+blend_point_4/pos = Vector2(0, -1)
+blend_point_4/name = &"MINIGAME_down"
+
+[node name="Player" type="Node3D" unique_id=873559703 node_paths=PackedStringArray("hand_attachment", "spawn_position", "animation_tree")]
 script = ExtResource("1_xjntw")
 hand_attachment = NodePath("HandAttachment")
 spawn_position = NodePath("SpawnPos")
+animation_tree = NodePath("AnimationTree")
 
 [node name="SpawnPos" type="Node3D" parent="." unique_id=2027742414]
 
@@ -168,3 +202,7 @@ skin = SubResource("Skin_n7u14")
 gi_mode = 0
 mesh = SubResource("ArrayMesh_ylk7q")
 skin = SubResource("Skin_n7u14")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=2013320539]
+tree_root = SubResource("AnimationNodeBlendSpace2D_ybtal")
+parameters/blend_position = Vector2(0, 0)
